@@ -84,7 +84,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4308775982114238}
   - component: {fileID: 143207520662926914}
-  - component: {fileID: 136807116113320690}
   - component: {fileID: 114917933624831438}
   m_Layer: 9
   m_Name: TestDragon
@@ -255,26 +254,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac96d03a53a6fc848982daefb92a85e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canDie: 1
-  currentHealth: 0
-  maxHealth: 0
+  canTakeDamage: 1
+  currentHealth: 3
+  maxHealth: 3
   movementSpeed: 2.5
-  fireballVelocity: 10
+  fireballVelocity: 0
+  canShoot: 1
+  shootCooldown: 1
   fireball: {fileID: 1567286283418420, guid: 59b1fa0048054f749bcc3d865a93e7ce, type: 2}
   shootPoint: {fileID: 4430348851371696}
---- !u!136 &136807116113320690
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1376551595804946}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &143207520662926914
 CharacterController:
   m_ObjectHideFlags: 1

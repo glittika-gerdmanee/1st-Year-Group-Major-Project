@@ -6,18 +6,18 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     // can the entity take damage and die
-    public bool canDie = true;
+    public bool canTakeDamage = true;
 
     // the character controller component of the entity
     protected CharacterController charController = null;
 
     // the current health of the entity
     [SerializeField]
-    private float currentHealth = 0f;
+    private int currentHealth = 0;
 
     // the maximum health of the entity
     [SerializeField]
-    private float maxHealth = 0f;
+    private int maxHealth = 0;
 
 	// Use this for initialization
 	virtual protected void Start()
@@ -40,16 +40,16 @@ public class Entity : MonoBehaviour
 
     // deal damage or heal the entity
     // negative values deal damage, positive values heal
-    public void Damage(float value)
+    public void Damage(int value)
     {
         // adjust health
         currentHealth += value;
 
         // clamp health
-        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         // is the entity dead
-        if (currentHealth <= 0f)
+        if (currentHealth <= 0)
         {
             // kill the entity
             Kill();

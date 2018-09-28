@@ -6,7 +6,7 @@ public class FireballController : MonoBehaviour
 {
     // damage dealt to entities hit by the explosion
     [SerializeField]
-    private float explosionDamage = 0f;
+    private int explosionDamage = 0;
 
     // effect to spawn when the fireball explodes
     [SerializeField]

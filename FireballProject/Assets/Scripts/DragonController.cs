@@ -14,7 +14,8 @@ public enum ControllerNum
 public class DragonController : Entity
 {
     // the controller number assigned to the dragon
-    public ControllerNum controller = 0;
+    [SerializeField]
+    private ControllerNum controller = 0;
 
     // can the dragon move
     public bool canMove = true;
@@ -129,6 +130,9 @@ public class DragonController : Entity
 
             // set velocity
             newFireball.GetComponent<Rigidbody>().velocity = transform.rotation * (new Vector3(0f, 0f, fireballVelocity));
+
+            // set owner
+            newFireball.GetComponent<FireballController>().SetOwner(gameObject);
         }
     }
 

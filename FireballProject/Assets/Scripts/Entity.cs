@@ -11,6 +11,10 @@ public class Entity : MonoBehaviour
     // the character controller component of the entity
     protected CharacterController charController = null;
 
+    // effect to spawn when the entity dies
+    [SerializeField]
+    private GameObject deathEffect = null;
+
     // the current health of the entity
     [SerializeField]
     private int currentHealth = 0;
@@ -59,6 +63,9 @@ public class Entity : MonoBehaviour
     // kill the entity
     public void Kill()
     {
+        // spawn the death effect
+        GameObject.Instantiate(deathEffect, transform.position, transform.rotation);
+
         // destroy the object
         GameObject.Destroy(gameObject);
     }

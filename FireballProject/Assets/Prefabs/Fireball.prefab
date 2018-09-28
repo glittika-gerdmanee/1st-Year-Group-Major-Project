@@ -142,10 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70d3dd645ad28242baa93d6ca630911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionDamage: -1
-  explosionEffect: {fileID: 1925692475331554, guid: a59ef2247dd1b2f4f8faa9813b59385a,
-    type: 2}
-  explosionRadius: 1
+  isStunned: 0
+  hitDamage: -1
   fuseTime: 1
   objectToDeparent: {fileID: 1491986414886498}
   deparentedEffectsLifetime: 1.25
@@ -156,7 +154,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1567286283418420}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.25

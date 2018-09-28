@@ -64,7 +64,10 @@ public class Entity : MonoBehaviour
     public void Kill()
     {
         // spawn the death effect
-        GameObject.Instantiate(deathEffect, transform.position, transform.rotation);
+        if (deathEffect != null)
+        {
+            GameObject.Instantiate(deathEffect, transform.position, transform.rotation);
+        }
 
         // destroy the object
         GameObject.Destroy(gameObject);

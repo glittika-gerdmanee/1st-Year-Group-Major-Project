@@ -5,20 +5,16 @@ using UnityEngine;
 public enum ControllerNum
 {
     keyboard = 0,
-    controller0,
     controller1,
     controller2,
-    controller3
+    controller3,
+    controller4
 }
 
 public class DragonController : Entity
 {
-    // the controller number assigned to the dragon
-    [SerializeField]
-    private ControllerNum controller = 0;
-
-    // can the dragon move
-    public bool canMove = true;
+    // how long to stun for when the dragon dies
+    public float DeathStunTime = 0f;
 
     // movement speed
     public float movementSpeed = 0f;
@@ -26,11 +22,20 @@ public class DragonController : Entity
     // velocity of a shot fireball
     public float fireballVelocity = 0f;
 
-    // can the dragon shoot
-    public bool canShoot = true;
-
     // time inbetween each shot
     public float shootCooldown = 0f;
+
+    // can the dragon move
+    [SerializeField]
+    private bool canMove = true;
+
+    // can the dragon shoot
+    [SerializeField]
+    private bool canShoot = true;
+
+    // the controller number assigned to the dragon
+    [SerializeField]
+    private ControllerNum controller = 0;
 
     // for timing inbetween shots
     private float shotTimer = 0f;
@@ -52,7 +57,7 @@ public class DragonController : Entity
     private string shootButton = "";
 
 	// Use this for initialization
-	override protected void Start()
+	protected override void Start()
     {
         base.Start();
 
@@ -67,7 +72,7 @@ public class DragonController : Entity
 	}
 	
 	// Update is called once per frame
-	override protected void Update()
+	protected override void Update()
     {
         base.Update();
 
@@ -136,6 +141,42 @@ public class DragonController : Entity
         }
     }
 
+    // override for death because dragons get stunned instead of actually dying
+    public override void Kill()
+    {
+        // spawn the death effect
+        if (deathEffect != null)
+        {
+            GameObject.Instantiate(deathEffect, transform.position, transform.rotation);
+        }
+
+        // stun the dragon
+        Stun(DeathStunTime);
+    }
+
+    // override for getting stunned
+    public override void Stun(float duration)
+    {
+        base.Stun(duration);
+
+        // can't move or shoot while stunned
+        canMove = false;
+        canShoot = false;
+    }
+
+    // ovrride for breaking stun
+    public override void BreakStun()
+    {
+        base.BreakStun();
+
+        // allow movement and shooting again
+        canMove = true;
+        canShoot = true;
+
+        // resets health to full
+        Damage(GetMaxHealth());
+    }
+
     // set control inputs for the dragon
     public void SetControls(ControllerNum cNum)
     {
@@ -151,19 +192,9 @@ public class DragonController : Entity
 
                     break;
                 }
-            case ControllerNum.controller0:
-                {
-                    // assign controller 0
-
-                    horizontalAxis = "HorizontalC0";
-                    verticalAxis = "VerticalC0";
-                    shootButton = "ShootC0";
-
-                    break;
-                }
             case ControllerNum.controller1:
                 {
-                    // assign controller 1
+                    // assign controller 0
 
                     horizontalAxis = "HorizontalC1";
                     verticalAxis = "VerticalC1";
@@ -173,7 +204,7 @@ public class DragonController : Entity
                 }
             case ControllerNum.controller2:
                 {
-                    // assign controller 2
+                    // assign controller 1
 
                     horizontalAxis = "HorizontalC2";
                     verticalAxis = "VerticalC2";
@@ -183,11 +214,21 @@ public class DragonController : Entity
                 }
             case ControllerNum.controller3:
                 {
-                    // assign controller 3
+                    // assign controller 2
 
                     horizontalAxis = "HorizontalC3";
                     verticalAxis = "VerticalC3";
                     shootButton = "ShootC3";
+
+                    break;
+                }
+            case ControllerNum.controller4:
+                {
+                    // assign controller 3
+
+                    horizontalAxis = "HorizontalC4";
+                    verticalAxis = "VerticalC4";
+                    shootButton = "ShootC4";
 
                     break;
                 }

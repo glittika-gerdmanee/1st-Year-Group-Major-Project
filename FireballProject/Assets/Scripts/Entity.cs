@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class Entity : MonoBehaviour
 {
+    // the camera
+    public Camera cam = null;
+
     // can the entity take damage and die
     public bool canTakeDamage = true;
 
@@ -13,7 +16,11 @@ public class Entity : MonoBehaviour
 
     // effect to spawn when the entity dies
     [SerializeField]
-    private GameObject deathEffect = null;
+    protected GameObject deathEffect = null;
+
+    // health bar object
+    [SerializeField]
+    private HealthBar healthBar = null;
 
     // the current health of the entity
     [SerializeField]
@@ -23,21 +30,75 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private int maxHealth = 0;
 
+    // is the entity stunned
+    private bool isStunned = false;
+
+    // how long until the entity isn't stunned
+    private float stunTime = 0f;
+
+    // can the entity be damaged while stunned
+    [SerializeField]
+    private bool canTakeDamageWhileStunned = false;
+
+    // returns the current health of the entity
+    public int GetHealth()
+    {
+        return currentHealth;
+    }
+
+    // returns the max health of the entity
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
 	// Use this for initialization
-	virtual protected void Start()
+	protected virtual void Start()
     {
         // get the character controller
         charController = GetComponent<CharacterController>();
+
+        // update health bar
+        if (healthBar != null)
+        {
+            healthBar.UpdateBar((uint)currentHealth);
+        }
 	}
 
     // Update is called once per frame
-    virtual protected void Update()
+    protected virtual void Update()
     {
+        // stunned
+        if (isStunned)
+        {
+            // stun countdown
+            stunTime -= Time.deltaTime;
 
+            // is the stun time over
+            if (stunTime <= 0f)
+            {
+                // break stun
+                BreakStun();
+            }
+        }
+    }
+
+    // late update is called once per frame after update
+    protected virtual void LateUpdate()
+    {
+        // make health bar face the camera
+        if (healthBar != null)
+        {
+            if (cam != null)
+            {
+                // look at the camera object
+                healthBar.transform.LookAt(cam.transform);
+            }
+        }
     }
 
     // fixed update is called once per physics step
-    virtual protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         
     }
@@ -46,11 +107,32 @@ public class Entity : MonoBehaviour
     // negative values deal damage, positive values heal
     public void Damage(int value)
     {
+        // check if allowed to take damage
+        if (!canTakeDamage)
+        {
+            return;
+        }
+
+        // check if allowed to take damage while stunned
+        if (isStunned)
+        {
+            if (!canTakeDamageWhileStunned)
+            {
+                return;
+            }
+        }
+
         // adjust health
         currentHealth += value;
 
         // clamp health
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        // update health bar
+        if (healthBar != null)
+        {
+            healthBar.UpdateBar((uint)currentHealth);
+        }
 
         // is the entity dead
         if (currentHealth <= 0)
@@ -60,8 +142,22 @@ public class Entity : MonoBehaviour
         }
     }
 
+    // stun the entity
+    public virtual void Stun(float duration)
+    {
+        isStunned = true;
+        stunTime += duration;
+    }
+
+    // breaks the entities stunned state
+    public virtual void BreakStun()
+    {
+        isStunned = false;
+        stunTime = 0f;
+    }
+
     // kill the entity
-    public void Kill()
+    public virtual void Kill()
     {
         // spawn the death effect
         if (deathEffect != null)

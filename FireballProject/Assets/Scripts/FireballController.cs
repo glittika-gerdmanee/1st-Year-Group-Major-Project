@@ -122,7 +122,7 @@ public class FireballController : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         // get the gameobject that was hit
-        GameObject hitObj = col.gameObject;
+        GameObject hitObj = FindHighestParent(col.gameObject);
 
         // is the hit object the fireballs owner
         if (hitObj != owner)
@@ -149,5 +149,16 @@ public class FireballController : MonoBehaviour
     public void SetOwner(GameObject obj)
     {
         owner = obj;
+    }
+
+    // find the highest parent of the gameobject
+    private GameObject FindHighestParent(GameObject obj)
+    {
+        while (obj.transform.parent != null)
+        {
+            obj = obj.transform.parent.gameObject;
+        }
+
+        return obj;
     }
 }

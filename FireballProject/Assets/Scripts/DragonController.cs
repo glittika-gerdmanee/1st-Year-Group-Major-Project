@@ -131,7 +131,7 @@ public class DragonController : Entity
         if (fireball != null)
         {
             // create fireball
-            GameObject newFireball = GameObject.Instantiate(fireball, shootPoint.position, transform.rotation);
+            GameObject newFireball = Instantiate(fireball, shootPoint.position, transform.rotation);
 
             // set velocity
             newFireball.GetComponent<Rigidbody>().velocity = transform.rotation * (new Vector3(0f, 0f, fireballVelocity));

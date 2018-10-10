@@ -11,6 +11,9 @@ public class Entity : MonoBehaviour
     // can the entity take damage and die
     public bool canTakeDamage = true;
 
+    // is the y position locked
+    public bool lockY = true;
+
     // the character controller component of the entity
     protected CharacterController charController = null;
 
@@ -95,12 +98,19 @@ public class Entity : MonoBehaviour
                 healthBar.transform.LookAt(cam.transform);
             }
         }
+
+        // reset y position
+        if (lockY)
+        {
+            transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
+            transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
+        }
     }
 
     // fixed update is called once per physics step
     protected virtual void FixedUpdate()
     {
-        
+
     }
 
     // deal damage or heal the entity

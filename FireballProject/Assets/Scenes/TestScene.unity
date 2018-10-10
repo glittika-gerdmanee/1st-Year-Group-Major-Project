@@ -927,8 +927,8 @@ GameObject:
   m_Component:
   - component: {fileID: 367551888}
   - component: {fileID: 367551887}
-  - component: {fileID: 367551886}
   - component: {fileID: 367551885}
+  - component: {fileID: 367551889}
   m_Layer: 8
   m_Name: Arena
   m_TagString: Untagged
@@ -970,20 +970,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &367551886
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 367551884}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &367551887
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1009,6 +995,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &367551889
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 367551884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11, y: 0.5, z: 11}
+  m_Center: {x: 0, y: -0.25, z: 0}
 --- !u!1 &397355579
 GameObject:
   m_ObjectHideFlags: 0

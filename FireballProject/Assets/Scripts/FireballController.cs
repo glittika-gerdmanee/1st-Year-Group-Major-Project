@@ -9,7 +9,7 @@ public class FireballController : MonoBehaviour
     public bool isStunned = false;
 
     // the dragon that fired this fireball
-    private GameObject owner = null;
+    private DragonController owner = null;
 
     // damage dealt to entities hit by the explosion
     [SerializeField]
@@ -125,7 +125,7 @@ public class FireballController : MonoBehaviour
         GameObject hitObj = FindHighestParent(col.gameObject);
 
         // is the hit object the fireballs owner
-        if (hitObj != owner)
+        if (hitObj != owner.gameObject)
         {
             // deal damage
             {
@@ -137,6 +137,26 @@ public class FireballController : MonoBehaviour
                 {
                     // damage
                     hitEntity.Damage(hitDamage);
+
+                    // check if the hit entity was killed
+                    if (hitEntity.GetHealth() <= 0)
+                    {
+                        // check if the entity was a player or a critter
+                        if (hitEntity.GetComponent<DragonController>() != null)
+                        {
+                            // entity is a dragon
+
+                            // give points
+                            owner.AddScore(DragonController.killPlayerScore);
+                        }
+                        else if (hitEntity.GetComponent<CritterController>() != null)
+                        {
+                            // entity is a critter
+
+                            // give points
+                            owner.AddScore(DragonController.killCritterScore);
+                        }
+                    }
                 }
             }
 
@@ -146,7 +166,7 @@ public class FireballController : MonoBehaviour
     }
 
     // set the owner of the fireball
-    public void SetOwner(GameObject obj)
+    public void SetOwner(DragonController obj)
     {
         owner = obj;
     }

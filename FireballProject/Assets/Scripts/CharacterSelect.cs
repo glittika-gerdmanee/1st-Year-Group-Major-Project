@@ -48,9 +48,8 @@ public class CharacterSelect : MonoBehaviour
             }
         }
 
-        // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        // todo: set up 'done' button better
-        if (Input.GetKeyDown("return"))
+        // start the game
+        if (Input.GetButtonDown("StartK") || Input.GetButtonDown("StartC1") || Input.GetButtonDown("StartC2") || Input.GetButtonDown("StartC3") || Input.GetButtonDown("StartC4"))
         {
             // load the test scene
             SceneManager.LoadScene(1, LoadSceneMode.Single);

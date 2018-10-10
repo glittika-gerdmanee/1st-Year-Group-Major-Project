@@ -191,7 +191,7 @@ MonoBehaviour:
   currentHealth: 1
   maxHealth: 1
   canTakeDamageWhileStunned: 0
-  movementSpeed: 1.5
+  movementSpeed: 0.5
   wanderEndRange: 0.1
   maxWanderTime: 5
   maxIdleTime: 3

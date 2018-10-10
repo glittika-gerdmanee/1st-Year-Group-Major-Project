@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum ControllerNum
 {
@@ -13,6 +14,12 @@ public enum ControllerNum
 
 public class DragonController : Entity
 {
+    // how many points for killing a critter
+    public static int killCritterScore = 1;
+
+    // how many points for killing a dragon
+    public static int killPlayerScore = 3;
+
     // how long to stun for when the dragon dies
     public float DeathStunTime = 0f;
 
@@ -56,8 +63,17 @@ public class DragonController : Entity
     private string verticalAxis = "";
     private string shootButton = "";
 
-	// Use this for initialization
-	protected override void Start()
+    // score
+    private int score = 0;
+
+    // UI text to display the dragons score
+    private Text scoreText = null;
+
+    // string to write to the UI text before the score number
+    private string scoreTextPrefix = "";
+
+    // Use this for initialization
+    protected override void Start()
     {
         base.Start();
 
@@ -69,6 +85,10 @@ public class DragonController : Entity
 
         // shot cooldown
         shotTimer = shootCooldown;
+
+        // give default score
+        SetScore(0);
+        UpdateScoreDisplay();
 	}
 	
 	// Update is called once per frame
@@ -137,7 +157,7 @@ public class DragonController : Entity
             newFireball.GetComponent<Rigidbody>().velocity = transform.rotation * (new Vector3(0f, 0f, fireballVelocity));
 
             // set owner
-            newFireball.GetComponent<FireballController>().SetOwner(gameObject);
+            newFireball.GetComponent<FireballController>().SetOwner(this);
         }
     }
 
@@ -237,5 +257,60 @@ public class DragonController : Entity
                     break;
                 }
         }
+    }
+
+    // set the score of the dragon
+    public void SetScore(int newScore)
+    {
+        // set score
+        score = newScore;
+
+        // don't allow negative score
+        if (score < 0)
+        {
+            score = 0;
+        }
+
+        // update the score
+        UpdateScoreDisplay();
+    }
+
+    // get the score of the dragon
+    public int GetScore()
+    {
+        return score;
+    }
+
+    // give the dragon <value> points
+    public void AddScore(int value)
+    {
+        // add score
+        score += value;
+
+        // don't allow negative points
+        if (score < 0)
+        {
+            score = 0;
+        }
+
+        // update the score
+        UpdateScoreDisplay();
+    }
+
+    // update the UI to display the dragons current score
+    public void UpdateScoreDisplay()
+    {
+        // set text
+        scoreText.text = scoreTextPrefix + score.ToString();
+    }
+
+    // set reference to the UI text for score display
+    public void SetScoreText(Text newText)
+    {
+        // set text
+        scoreText = newText;
+
+        // get text prefix
+        scoreTextPrefix = scoreText.text;
     }
 }

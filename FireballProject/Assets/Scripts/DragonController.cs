@@ -180,7 +180,11 @@ public class DragonController : Entity
     // set control inputs for the dragon
     public void SetControls(ControllerNum cNum)
     {
-        switch (cNum)
+        // set controller
+        controller = cNum;
+
+        // assign button names
+        switch (controller)
         {
             case ControllerNum.keyboard:
                 {

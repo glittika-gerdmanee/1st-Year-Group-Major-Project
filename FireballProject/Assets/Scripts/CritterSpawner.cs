@@ -48,7 +48,7 @@ public class CritterSpawner : MonoBehaviour
                     if (spawnPositions[r] != null)
                     {
                         // spawn critter at spawn pos
-                        GameObject newCritter = Instantiate(critter, spawnPositions[r].transform.position, spawnPositions[r].transform.rotation);
+                        Instantiate(critter, spawnPositions[r].transform.position, spawnPositions[r].transform.rotation);
 
                         // reset spawn timer
                         spawnTimer = 0f;

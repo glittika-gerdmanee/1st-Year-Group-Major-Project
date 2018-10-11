@@ -31,7 +31,7 @@ public class InstructionImages : MonoBehaviour {
 
     public void leftButton()
     {
-        if(imagePos - 1 > 0)
+        if(imagePos - 1 > 0) //do something about the 0 later because it will not return to image 0 when on image 1 and 3
         {
             imagePos--;
         }

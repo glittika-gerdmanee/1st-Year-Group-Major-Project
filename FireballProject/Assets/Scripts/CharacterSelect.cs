@@ -29,6 +29,9 @@ public class CharacterSelect : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // reset
+        ResetPlayers();
+
         // set default joined player states
         UpdateJoinedPlayersDisplay();
 	}

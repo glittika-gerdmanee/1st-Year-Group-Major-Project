@@ -32,6 +32,10 @@ public class DragonController : Entity
     // time inbetween each shot
     public float shootCooldown = 0f;
 
+    // what player number is this dragon
+    [HideInInspector]
+    public int playerNumber = 0;
+
     // can the dragon move
     [SerializeField]
     private bool canMove = true;
@@ -312,5 +316,11 @@ public class DragonController : Entity
 
         // get text prefix
         scoreTextPrefix = scoreText.text;
+    }
+
+    // get the controller type
+    public ControllerNum GetController()
+    {
+        return controller;
     }
 }

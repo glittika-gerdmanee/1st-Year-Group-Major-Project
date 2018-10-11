@@ -13,31 +13,32 @@ public class InstructionImages : MonoBehaviour {
     public GameObject imagePanel;*/
     
     //array of images for Instructions panel
-    public Sprite[] images;
+    public Sprite[] images = new Sprite[1];
 
     //current position in image array
     public int imagePos = 0;
 
     //Image currently displayed
-    public Image currentImage;
+    public Image currentImage = null;
 
     //the right and left button respectively
-    public Button nextButton, prevButton;
+    public Button nextButton = null;
+    public Button prevButton = null;
 
 
-    public void rightButton()
+    public void RightButton()
     {
         if(imagePos + 1 < images.Length)
         {
-            imagePos++;
+            ++imagePos;
         }
     }
 
-    public void leftButton()
+    public void LeftButton()
     {
         if(imagePos - 1 > 0) //do something about the 0 later because it will not return to image 0 when on image 1 and 3
         {
-            imagePos--;
+            --imagePos;
         }
     }
 

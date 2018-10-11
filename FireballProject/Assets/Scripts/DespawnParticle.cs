@@ -22,7 +22,7 @@ public class DespawnParticle : MonoBehaviour
 		if (!pSys.IsAlive(true))
         {
             // destroy the object
-            GameObject.Destroy(gameObject);
+            Destroy(gameObject);
         }
 	}
 }

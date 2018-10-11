@@ -21,9 +21,9 @@ public class HealthBar : MonoBehaviour
         else if (sprites.Length <= health)
         {
             // enable all sprites
-            foreach (GameObject sp in sprites)
+            for (int i = 0; i < sprites.Length; ++i)
             {
-                sp.SetActive(true);
+                sprites[i].SetActive(true);
             }
         }
         else

@@ -73,10 +73,10 @@ public class GameTimer : MonoBehaviour
         DragonController[] players = FindObjectsOfType<DragonController>();
 
         // save player scores
-        foreach (DragonController dc in players)
+        for (int i = 0; i < players.Length; ++i)
         {
             // add the score
-            EndScreen.SetScores(dc.playerNumber, dc.GetScore());
+            EndScreen.SetScores(players[i].playerNumber, players[i].GetScore());
         }
 
         // load end scene

@@ -1246,7 +1246,8 @@ MonoBehaviour:
   controller2Button: ShootC2
   controller3Button: ShootC3
   controller4Button: ShootC4
-  nextScene: Scenes/TestScene
+  nextScene: Scenes/LevelSelect
+  minPlayers: 2
   playersDisplayText:
   - {fileID: 1843882245}
   - {fileID: 653983751}

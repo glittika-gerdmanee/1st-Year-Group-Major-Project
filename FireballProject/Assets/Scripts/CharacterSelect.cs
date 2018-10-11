@@ -23,6 +23,9 @@ public class CharacterSelect : MonoBehaviour
     // the scene to load in after players have joined
     public string nextScene = "Scenes/Scene";
 
+    // minimum amount of players to start the game
+    public uint minPlayers = 2u;
+
     // text to change when a player joins
     // these objects must have a TextMesh component on them OR ELSE >:(
     // length of this list should always be equal to maxPlayers, if it isn't an exception may occur
@@ -57,8 +60,12 @@ public class CharacterSelect : MonoBehaviour
         // start the game
         if (Input.GetButtonDown("StartK") || Input.GetButtonDown("StartC1") || Input.GetButtonDown("StartC2") || Input.GetButtonDown("StartC3") || Input.GetButtonDown("StartC4"))
         {
-            // load the test scene
-            SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+            // check if enough players have joined
+            if (players.Count >= minPlayers)
+            {
+                // load the test scene
+                SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+            }
         }
 	}
 
@@ -131,9 +138,9 @@ public class CharacterSelect : MonoBehaviour
 
         // check if the new player is already in the game
         bool alreadyInGame = false;
-        foreach (ControllerNum num in players)
+        for (int i = 0; i < players.Count; ++i)
         {
-            if (num == newPlayer)
+            if (players[i] == newPlayer)
             {
                 alreadyInGame = true;
                 break;

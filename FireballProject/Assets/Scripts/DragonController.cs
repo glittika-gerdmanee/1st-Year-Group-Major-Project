@@ -171,7 +171,7 @@ public class DragonController : Entity
         // spawn the death effect
         if (deathEffect != null)
         {
-            GameObject.Instantiate(deathEffect, transform.position, transform.rotation);
+            Instantiate(deathEffect, transform.position, transform.rotation);
         }
 
         // stun the dragon

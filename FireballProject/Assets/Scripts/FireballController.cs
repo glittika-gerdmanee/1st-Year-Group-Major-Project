@@ -74,11 +74,11 @@ public class FireballController : MonoBehaviour
             objectToDeparent.transform.SetParent(null);
 
             // destroy the effects after a period of time
-            GameObject.Destroy(objectToDeparent, deparentedEffectsLifetime);
+            Destroy(objectToDeparent, deparentedEffectsLifetime);
         }
 
         // destroy the fireball
-        GameObject.Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     // explodes the fireball

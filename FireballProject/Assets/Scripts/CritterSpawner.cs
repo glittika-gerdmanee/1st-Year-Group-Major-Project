@@ -57,7 +57,20 @@ public class CritterSpawner : MonoBehaviour
                         GameObject newCritter = Instantiate(critter, spawnPositions[r].transform.position, spawnPositions[r].transform.rotation);
 
                         // set random scale of new critter
-                        newCritter.transform.localScale = newCritter.transform.localScale * Random.Range(minScale, maxScale);
+                        float rr = Random.Range(minScale, maxScale);
+                        newCritter.transform.localScale = newCritter.transform.localScale * rr;
+
+                        // set move speed of critter based on it's randomised scale
+                        {
+                            // get rr average
+                            float rrAverage = (minScale + maxScale) / 2f;
+
+                            // get inverse of rr
+                            float rrInverse = rrAverage + (rrAverage - rr);
+
+                            // modify movement speed
+                            newCritter.GetComponent<CritterController>().movementSpeed *= rrInverse;
+                        }
 
                         // reset spawn timer
                         spawnTimer = 0f;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class PlayerSpawner : MonoBehaviour
     // list of spawn locations
     // length of this list should always be equal to CharacterSelect.maxPlayers, if it isn't an exception may occur
     public GameObject[] spawnLocations = new GameObject[4];
+
+    // list of UI text to display players scores
+    // length of this list should always be equal to CharacterSelect.maxPlayers, if it isn't an exception may occur
+    public Text[] scoreDisplays = new Text[4];
 
 	// Use this for initialization
 	void Start()
@@ -29,6 +34,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (player != null)
         {
+            // spawn players
             for (int i = 0; i < CharacterSelect.players.Count; ++i)
             {
                 // get controller num
@@ -40,8 +46,14 @@ public class PlayerSpawner : MonoBehaviour
                 // spawn the player
                 GameObject newPlayer = Instantiate(player, spawnLocation.transform.position, spawnLocation.transform.rotation);
 
+                // get reference to the players controller
+                DragonController newPlayerController = newPlayer.GetComponent<DragonController>();
+
                 // set the new players controls
-                newPlayer.GetComponent<DragonController>().SetControls(num);
+                newPlayerController.SetControls(num);
+
+                // set text to display players score
+                newPlayerController.SetScoreText(scoreDisplays[i]);
             }
         }
     }

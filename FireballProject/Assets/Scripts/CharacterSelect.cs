@@ -67,6 +67,8 @@ public class CharacterSelect : MonoBehaviour
                 SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
             }
         }
+
+
 	}
 
     // update display

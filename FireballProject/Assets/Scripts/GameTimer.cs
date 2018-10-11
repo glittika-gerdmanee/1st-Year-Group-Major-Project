@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameTimer : MonoBehaviour
 {
@@ -62,7 +63,20 @@ public class GameTimer : MonoBehaviour
     // ends the game
     public void EndGame()
     {
-        // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        Debug.Log("game ended");
+        // clear current scores
+        EndScreen.ClearScores();
+
+        // get all currently loaded players
+        DragonController[] players = FindObjectsOfType<DragonController>();
+
+        // save player scores
+        foreach (DragonController dc in players)
+        {
+            // add the score
+            EndScreen.SetScores(dc.playerNumber, dc.GetScore());
+        }
+
+        // load end scene
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 }

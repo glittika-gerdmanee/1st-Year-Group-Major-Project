@@ -54,6 +54,9 @@ public class PlayerSpawner : MonoBehaviour
 
                 // set text to display players score
                 newPlayerController.SetScoreText(scoreDisplays[i]);
+
+                // set the players number
+                newPlayerController.playerNumber = i;
             }
         }
     }

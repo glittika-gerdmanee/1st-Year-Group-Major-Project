@@ -16,6 +16,12 @@ public class CritterSpawner : MonoBehaviour
     // time inbetween each spawn
     public float spawnCooldown = 0f;
 
+    // maximum scale of a critter
+    public float maxScale = 0f;
+
+    // minimum scale of a critter
+    public float minScale = 0f;
+
     // current spawn timer
     private float spawnTimer = 0f;
 
@@ -48,7 +54,10 @@ public class CritterSpawner : MonoBehaviour
                     if (spawnPositions[r] != null)
                     {
                         // spawn critter at spawn pos
-                        Instantiate(critter, spawnPositions[r].transform.position, spawnPositions[r].transform.rotation);
+                        GameObject newCritter = Instantiate(critter, spawnPositions[r].transform.position, spawnPositions[r].transform.rotation);
+
+                        // set random scale of new critter
+                        newCritter.transform.localScale = newCritter.transform.localScale * Random.Range(minScale, maxScale);
 
                         // reset spawn timer
                         spawnTimer = 0f;

@@ -50,9 +50,6 @@ public class CritterController : Entity
     // direction to wander in
     private Vector3 wanderPoint = Vector3.zero;
 
-    // previous position of the critter
-    private Vector3 previousPosition = Vector3.zero;
-
     // use this for initialization
     protected override void Start()
     {
@@ -60,9 +57,6 @@ public class CritterController : Entity
 
         // increment critter count
         ++critterCount;
-
-        // default previous position
-        previousPosition = transform.position;
 
         // default wander state
         ChangeState(CritterState.wander);
@@ -127,15 +121,8 @@ public class CritterController : Entity
 
                     // rotate to face movement direction
                     {
-                        // get vector from previous position to current position
-                        Vector3 movement = previousPosition - transform.position;
-                        movement.y = 0f;
-
                         // apply rotation
-                        transform.LookAt(transform.position + movement);
-
-                        // update previous position
-                        previousPosition = transform.position;
+                        transform.LookAt(transform.position + critterToPoint);
                     }
 
                     // wander timer
@@ -148,10 +135,6 @@ public class CritterController : Entity
                         // has been wandering for too long
                         ChangeState(CritterState.random);
                     }
-
-                    // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa debug
-                    // draw line
-                    Debug.DrawLine(transform.position, wanderPoint, Color.red);
 
                     break;
                 }

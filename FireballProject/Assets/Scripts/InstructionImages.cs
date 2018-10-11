@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class InstructionImages : MonoBehaviour {
 
+   
+    //reset the images to 0 so that when instruction is reopened
+    //the image display is always on the very first image and not the last opened image
+    
     /*//panel holding the image
     public GameObject imagePanel;*/
     

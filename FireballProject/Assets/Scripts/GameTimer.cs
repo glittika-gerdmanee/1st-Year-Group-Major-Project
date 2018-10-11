@@ -12,6 +12,9 @@ public class GameTimer : MonoBehaviour
     // timer display
     public Text timerText = null;
 
+    // the scene to load once the game ends
+    public string nextScene = "Scenes/Scene";
+
     // the current duration of the game in seconds
     private float currentDuration = 0f;
 
@@ -77,6 +80,6 @@ public class GameTimer : MonoBehaviour
         }
 
         // load end scene
-        SceneManager.LoadScene(2, LoadSceneMode.Single);
+        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
 }

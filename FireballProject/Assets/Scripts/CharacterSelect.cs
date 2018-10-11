@@ -20,6 +20,9 @@ public class CharacterSelect : MonoBehaviour
     // maximum amount of players that can join
     private uint maxPlayers = 4u;
 
+    // the scene to load in after players have joined
+    public string nextScene = "Scenes/Scene";
+
     // text to change when a player joins
     // these objects must have a TextMesh component on them OR ELSE >:(
     // length of this list should always be equal to maxPlayers, if it isn't an exception may occur
@@ -55,7 +58,7 @@ public class CharacterSelect : MonoBehaviour
         if (Input.GetButtonDown("StartK") || Input.GetButtonDown("StartC1") || Input.GetButtonDown("StartC2") || Input.GetButtonDown("StartC3") || Input.GetButtonDown("StartC4"))
         {
             // load the test scene
-            SceneManager.LoadScene(1, LoadSceneMode.Single);
+            SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
         }
 	}
 

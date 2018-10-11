@@ -10,6 +10,9 @@ public class EndScreen : MonoBehaviour
     // length of this list should always be equal to CharacterSelect.maxPlayers, if it isn't an exception may occur
     public Text[] displayText = new Text[4];
 
+    // the scene to load once players have finished looking at scores
+    public string nextScene = "Scenes/Scene";
+
     // list of scores
     // key = player number
     // value = score
@@ -29,7 +32,7 @@ public class EndScreen : MonoBehaviour
         // load end scene
         if (Input.GetButtonDown("StartK") || Input.GetButtonDown("StartC1") || Input.GetButtonDown("StartC2") || Input.GetButtonDown("StartC3") || Input.GetButtonDown("StartC4"))
         {
-            SceneManager.LoadScene(0, LoadSceneMode.Single);
+            SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
         }
     }
 

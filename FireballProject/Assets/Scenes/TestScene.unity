@@ -425,6 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 120
   timerText: {fileID: 674527012}
+  nextScene: Scenes/EndScreen
 --- !u!114 &327466262
 MonoBehaviour:
   m_ObjectHideFlags: 0

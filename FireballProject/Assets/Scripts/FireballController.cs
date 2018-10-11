@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FireballController : MonoBehaviour
 {
+    // how many entities can the fireball pass through before it gets destroyed
+    public uint maxPierces = 1u;
+
     // is the dragon stunned
     [HideInInspector]
     public bool isStunned = false;
@@ -37,6 +40,9 @@ public class FireballController : MonoBehaviour
 
     // how long the fireball has been active for
     private float age = 0f;
+
+    // list of entities that have already been hit
+    private List<Entity> hitEntities = new List<Entity>();
 
 	// Use this for initialization
 	void Start()
@@ -135,33 +141,49 @@ public class FireballController : MonoBehaviour
                 // if the entity exists
                 if (hitEntity != null)
                 {
-                    // damage
-                    hitEntity.Damage(hitDamage);
-
-                    // check if the hit entity was killed
-                    if (hitEntity.GetHealth() <= 0)
+                    // has this entity already been hit
+                    if (!(hitEntities.Contains(hitEntity)))
                     {
-                        // check if the entity was a player or a critter
-                        if (hitEntity.GetComponent<DragonController>() != null)
-                        {
-                            // entity is a dragon
+                        // add entity to hit list
+                        hitEntities.Add(hitEntity);
 
-                            // give points
-                            owner.AddScore(DragonController.killPlayerScore);
-                        }
-                        else if (hitEntity.GetComponent<CritterController>() != null)
-                        {
-                            // entity is a critter
+                        // damage
+                        hitEntity.Damage(hitDamage);
 
-                            // give points
-                            owner.AddScore(DragonController.killCritterScore);
+                        // check if the hit entity was killed
+                        if (hitEntity.GetHealth() <= 0)
+                        {
+                            // check if the entity was a player or a critter
+                            if (hitEntity.GetComponent<DragonController>() != null)
+                            {
+                                // entity is a dragon
+
+                                // give points
+                                owner.AddScore(DragonController.killPlayerScore);
+                            }
+                            else if (hitEntity.GetComponent<CritterController>() != null)
+                            {
+                                // entity is a critter
+
+                                // give points
+                                owner.AddScore(DragonController.killCritterScore);
+                            }
                         }
                     }
                 }
+                else
+                {
+                    // explode on hit
+                    Despawn();
+                }
             }
 
-            // explode on hit
-            Despawn();
+            // check if the fireball has hit the maximum amount of entities
+            if (hitEntities.Count >= maxPierces)
+            {
+                // explode on hit
+                Despawn();
+            }
         }
     }
 

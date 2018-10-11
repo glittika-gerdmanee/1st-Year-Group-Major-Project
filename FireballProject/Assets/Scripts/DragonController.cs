@@ -305,7 +305,10 @@ public class DragonController : Entity
     public void UpdateScoreDisplay()
     {
         // set text
-        scoreText.text = scoreTextPrefix + score.ToString();
+        if (scoreText != null)
+        {
+            scoreText.text = scoreTextPrefix + score.ToString();
+        }
     }
 
     // set reference to the UI text for score display

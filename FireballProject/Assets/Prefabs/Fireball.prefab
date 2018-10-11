@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70d3dd645ad28242baa93d6ca630911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPierces: 1000
   isStunned: 0
   hitDamage: -1
   fuseTime: 1

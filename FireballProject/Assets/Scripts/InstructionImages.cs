@@ -5,16 +5,40 @@ using UnityEngine.UI;
 
 public class InstructionImages : MonoBehaviour {
 
-    public Image[] instructionImages;
+    /*//panel holding the image
+    public GameObject imagePanel;*/
+    
+    //array of images for Instructions panel
+    public Sprite[] images;
+
+    //current position in image array
+    public int imagePos = 0;
+
+    //Image currently displayed
+    public Image currentImage;
+
+    //the right and left button respectively
+    public Button nextButton, prevButton;
 
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void rightButton()
+    {
+        if(imagePos + 1 < images.Length)
+        {
+            imagePos++;
+        }
+    }
+
+    public void leftButton()
+    {
+        if(imagePos - 1 > 0)
+        {
+            imagePos--;
+        }
+    }
+
+    public void Update()
+    {
+        currentImage.sprite = images[imagePos];
+    }
 }

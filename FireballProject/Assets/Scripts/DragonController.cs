@@ -12,13 +12,19 @@ public enum ControllerNum
     controller4
 }
 
+public enum AttackType
+{
+    fireball = 0,
+    flameCone
+}
+
 public class DragonController : Entity
 {
     // how many points for killing a critter
-    public static int killCritterScore = 1;
+    public static int KILL_CRITTER_SCORE = 1;
 
     // how many points for killing a dragon
-    public static int killPlayerScore = 3;
+    public static int KILL_DRAGON_SCORE = 3;
 
     // how long to stun for when the dragon dies
     public float DeathStunTime = 0f;
@@ -39,6 +45,9 @@ public class DragonController : Entity
     // amount of time to be invincible after reviving
     public float iTime = 0f;
 
+    // how the dragon attacks
+    public AttackType attackType = AttackType.fireball;
+
     // can the dragon move
     [SerializeField]
     private bool canMove = true;
@@ -57,6 +66,10 @@ public class DragonController : Entity
     // fireball prefab
     [SerializeField]
     private GameObject fireball = null;
+
+    // fire cone prefab
+    [SerializeField]
+    private GameObject fireCone = null;
 
     // shoot point transform
     [SerializeField]
@@ -148,7 +161,7 @@ public class DragonController : Entity
                     if (shotTimer >= shootCooldown)
                     {
                         // shoot
-                        Shoot();
+                        Attack();
 
                         // reset timer
                         shotTimer = 0f;
@@ -170,19 +183,41 @@ public class DragonController : Entity
         }
 	}
 
-    // shoot a fireball
-    public void Shoot()
+    // attack
+    public void Attack()
     {
-        if (fireball != null)
+        // attack type
+        switch (attackType)
         {
-            // create fireball
-            GameObject newFireball = Instantiate(fireball, shootPoint.position, transform.rotation);
+            case AttackType.fireball:
+                {
+                    if (fireball != null)
+                    {
+                        // create fireball
+                        GameObject newFireball = Instantiate(fireball, shootPoint.transform.position, shootPoint.transform.rotation);
 
-            // set velocity
-            newFireball.GetComponent<Rigidbody>().velocity = transform.rotation * (new Vector3(0f, 0f, fireballVelocity));
+                        // set velocity
+                        newFireball.GetComponent<Rigidbody>().velocity = transform.rotation * (new Vector3(0f, 0f, fireballVelocity));
 
-            // set owner
-            newFireball.GetComponent<FireballController>().SetOwner(this);
+                        // set owner
+                        newFireball.GetComponent<FireballController>().owner = this;
+                    }
+
+                    break;
+                }
+            case AttackType.flameCone:
+                {
+                    if (fireCone != null)
+                    {
+                        // create fire cone
+                        GameObject newFireCone = Instantiate(fireCone, shootPoint.transform.position, shootPoint.transform.rotation, shootPoint);
+
+                        // set owner
+                        newFireCone.GetComponent<FireConeController>().owner = this;
+                    }
+
+                    break;
+                }
         }
     }
 

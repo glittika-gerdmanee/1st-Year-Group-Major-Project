@@ -408,10 +408,12 @@ MonoBehaviour:
   shootCooldown: 1
   playerNumber: 0
   iTime: 2
+  attackType: 0
   canMove: 1
   canShoot: 1
   controller: 0
   fireball: {fileID: 1567286283418420, guid: 59b1fa0048054f749bcc3d865a93e7ce, type: 2}
+  fireCone: {fileID: 1281477515925420, guid: 623858d6adf532448b8650b7175fa384, type: 2}
   shootPoint: {fileID: 4409779342540526}
 --- !u!114 &114626458657205522
 MonoBehaviour:

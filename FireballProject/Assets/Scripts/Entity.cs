@@ -6,7 +6,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     // the camera
-    public Camera cam = null;
+    public Vector3 camPos = Vector3.zero;
 
     // can the entity take damage and die
     public bool canTakeDamage = true;
@@ -92,11 +92,8 @@ public class Entity : MonoBehaviour
         // make health bar face the camera
         if (healthBar != null)
         {
-            if (cam != null)
-            {
-                // look at the camera object
-                healthBar.transform.LookAt(cam.transform);
-            }
+            // look at the camera object
+            healthBar.transform.LookAt(camPos);
         }
 
         // reset y position

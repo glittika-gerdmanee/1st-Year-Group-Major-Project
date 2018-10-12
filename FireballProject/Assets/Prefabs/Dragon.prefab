@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac96d03a53a6fc848982daefb92a85e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  camPos: {x: 0, y: 6.56, z: -5.97}
   canTakeDamage: 1
   lockY: 1
   deathEffect: {fileID: 1925692475331554, guid: a59ef2247dd1b2f4f8faa9813b59385a,
@@ -407,6 +407,7 @@ MonoBehaviour:
   fireballVelocity: 5
   shootCooldown: 1
   playerNumber: 0
+  iTime: 2
   canMove: 1
   canShoot: 1
   controller: 0

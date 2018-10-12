@@ -48,7 +48,7 @@ public class CritterSpawner : MonoBehaviour
                 if (critter != null)
                 {
                     // choose random spawn position
-                    int r = Random.Range(0, spawnPositions.Length - 1);
+                    int r = Random.Range(0, spawnPositions.Length);
 
                     // null check spawn position
                     if (spawnPositions[r] != null)

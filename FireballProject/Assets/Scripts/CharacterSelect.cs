@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
+    // maximum amount of players that can join
+    [HideInInspector]
+    public const uint maxPlayers = 4u;
+
     // buttons to press to join the game
     public string keyboardButton = "ShootK";
     public string controller1Button = "ShootC1";
@@ -17,9 +21,6 @@ public class CharacterSelect : MonoBehaviour
     [HideInInspector]
     public static List<ControllerNum> players = new List<ControllerNum>();
 
-    // maximum amount of players that can join
-    private uint maxPlayers = 4u;
-
     // the scene to load in after players have joined
     public string nextScene = "Scenes/Scene";
 
@@ -27,10 +28,9 @@ public class CharacterSelect : MonoBehaviour
     public uint minPlayers = 2u;
 
     // text to change when a player joins
-    // these objects must have a TextMesh component on them OR ELSE >:(
-    // length of this list should always be equal to maxPlayers, if it isn't an exception may occur
+    // don't change the size of this list
     [SerializeField]
-    private GameObject[] playersDisplayText = new GameObject[4];
+    private GameObject[] playersDisplayText = new GameObject[maxPlayers];
 
     // Use this for initialization
     void Start()

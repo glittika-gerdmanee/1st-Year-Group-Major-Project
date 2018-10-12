@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 public class EndScreen : MonoBehaviour
 {
     // UI text to display players scores
-    // length of this list should always be equal to CharacterSelect.maxPlayers, if it isn't an exception may occur
-    public Text[] displayText = new Text[4];
+    public Text[] displayText = new Text[CharacterSelect.maxPlayers];
 
     // the scene to load once players have finished looking at scores
     public string nextScene = "Scenes/Scene";

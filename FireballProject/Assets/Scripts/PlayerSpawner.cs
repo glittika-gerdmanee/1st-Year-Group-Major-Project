@@ -10,12 +10,12 @@ public class PlayerSpawner : MonoBehaviour
     public GameObject player = null;
 
     // list of spawn locations
-    // length of this list should always be equal to CharacterSelect.maxPlayers, if it isn't an exception may occur
-    public GameObject[] spawnLocations = new GameObject[4];
+    // don't change the size of this list
+    public GameObject[] spawnLocations = new GameObject[CharacterSelect.maxPlayers];
 
     // list of UI text to display players scores
-    // length of this list should always be equal to CharacterSelect.maxPlayers, if it isn't an exception may occur
-    public Text[] scoreDisplays = new Text[4];
+    // don't change the size of this list
+    public Text[] scoreDisplays = new Text[CharacterSelect.maxPlayers];
 
 	// Use this for initialization
 	void Start()

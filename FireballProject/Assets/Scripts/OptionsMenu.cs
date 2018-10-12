@@ -37,6 +37,8 @@ public class OptionsMenu : MonoBehaviour {
 
     public Slider brightness;
 
+    public float brightnessLevel;
+
 
 	// Use this for initialization
 	void Awake()
@@ -69,7 +71,7 @@ public class OptionsMenu : MonoBehaviour {
     //toggle brightness of game screen
     public void BrightnessToggle()
     {
-
+        brightnessLevel = brightness.value;
     }
 
     //allowing panels to returning to options panel instead of closing it entirely

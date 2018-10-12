@@ -149,7 +149,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    // stun the entity
+    // stun the entity for <duration> seconds
     public virtual void Stun(float duration)
     {
         isStunned = true;

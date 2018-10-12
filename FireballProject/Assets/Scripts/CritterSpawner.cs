@@ -24,12 +24,6 @@ public class CritterSpawner : MonoBehaviour
 
     // current spawn timer
     private float spawnTimer = 0f;
-
-	// use this for initialization
-	void Start()
-	{
-		
-	}
 	
 	// update is called once per frame
 	void Update()

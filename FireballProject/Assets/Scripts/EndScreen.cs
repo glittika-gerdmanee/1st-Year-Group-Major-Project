@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class EndScreen : MonoBehaviour
 {
     // UI text to display players scores
-    public Text[] displayText = new Text[CharacterSelect.maxPlayers];
+    public Text[] displayText = new Text[CharacterSelect.MAX_PLAYERS];
 
     // the scene to load once players have finished looking at scores
     public string nextScene = "Scenes/Scene";
@@ -27,8 +27,7 @@ public class EndScreen : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        // go back to character select
-        // load end scene
+        // continue from end screen
         if (Input.GetButtonDown("StartK") || Input.GetButtonDown("StartC1") || Input.GetButtonDown("StartC2") || Input.GetButtonDown("StartC3") || Input.GetButtonDown("StartC4"))
         {
             SceneManager.LoadScene(nextScene, LoadSceneMode.Single);

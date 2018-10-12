@@ -26,7 +26,7 @@ public class InstructionScroll : MonoBehaviour
     public Text currentText = null;
 
     //page number
-    public int pageNo = 1;
+    public int pageNo;
 
     //display page number
     public Text pageText = null;

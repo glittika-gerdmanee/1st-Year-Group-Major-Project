@@ -36,6 +36,9 @@ public class DragonController : Entity
     [HideInInspector]
     public int playerNumber = 0;
 
+    // amount of time to be invincible after reviving
+    public float iTime = 0f;
+
     // can the dragon move
     [SerializeField]
     private bool canMove = true;
@@ -76,6 +79,9 @@ public class DragonController : Entity
     // string to write to the UI text before the score number
     private string scoreTextPrefix = "";
 
+    // timer for invincibility after reviving
+    private float iTimer = 0f;
+
     // Use this for initialization
     protected override void Start()
     {
@@ -93,6 +99,9 @@ public class DragonController : Entity
         // give default score
         SetScore(0);
         UpdateScoreDisplay();
+
+        // default invincibility timer
+        iTimer = iTime;
 	}
 	
 	// Update is called once per frame
@@ -147,6 +156,18 @@ public class DragonController : Entity
                 }
             }
         }
+
+        // invincibility
+        if (iTimer < iTime)
+        {
+            // increment timer
+            iTimer += Time.deltaTime;
+        }
+        else
+        {
+            // end invincibility
+            canTakeDamage = true;
+        }
 	}
 
     // shoot a fireball
@@ -199,6 +220,10 @@ public class DragonController : Entity
 
         // resets health to full
         Damage(GetMaxHealth());
+
+        // start incincibility timer
+        iTimer = 0f;
+        canTakeDamage = false;
     }
 
     // set control inputs for the dragon

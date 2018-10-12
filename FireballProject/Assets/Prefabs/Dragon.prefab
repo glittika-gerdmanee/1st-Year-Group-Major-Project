@@ -407,6 +407,7 @@ MonoBehaviour:
   fireballVelocity: 5
   shootCooldown: 1
   playerNumber: 0
+  iTime: 2
   canMove: 1
   canShoot: 1
   controller: 0

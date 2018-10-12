@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class InstructionScroll : MonoBehaviour
 {
-
-
     //reset the images to 0 so that when instruction is reopened
     //the image display is always on the very first image and not the last opened image
 
@@ -22,7 +20,6 @@ public class InstructionScroll : MonoBehaviour
     //the right and left button respectively
     public Button nextButton = null;
     public Button prevButton = null;
-
 
     public void RightButton()
     {

@@ -11,22 +11,16 @@ public class PlayerSpawner : MonoBehaviour
 
     // list of spawn locations
     // don't change the size of this list
-    public GameObject[] spawnLocations = new GameObject[CharacterSelect.maxPlayers];
+    public GameObject[] spawnLocations = new GameObject[CharacterSelect.MAX_PLAYERS];
 
     // list of UI text to display players scores
     // don't change the size of this list
-    public Text[] scoreDisplays = new Text[CharacterSelect.maxPlayers];
+    public Text[] scoreDisplays = new Text[CharacterSelect.MAX_PLAYERS];
 
 	// Use this for initialization
 	void Start()
     {
         SpawnPlayers();
-	}
-	
-	// Update is called once per frame
-	void Update()
-    {
-		
 	}
 
     // spawn players

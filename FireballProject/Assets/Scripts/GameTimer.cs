@@ -18,12 +18,6 @@ public class GameTimer : MonoBehaviour
     // the current duration of the game in seconds
     private float currentDuration = 0f;
 
-	// Use this for initialization
-	void Start()
-    {
-		
-	}
-	
 	// Update is called once per frame
 	void Update()
     {
@@ -33,8 +27,8 @@ public class GameTimer : MonoBehaviour
         // update the UI
         UpdateTimerText();
 
-        // end the game
-        if (currentDuration >= duration)
+        // end the game when the timer ends or when the quit button is pressed
+        if (currentDuration >= duration || Input.GetButtonDown("QuitK") || Input.GetButtonDown("QuitC1") || Input.GetButtonDown("QuitC2") || Input.GetButtonDown("QuitC3") || Input.GetButtonDown("QuitC4"))
         {
             EndGame();
         }

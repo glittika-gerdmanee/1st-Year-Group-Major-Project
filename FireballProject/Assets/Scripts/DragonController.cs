@@ -238,7 +238,6 @@ public class DragonController : Entity
             case ControllerNum.keyboard:
                 {
                     // assign keyboard
-
                     horizontalAxis = "HorizontalK";
                     verticalAxis = "VerticalK";
                     shootButton = "ShootK";
@@ -248,7 +247,6 @@ public class DragonController : Entity
             case ControllerNum.controller1:
                 {
                     // assign controller 0
-
                     horizontalAxis = "HorizontalC1";
                     verticalAxis = "VerticalC1";
                     shootButton = "ShootC1";
@@ -258,7 +256,6 @@ public class DragonController : Entity
             case ControllerNum.controller2:
                 {
                     // assign controller 1
-
                     horizontalAxis = "HorizontalC2";
                     verticalAxis = "VerticalC2";
                     shootButton = "ShootC2";
@@ -268,7 +265,6 @@ public class DragonController : Entity
             case ControllerNum.controller3:
                 {
                     // assign controller 2
-
                     horizontalAxis = "HorizontalC3";
                     verticalAxis = "VerticalC3";
                     shootButton = "ShootC3";
@@ -278,7 +274,6 @@ public class DragonController : Entity
             case ControllerNum.controller4:
                 {
                     // assign controller 3
-
                     horizontalAxis = "HorizontalC4";
                     verticalAxis = "VerticalC4";
                     shootButton = "ShootC4";

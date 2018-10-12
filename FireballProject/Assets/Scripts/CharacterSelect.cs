@@ -8,7 +8,7 @@ public class CharacterSelect : MonoBehaviour
 {
     // maximum amount of players that can join
     [HideInInspector]
-    public const uint maxPlayers = 4u;
+    public const uint MAX_PLAYERS = 4u;
 
     // buttons to press to join the game
     public string keyboardButton = "ShootK";
@@ -30,7 +30,7 @@ public class CharacterSelect : MonoBehaviour
     // text to change when a player joins
     // don't change the size of this list
     [SerializeField]
-    private GameObject[] playersDisplayText = new GameObject[maxPlayers];
+    private GameObject[] playersDisplayText = new GameObject[MAX_PLAYERS];
 
     // Use this for initialization
     void Start()
@@ -46,14 +46,16 @@ public class CharacterSelect : MonoBehaviour
 	void Update()
     {
         // check if any of the join buttons were pressed
-        int buttonCheck = CheckJoinButtons();
-        if (buttonCheck != -1)
         {
-            // add the player who pressed the button to the game
-            if (AddPlayer((ControllerNum)buttonCheck))
+            int buttonCheck = CheckJoinButtons();
+            if (buttonCheck != -1)
             {
-                // update the display
-                UpdateJoinedPlayersDisplay();
+                // add the player who pressed the button to the game
+                if (AddPlayer((ControllerNum)buttonCheck))
+                {
+                    // update the display
+                    UpdateJoinedPlayersDisplay();
+                }
             }
         }
 
@@ -133,7 +135,7 @@ public class CharacterSelect : MonoBehaviour
     private bool AddPlayer(ControllerNum newPlayer)
     {
         // don't add the player if there is already maximum amount of players
-        if (players.Count >= maxPlayers)
+        if (players.Count >= MAX_PLAYERS)
         {
             return false;
         }

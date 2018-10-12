@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class InstructionScroll : MonoBehaviour
 {
-
     //array of images for Instructions panel
     public Sprite[] images = new Sprite[1];
 
@@ -62,8 +61,6 @@ public class InstructionScroll : MonoBehaviour
             --textPos;
             --pageNo;
         }
-
-
     }
 
     public void ResetStep()

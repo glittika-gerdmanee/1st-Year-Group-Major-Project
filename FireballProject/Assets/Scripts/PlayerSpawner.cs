@@ -23,6 +23,26 @@ public class PlayerSpawner : MonoBehaviour
         SpawnPlayers();
 	}
 
+    // update runs once per frame
+    private void Update()
+    {
+        // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa debug
+        // spawn a keyboard player if tilde is pressed
+        {
+            if (Input.GetKeyDown(KeyCode.BackQuote))
+            {
+                // spawn the player
+                GameObject newPlayer = Instantiate(player, Vector3.zero, Quaternion.identity);
+
+                // get reference to the players controller
+                DragonController newPlayerController = newPlayer.GetComponent<DragonController>();
+
+                // set the new players controls
+                newPlayerController.SetControls(ControllerNum.Keyboard);
+            }
+        }
+    }
+
     // spawn players
     private void SpawnPlayers()
     {

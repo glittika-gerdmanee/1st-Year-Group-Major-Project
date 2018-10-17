@@ -92,31 +92,31 @@ public class CharacterSelect : MonoBehaviour
             string str = "";
             switch (num)
             {
-                case ControllerNum.keyboard:
+                case ControllerNum.Keyboard:
                     {
                         str = "Keyboard";
 
                         break;
                     }
-                case ControllerNum.controller1:
+                case ControllerNum.Controller1:
                     {
                         str = "Controller 1";
 
                         break;
                     }
-                case ControllerNum.controller2:
+                case ControllerNum.Controller2:
                     {
                         str = "Controller 2";
 
                         break;
                     }
-                case ControllerNum.controller3:
+                case ControllerNum.Controller3:
                     {
                         str = "Controller 3";
 
                         break;
                     }
-                case ControllerNum.controller4:
+                case ControllerNum.Controller4:
                     {
                         str = "Controller 4";
 
@@ -168,31 +168,31 @@ public class CharacterSelect : MonoBehaviour
         // keyboard
         if (Input.GetButtonDown(keyboardButton))
         {
-            return (int)ControllerNum.keyboard;
+            return (int)ControllerNum.Keyboard;
         }
 
         // controller 1
         if (Input.GetButtonDown(controller1Button))
         {
-            return (int)ControllerNum.controller1;
+            return (int)ControllerNum.Controller1;
         }
 
         // controller 2
         if (Input.GetButtonDown(controller2Button))
         {
-            return (int)ControllerNum.controller2;
+            return (int)ControllerNum.Controller2;
         }
 
         // controller 3
         if (Input.GetButtonDown(controller3Button))
         {
-            return (int)ControllerNum.controller3;
+            return (int)ControllerNum.Controller3;
         }
 
         // controller 4
         if (Input.GetButtonDown(controller4Button))
         {
-            return (int)ControllerNum.controller4;
+            return (int)ControllerNum.Controller4;
         }
 
         // -1 means none of the join keys were pressed

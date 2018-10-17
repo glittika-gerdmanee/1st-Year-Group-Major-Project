@@ -1,0 +1,137 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum PowerupType
+{
+    None = 0,
+    FlameCone,
+    Speed,
+    Bomb
+}
+
+public class PowerupDrop : MonoBehaviour
+{
+    // type of powerup
+    public PowerupType type = PowerupType.None;
+
+    // duration of the powerup drop before it despawns
+    public float duration = 0f;
+
+    // durations
+    [SerializeField]
+    private float flameConeDuration = 0f;
+    [SerializeField]
+    private float speedDuration = 0f;
+    [SerializeField]
+    private float bombDuration = 0f;
+
+    // age of the powerup drop
+    private float age = 0f;
+
+    // Use this for initialization
+    void Start()
+    {
+        // randomise powerup type
+        if (type == PowerupType.None)
+        {
+            // get random type enum
+            int r = Random.Range(1, 4); // this range needs to be changed if values are removed/added to PowerupType
+
+            // set type
+            type = (PowerupType)r;
+        }
+	}
+	
+	// Update is called once per frame
+	void Update()
+    {
+		// despawn timer
+        if (age < duration)
+        {
+            // increment timer
+            age += Time.deltaTime;
+        }
+        else
+        {
+            // despawn powerup drop
+            Despawn();
+        }
+	}
+
+    // destroy the powerup drop
+    public void Despawn()
+    {
+        // destroy the gameobject
+        Destroy(gameObject);
+    }
+
+    // trigger collide with other object
+    private void OnTriggerEnter(Collider col)
+    {
+        // get the object that was hit
+        GameObject hitObj = FindHighestParent(col.gameObject);
+
+        // check if the hit object was a dragon
+        DragonController dragon = hitObj.GetComponent<DragonController>();
+        if (dragon != null)
+        {
+            // give the player the powerup
+            dragon.GivePowerup(CreatePowerup());
+
+            // despawn the powerup drop
+            Despawn();
+        }
+    }
+
+    // find the highest parent of the gameobject
+    private GameObject FindHighestParent(GameObject obj)
+    {
+        while (obj.transform.parent != null)
+        {
+            obj = obj.transform.parent.gameObject;
+        }
+
+        return obj;
+    }
+
+    // create a powerup to give to a dragon
+    private Powerup CreatePowerup()
+    {
+        // create powerup based on the type
+        if (type != PowerupType.None)
+        {
+            Powerup newPowerup = null;
+
+            // create powerup instance
+            switch (type)
+            {
+                case PowerupType.FlameCone:
+                    {
+                        newPowerup = new FlameConePowerup();
+                        newPowerup.duration = flameConeDuration;
+
+                        break;
+                    }
+                case PowerupType.Speed:
+                    {
+                        newPowerup = new SpeedPowerup();
+                        newPowerup.duration = speedDuration;
+
+                        break;
+                    }
+                case PowerupType.Bomb:
+                    {
+                        newPowerup = new BombPowerup();
+                        newPowerup.duration = bombDuration;
+
+                        break;
+                    }
+            }
+
+            return newPowerup;
+        }
+
+        return null;
+    }
+}

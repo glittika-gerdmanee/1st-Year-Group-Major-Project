@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public enum ControllerNum
 {
-    keyboard = 0,
-    controller1,
-    controller2,
-    controller3,
-    controller4
+    Keyboard = 0,
+    Controller1,
+    Controller2,
+    Controller3,
+    Controller4
 }
 
 public enum AttackType
 {
-    fireball = 0,
-    flameCone
+    Fireball = 0,
+    FlameCone,
+    Bomb
 }
 
 public class DragonController : Entity
@@ -46,7 +47,7 @@ public class DragonController : Entity
     public float iTime = 0f;
 
     // how the dragon attacks
-    public AttackType attackType = AttackType.fireball;
+    public AttackType attackType = AttackType.Fireball;
 
     // can the dragon move
     [SerializeField]
@@ -70,6 +71,10 @@ public class DragonController : Entity
     // fire cone prefab
     [SerializeField]
     private GameObject fireCone = null;
+
+    // bomb prefab
+    [SerializeField]
+    private GameObject bomb = null;
 
     // shoot point transform
     [SerializeField]
@@ -95,6 +100,9 @@ public class DragonController : Entity
     // timer for invincibility after reviving
     private float iTimer = 0f;
 
+    // the dragons current powerup
+    private Powerup powerUp = null;
+
     // Use this for initialization
     protected override void Start()
     {
@@ -116,11 +124,54 @@ public class DragonController : Entity
         // default invincibility timer
         iTimer = iTime;
 	}
+
+    // gives the dragon a powerup
+    public void GivePowerup(Powerup newPowerup)
+    {
+        // remove current powerup
+        RemovePowerup();
+
+        // add new powerup
+        powerUp = newPowerup;
+
+        // set powerup vars
+        powerUp.dragon = this;
+
+        // start powerups effects
+        powerUp.Start();
+    }
+
+    // remove the current powerup
+    public void RemovePowerup()
+    {
+        if (powerUp != null)
+        {
+            // end the powerups effects
+            powerUp.End();
+
+            // remove the powerup
+            powerUp = null;
+        }
+    }
 	
 	// Update is called once per frame
 	protected override void Update()
     {
         base.Update();
+
+        // run powerup
+        if (powerUp != null)
+        {
+            // update the powerup
+            powerUp.Update();
+
+            // check if the powerup has run out of time
+            if (powerUp.TimedOut())
+            {
+                // remove the powerup
+                RemovePowerup();
+            }
+        }
 
         // move the dragon
         {
@@ -189,7 +240,7 @@ public class DragonController : Entity
         // attack type
         switch (attackType)
         {
-            case AttackType.fireball:
+            case AttackType.Fireball:
                 {
                     if (fireball != null)
                     {
@@ -205,7 +256,7 @@ public class DragonController : Entity
 
                     break;
                 }
-            case AttackType.flameCone:
+            case AttackType.FlameCone:
                 {
                     if (fireCone != null)
                     {
@@ -214,6 +265,16 @@ public class DragonController : Entity
 
                         // set owner
                         newFireCone.GetComponent<FireConeController>().owner = this;
+                    }
+
+                    break;
+                }
+            case AttackType.Bomb:
+                {
+                    if (bomb != null)
+                    {
+                        // create bomb
+                        Instantiate(bomb, shootPoint.transform.position, shootPoint.transform.rotation);
                     }
 
                     break;
@@ -270,7 +331,7 @@ public class DragonController : Entity
         // assign button names
         switch (controller)
         {
-            case ControllerNum.keyboard:
+            case ControllerNum.Keyboard:
                 {
                     // assign keyboard
                     horizontalAxis = "HorizontalK";
@@ -279,7 +340,7 @@ public class DragonController : Entity
 
                     break;
                 }
-            case ControllerNum.controller1:
+            case ControllerNum.Controller1:
                 {
                     // assign controller 0
                     horizontalAxis = "HorizontalC1";
@@ -288,7 +349,7 @@ public class DragonController : Entity
 
                     break;
                 }
-            case ControllerNum.controller2:
+            case ControllerNum.Controller2:
                 {
                     // assign controller 1
                     horizontalAxis = "HorizontalC2";
@@ -297,7 +358,7 @@ public class DragonController : Entity
 
                     break;
                 }
-            case ControllerNum.controller3:
+            case ControllerNum.Controller3:
                 {
                     // assign controller 2
                     horizontalAxis = "HorizontalC3";
@@ -306,7 +367,7 @@ public class DragonController : Entity
 
                     break;
                 }
-            case ControllerNum.controller4:
+            case ControllerNum.Controller4:
                 {
                     // assign controller 3
                     horizontalAxis = "HorizontalC4";

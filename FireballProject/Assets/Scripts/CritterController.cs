@@ -28,6 +28,12 @@ public class CritterController : Entity
     public Vector3 wanderBoxPosition = Vector3.zero;
     public Vector3 wanderBoxScale = Vector3.zero;
 
+    // chance between 0 and 1 for the critter to drop a powerup on death
+    public float dropChance = 0.1f;
+
+    // gameobject to spawn as a powerup drop when the critter dies
+    public GameObject drop = null;
+
     // how many critters exist
     private static int critterCount = 0;
 
@@ -202,5 +208,22 @@ public class CritterController : Entity
     public static int GetCritterCount()
     {
         return critterCount;
+    }
+
+    // kill the critter
+    public override void Kill()
+    {
+        // chance to drop a powerup
+        {
+            float r = Random.Range(0f, 1f);
+
+            if (r <= dropChance)
+            {
+                // spawn a drop
+                Instantiate(drop, transform.position, transform.rotation);
+            }
+        }
+
+        base.Kill();
     }
 }

@@ -7,10 +7,6 @@ public class FireballController : MonoBehaviour
     // how many entities can the fireball pass through before it gets destroyed
     public uint maxPierces = 1u;
 
-    // is the dragon stunned
-    [HideInInspector]
-    public bool isStunned = false;
-
     // the dragon that fired this fireball
     [HideInInspector]
     public DragonController owner = null;
@@ -18,14 +14,6 @@ public class FireballController : MonoBehaviour
     // damage dealt to entities
     [SerializeField]
     private int hitDamage = 0;
-
-    // effect to spawn when the fireball explodes
-    // [SerializeField]
-    // private GameObject explosionEffect = null;
-
-    // radius of the explosion
-    // [SerializeField]
-    // private float explosionRadius = 0f;
 
     // time until the fireball explodes
     [SerializeField]
@@ -80,49 +68,6 @@ public class FireballController : MonoBehaviour
 
         // destroy the fireball
         Destroy(gameObject);
-    }
-
-    // explodes the fireball
-    [System.Obsolete]
-    public void Explode()
-    {
-        //// damage entities
-        //{
-        //    // find all entities
-        //    GameObject[] entities = GameObject.FindGameObjectsWithTag("Entity");
-
-        //    // damage them if they are within explosion radius
-        //    foreach (GameObject obj in entities)
-        //    {
-        //        // get vector from the explosion to the entity
-        //        Vector3 explosionToEntity = obj.transform.position - transform.position;
-
-        //        // is the entity withion range of the explosion
-        //        if (explosionToEntity.magnitude <= explosionRadius)
-        //        {
-        //            // damage the entity
-        //            obj.GetComponent<Entity>().Damage(explosionDamage);
-        //        }
-        //    }
-        //}
-
-        //// deparent effects
-        //{
-        //    // set parent to null
-        //    objectToDeparent.transform.SetParent(null);
-
-        //    // destroy the effects after a period of time
-        //    GameObject.Destroy(objectToDeparent, deparentedEffectsLifetime);
-        //}
-
-        //// spawn explosion effect
-        //if (explosionEffect != null)
-        //{
-        //    GameObject.Instantiate(explosionEffect, transform.position, transform.rotation);
-        //}
-
-        //// destroy the fireball
-        //GameObject.Destroy(gameObject);
     }
 
     // collide with something

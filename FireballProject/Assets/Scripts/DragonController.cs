@@ -16,7 +16,8 @@ public enum AttackType
 {
     Fireball = 0,
     FlameCone,
-    Bomb
+    Bomb,
+    Freeze
 }
 
 public class DragonController : Entity
@@ -49,6 +50,9 @@ public class DragonController : Entity
     // how the dragon attacks
     public AttackType attackType = AttackType.Fireball;
 
+    // does a pickup override the previous pickup
+    public bool pickupOverride = false;
+
     // can the dragon move
     [SerializeField]
     private bool canMove = true;
@@ -75,6 +79,10 @@ public class DragonController : Entity
     // bomb prefab
     [SerializeField]
     private GameObject bomb = null;
+
+    // freeze attack prefab
+    [SerializeField]
+    private GameObject freeze = null;
 
     // shoot point transform
     [SerializeField]
@@ -126,19 +134,30 @@ public class DragonController : Entity
 	}
 
     // gives the dragon a powerup
-    public void GivePowerup(Powerup newPowerup)
+    // returns true if the dragon sucesfully got the powerup
+    public bool GivePowerup(Powerup newPowerup)
     {
-        // remove current powerup
-        RemovePowerup();
+        // is the dragon allowed to recieve this powerup
+        // true if the pickup is allowed to override the previous powerup
+        // true if the dragon does not currently have a powerup
+        if (pickupOverride || powerUp == null)
+        {
+            // remove current powerup
+            RemovePowerup();
 
-        // add new powerup
-        powerUp = newPowerup;
+            // add new powerup
+            powerUp = newPowerup;
 
-        // set powerup vars
-        powerUp.dragon = this;
+            // set powerup vars
+            powerUp.dragon = this;
 
-        // start powerups effects
-        powerUp.Start();
+            // start powerups effects
+            powerUp.Start();
+
+            return true;
+        }
+
+        return false;
     }
 
     // remove the current powerup
@@ -279,6 +298,31 @@ public class DragonController : Entity
 
                     break;
                 }
+            case AttackType.Freeze:
+                {
+                    if (freeze != null)
+                    {
+                        // create freeze attack
+                        GameObject newFreeze = Instantiate(freeze, shootPoint.transform.position, shootPoint.transform.rotation);
+
+                        // set velocity
+                        newFreeze.GetComponent<Rigidbody>().velocity = transform.rotation * (new Vector3(0f, 0f, fireballVelocity));
+
+                        // set owner
+                        newFreeze.GetComponent<FreezeAttackController>().owner = this;
+                    }
+
+                    break;
+                }
+        }
+
+        // remove the powerup if it was a one use attack
+        if (powerUp != null)
+        {
+            if (powerUp.singleUse)
+            {
+                RemovePowerup();
+            }
         }
     }
 

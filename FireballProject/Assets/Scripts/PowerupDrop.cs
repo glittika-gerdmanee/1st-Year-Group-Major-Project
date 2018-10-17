@@ -7,7 +7,9 @@ public enum PowerupType
     None = 0,
     FlameCone,
     Speed,
-    Bomb
+    Bomb,
+    Freeze,
+    EnumSize // this is not a powerup >:( always keep this as the last value
 }
 
 public class PowerupDrop : MonoBehaviour
@@ -23,8 +25,6 @@ public class PowerupDrop : MonoBehaviour
     private float flameConeDuration = 0f;
     [SerializeField]
     private float speedDuration = 0f;
-    [SerializeField]
-    private float bombDuration = 0f;
 
     // age of the powerup drop
     private float age = 0f;
@@ -33,10 +33,10 @@ public class PowerupDrop : MonoBehaviour
     void Start()
     {
         // randomise powerup type
-        if (type == PowerupType.None)
+        if (type == PowerupType.None || type == PowerupType.EnumSize)
         {
             // get random type enum
-            int r = Random.Range(1, 4); // this range needs to be changed if values are removed/added to PowerupType
+            int r = Random.Range(1, (int)(PowerupType.EnumSize));
 
             // set type
             type = (PowerupType)r;
@@ -77,10 +77,11 @@ public class PowerupDrop : MonoBehaviour
         if (dragon != null)
         {
             // give the player the powerup
-            dragon.GivePowerup(CreatePowerup());
-
-            // despawn the powerup drop
-            Despawn();
+            if (dragon.GivePowerup(CreatePowerup()))
+            {
+                // despawn the powerup drop
+                Despawn();
+            }
         }
     }
 
@@ -123,7 +124,12 @@ public class PowerupDrop : MonoBehaviour
                 case PowerupType.Bomb:
                     {
                         newPowerup = new BombPowerup();
-                        newPowerup.duration = bombDuration;
+
+                        break;
+                    }
+                case PowerupType.Freeze:
+                    {
+                        newPowerup = new FreezePowerup();
 
                         break;
                     }

@@ -226,4 +226,22 @@ public class CritterController : Entity
 
         base.Kill();
     }
+
+    // stun the critter
+    public override void Stun(float duration)
+    {
+        base.Stun(duration);
+
+        // don't allow movement while stunned
+        canMove = false;
+    }
+
+    // break stun
+    public override void BreakStun()
+    {
+        base.BreakStun();
+
+        // allow movement
+        canMove = true;
+    }
 }

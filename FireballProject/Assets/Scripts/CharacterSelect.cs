@@ -29,8 +29,7 @@ public class CharacterSelect : MonoBehaviour
 
     // text to change when a player joins
     // don't change the size of this list
-    [SerializeField]
-    private GameObject[] playersDisplayText = new GameObject[MAX_PLAYERS];
+    public GameObject[] playersDisplayText = new GameObject[MAX_PLAYERS];
 
     // Use this for initialization
     void Start()

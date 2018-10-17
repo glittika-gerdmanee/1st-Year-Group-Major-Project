@@ -5,20 +5,16 @@ using UnityEngine;
 public class BombController : MonoBehaviour
 {
     // hit damage
-    [SerializeField]
-    private int hitDamage = 0;
+    public int hitDamage = 0;
 
     // time until the bomb explodes
-    [SerializeField]
-    private float fuseTime = 0f;
+    public float fuseTime = 0f;
 
     // effect to spawn when the bomb explodes
-    [SerializeField]
-    private GameObject explosionEffect = null;
+    public GameObject explosionEffect = null;
 
     // radius of the explosion
-    [SerializeField]
-    private float explosionRadius = 0f;
+    public float explosionRadius = 0f;
 
     // age of the bomb
     private float age = 0f;

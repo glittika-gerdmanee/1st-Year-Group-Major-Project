@@ -26,7 +26,7 @@ public class PlayerSpawner : MonoBehaviour
     // update runs once per frame
     private void Update()
     {
-        // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa debug
+        // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa debug
         // spawn a keyboard player if tilde is pressed
         {
             if (Input.GetKeyDown(KeyCode.BackQuote))

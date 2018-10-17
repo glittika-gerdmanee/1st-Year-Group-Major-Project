@@ -186,11 +186,11 @@ MonoBehaviour:
   camPos: {x: 0, y: 0, z: 0}
   canTakeDamage: 1
   lockY: 1
+  canTakeDamageWhileStunned: 1
   deathEffect: {fileID: 0}
   healthBar: {fileID: 0}
   currentHealth: 1
   maxHealth: 1
-  canTakeDamageWhileStunned: 0
   movementSpeed: 1
   wanderEndRange: 0.1
   maxWanderTime: 5
@@ -199,7 +199,6 @@ MonoBehaviour:
   wanderBoxScale: {x: 8.5, y: 0, z: 8.5}
   dropChance: 0.25
   drop: {fileID: 1765741900847232, guid: c68686f8c4c131e4db0edd182ba43485, type: 2}
-  canMove: 1
 --- !u!136 &136529620318163086
 CapsuleCollider:
   m_ObjectHideFlags: 1

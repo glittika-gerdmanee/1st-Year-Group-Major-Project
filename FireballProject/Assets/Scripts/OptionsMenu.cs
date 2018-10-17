@@ -17,11 +17,11 @@ public class OptionsMenu : MonoBehaviour {
     //video options panel
     public GameObject videoPanel;
 
-    /*public Button applyButton = null;
-    public Button backButton = null;
-    public Button controlButton = null;
-    public Button soundButton = null;
-    public Button videoButton = null;*/
+    // public Button applyButton = null;
+    // public Button backButton = null;
+    // public Button controlButton = null;
+    // public Button soundButton = null;
+    // public Button videoButton = null;
     
     //slider for bgm
     public Slider musicVolume;
@@ -38,7 +38,6 @@ public class OptionsMenu : MonoBehaviour {
     public Slider brightness;
 
     public float brightnessLevel;
-
 
 	// Use this for initialization
 	void Awake()

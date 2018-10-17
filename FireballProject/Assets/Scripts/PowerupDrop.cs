@@ -21,10 +21,8 @@ public class PowerupDrop : MonoBehaviour
     public float duration = 0f;
 
     // durations
-    [SerializeField]
-    private float flameConeDuration = 0f;
-    [SerializeField]
-    private float speedDuration = 0f;
+    public float flameConeDuration = 0f;
+    public float speedDuration = 0f;
 
     // age of the powerup drop
     private float age = 0f;

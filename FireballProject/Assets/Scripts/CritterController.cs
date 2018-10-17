@@ -38,11 +38,10 @@ public class CritterController : Entity
     private static int critterCount = 0;
 
     // can the critter move
-    [SerializeField]
     private bool canMove = true;
 
     // what state is the critter in
-    CritterState state = CritterState.wander;
+    private CritterState state = CritterState.wander;
 
     // how long will the critter idle for
     private float idleTime = 0f;
@@ -53,7 +52,7 @@ public class CritterController : Entity
     // wander timer
     private float wanderTimer = 0f;
 
-    // direction to wander in
+    // point to wander to
     private Vector3 wanderPoint = Vector3.zero;
 
     // use this for initialization

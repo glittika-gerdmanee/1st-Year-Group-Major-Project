@@ -15,8 +15,7 @@ public class FreezeAttackController : MonoBehaviour
     public DragonController owner = null;
 
     // time until the fireball explodes
-    [SerializeField]
-    private float fuseTime = 0f;
+    public float fuseTime = 0f;
 
     // how long the fireball has been active for
     private float age = 0f;

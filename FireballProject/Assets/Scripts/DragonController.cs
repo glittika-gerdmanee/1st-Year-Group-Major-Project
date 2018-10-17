@@ -53,13 +53,29 @@ public class DragonController : Entity
     // does a pickup override the previous pickup
     public bool pickupOverride = false;
 
-    // can the dragon move
-    [SerializeField]
-    private bool canMove = true;
+    // fireball prefab
+    public GameObject fireball = null;
+
+    // fire cone prefab
+    public GameObject fireCone = null;
+
+    // bomb prefab
+    public GameObject bomb = null;
+
+    // freeze attack prefab
+    public GameObject freeze = null;
+
+    // shoot point transform
+    public Transform shootPoint = null;
+
+    // string to write to the UI text before the score number
+    public string scoreTextPrefix = "";
 
     // can the dragon shoot
-    [SerializeField]
     private bool canShoot = true;
+
+    // can the dragon move
+    private bool canMove = true;
 
     // the controller number assigned to the dragon
     [SerializeField]
@@ -67,26 +83,6 @@ public class DragonController : Entity
 
     // for timing inbetween shots
     private float shotTimer = 0f;
-
-    // fireball prefab
-    [SerializeField]
-    private GameObject fireball = null;
-
-    // fire cone prefab
-    [SerializeField]
-    private GameObject fireCone = null;
-
-    // bomb prefab
-    [SerializeField]
-    private GameObject bomb = null;
-
-    // freeze attack prefab
-    [SerializeField]
-    private GameObject freeze = null;
-
-    // shoot point transform
-    [SerializeField]
-    private Transform shootPoint = null;
 
     // previous position of the dragon
     private Vector3 previousPos = Vector3.zero;
@@ -102,14 +98,14 @@ public class DragonController : Entity
     // UI text to display the dragons score
     private Text scoreText = null;
 
-    // string to write to the UI text before the score number
-    private string scoreTextPrefix = "";
-
     // timer for invincibility after reviving
     private float iTimer = 0f;
 
     // the dragons current powerup
     private Powerup powerUp = null;
+
+    // is the dragon dead
+    private bool isDead = false;
 
     // Use this for initialization
     protected override void Start()
@@ -335,6 +331,11 @@ public class DragonController : Entity
             Instantiate(deathEffect, transform.position, transform.rotation);
         }
 
+        isDead = true;
+
+        // remove powerup
+        powerUp = null;
+
         // stun the dragon
         Stun(DeathStunTime);
     }
@@ -359,7 +360,11 @@ public class DragonController : Entity
         canShoot = true;
 
         // resets health to full
-        Damage(GetMaxHealth());
+        if (isDead)
+        {
+            Damage(GetMaxHealth());
+            isDead = false;
+        }
 
         // start incincibility timer
         iTimer = 0f;
@@ -485,5 +490,11 @@ public class DragonController : Entity
     public ControllerNum GetController()
     {
         return controller;
+    }
+
+    // is the dragon dead
+    public bool IsDead()
+    {
+        return isDead;
     }
 }

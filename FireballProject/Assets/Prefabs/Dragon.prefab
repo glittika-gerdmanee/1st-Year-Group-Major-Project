@@ -396,12 +396,12 @@ MonoBehaviour:
   camPos: {x: 0, y: 6.56, z: -5.97}
   canTakeDamage: 1
   lockY: 1
+  canTakeDamageWhileStunned: 1
   deathEffect: {fileID: 1925692475331554, guid: a59ef2247dd1b2f4f8faa9813b59385a,
     type: 2}
   healthBar: {fileID: 114626458657205522}
   currentHealth: 3
   maxHealth: 3
-  canTakeDamageWhileStunned: 0
   DeathStunTime: 5
   movementSpeed: 2.5
   fireballVelocity: 5
@@ -410,14 +410,13 @@ MonoBehaviour:
   iTime: 2
   attackType: 0
   pickupOverride: 0
-  canMove: 1
-  canShoot: 1
-  controller: 0
   fireball: {fileID: 1567286283418420, guid: 59b1fa0048054f749bcc3d865a93e7ce, type: 2}
   fireCone: {fileID: 1281477515925420, guid: 623858d6adf532448b8650b7175fa384, type: 2}
   bomb: {fileID: 1558795604694194, guid: 7f81a21adee7fcf44a7304679c842e10, type: 2}
   freeze: {fileID: 1238448975370898, guid: 9b7479d54611d974fb0eaaaf723b7506, type: 2}
   shootPoint: {fileID: 4409779342540526}
+  scoreTextPrefix: 
+  controller: 0
 --- !u!114 &114626458657205522
 MonoBehaviour:
   m_ObjectHideFlags: 1

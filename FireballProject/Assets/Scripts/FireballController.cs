@@ -12,20 +12,16 @@ public class FireballController : MonoBehaviour
     public DragonController owner = null;
 
     // damage dealt to entities
-    [SerializeField]
-    private int hitDamage = 0;
+    public int hitDamage = 0;
 
     // time until the fireball explodes
-    [SerializeField]
-    private float fuseTime = 0f;
+    public float fuseTime = 0f;
 
     // the particle effect of the fireball to deparent on explosion
-    [SerializeField]
-    private GameObject objectToDeparent = null;
+    public GameObject objectToDeparent = null;
 
     // time to keep deparented particle effects for
-    [SerializeField]
-    private float deparentedEffectsLifetime = 0f;
+    public float deparentedEffectsLifetime = 0f;
 
     // how long the fireball has been active for
     private float age = 0f;
@@ -94,10 +90,8 @@ public class FireballController : MonoBehaviour
                         hitEntities.Add(hitEntity);
 
                         // damage
-                        hitEntity.Damage(hitDamage);
-
                         // check if the hit entity was killed
-                        if (hitEntity.GetHealth() <= 0)
+                        if (hitEntity.Damage(hitDamage))
                         {
                             // check if the entity was a player or a critter
                             if (hitEntity.GetComponent<DragonController>() != null)

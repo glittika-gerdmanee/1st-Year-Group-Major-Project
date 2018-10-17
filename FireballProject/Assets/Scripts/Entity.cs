@@ -14,16 +14,17 @@ public class Entity : MonoBehaviour
     // is the y position locked
     public bool lockY = true;
 
+    // can the entity be damaged while stunned
+    public bool canTakeDamageWhileStunned = false;
+
     // the character controller component of the entity
     protected CharacterController charController = null;
 
     // effect to spawn when the entity dies
-    [SerializeField]
-    protected GameObject deathEffect = null;
+    public GameObject deathEffect = null;
 
     // health bar object
-    [SerializeField]
-    private HealthBar healthBar = null;
+    public HealthBar healthBar = null;
 
     // the current health of the entity
     [SerializeField]
@@ -38,10 +39,6 @@ public class Entity : MonoBehaviour
 
     // how long until the entity isn't stunned
     private float stunTime = 0f;
-
-    // can the entity be damaged while stunned
-    [SerializeField]
-    private bool canTakeDamageWhileStunned = false;
 
     // returns the current health of the entity
     public int GetHealth()
@@ -112,12 +109,13 @@ public class Entity : MonoBehaviour
 
     // deal damage or heal the entity
     // negative values deal damage, positive values heal
-    public void Damage(int value)
+    // returns true if this damage killed the entity
+    public bool Damage(int value)
     {
         // check if allowed to take damage
         if (!canTakeDamage)
         {
-            return;
+            return false;
         }
 
         // check if allowed to take damage while stunned
@@ -125,9 +123,12 @@ public class Entity : MonoBehaviour
         {
             if (!canTakeDamageWhileStunned)
             {
-                return;
+                return false;
             }
         }
+
+        // save health before damage
+        int prevHealth = currentHealth;
 
         // adjust health
         currentHealth += value;
@@ -144,9 +145,17 @@ public class Entity : MonoBehaviour
         // is the entity dead
         if (currentHealth <= 0)
         {
-            // kill the entity
-            Kill();
+            // return true if this dmaage killed the entity
+            if (prevHealth > 0)
+            {
+                // kill the entity
+                Kill();
+
+                return true;
+            }
         }
+
+        return false;
     }
 
     // stun the entity for <duration> seconds

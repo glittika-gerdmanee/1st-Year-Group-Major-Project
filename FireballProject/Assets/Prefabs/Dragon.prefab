@@ -416,6 +416,9 @@ MonoBehaviour:
   freeze: {fileID: 1238448975370898, guid: 9b7479d54611d974fb0eaaaf723b7506, type: 2}
   shootPoint: {fileID: 4409779342540526}
   scoreTextPrefix: 
+  maxPierces: 1
+  fuseTime: 0.5
+  hitDamage: -1
   controller: 0
 --- !u!114 &114626458657205522
 MonoBehaviour:

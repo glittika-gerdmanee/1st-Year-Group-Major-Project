@@ -71,6 +71,15 @@ public class DragonController : Entity
     // string to write to the UI text before the score number
     public string scoreTextPrefix = "";
 
+    // how many entities can a shot fireball pass through before it gets destroyed
+    public uint maxPierces = 1u;
+
+    // amount of time a fireball flies before despawning
+    public float fuseTime = 0f;
+
+    // amount of damage a fireball does
+    public int hitDamage = 0;
+
     // can the dragon shoot
     private bool canShoot = true;
 
@@ -265,8 +274,14 @@ public class DragonController : Entity
                         // set velocity
                         newFireball.GetComponent<Rigidbody>().velocity = transform.rotation * (new Vector3(0f, 0f, fireballVelocity));
 
-                        // set owner
-                        newFireball.GetComponent<FireballController>().owner = this;
+                        // set vars
+                        {
+                            FireballController newController = newFireball.GetComponent<FireballController>();
+                            newController.owner = this;
+                            newController.maxPierces = maxPierces;
+                            newController.fuseTime = fuseTime;
+                            newController.hitDamage = hitDamage;
+                        }
                     }
 
                     break;

@@ -97,9 +97,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   duration: 5
-  flameConeDuration: 10
-  speedDuration: 1
-  bombDuration: 5
+  flameConeDuration: 5
+  speedDuration: 2
+  shotPierceDuration: 5
+  shotSpeedDuration: 5
+  shotRangeDuration: 5
 --- !u!135 &135773970286679774
 SphereCollider:
   m_ObjectHideFlags: 1

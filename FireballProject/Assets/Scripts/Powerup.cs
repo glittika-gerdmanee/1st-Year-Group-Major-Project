@@ -127,7 +127,7 @@ public class SpeedPowerup : Powerup
     private float baseMoveSpeed = 0f;
 
     // new move speed
-    private float speedMultiplier = 2f;
+    private float newSpeed = 5f;
 
     // starts the effects of the powerup
     public override void Start()
@@ -138,7 +138,7 @@ public class SpeedPowerup : Powerup
         baseMoveSpeed = dragon.movementSpeed;
 
         // set new speed
-        dragon.movementSpeed *= speedMultiplier;
+        dragon.movementSpeed = newSpeed;
     }
 
     // ends the effects of the powerup
@@ -148,5 +148,101 @@ public class SpeedPowerup : Powerup
 
         // reset the dragons speed back to default
         dragon.movementSpeed = baseMoveSpeed;
+    }
+}
+
+// piercing shot powerup
+// makes the players attacks pierce multiple enemies
+public class ShotPiercePowerup : Powerup
+{
+    // save the dragons default shot pierce amount
+    private uint basePierce = 1u;
+
+    // new shot pierce amount
+    private uint newPierce = 1000u;
+
+    // starts the effects of the powerup
+    public override void Start()
+    {
+        base.Start();
+
+        // save the dragons move speed
+        basePierce = dragon.maxPierces;
+
+        // set new speed
+        dragon.maxPierces = newPierce;
+    }
+
+    // ends the effects of the powerup
+    public override void End()
+    {
+        base.End();
+
+        // reset the dragons speed back to default
+        dragon.maxPierces = basePierce;
+    }
+}
+
+// shot speed powerup
+// makes the player attack faster
+public class ShotSpeedPowerup : Powerup
+{
+    // save the dragons default shot pierce amount
+    private float baseShotCooldown = 0f;
+
+    // new shot pierce amount
+    private float newShotCooldown = 0f;
+
+    // starts the effects of the powerup
+    public override void Start()
+    {
+        base.Start();
+
+        // save the dragons move speed
+        baseShotCooldown = dragon.shootCooldown;
+
+        // set new speed
+        dragon.shootCooldown = newShotCooldown;
+    }
+
+    // ends the effects of the powerup
+    public override void End()
+    {
+        base.End();
+
+        // reset the dragons speed back to default
+        dragon.shootCooldown = baseShotCooldown;
+    }
+}
+
+// shot range powerup
+// makes the player attacks go further
+public class ShotRangePowerup : Powerup
+{
+    // save the dragons default shot fuse time
+    private float baseShotFuse = 0f;
+
+    // new shot fuse time
+    private float newShotFuse = 10f;
+
+    // starts the effects of the powerup
+    public override void Start()
+    {
+        base.Start();
+
+        // save the dragons move speed
+        baseShotFuse = dragon.fuseTime;
+
+        // set new speed
+        dragon.fuseTime = newShotFuse;
+    }
+
+    // ends the effects of the powerup
+    public override void End()
+    {
+        base.End();
+
+        // reset the dragons speed back to default
+        dragon.fuseTime = baseShotFuse;
     }
 }

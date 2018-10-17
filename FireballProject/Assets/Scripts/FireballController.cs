@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireballController : MonoBehaviour
 {
     // how many entities can the fireball pass through before it gets destroyed
+    [HideInInspector]
     public uint maxPierces = 1u;
 
     // the dragon that fired this fireball
@@ -12,9 +13,11 @@ public class FireballController : MonoBehaviour
     public DragonController owner = null;
 
     // damage dealt to entities
+    [HideInInspector]
     public int hitDamage = 0;
 
     // time until the fireball explodes
+    [HideInInspector]
     public float fuseTime = 0f;
 
     // the particle effect of the fireball to deparent on explosion

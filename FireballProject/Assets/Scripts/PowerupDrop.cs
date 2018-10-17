@@ -9,6 +9,9 @@ public enum PowerupType
     Speed,
     Bomb,
     Freeze,
+    Pierce,
+    ShotSpeed,
+    ShotRange,
     EnumSize // this is not a powerup >:( always keep this as the last value
 }
 
@@ -23,6 +26,9 @@ public class PowerupDrop : MonoBehaviour
     // durations
     public float flameConeDuration = 0f;
     public float speedDuration = 0f;
+    public float shotPierceDuration = 0f;
+    public float shotSpeedDuration = 0f;
+    public float shotRangeDuration = 0f;
 
     // age of the powerup drop
     private float age = 0f;
@@ -128,6 +134,27 @@ public class PowerupDrop : MonoBehaviour
                 case PowerupType.Freeze:
                     {
                         newPowerup = new FreezePowerup();
+
+                        break;
+                    }
+                case PowerupType.Pierce:
+                    {
+                        newPowerup = new ShotPiercePowerup();
+                        newPowerup.duration = shotPierceDuration;
+
+                        break;
+                    }
+                case PowerupType.ShotSpeed:
+                    {
+                        newPowerup = new ShotSpeedPowerup();
+                        newPowerup.duration = shotSpeedDuration;
+
+                        break;
+                    }
+                case PowerupType.ShotRange:
+                    {
+                        newPowerup = new ShotRangePowerup();
+                        newPowerup.duration = shotRangeDuration;
 
                         break;
                     }

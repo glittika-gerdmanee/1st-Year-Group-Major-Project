@@ -289,7 +289,10 @@ public class DragonController : Entity
                     if (bomb != null)
                     {
                         // create bomb
-                        Instantiate(bomb, shootPoint.transform.position, shootPoint.transform.rotation);
+                        GameObject newBomb = Instantiate(bomb, shootPoint.transform.position, shootPoint.transform.rotation);
+
+                        // set owner
+                        newBomb.GetComponent<BombController>().owner = this;
                     }
 
                     break;

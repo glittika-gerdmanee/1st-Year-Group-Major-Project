@@ -16,6 +16,10 @@ public class BombController : MonoBehaviour
     // radius of the explosion
     public float explosionRadius = 0f;
 
+    // owner of the bomb
+    [HideInInspector]
+    public DragonController owner = null;
+
     // age of the bomb
     private float age = 0f;
 
@@ -60,6 +64,27 @@ public class BombController : MonoBehaviour
                 {
                     // damage the entity
                     entities[i].GetComponent<Entity>().Damage(hitDamage);
+
+                    // damage
+                    // check if the hit entity was killed
+                    if (entities[i].GetComponent<Entity>().Damage(hitDamage))
+                    {
+                        // check if the entity was a player or a critter
+                        if (entities[i].GetComponent<DragonController>() != null)
+                        {
+                            // entity is a dragon
+
+                            // give points
+                            owner.AddScore(DragonController.KILL_DRAGON_SCORE);
+                        }
+                        else if (entities[i].GetComponent<CritterController>() != null)
+                        {
+                            // entity is a critter
+
+                            // give points
+                            owner.AddScore(DragonController.KILL_CRITTER_SCORE);
+                        }
+                    }
                 }
             }
         }

@@ -2,19 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PowerupType
-{
-    None = 0,
-    FlameCone,
-    Speed,
-    Bomb,
-    Freeze,
-    Pierce,
-    ShotSpeed,
-    ShotRange,
-    EnumSize // this is not a powerup >:( always keep this as the last value
-}
-
 public class PowerupDrop : MonoBehaviour
 {
     // type of powerup

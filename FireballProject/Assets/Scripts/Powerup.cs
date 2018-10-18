@@ -2,6 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PowerupType
+{
+    None = 0,
+    FlameCone,
+    Speed,
+    Bomb,
+    Freeze,
+    Pierce,
+    ShotSpeed,
+    ShotRange,
+    EnumSize // this is not a powerup >:( always keep this as the last value
+}
+
 // base powerup class
 public class Powerup
 {
@@ -16,6 +29,45 @@ public class Powerup
 
     // time the powerup has been active for
     private float age = 0f;
+
+    // get the powerup type
+    public PowerupType GetPowerupType()
+    {
+        // get type of powerup
+        System.Type type = GetType();
+
+        // convert to enum
+        if (type == typeof(FlameConePowerup))
+        {
+            return PowerupType.FlameCone;
+        }
+        if (type == typeof(SpeedPowerup))
+        {
+            return PowerupType.Speed;
+        }
+        if (type == typeof(BombPowerup))
+        {
+            return PowerupType.Bomb;
+        }
+        if (type == typeof(FreezePowerup))
+        {
+            return PowerupType.Freeze;
+        }
+        if (type == typeof(ShotPiercePowerup))
+        {
+            return PowerupType.Pierce;
+        }
+        if (type == typeof(ShotSpeedPowerup))
+        {
+            return PowerupType.ShotSpeed;
+        }
+        if (type == typeof(ShotRangePowerup))
+        {
+            return PowerupType.ShotRange;
+        }
+
+        return PowerupType.None;
+    }
 
     // starts the effects of the powerup
     public virtual void Start()

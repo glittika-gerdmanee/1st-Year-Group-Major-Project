@@ -80,6 +80,12 @@ public class DragonController : Entity
     // amount of damage a fireball does
     public int hitDamage = 0;
 
+    // sprite to display powerup
+    public SpriteRenderer powerupSprite = null;
+
+    // reference to sprite array
+    private PowerupSprites powerupSprites = null;
+
     // can the dragon shoot
     private bool canShoot = true;
 
@@ -136,6 +142,9 @@ public class DragonController : Entity
 
         // default invincibility timer
         iTimer = iTime;
+
+        // get reference to the powerup sprite array
+        powerupSprites = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupSprites>();
 	}
 
     // gives the dragon a powerup
@@ -159,6 +168,12 @@ public class DragonController : Entity
             // start powerups effects
             powerUp.Start();
 
+            // set sprite
+            if (powerupSprite != null)
+            {
+                powerupSprite.sprite = powerupSprites.powerupSprites[(int)(powerUp.GetPowerupType())];
+            }
+
             return true;
         }
 
@@ -176,6 +191,9 @@ public class DragonController : Entity
             // remove the powerup
             powerUp = null;
         }
+
+        // remove sprite
+        powerupSprite.sprite = powerupSprites.powerupSprites[(int)(PowerupType.None)];
     }
 	
 	// Update is called once per frame
@@ -190,7 +208,7 @@ public class DragonController : Entity
             powerUp.Update();
 
             // check if the powerup has run out of time
-            if (powerUp.TimedOut())
+            if (powerUp.TimedOut() && !(powerUp.singleUse))
             {
                 // remove the powerup
                 RemovePowerup();

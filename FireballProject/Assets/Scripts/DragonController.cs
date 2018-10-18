@@ -69,6 +69,7 @@ public class DragonController : Entity
     public Transform shootPoint = null;
 
     // string to write to the UI text before the score number
+    [HideInInspector]
     public string scoreTextPrefix = "";
 
     // how many entities can a shot fireball pass through before it gets destroyed

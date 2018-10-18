@@ -550,7 +550,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &327466261
 MonoBehaviour:
@@ -724,7 +724,7 @@ Transform:
   - {fileID: 582319341}
   - {fileID: 645589098}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &385299923 stripped
 Transform:
@@ -923,7 +923,7 @@ Transform:
   - {fileID: 1343075440}
   - {fileID: 1924987076}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &457982369 stripped
 Transform:
@@ -2829,7 +2829,7 @@ RectTransform:
   - {fileID: 12871996}
   - {fileID: 1379511436}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3522,6 +3522,66 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 095a899a77afab24281430f534dcec53, type: 3}
   m_IsPrefabParent: 0
+--- !u!1001 &1605580582
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4706884652274724, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.620155
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706884652274724, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706884652274724, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.5221348
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706884652274724, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706884652274724, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706884652274724, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706884652274724, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706884652274724, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935300720184232, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.0395
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935300720184232, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.0915
+      objectReference: {fileID: 0}
+    - target: {fileID: 136529620318163086, guid: 1a834428c3a9ba542a541e6c9b490ff1,
+        type: 2}
+      propertyPath: m_Height
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 136529620318163086, guid: 1a834428c3a9ba542a541e6c9b490ff1,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1a834428c3a9ba542a541e6c9b490ff1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1618644032
 GameObject:
   m_ObjectHideFlags: 0
@@ -3651,7 +3711,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1663115930
 GameObject:
@@ -3716,7 +3776,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &1671112430 stripped
 Transform:

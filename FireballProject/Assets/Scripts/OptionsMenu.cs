@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering; //post-processing
 
 public class OptionsMenu : MonoBehaviour {
 
-    //mian options panel
+    //mainn options panel
     public GameObject optionsPanel;
 
     //control mapping panel
@@ -17,11 +18,12 @@ public class OptionsMenu : MonoBehaviour {
     //video options panel
     public GameObject videoPanel;
 
+    //button to confirm all settings adjusted by player
     // public Button applyButton = null;
+
+    //button for player to return to other panels and leave options menu
     // public Button backButton = null;
-    // public Button controlButton = null;
-    // public Button soundButton = null;
-    // public Button videoButton = null;
+
     
     //slider for bgm
     public Slider musicVolume;
@@ -76,7 +78,7 @@ public class OptionsMenu : MonoBehaviour {
     //allowing panels to returning to options panel instead of closing it entirely
     public void BackButton()
     {
-       
+
     }
 
 }

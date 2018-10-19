@@ -62,7 +62,8 @@ public class DebugConsole : MonoBehaviour
             typeStr = GUI.TextField(new Rect(new Vector2(10, scale.y - textHeight - 5), new Vector2(scale.x - 40, textHeight)), typeStr);
 
             // draw submit button
-            if (GUI.Button(new Rect(new Vector2(scale.x - 30, scale.y - textHeight - 5), new Vector2(20, textHeight)), ""))
+            Event e = Event.current;
+            if (GUI.Button(new Rect(new Vector2(scale.x - 30, scale.y - textHeight - 5), new Vector2(20, textHeight)), "") || e.keyCode == KeyCode.Return)
             {
                 // run the command
                 if (!RunCommand())

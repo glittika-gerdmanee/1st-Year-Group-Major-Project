@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: 0629fc4ee55f6624b9e189372ecc3a23
+timeCreated: 1539922905
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bunny_Rig_0010:backHalf01_ctrl
+    100002: Bunny_Rig_0010:backHalf01_jnt
+    100004: Bunny_Rig_0010:backHalf02_ctrl
+    100006: Bunny_Rig_0010:backHalf02_jnt
+    100008: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP
+    100010: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_body
+    100012: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_eyes
+    100014: Bunny_Rig_0010:COG_ctrl
+    100016: Bunny_Rig_0010:COG_jnt
+    100018: Bunny_Rig_0010:ear01_L_ctrl
+    100020: Bunny_Rig_0010:ear01_L_jnt
+    100022: Bunny_Rig_0010:ear01_R_ctrl
+    100024: Bunny_Rig_0010:ear01_R_jnt
+    100026: Bunny_Rig_0010:ear02_L_ctrl
+    100028: Bunny_Rig_0010:ear02_L_jnt
+    100030: Bunny_Rig_0010:ear02_R_ctrl
+    100032: Bunny_Rig_0010:ear02_R_jnt
+    100034: Bunny_Rig_0010:ear03_L_ctrl
+    100036: Bunny_Rig_0010:ear03_L_jnt
+    100038: Bunny_Rig_0010:ear03_R_ctrl
+    100040: Bunny_Rig_0010:ear03_R_jnt
+    100042: Bunny_Rig_0010:earEnd_L_NULL
+    100044: Bunny_Rig_0010:earEnd_R_NULL
+    100046: Bunny_Rig_0010:frontHalf_ctrl
+    100048: Bunny_Rig_0010:frontHalf_jnt
+    100050: Bunny_Rig_0010:head_ctrl
+    100052: Bunny_Rig_0010:head_jnt
+    100054: Bunny_Rig_0010:MASTER_ctrl
+    100056: Bunny_Rig_0010:nose_ctrl
+    100058: Bunny_Rig_0010:nose_jnt
+    100060: Bunny_Rig_0010:tail_ctrl
+    100062: Bunny_Rig_0010:tail_jnt
+    100064: //RootNode
+    400000: Bunny_Rig_0010:backHalf01_ctrl
+    400002: Bunny_Rig_0010:backHalf01_jnt
+    400004: Bunny_Rig_0010:backHalf02_ctrl
+    400006: Bunny_Rig_0010:backHalf02_jnt
+    400008: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP
+    400010: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_body
+    400012: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_eyes
+    400014: Bunny_Rig_0010:COG_ctrl
+    400016: Bunny_Rig_0010:COG_jnt
+    400018: Bunny_Rig_0010:ear01_L_ctrl
+    400020: Bunny_Rig_0010:ear01_L_jnt
+    400022: Bunny_Rig_0010:ear01_R_ctrl
+    400024: Bunny_Rig_0010:ear01_R_jnt
+    400026: Bunny_Rig_0010:ear02_L_ctrl
+    400028: Bunny_Rig_0010:ear02_L_jnt
+    400030: Bunny_Rig_0010:ear02_R_ctrl
+    400032: Bunny_Rig_0010:ear02_R_jnt
+    400034: Bunny_Rig_0010:ear03_L_ctrl
+    400036: Bunny_Rig_0010:ear03_L_jnt
+    400038: Bunny_Rig_0010:ear03_R_ctrl
+    400040: Bunny_Rig_0010:ear03_R_jnt
+    400042: Bunny_Rig_0010:earEnd_L_NULL
+    400044: Bunny_Rig_0010:earEnd_R_NULL
+    400046: Bunny_Rig_0010:frontHalf_ctrl
+    400048: Bunny_Rig_0010:frontHalf_jnt
+    400050: Bunny_Rig_0010:head_ctrl
+    400052: Bunny_Rig_0010:head_jnt
+    400054: Bunny_Rig_0010:MASTER_ctrl
+    400056: Bunny_Rig_0010:nose_ctrl
+    400058: Bunny_Rig_0010:nose_jnt
+    400060: Bunny_Rig_0010:tail_ctrl
+    400062: Bunny_Rig_0010:tail_jnt
+    400064: //RootNode
+    2100000: lambert1
+    4300000: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_body
+    4300002: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_eyes
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_body
+    13700002: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_eyes
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

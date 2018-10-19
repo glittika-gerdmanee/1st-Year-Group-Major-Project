@@ -34,6 +34,9 @@ public class CritterController : Entity
     // gameobject to spawn as a powerup drop when the critter dies
     public GameObject drop = null;
 
+    // animator controller
+    public Animator animator = null;
+
     // how many critters exist
     private static int critterCount = 0;
 
@@ -174,6 +177,9 @@ public class CritterController : Entity
                     // generate new idle time
                     idleTime = Random.Range(0f, maxIdleTime);
 
+                    // set animation to idle
+                    animator.SetBool("isMoving", false);
+
                     break;
                 }
             case CritterState.wander:
@@ -194,6 +200,9 @@ public class CritterController : Entity
 
                     // set wander point
                     wanderPoint = newWanderPoint;
+
+                    // set animation to hop
+                    animator.SetBool("isMoving", true);
 
                     break;
                 }

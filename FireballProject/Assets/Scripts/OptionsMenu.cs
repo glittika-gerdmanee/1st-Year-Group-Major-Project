@@ -123,6 +123,12 @@ public class OptionsMenu : MonoBehaviour {
         brightnessLevel = brightness.value;
     }
 
+    //applies any changes made by player
+    public void ApplyButton()
+    {
+
+    }
+
     //allowing panels to returning to options panel instead of closing it entirely
     public void BackButton()
     {
@@ -143,12 +149,6 @@ public class OptionsMenu : MonoBehaviour {
             controlsPanel.SetActive(false);
             optionsPanel.SetActive(true);
         }
-
-        if(optionsPanel.activeInHierarchy)
-        {
-            optionsMenu.SetActive(false);
-        }
-
     }
 
 }

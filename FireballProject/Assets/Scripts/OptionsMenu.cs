@@ -5,8 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.Rendering; //post-processing
 
 public class OptionsMenu : MonoBehaviour {
-
-    //mainn options panel
+    
+    //main options panel
     public GameObject optionsPanel;
 
     //control mapping panel
@@ -59,9 +59,13 @@ public class OptionsMenu : MonoBehaviour {
         for (int i = 0; i < resolution.Length; i++)
         {
             string resolutionOption = resolution[i].width + " x " + resolution[i].height;
-            options.Add(resolutionOption);
 
-            if(resolution[1].width == Screen.width && resolution[1].height == Screen.height)
+            if (options.Contains(resolutionOption) == false)
+            {
+                options.Add(resolutionOption);
+            }
+
+            if(resolution[i].width == Screen.width && resolution[i].height == Screen.height)
             {
                 currentResolutionIndex = i;
             }

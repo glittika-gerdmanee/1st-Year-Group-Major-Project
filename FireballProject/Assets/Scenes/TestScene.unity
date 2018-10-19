@@ -649,7 +649,7 @@ MonoBehaviour:
   spacing: 17.5
   visible: 0
   maxDisplayLogs: 11
-  errorMessage: invalid command, type 'help' for a list of commands
+  errorMessage: ' is not a valid command'
 --- !u!1 &328256395
 GameObject:
   m_ObjectHideFlags: 0

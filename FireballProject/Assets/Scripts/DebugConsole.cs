@@ -20,7 +20,7 @@ public class DebugConsole : MonoBehaviour
     public uint maxDisplayLogs = 0u;
 
     // error message
-    public string errorMessage = "invalid command, type 'help' for a list of commands";
+    public string errorMessage = " is not a valid command";
 
     // log of strings
     private static List<string> log = new List<string>();
@@ -70,7 +70,7 @@ public class DebugConsole : MonoBehaviour
                     // run the command
                     if (!RunCommand())
                     {
-                        Log(errorMessage);
+                        Log("<" + typeStr + ">" + errorMessage);
                     }
 
                     // clear text
@@ -175,7 +175,7 @@ public class DebugConsole : MonoBehaviour
     {
         // list commands
         {
-            Log("commands:");
+            Log("list of commands:");
             Log("\"clear\"");
             Log("\"timescale\" <scale>");
         }
@@ -194,6 +194,12 @@ public class DebugConsole : MonoBehaviour
         if (canConvert)
         {
             Time.timeScale = Mathf.Clamp(val, 0f, 100f);
+        }
+
+        // log command
+        if (canConvert)
+        {
+            Log("set timescale to " + val.ToString());
         }
 
         return canConvert;

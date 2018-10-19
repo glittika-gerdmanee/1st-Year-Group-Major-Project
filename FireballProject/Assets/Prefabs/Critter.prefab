@@ -186,7 +186,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1125467285823798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.620155, y: 0, z: -0.5221348}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4942612615790862}
@@ -235,7 +235,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bda7c5da5b7a6c94eada194a707a03d6, type: 3}
+  - {fileID: 2100000, guid: eac430983b7978f40899d727cefb0a04, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -269,7 +269,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bda7c5da5b7a6c94eada194a707a03d6, type: 3}
+  - {fileID: 2100000, guid: cd238386fdba3384b9f0ac3a386390ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -335,7 +335,8 @@ MonoBehaviour:
   canTakeDamage: 1
   lockY: 1
   canTakeDamageWhileStunned: 1
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 1081564986198420, guid: 944d1d438580e3d43ab436b72f8abc1c,
+    type: 2}
   healthBar: {fileID: 0}
   currentHealth: 1
   maxHealth: 1

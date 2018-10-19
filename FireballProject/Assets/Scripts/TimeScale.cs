@@ -23,13 +23,21 @@ public class TimeScale : MonoBehaviour
 		// increase/decrease time scale
         if (Input.GetKeyDown("up"))
         {
-            Time.timeScale += increment;
-            Debug.Log("TimeScale:\t" + (Time.timeScale).ToString());
+            if (Time.timeScale + increment <= 100f)
+            {
+                Time.timeScale += increment;
+            }
+
+            DebugConsole.Log("TimeScale:\t" + (Time.timeScale).ToString());
         }
         else if (Input.GetKeyDown("down"))
         {
-            Time.timeScale -= increment;
-            Debug.Log("TimeScale:\t" + (Time.timeScale).ToString());
+            if (Time.timeScale - increment >= 0)
+            {
+                Time.timeScale -= increment;
+            }
+
+            DebugConsole.Log("TimeScale:\t" + (Time.timeScale).ToString());
         }
 	}
 

@@ -27,9 +27,9 @@ public class PlayerSpawner : MonoBehaviour
     private void Update()
     {
         // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa debug
-        // spawn a keyboard player if tilde is pressed
+        // spawn a keyboard player if f1 is pressed
         {
-            if (Input.GetKeyDown(KeyCode.BackQuote))
+            if (Input.GetKeyDown(KeyCode.F1))
             {
                 // spawn the player
                 GameObject newPlayer = Instantiate(player, Vector3.zero, Quaternion.identity);

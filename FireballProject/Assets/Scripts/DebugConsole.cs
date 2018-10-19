@@ -20,7 +20,7 @@ public class DebugConsole : MonoBehaviour
     public uint maxDisplayLogs = 0u;
 
     // error message
-    public string errorMessage = "invalid command";
+    public string errorMessage = "invalid command, type 'help' for a list of commands";
 
     // log of strings
     private static List<string> log = new List<string>();
@@ -59,20 +59,23 @@ public class DebugConsole : MonoBehaviour
             }
 
             // draw text field
-            typeStr = GUI.TextField(new Rect(new Vector2(10, scale.y - textHeight - 5), new Vector2(scale.x - 40, textHeight)), typeStr);
+            typeStr = GUI.TextField(new Rect(new Vector2(10, scale.y - textHeight - 5), new Vector2(scale.x - 20, textHeight)), typeStr);
 
-            // draw submit button
+            // submit
             Event e = Event.current;
-            if (GUI.Button(new Rect(new Vector2(scale.x - 30, scale.y - textHeight - 5), new Vector2(20, textHeight)), "") || e.keyCode == KeyCode.Return)
+            if (e.keyCode == KeyCode.Return)
             {
-                // run the command
-                if (!RunCommand())
+                if (typeStr != "")
                 {
-                    Log(errorMessage);
-                }
+                    // run the command
+                    if (!RunCommand())
+                    {
+                        Log(errorMessage);
+                    }
 
-                // clear text
-                typeStr = "";
+                    // clear text
+                    typeStr = "";
+                }
             }
         }
     }
@@ -132,8 +135,17 @@ public class DebugConsole : MonoBehaviour
             // clear
             if (words[0] == "clear" && words.Count == 1)
             {
-                Clear();
-                return true;
+                return CommandClear();
+            }
+            // help
+            else if (words[0] == "help" && words.Count == 1)
+            {
+                return CommandHelp();
+            }
+            // timescale
+            else if (words[0] == "timescale" && words.Count == 2)
+            {
+                return CommandTimeScale(words[1]);
             }
         }
 
@@ -152,8 +164,52 @@ public class DebugConsole : MonoBehaviour
     }
 
     // command: log a word
-    private void Clear()
+    private bool CommandClear()
     {
         log.Clear();
+        return true;
+    }
+
+    // command: help
+    private bool CommandHelp()
+    {
+        // list commands
+        {
+            Log("commands:");
+            Log("\"clear\"");
+            Log("\"timescale\" <scale>");
+        }
+
+        return true;
+    }
+
+    // command: timescale
+    private bool CommandTimeScale(string s)
+    {
+        // convert string to float
+        float val = 0f;
+        bool canConvert = StringToFloat(s, out val);
+
+        // set timescale
+        if (canConvert)
+        {
+            Time.timeScale = Mathf.Clamp(val, 0f, 100f);
+        }
+
+        return canConvert;
+    }
+
+    // convert a string to an int
+    public static bool StringToInt(string s, out int val)
+    {
+        // convert
+        return int.TryParse(s, out val);
+    }
+
+    // convert a string to a float
+    public static bool StringToFloat(string s, out float val)
+    {
+        // convert
+        return float.TryParse(s, out val);
     }
 }

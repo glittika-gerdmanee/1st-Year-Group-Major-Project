@@ -133,19 +133,24 @@ public class DebugConsole : MonoBehaviour
         if (words.Count >= 1)
         {
             // clear
-            if (words[0] == "clear" && words.Count == 1)
+            if (words.Count == 1 && words[0] == "clear")
             {
                 return CommandClear();
             }
             // help
-            else if (words[0] == "help" && words.Count == 1)
+            else if (words.Count == 1 && words[0] == "help")
             {
                 return CommandHelp();
             }
             // timescale
-            else if (words[0] == "timescale" && words.Count == 2)
+            else if (words.Count == 2 && words[0] == "timescale")
             {
                 return CommandTimeScale(words[1]);
+            }
+            // spawn dragon
+            else if (words.Count == 2 && words[0] == "spawndragon")
+            {
+                return CommandSpawnDragon(words[1]);
             }
         }
 
@@ -178,6 +183,7 @@ public class DebugConsole : MonoBehaviour
             Log("list of commands:");
             Log("\"clear\"");
             Log("\"timescale\" <scale>");
+            Log("\"spawndragon\" <controller num>");
         }
 
         return true;
@@ -203,6 +209,42 @@ public class DebugConsole : MonoBehaviour
         }
 
         return canConvert;
+    }
+
+    // command: spawndragon
+    private bool CommandSpawnDragon(string s)
+    {
+        // get controller num
+        ControllerNum type = ControllerNum.Keyboard;
+        if (s == "k")
+        {
+            type = ControllerNum.Keyboard;
+        }
+        else if (s == "c1")
+        {
+            type = ControllerNum.Controller1;
+        }
+        else if (s == "c2")
+        {
+            type = ControllerNum.Controller2;
+        }
+        else if (s == "c3")
+        {
+            type = ControllerNum.Controller3;
+        }
+        else if (s == "c4")
+        {
+            type = ControllerNum.Controller4;
+        }
+        else
+        {
+            return false;
+        }
+
+        // spawn
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<PlayerSpawner>().SpawnDebugDragon(type);
+
+        return true;
     }
 
     // convert a string to an int

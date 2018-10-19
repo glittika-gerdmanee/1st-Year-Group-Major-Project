@@ -8,6 +8,8 @@ public class OptionsMenu : MonoBehaviour {
 
     //note: playerprefs & dontdestroyonload
 
+    public GameObject optionsMenu;
+        
     //main options panel
     public GameObject optionsPanel;
 
@@ -103,10 +105,10 @@ public class OptionsMenu : MonoBehaviour {
     }
 
     //displays as fullscreen
-    public void Fullscreen(bool isFullscreen)
+    /*public void Fullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
-    }
+    }*/
 
     //toggle between grahpics quality
     public void GraphicsToggle(int qualityIndex)
@@ -140,6 +142,11 @@ public class OptionsMenu : MonoBehaviour {
         {
             controlsPanel.SetActive(false);
             optionsPanel.SetActive(true);
+        }
+
+        if(optionsPanel.activeInHierarchy)
+        {
+            optionsMenu.SetActive(false);
         }
 
     }

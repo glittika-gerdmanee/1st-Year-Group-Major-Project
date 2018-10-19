@@ -5,18 +5,20 @@ using UnityEngine.UI;
 using UnityEngine.Rendering; //post-processing
 
 public class OptionsMenu : MonoBehaviour {
-    
+
+    //note: playerprefs & dontdestroyonload
+
     //main options panel
     public GameObject optionsPanel;
-
-    //control mapping panel
-    public GameObject controlsPanel;
 
     //sound options panel
     public GameObject soundsPanel;
 
     //video options panel
     public GameObject videoPanel;
+
+    //control mapping panel
+    public GameObject controlsPanel;
 
     //button to confirm all settings adjusted by player
     // public Button applyButton = null;
@@ -36,14 +38,16 @@ public class OptionsMenu : MonoBehaviour {
     //slider for sfx
     public Slider soundVolume;
 
-
+    //slider for brightness
     public Slider brightness;
 
-
+    //how bright the gamescreen is
     public float brightnessLevel;
 
+    //display for resolution options
     public Dropdown resolutionDropdown;
 
+    //array of resolution options
     public Resolution[] resolution;
 
 	// Use this for initialization
@@ -87,8 +91,8 @@ public class OptionsMenu : MonoBehaviour {
     {
         musicSource.volume = musicVolume.value;
         //soundSource.volume = soundVolume.value;
-        //maybe have some numbers on the slider to indicate volume placement later
-        //playerprefs?
+        //Have some numbers on the slider to indicate volume placement later
+        
     }
 
     //updates resolution
@@ -120,6 +124,23 @@ public class OptionsMenu : MonoBehaviour {
     //allowing panels to returning to options panel instead of closing it entirely
     public void BackButton()
     {
+        if(soundsPanel.activeInHierarchy)
+        {
+            soundsPanel.SetActive(false);
+            optionsPanel.SetActive(true);
+        }
+
+        if (videoPanel.activeInHierarchy)
+        {
+            videoPanel.SetActive(false);
+            optionsPanel.SetActive(true);
+        }
+
+        if (controlsPanel.activeInHierarchy)
+        {
+            controlsPanel.SetActive(false);
+            optionsPanel.SetActive(true);
+        }
 
     }
 

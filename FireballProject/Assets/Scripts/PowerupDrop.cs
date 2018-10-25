@@ -49,13 +49,13 @@ public class PowerupDrop : MonoBehaviour
 
         // randomise type
         int enumLength = System.Enum.GetValues(typeof(PowerupType)).Length;
-        PowerupType r = (PowerupType)(Random.Range(0, enumLength));
+        newPowerup.type = (PowerupType)(Random.Range(0, enumLength));
 
         // get powerup stats
         PowerupStats powerupStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>();
 
         // set stat values
-        switch (r)
+        switch (newPowerup.type)
         {
             case PowerupType.MoveSpeed:
                 {

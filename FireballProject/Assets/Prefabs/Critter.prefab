@@ -1131,7 +1131,7 @@ MonoBehaviour:
   maxWanderTime: 5
   maxIdleTime: 3
   wanderBoxPosition: {x: 0, y: 0, z: 0}
-  wanderBoxScale: {x: 8.5, y: 0, z: 8.5}
+  wanderBoxScale: {x: 17.5, y: 0, z: 8.5}
   dropChance: 0.25
   drop: {fileID: 1413962039736392, guid: 4bd0ac3ded4e536448507a48c697b8ee, type: 2}
   animator: {fileID: 95598994453863862}

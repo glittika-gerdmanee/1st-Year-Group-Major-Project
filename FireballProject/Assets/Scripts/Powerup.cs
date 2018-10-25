@@ -24,6 +24,9 @@ public class Powerup
     // duration of the powerup if it is not single use
     public float duration = 0f;
 
+    // the type of powerup
+    public PowerupType type = PowerupType.MoveSpeed;
+
     // age of the powerup
     private float age = 0f;
 

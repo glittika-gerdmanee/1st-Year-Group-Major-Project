@@ -38,4 +38,7 @@ public class PowerupStats : MonoBehaviour
     public float shotRangeDuration = 0f;
     public DragonStats shotRangeStats = new DragonStats();
     public bool shotRangeIsSingleUse = false;
+
+    // powerup sprites
+    public Sprite[] sprites = new Sprite[System.Enum.GetValues(typeof(PowerupType)).Length];
 }

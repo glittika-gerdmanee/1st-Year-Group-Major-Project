@@ -497,6 +497,7 @@ MonoBehaviour:
   coneAttack: {fileID: 1673790995172900, guid: 623858d6adf532448b8650b7175fa384, type: 2}
   shootPoint: {fileID: 4136277391203942}
   scoreTextPrefix: 
+  powerupSprite: {fileID: 212702541906085102}
   controller: 0
 --- !u!114 &114990670472526590
 MonoBehaviour:

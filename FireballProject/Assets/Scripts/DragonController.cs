@@ -58,6 +58,9 @@ public class DragonController : Entity
     [HideInInspector]
     public string scoreTextPrefix = "";
 
+    // sprite to display the current powerup
+    public SpriteRenderer powerupSprite = null;
+
     // can the dragon shoot
     private bool canShoot = true;
 
@@ -132,6 +135,9 @@ public class DragonController : Entity
             // update the modified stats
             modifiedStats = GetModifiedStats();
 
+            // set the powerup display sprite
+            powerupSprite.sprite = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>().sprites[(int)(powerup.type)];
+
             // don't allow new powerup
             canPickupPowerup = false;
 
@@ -149,6 +155,9 @@ public class DragonController : Entity
 
         // update modified stats
         modifiedStats = GetModifiedStats();
+
+        // set the powerup display sprite
+        powerupSprite.sprite = null;
 
         // allow new powerup
         canPickupPowerup = true;

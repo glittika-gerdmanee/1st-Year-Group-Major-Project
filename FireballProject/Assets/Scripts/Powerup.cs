@@ -4,7 +4,13 @@ using UnityEngine;
 
 public enum PowerupType
 {
-    MoveSpeed
+    MoveSpeed,
+    FlameCone,
+    FreezeAttack,
+    BombAttack,
+    PierceAttack,
+    ShotInterval,
+    ShotRange
 }
 
 public class Powerup

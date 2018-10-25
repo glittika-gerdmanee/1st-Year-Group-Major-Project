@@ -348,7 +348,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1982790539243746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7014327, y: -0.0063549876, z: -0.0017056167}
+  m_LocalPosition: {x: 1.849898, y: -0.0063549876, z: -0.44346142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4136277391203942}
@@ -497,7 +497,6 @@ MonoBehaviour:
   coneAttack: {fileID: 1673790995172900, guid: 623858d6adf532448b8650b7175fa384, type: 2}
   shootPoint: {fileID: 4136277391203942}
   scoreTextPrefix: 
-  powerupSprite: {fileID: 212702541906085102}
   controller: 0
 --- !u!114 &114990670472526590
 MonoBehaviour:

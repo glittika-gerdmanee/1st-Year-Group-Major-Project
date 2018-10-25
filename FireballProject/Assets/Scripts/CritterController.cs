@@ -29,7 +29,7 @@ public class CritterController : Entity
     public Vector3 wanderBoxScale = Vector3.zero;
 
     // chance between 0 and 1 for the critter to drop a powerup on death
-    public float dropChance = 0.1f;
+    public float dropChance = 0.2f;
 
     // gameobject to spawn as a powerup drop when the critter dies
     public GameObject drop = null;

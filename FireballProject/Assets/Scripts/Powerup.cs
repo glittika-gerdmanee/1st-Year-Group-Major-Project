@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum PowerupType
 {
-
+    MoveSpeed
 }
 
 public class Powerup

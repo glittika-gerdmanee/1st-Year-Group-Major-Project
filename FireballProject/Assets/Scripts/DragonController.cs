@@ -107,7 +107,7 @@ public class DragonController : Entity
             newStats.CopyFrom(baseStats);
 
             // multiply stats
-            newStats.MultiplyBy(powerup.stats);
+            newStats *= powerup.stats;
 
             return newStats;
         }
@@ -117,6 +117,41 @@ public class DragonController : Entity
 
             return baseStats;
         }
+    }
+
+    // give the dragon a powerup
+    // returns true if the dragon succesfuly recieved the powerup
+    public bool GivePowerup(Powerup newPowerup)
+    {
+        // check if the dragon is allowed to get a new powerup
+        if (canPickupPowerup)
+        {
+            // set the powerup
+            powerup = newPowerup;
+
+            // update the modified stats
+            modifiedStats = GetModifiedStats();
+
+            // don't allow new powerup
+            canPickupPowerup = false;
+
+            return true;
+        }
+
+        return false;
+    }
+
+    // removes the dragons powerup
+    public void RemovePowerup()
+    {
+        // set the powerup
+        powerup = null;
+
+        // update modified stats
+        modifiedStats = GetModifiedStats();
+
+        // allow new powerup
+        canPickupPowerup = true;
     }
 
     // use this for initialisation
@@ -139,6 +174,9 @@ public class DragonController : Entity
 
         // default invincibility timer
         iTimer = iTime;
+
+        // set default no powerup
+        RemovePowerup();
     }
 
     // update is called once per frame
@@ -146,8 +184,16 @@ public class DragonController : Entity
     {
         base.Update();
 
-        // update modified stats
-        modifiedStats = GetModifiedStats();
+        // update powerup
+        if (powerup != null && !(powerup.isSingleUse))
+        {
+            // increment powerup duration timer
+            // remove the powerup if it has timed out
+            if (powerup.UpdateTimer(Time.deltaTime))
+            {
+                RemovePowerup();
+            }
+        }
 
         // move the dragon
         if (canMove)
@@ -188,6 +234,12 @@ public class DragonController : Entity
 
                         // reset cooldown timer
                         shotTimer = 0f;
+                    }
+
+                    // remove a single use attack powerup
+                    if (powerup != null && powerup.isSingleUse)
+                    {
+                        RemovePowerup();
                     }
                 }
             }

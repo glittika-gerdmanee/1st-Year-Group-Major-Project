@@ -6,31 +6,31 @@ using UnityEngine;
 public class DragonStats : System.Object
 {
     // movement speed
-    public float moveSpeed = 0f;
+    public float moveSpeed = 1f;
 
     // shot velocity
-    public float projectileVelocity = 0f;
+    public float projectileVelocity = 1f;
 
     // attack cooldown
-    public float attackCooldown = 0f;
+    public float attackCooldown = 1f;
 
     // times an attack will pierce before despawning
-    public uint maxPierces = 0u;
+    public uint maxPierces = 1u;
 
     // amount of time an attack projectile exists for before it despawns
-    public float projectileLifespan = 0f;
+    public float projectileLifespan = 1f;
 
     // type of attack
-    public AttackType attackType = AttackType.None;
+    public AttackType attackType = AttackType.Fireball;
 
     // attack damage
-    public int attackDamage = 0;
+    public int attackDamage = 1;
 
     // stun duration
-    public float stunDuration = 0f;
+    public float stunDuration = 1f;
 
     // bomb attack explosion radius
-    public float explosionRadius = 0f;
+    public float explosionRadius = 1f;
 
     // copies stats from the target
     public void CopyFrom(DragonStats target)
@@ -49,22 +49,26 @@ public class DragonStats : System.Object
         }
     }
 
-    // multiplies the stats by the targets stats
-    public void MultiplyBy(DragonStats target)
+    // multiplies stats
+    public static DragonStats operator *(DragonStats lhs, DragonStats rhs)
     {
-        // multiply values
+        DragonStats newStats = new DragonStats();
+
+        // multiply stat values
         {
-            moveSpeed *= target.moveSpeed;
-            projectileVelocity *= target.projectileVelocity;
-            attackCooldown *= target.attackCooldown;
-            maxPierces *= target.maxPierces;
-            projectileLifespan *= target.projectileLifespan;
-            attackDamage *= target.attackDamage;
-            stunDuration *= target.stunDuration;
-            explosionRadius *= target.explosionRadius;
+            newStats.moveSpeed = lhs.moveSpeed * rhs.moveSpeed;
+            newStats.projectileVelocity = lhs.projectileVelocity * rhs.projectileVelocity;
+            newStats.attackCooldown = lhs.attackCooldown * rhs.attackCooldown;
+            newStats.maxPierces = lhs.maxPierces * rhs.maxPierces;
+            newStats.projectileLifespan = lhs.projectileLifespan * rhs.projectileLifespan;
+            newStats.attackDamage = lhs.attackDamage * rhs.attackDamage;
+            newStats.stunDuration = lhs.stunDuration * rhs.stunDuration;
+            newStats.explosionRadius = lhs.explosionRadius * rhs.explosionRadius;
         }
 
         // set attack type
-        attackType = target.attackType;
+        newStats.attackType = rhs.attackType;
+
+        return newStats;
     }
 }

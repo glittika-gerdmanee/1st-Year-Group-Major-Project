@@ -31,4 +31,40 @@ public class DragonStats : System.Object
 
     // bomb attack explosion radius
     public float explosionRadius = 0f;
+
+    // copies stats from the target
+    public void CopyFrom(DragonStats target)
+    {
+        // copy values
+        {
+            moveSpeed = target.moveSpeed;
+            projectileVelocity = target.projectileVelocity;
+            attackCooldown = target.attackCooldown;
+            maxPierces = target.maxPierces;
+            projectileLifespan = target.projectileLifespan;
+            attackType = target.attackType;
+            attackDamage = target.attackDamage;
+            stunDuration = target.stunDuration;
+            explosionRadius = target.explosionRadius;
+        }
+    }
+
+    // multiplies the stats by the targets stats
+    public void MultiplyBy(DragonStats target)
+    {
+        // multiply values
+        {
+            moveSpeed *= target.moveSpeed;
+            projectileVelocity *= target.projectileVelocity;
+            attackCooldown *= target.attackCooldown;
+            maxPierces *= target.maxPierces;
+            projectileLifespan *= target.projectileLifespan;
+            attackDamage *= target.attackDamage;
+            stunDuration *= target.stunDuration;
+            explosionRadius *= target.explosionRadius;
+        }
+
+        // set attack type
+        attackType = target.attackType;
+    }
 }

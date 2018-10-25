@@ -58,12 +58,6 @@ public class DragonController : Entity
     [HideInInspector]
     public string scoreTextPrefix = "";
 
-    // sprite to display powerup
-    public SpriteRenderer powerupSprite = null;
-
-    // reference to sprite array
-    private PowerupSprites powerupSprites = null;
-
     // can the dragon shoot
     private bool canShoot = true;
 
@@ -97,10 +91,32 @@ public class DragonController : Entity
     // the dragons stats modified by powerups
     private DragonStats modifiedStats = null;
 
+    // the dragons current powerup
+    private Powerup powerup = null;
+
     // get the dragons stats after aplying boosts from powerups
     public DragonStats GetModifiedStats()
     {
-        return baseStats;
+        // check if the dragon has a powerup
+        if (powerup != null)
+        {
+            // create modified stats
+            DragonStats newStats = new DragonStats();
+
+            // copy stats from base
+            newStats.CopyFrom(baseStats);
+
+            // multiply stats
+            newStats.MultiplyBy(powerup.stats);
+
+            return newStats;
+        }
+        else
+        {
+            // no powerup so modified stats = base stats
+
+            return baseStats;
+        }
     }
 
     // use this for initialisation
@@ -123,9 +139,6 @@ public class DragonController : Entity
 
         // default invincibility timer
         iTimer = iTime;
-
-        // get reference to the powerup sprite array
-        powerupSprites = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupSprites>();
     }
 
     // update is called once per frame

@@ -80,7 +80,7 @@ public class CharacterSelect : MonoBehaviour
         {
             bool enable = i < players.Count;
 
-            playersDisplayText[i].SetActive(enable);
+            playersDisplayText[i].transform.parent.gameObject.SetActive(enable);
         }
 
         // set text on displays

@@ -110,7 +110,7 @@ public class FlameConePowerup : Powerup
         base.Start();
 
         // change the dragons attack type to flame cone
-        dragon.attackType = AttackType.FlameCone;
+        // dragon.attackType = AttackType.FlameCone;
     }
 
     // ends the effects of the powerup
@@ -119,7 +119,7 @@ public class FlameConePowerup : Powerup
         base.End();
 
         // change the dragons attack type back to fireball
-        dragon.attackType = AttackType.Fireball;
+        // dragon.attackType = AttackType.Fireball;
     }
 }
 
@@ -133,7 +133,7 @@ public class BombPowerup : Powerup
         base.Start();
 
         // change the dragons attack type to bomb
-        dragon.attackType = AttackType.Bomb;
+        // dragon.attackType = AttackType.Bomb;
         singleUse = true;
     }
 
@@ -143,7 +143,7 @@ public class BombPowerup : Powerup
         base.End();
 
         // change the dragons attack type back to fireball
-        dragon.attackType = AttackType.Fireball;
+        // dragon.attackType = AttackType.Fireball;
     }
 }
 
@@ -157,7 +157,7 @@ public class FreezePowerup : Powerup
         base.Start();
 
         // change the dragons attack type to bomb
-        dragon.attackType = AttackType.Freeze;
+        // dragon.attackType = AttackType.Freeze;
         singleUse = true;
     }
 
@@ -167,7 +167,7 @@ public class FreezePowerup : Powerup
         base.End();
 
         // change the dragons attack type back to fireball
-        dragon.attackType = AttackType.Fireball;
+        // dragon.attackType = AttackType.Fireball;
     }
 }
 
@@ -187,10 +187,10 @@ public class SpeedPowerup : Powerup
         base.Start();
 
         // save the dragons move speed
-        baseMoveSpeed = dragon.movementSpeed;
+        // baseMoveSpeed = dragon.movementSpeed;
 
         // set new speed
-        dragon.movementSpeed = newSpeed;
+        // dragon.movementSpeed = newSpeed;
     }
 
     // ends the effects of the powerup
@@ -199,7 +199,7 @@ public class SpeedPowerup : Powerup
         base.End();
 
         // reset the dragons speed back to default
-        dragon.movementSpeed = baseMoveSpeed;
+        // dragon.movementSpeed = baseMoveSpeed;
     }
 }
 
@@ -219,10 +219,10 @@ public class ShotPiercePowerup : Powerup
         base.Start();
 
         // save the dragons move speed
-        basePierce = dragon.maxPierces;
+        // basePierce = dragon.maxPierces;
 
         // set new speed
-        dragon.maxPierces = newPierce;
+        // dragon.maxPierces = newPierce;
     }
 
     // ends the effects of the powerup
@@ -231,7 +231,7 @@ public class ShotPiercePowerup : Powerup
         base.End();
 
         // reset the dragons speed back to default
-        dragon.maxPierces = basePierce;
+        // dragon.maxPierces = basePierce;
     }
 }
 
@@ -251,10 +251,10 @@ public class ShotSpeedPowerup : Powerup
         base.Start();
 
         // save the dragons move speed
-        baseShotCooldown = dragon.shootCooldown;
+        // baseShotCooldown = dragon.shootCooldown;
 
         // set new speed
-        dragon.shootCooldown = newShotCooldown;
+        // dragon.shootCooldown = newShotCooldown;
     }
 
     // ends the effects of the powerup
@@ -263,7 +263,7 @@ public class ShotSpeedPowerup : Powerup
         base.End();
 
         // reset the dragons speed back to default
-        dragon.shootCooldown = baseShotCooldown;
+        // dragon.shootCooldown = baseShotCooldown;
     }
 }
 
@@ -283,10 +283,10 @@ public class ShotRangePowerup : Powerup
         base.Start();
 
         // save the dragons move speed
-        baseShotFuse = dragon.fuseTime;
+        // baseShotFuse = dragon.fuseTime;
 
         // set new speed
-        dragon.fuseTime = newShotFuse;
+        // dragon.fuseTime = newShotFuse;
     }
 
     // ends the effects of the powerup
@@ -295,6 +295,6 @@ public class ShotRangePowerup : Powerup
         base.End();
 
         // reset the dragons speed back to default
-        dragon.fuseTime = baseShotFuse;
+        // dragon.fuseTime = baseShotFuse;
     }
 }

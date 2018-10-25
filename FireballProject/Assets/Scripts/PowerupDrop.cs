@@ -68,11 +68,11 @@ public class PowerupDrop : MonoBehaviour
         if (dragon != null)
         {
             // give the player the powerup
-            if (dragon.GivePowerup(CreatePowerup()))
-            {
-                // despawn the powerup drop
-                Despawn();
-            }
+            //if (dragon.GivePowerup(CreatePowerup()))
+            //{
+            //    // despawn the powerup drop
+            //    Despawn();
+            //}
         }
     }
 

@@ -14,7 +14,8 @@ public enum ControllerNum
 
 public enum AttackType
 {
-    Fireball = 0,
+    None = 0,
+    Fireball,
     FlameCone,
     Bomb,
     Freeze
@@ -29,16 +30,10 @@ public class DragonController : Entity
     public static int KILL_DRAGON_SCORE = 3;
 
     // how long to stun for when the dragon dies
-    public float DeathStunTime = 0f;
+    public float deathStunTime = 0f;
 
-    // movement speed
-    public float movementSpeed = 0f;
-
-    // velocity of a shot fireball
-    public float fireballVelocity = 0f;
-
-    // time inbetween each shot
-    public float shootCooldown = 0f;
+    // base dragon stats
+    public DragonStats baseStats = new DragonStats();
 
     // what player number is this dragon
     [HideInInspector]
@@ -47,23 +42,14 @@ public class DragonController : Entity
     // amount of time to be invincible after reviving
     public float iTime = 0f;
 
-    // how the dragon attacks
-    public AttackType attackType = AttackType.Fireball;
+    // can the dragon pick up a powerup
+    public bool canPickupPowerup = true;
 
-    // does a pickup override the previous pickup
-    public bool pickupOverride = false;
+    // projectile prefab
+    public GameObject projectile = null;
 
-    // fireball prefab
-    public GameObject fireball = null;
-
-    // fire cone prefab
-    public GameObject fireCone = null;
-
-    // bomb prefab
-    public GameObject bomb = null;
-
-    // freeze attack prefab
-    public GameObject freeze = null;
+    // cone attack prefab
+    public GameObject coneAttack = null;
 
     // shoot point transform
     public Transform shootPoint = null;
@@ -71,15 +57,6 @@ public class DragonController : Entity
     // string to write to the UI text before the score number
     [HideInInspector]
     public string scoreTextPrefix = "";
-
-    // how many entities can a shot fireball pass through before it gets destroyed
-    public uint maxPierces = 1u;
-
-    // amount of time a fireball flies before despawning
-    public float fuseTime = 0f;
-
-    // amount of damage a fireball does
-    public int hitDamage = 0;
 
     // sprite to display powerup
     public SpriteRenderer powerupSprite = null;
@@ -95,7 +72,7 @@ public class DragonController : Entity
 
     // the controller number assigned to the dragon
     [SerializeField]
-    private ControllerNum controller = 0;
+    private ControllerNum controller = ControllerNum.Keyboard;
 
     // for timing inbetween shots
     private float shotTimer = 0f;
@@ -117,13 +94,13 @@ public class DragonController : Entity
     // timer for invincibility after reviving
     private float iTimer = 0f;
 
-    // the dragons current powerup
-    private Powerup powerUp = null;
+    // get the dragons stats after aplying boosts from powerups
+    public DragonStats GetModifiedStats()
+    {
+        return baseStats;
+    }
 
-    // is the dragon dead
-    private bool isDead = false;
-
-    // Use this for initialization
+    // use this for initialisation
     protected override void Start()
     {
         base.Start();
@@ -135,7 +112,7 @@ public class DragonController : Entity
         previousPos = transform.position;
 
         // shot cooldown
-        shotTimer = shootCooldown;
+        shotTimer = GetModifiedStats().attackCooldown;
 
         // give default score
         SetScore(0);
@@ -146,215 +123,86 @@ public class DragonController : Entity
 
         // get reference to the powerup sprite array
         powerupSprites = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupSprites>();
-	}
-
-    // gives the dragon a powerup
-    // returns true if the dragon sucesfully got the powerup
-    public bool GivePowerup(Powerup newPowerup)
-    {
-        // is the dragon allowed to recieve this powerup
-        // true if the pickup is allowed to override the previous powerup
-        // true if the dragon does not currently have a powerup
-        if (pickupOverride || powerUp == null)
-        {
-            // remove current powerup
-            RemovePowerup();
-
-            // add new powerup
-            powerUp = newPowerup;
-
-            // set powerup vars
-            powerUp.dragon = this;
-
-            // start powerups effects
-            powerUp.Start();
-
-            // set sprite
-            if (powerupSprite != null)
-            {
-                powerupSprite.sprite = powerupSprites.powerupSprites[(int)(powerUp.GetPowerupType())];
-            }
-
-            return true;
-        }
-
-        return false;
     }
 
-    // remove the current powerup
-    public void RemovePowerup()
-    {
-        if (powerUp != null)
-        {
-            // end the powerups effects
-            powerUp.End();
-
-            // remove the powerup
-            powerUp = null;
-        }
-
-        // remove sprite
-        powerupSprite.sprite = powerupSprites.powerupSprites[(int)(PowerupType.None)];
-    }
-	
-	// Update is called once per frame
-	protected override void Update()
+    // update is called once per frame
+    protected override void Update()
     {
         base.Update();
 
-        // run powerup
-        if (powerUp != null)
-        {
-            // update the powerup
-            powerUp.Update();
-
-            // check if the powerup has run out of time
-            if (powerUp.TimedOut() && !(powerUp.singleUse))
-            {
-                // remove the powerup
-                RemovePowerup();
-            }
-        }
-
         // move the dragon
+        if (canMove)
         {
-            if (canMove)
-            {
-                // move
-                charController.Move(new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis)) * movementSpeed * Time.deltaTime);
-            }
+            // move
+            charController.Move(new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis)) * GetModifiedStats().moveSpeed * Time.deltaTime);
         }
 
         // rotate the dragon
         {
             // get direction vector
-            Vector3 previousPosToCurrentPos = transform.position - previousPos;
+            Vector3 direction = transform.position - previousPos;
 
             // rotate the dragon
-            transform.LookAt(transform.position + previousPosToCurrentPos);
+            transform.LookAt(transform.position + direction);
 
-            // get new previous position
+            // update the previous direction
             previousPos = transform.position;
         }
 
-        // shoot a fireball
+        // attack
         {
-            // shot timer
-            if (shotTimer < shootCooldown)
+            // attack cooldown timer
+            if (shotTimer < GetModifiedStats().attackCooldown)
             {
                 shotTimer += Time.deltaTime;
             }
 
-            // shoot
+            // shoot a projectile
             if (Input.GetButtonDown(shootButton))
             {
-                // is the dragon allowed to shoot
                 if (canShoot)
                 {
                     // has the cooldown finished
-                    if (shotTimer >= shootCooldown)
+                    if (shotTimer >= GetModifiedStats().attackCooldown)
                     {
-                        // shoot
                         Attack();
 
-                        // reset timer
+                        // reset cooldown timer
                         shotTimer = 0f;
                     }
                 }
             }
         }
 
-        // invincibility
+        // invincibility timer
         if (iTimer < iTime)
         {
             // increment timer
             iTimer += Time.deltaTime;
         }
-        else
+        else if (!canTakeDamage)
         {
             // end invincibility
             canTakeDamage = true;
         }
-	}
+    }
 
     // attack
     public void Attack()
     {
         // attack type
-        switch (attackType)
         {
-            case AttackType.Fireball:
-                {
-                    if (fireball != null)
-                    {
-                        // create fireball
-                        GameObject newFireball = Instantiate(fireball, shootPoint.transform.position, shootPoint.transform.rotation);
-
-                        // set velocity
-                        newFireball.GetComponent<Rigidbody>().velocity = transform.rotation * (new Vector3(0f, 0f, fireballVelocity));
-
-                        // set vars
-                        {
-                            FireballController newController = newFireball.GetComponent<FireballController>();
-                            newController.owner = this;
-                            newController.maxPierces = maxPierces;
-                            newController.fuseTime = fuseTime;
-                            newController.hitDamage = hitDamage;
-                        }
-                    }
-
-                    break;
-                }
-            case AttackType.FlameCone:
-                {
-                    if (fireCone != null)
-                    {
-                        // create fire cone
-                        GameObject newFireCone = Instantiate(fireCone, shootPoint.transform.position, shootPoint.transform.rotation, shootPoint);
-
-                        // set owner
-                        newFireCone.GetComponent<FireConeController>().owner = this;
-                    }
-
-                    break;
-                }
-            case AttackType.Bomb:
-                {
-                    if (bomb != null)
-                    {
-                        // create bomb
-                        GameObject newBomb = Instantiate(bomb, shootPoint.transform.position, shootPoint.transform.rotation);
-
-                        // set owner
-                        newBomb.GetComponent<BombController>().owner = this;
-                    }
-
-                    break;
-                }
-            case AttackType.Freeze:
-                {
-                    if (freeze != null)
-                    {
-                        // create freeze attack
-                        GameObject newFreeze = Instantiate(freeze, shootPoint.transform.position, shootPoint.transform.rotation);
-
-                        // set velocity
-                        newFreeze.GetComponent<Rigidbody>().velocity = transform.rotation * (new Vector3(0f, 0f, fireballVelocity));
-
-                        // set owner
-                        newFreeze.GetComponent<FreezeAttackController>().owner = this;
-                    }
-
-                    break;
-                }
-        }
-
-        // remove the powerup if it was a one use attack
-        if (powerUp != null)
-        {
-            if (powerUp.singleUse)
+            // projectile
+            if (GetModifiedStats().attackType == AttackType.Fireball || GetModifiedStats().attackType == AttackType.Freeze || GetModifiedStats().attackType == AttackType.Bomb)
             {
-                RemovePowerup();
+                // todo
+                // spawn projectile
+            }
+            // cone
+            else if (GetModifiedStats().attackType == AttackType.FlameCone)
+            {
+                // todo
+                // spawn cone attack
             }
         }
     }
@@ -368,42 +216,36 @@ public class DragonController : Entity
             Instantiate(deathEffect, transform.position, transform.rotation);
         }
 
-        isDead = true;
-
-        // remove powerup
-        powerUp = null;
-
         // stun the dragon
-        Stun(DeathStunTime);
+        Stun(deathStunTime);
     }
 
-    // override for getting stunned
+    // override for getitng stunned to disable movement and attacking
     public override void Stun(float duration)
     {
         base.Stun(duration);
 
-        // can't move or shoot while stunned
+        // disable movement and attacking while stunned
         canMove = false;
         canShoot = false;
     }
 
-    // ovrride for breaking stun
+    // override for breaking stun
     public override void BreakStun()
     {
         base.BreakStun();
 
-        // allow movement and shooting again
+        // aloow movement and shooting
         canMove = true;
         canShoot = true;
 
         // resets health to full
-        if (isDead)
+        if (GetHealth() <= 0)
         {
             Damage(GetMaxHealth());
-            isDead = false;
         }
 
-        // start incincibility timer
+        // start invincibility timer
         iTimer = 0f;
         canTakeDamage = false;
     }
@@ -532,6 +374,6 @@ public class DragonController : Entity
     // is the dragon dead
     public bool IsDead()
     {
-        return isDead;
+        return GetHealth() <= 0;
     }
 }

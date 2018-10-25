@@ -1133,7 +1133,7 @@ MonoBehaviour:
   wanderBoxPosition: {x: 0, y: 0, z: 0}
   wanderBoxScale: {x: 8.5, y: 0, z: 8.5}
   dropChance: 0.25
-  drop: {fileID: 1765741900847232, guid: c68686f8c4c131e4db0edd182ba43485, type: 2}
+  drop: {fileID: 0}
   animator: {fileID: 95598994453863862}
 --- !u!136 &136529620318163086
 CapsuleCollider:

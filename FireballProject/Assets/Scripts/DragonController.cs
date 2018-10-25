@@ -94,6 +94,9 @@ public class DragonController : Entity
     // timer for invincibility after reviving
     private float iTimer = 0f;
 
+    // the dragons stats modified by powerups
+    private DragonStats modifiedStats = null;
+
     // get the dragons stats after aplying boosts from powerups
     public DragonStats GetModifiedStats()
     {
@@ -112,7 +115,7 @@ public class DragonController : Entity
         previousPos = transform.position;
 
         // shot cooldown
-        shotTimer = GetModifiedStats().attackCooldown;
+        shotTimer = baseStats.attackCooldown;
 
         // give default score
         SetScore(0);
@@ -130,11 +133,14 @@ public class DragonController : Entity
     {
         base.Update();
 
+        // update modified stats
+        modifiedStats = GetModifiedStats();
+
         // move the dragon
         if (canMove)
         {
             // move
-            charController.Move(new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis)) * GetModifiedStats().moveSpeed * Time.deltaTime);
+            charController.Move(new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis)) * modifiedStats.moveSpeed * Time.deltaTime);
         }
 
         // rotate the dragon
@@ -152,7 +158,7 @@ public class DragonController : Entity
         // attack
         {
             // attack cooldown timer
-            if (shotTimer < GetModifiedStats().attackCooldown)
+            if (shotTimer < modifiedStats.attackCooldown)
             {
                 shotTimer += Time.deltaTime;
             }
@@ -163,7 +169,7 @@ public class DragonController : Entity
                 if (canShoot)
                 {
                     // has the cooldown finished
-                    if (shotTimer >= GetModifiedStats().attackCooldown)
+                    if (shotTimer >= modifiedStats.attackCooldown)
                     {
                         Attack();
 
@@ -192,17 +198,44 @@ public class DragonController : Entity
     {
         // attack type
         {
-            // projectile
-            if (GetModifiedStats().attackType == AttackType.Fireball || GetModifiedStats().attackType == AttackType.Freeze || GetModifiedStats().attackType == AttackType.Bomb)
+            // moving projectile
+            if (modifiedStats.attackType == AttackType.Fireball || modifiedStats.attackType == AttackType.Freeze)
             {
-                // todo
-                // spawn projectile
+                // spawn projectile (fireball or freeze ball)
+                Projectile newProjectile = (Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation)).GetComponent<Projectile>();
+
+                // set projectile vars
+                newProjectile.owner = this;
+                newProjectile.maxPierces = modifiedStats.maxPierces;
+                newProjectile.lifespan = modifiedStats.projectileLifespan;
+                newProjectile.type = AttackToProjectileType(modifiedStats.attackType);
+                newProjectile.damage = modifiedStats.attackDamage;
+                newProjectile.stunDuration = modifiedStats.stunDuration;
+                newProjectile.SetVelocity(modifiedStats.projectileVelocity);
             }
-            // cone
-            else if (GetModifiedStats().attackType == AttackType.FlameCone)
+            // stationary projectile (bomb)
+            else if (modifiedStats.attackType == AttackType.Bomb)
             {
-                // todo
+                // spawn projectile
+                Projectile newProjectile = (Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation)).GetComponent<Projectile>();
+
+                // set projectile vars
+                newProjectile.owner = this;
+                newProjectile.lifespan = modifiedStats.projectileLifespan;
+                newProjectile.type = AttackToProjectileType(modifiedStats.attackType);
+                newProjectile.damage = modifiedStats.attackDamage;
+                newProjectile.explosionRadius = modifiedStats.explosionRadius;
+            }
+            // cone (fire breath)
+            else if (modifiedStats.attackType == AttackType.FlameCone)
+            {
                 // spawn cone attack
+                FireCone newFireCone = (Instantiate(coneAttack, shootPoint.transform.position, shootPoint.transform.rotation, shootPoint.transform)).GetComponent<FireCone>();
+
+                // set fire cone vars
+                newFireCone.owner = this;
+                newFireCone.duration = modifiedStats.projectileLifespan;
+                newFireCone.damage = modifiedStats.attackDamage;
             }
         }
     }
@@ -375,5 +408,27 @@ public class DragonController : Entity
     public bool IsDead()
     {
         return GetHealth() <= 0;
+    }
+
+    // converts an attack type into a projectile type
+    private ProjectileType AttackToProjectileType(AttackType aType)
+    {
+        switch (aType)
+        {
+            case AttackType.Fireball:
+                {
+                    return ProjectileType.Damage;
+                }
+            case AttackType.Freeze:
+                {
+                    return ProjectileType.Stun;
+                }
+            case AttackType.Bomb:
+                {
+                    return ProjectileType.Bomb;
+                }
+        }
+
+        return ProjectileType.None;
     }
 }

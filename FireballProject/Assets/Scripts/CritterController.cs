@@ -228,7 +228,10 @@ public class CritterController : Entity
             if (r <= dropChance)
             {
                 // spawn a drop
-                Instantiate(drop, transform.position, transform.rotation);
+                if (drop != null)
+                {
+                    Instantiate(drop, transform.position, transform.rotation);
+                }
             }
         }
 

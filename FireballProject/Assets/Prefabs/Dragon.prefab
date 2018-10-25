@@ -348,7 +348,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1982790539243746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1266704, y: -0.0063549876, z: -0.54691315}
+  m_LocalPosition: {x: -1.7014327, y: -0.0063549876, z: -0.0017056167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4136277391203942}
@@ -479,20 +479,22 @@ MonoBehaviour:
   healthBar: {fileID: 114990670472526590}
   currentHealth: 3
   maxHealth: 3
-  deathStunTime: 0
+  deathStunTime: 5
   baseStats:
     moveSpeed: 2
-    shotVelocity: 5
+    projectileVelocity: 5
     attackCooldown: 1
     maxPierces: 1
     projectileLifespan: 1
     attackType: 1
     attackDamage: -1
+    stunDuration: 3
+    explosionRadius: 3
   playerNumber: 0
   iTime: 2
   canPickupPowerup: 1
-  projectile: {fileID: 0}
-  coneAttack: {fileID: 0}
+  projectile: {fileID: 1734649102457260, guid: 48faacf168c0530449c2c6d6be98e0a6, type: 2}
+  coneAttack: {fileID: 1673790995172900, guid: 623858d6adf532448b8650b7175fa384, type: 2}
   shootPoint: {fileID: 4136277391203942}
   scoreTextPrefix: 
   powerupSprite: {fileID: 212702541906085102}

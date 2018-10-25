@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum ProjectileType
 {
+    None,
     Damage,
     Stun,
     Bomb
@@ -17,7 +18,7 @@ public class Projectile : MonoBehaviour
     public DragonController owner = null;
 
     // amount of entities the projectile can hit before despawning
-    public int maxPierces = 0;
+    public uint maxPierces = 0;
 
     // how long does the projectile fly for before it despawns
     public float lifespan = 0f;
@@ -31,6 +32,9 @@ public class Projectile : MonoBehaviour
     // how long does a stunning projectile stun for
     public float stunDuration = 0f;
 
+    // how large is the projectiles explosion
+    public float explosionRadius = 0f;
+
     // reference to the rigidbody
     private Rigidbody rb = null;
 
@@ -41,7 +45,7 @@ public class Projectile : MonoBehaviour
     private List<Entity> hitEntities = new List<Entity>();
 
 	// Use this for initialization
-	void Start()
+	void Awake()
     {
         // get the rigidbody on the projectile
         rb = GetComponent<Rigidbody>();
@@ -65,13 +69,25 @@ public class Projectile : MonoBehaviour
     // set the velocity of the projectile
     public void SetVelocity(float velocity)
     {
-        // set z value of rigidbody velocity
-        rb.velocity = new Vector3(0f, 0f, velocity);
+        // create velocity vector
+        Vector3 newVel = new Vector3(0f, 0f, velocity);
+
+        // rotate vector by the objects rotation
+        newVel = transform.rotation * newVel;
+
+        // set rigidbody velocity
+        rb.velocity = newVel;
     }
 
     // despawn the projectile
     public void Despawn()
     {
+        // explode if this projectile is a bomb
+        if (type == ProjectileType.Bomb)
+        {
+            Explode();
+        }
+
         // destroy the projectile
         Destroy(gameObject);
     }
@@ -93,7 +109,7 @@ public class Projectile : MonoBehaviour
                 if (hitObj != owner.gameObject)
                 {
                     // has the entity already been hit
-                    if (hitEntities.Contains(hitEntity))
+                    if (!(hitEntities.Contains(hitEntity)))
                     {
                         // add hit entity ot the hit list
                         hitEntities.Add(hitEntity);
@@ -146,6 +162,27 @@ public class Projectile : MonoBehaviour
             else
             {
                 Despawn();
+            }
+        }
+    }
+
+    // explodes the projectile damaging entities in the damage radius
+    private void Explode()
+    {
+        // find all entities
+        GameObject[] entities = GameObject.FindGameObjectsWithTag("Entity");
+
+        // damage them if they are within the radius
+        for (int i = 0; i < entities.Length; ++i)
+        {
+            // get vector from the projectile to the entity
+            Vector3 toEntity = entities[i].transform.position - transform.position;
+
+            // check the distance between the projectile and the entity
+            if (toEntity.magnitude <= explosionRadius)
+            {
+                // damage entity
+                entities[i].GetComponent<Entity>().Damage(damage);
             }
         }
     }

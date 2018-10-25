@@ -9,7 +9,7 @@ public class DragonStats : System.Object
     public float moveSpeed = 0f;
 
     // shot velocity
-    public float shotVelocity = 0f;
+    public float projectileVelocity = 0f;
 
     // attack cooldown
     public float attackCooldown = 0f;
@@ -25,4 +25,10 @@ public class DragonStats : System.Object
 
     // attack damage
     public int attackDamage = 0;
+
+    // stun duration
+    public float stunDuration = 0f;
+
+    // bomb attack explosion radius
+    public float explosionRadius = 0f;
 }

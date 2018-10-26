@@ -29,17 +29,7 @@ public class PlayerSpawner : MonoBehaviour
     // spawn a debug dragon
     public void SpawnDebugDragon(ControllerNum cNum)
     {
-        // spawn the player
-        GameObject newPlayer = Instantiate(player, Vector3.zero, Quaternion.identity);
-
-        // get reference to the players controller
-        DragonController newPlayerController = newPlayer.GetComponent<DragonController>();
-
-        // set the new players controls
-        newPlayerController.SetControls(cNum);
-
-        // set the new dragons colour
-        newPlayerController.SetMaterial(RandomMaterial());
+        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, null, 0, RandomMaterial());
     }
 
     // spawn players
@@ -50,31 +40,30 @@ public class PlayerSpawner : MonoBehaviour
             // spawn players
             for (int i = 0; i < CharacterSelect.players.Count; ++i)
             {
-                // get controller num
-                ControllerNum num = CharacterSelect.players[i];
-
-                // get spawn location
-                GameObject spawnLocation = spawnLocations[i];
-
-                // spawn the player
-                GameObject newPlayer = Instantiate(player, spawnLocation.transform.position, spawnLocation.transform.rotation);
-
-                // get reference to the players controller
-                DragonController newPlayerController = newPlayer.GetComponent<DragonController>();
-
-                // set the new players controls
-                newPlayerController.SetControls(num);
-
-                // set text to display players score
-                newPlayerController.SetScoreText(scoreDisplays[i]);
-
-                // set the players number
-                newPlayerController.playerNumber = i;
-
-                // set the new dragons colour
-                newPlayerController.SetMaterial(RandomMaterial());
+                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, scoreDisplays[i], i, RandomMaterial());
             }
         }
+    }
+
+    // spawns a dragon
+    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, Text scoreText, int playerNum, Material mat)
+    {
+        // spawn dragon
+        DragonController newDragon = Instantiate(player, position, rotation).GetComponent<DragonController>();
+
+        // set controls
+        newDragon.SetControls(num);
+
+        // set text to display the dragons score
+        newDragon.SetScoreText(scoreText);
+
+        // set the players number
+        newDragon.playerNumber = playerNum;
+
+        // set the dragons colour
+        newDragon.SetMaterial(mat);
+
+        return newDragon;
     }
 
     // gets a random dragon material

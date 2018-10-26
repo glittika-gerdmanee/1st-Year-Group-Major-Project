@@ -7,6 +7,9 @@ public class DevConsole : MonoBehaviour
     // delegate for command functions
     public delegate string CommandFunction(string[] args);
 
+    // powerup drop prefab
+    public GameObject powerupDrop = null;
+
     // is the window visible
     public bool visible = false;
 
@@ -14,7 +17,7 @@ public class DevConsole : MonoBehaviour
     public float textHeight = 0f;
 
     // max amount of logs to render
-    public uint maxRenderLogs = 0u;
+    private uint maxRenderLogs = 0u;
 
     // string to type into
     private string inputString = "";
@@ -35,7 +38,7 @@ public class DevConsole : MonoBehaviour
     // error messages
     // invalid command
     private string invalidCommandErrorMessage1 = "error: \"";
-    private string invalidCommandErrorMessage2 = "\" is not a valid command";
+    private string invalidCommandErrorMessage2 = "\" is not a valid command, type \"help\" for a list of commands";
     // invalid parameters
     private string invalidArgsErrorMessage1 = "error: command \"";
     private string invalidArgsErrorMessage2 = "\" does not take parameters: \"";
@@ -127,6 +130,9 @@ public class DevConsole : MonoBehaviour
     // initialisation
     private void Awake()
     {
+        // set max render logs
+        maxRenderLogs = (uint)(Screen.height / textHeight) - 1;
+
         // add commands
         {
             // help
@@ -149,6 +155,18 @@ public class DevConsole : MonoBehaviour
 
             // settimer
             commands.Add("settimer", SetTimerCommand);
+
+            // spawnpowerup
+            commands.Add("spawnpowerup", SpawnPowerupCommand);
+
+            // givepowerup
+            commands.Add("givepowerup", GivePowerupCommand);
+
+            // poweruplist
+            commands.Add("poweruplist", PowerupListCommand);
+
+            // kill
+            commands.Add("kill", KillCommand);
         }
     }
 
@@ -244,6 +262,10 @@ public class DevConsole : MonoBehaviour
             Log("command: crittercooldown <float cooldown> \"sets the delay in seconds between critter spawns\"");
             Log("command: maxcritters <uint max> \"sets the maximum amount of critters (does not remove existing critters)\"");
             Log("commmand: settimer <float seconds> \"sets the remaining game time in seconds\"");
+            Log("command: spawnpowerup <int type> \"spawns a powerup\"");
+            Log("command: givepowerup <int type> <int playerNum> \"gives the player a powerup\"");
+            Log("command: poweruplist \"displays a list of powerups\"");
+            Log("command: kill <string entityType> \"kills all specified entities, types are 'critter', 'dragon' or 'all'\"");
 
             return "";
         }
@@ -371,5 +393,155 @@ public class DevConsole : MonoBehaviour
             // invalid parameters
             return GetInvalidArgsErrorMessage("settimer", args);
         }
+    }
+
+    // spawnpowerup command
+    // args: <int type>
+    private string SpawnPowerupCommand(string[] args)
+    {
+        // check args
+        int type = 0;
+        if (args.Length == 1 && int.TryParse(args[0], out type) && type == Mathf.Clamp(type, 0, 6))
+        {
+            // spawn powerup
+            PowerupDrop drop = Instantiate(powerupDrop, Vector3.zero, Quaternion.identity).GetComponent<PowerupDrop>();
+
+            // set type
+            drop.powerup = PowerupDrop.GetPowerup((PowerupType)type);
+
+            return "spawned " + drop.powerup.type.ToString() + " powerup";
+        }
+        else
+        {
+            // invalid parameters
+            return GetInvalidArgsErrorMessage("spawnpowerup", args);
+        }
+    }
+
+    // givepowerup command
+    // args: <int type> <int playerNum>
+    private string GivePowerupCommand(string[] args)
+    {
+        // check args
+        int type = 0;
+        int playerNum = 0;
+        if (args.Length == 2 && int.TryParse(args[0], out type) && type == Mathf.Clamp(type, 0, 6) && int.TryParse(args[1], out playerNum))
+        {
+            // get reference to the player
+            DragonController player = null;
+            {
+                DragonController[] dragons = FindObjectsOfType<DragonController>();
+
+                // find dragon with correct playerNum
+                for (int i = 0; i < dragons.Length; ++i)
+                {
+                    if (dragons[i].playerNumber == playerNum)
+                    {
+                        player = dragons[i];
+
+                        break;
+                    }
+                }
+            }
+
+            // give powerup
+            if (player != null)
+            {
+                Powerup newPowerup = PowerupDrop.GetPowerup((PowerupType)type);
+
+                player.GivePowerup(newPowerup);
+
+                return "gave player " + playerNum.ToString() + " a " + type.ToString() + " powerup";
+            }
+            else
+            {
+                // invalid playerNum
+                return "error: player " + playerNum.ToString() + " could not be found";
+            }
+        }
+        else
+        {
+            // invalid parameters
+            return GetInvalidArgsErrorMessage("givepowerup", args);
+        }
+    }
+
+    // poweruplist command
+    private string PowerupListCommand(string[] args)
+    {
+        // check args
+        if (args.Length == 0)
+        {
+            // list powerups
+            Log("powerup list:");
+            Log("0 : move speed");
+            Log("1 : flame cone");
+            Log("2 : freeze attack");
+            Log("3 : bomb attack");
+            Log("4 : piercing shot");
+            Log("5 : shot interval");
+            Log("6 : shot range");
+
+            return "";
+        }
+        else
+        {
+            // invalid parameters
+            return GetInvalidArgsErrorMessage("poweruplist", args);
+        }
+    }
+
+    // kill command
+    private string KillCommand(string[] args)
+    {
+        // check args
+        if (args.Length == 1)
+        {
+            // kill all critters
+            if (args[0] == "critter")
+            {
+                // get all critters
+                CritterController[] critters = FindObjectsOfType<CritterController>();
+
+                // kill
+                for (int i = 0; i < critters.Length; ++i)
+                {
+                    critters[i].Kill();
+                }
+
+                return "killed " + critters.Length.ToString() + " critters";
+            }
+            // kill all dragons
+            else if (args[0] == "dragon")
+            {
+                // get all critters
+                DragonController[] dragons = FindObjectsOfType<DragonController>();
+
+                // kill
+                for (int i = 0; i < dragons.Length; ++i)
+                {
+                    dragons[i].Kill();
+                }
+
+                return "killed " + dragons.Length.ToString() + " dragons";
+            }
+            // kill all entities
+            else if (args[0] == "all")
+            {
+                // get all entities
+                Entity[] entities = FindObjectsOfType<Entity>();
+
+                // kill
+                for (int i = 0; i < entities.Length; ++i)
+                {
+                    entities[i].Kill();
+                }
+
+                return "killed " + entities.Length.ToString() + " entities";
+            }
+        }
+
+        // invalid parameters
+        return GetInvalidArgsErrorMessage("kill", args);
     }
 }

@@ -732,6 +732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696255f3b152f6b4f856216d31492276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerupDrop: {fileID: 1413962039736392, guid: 4bd0ac3ded4e536448507a48c697b8ee,
+    type: 2}
   visible: 1
   textHeight: 20
   maxRenderLogs: 31

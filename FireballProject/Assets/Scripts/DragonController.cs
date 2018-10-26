@@ -472,7 +472,10 @@ public class DragonController : Entity
         scoreText = newText;
 
         // get text prefix
-        scoreTextPrefix = scoreText.text;
+        if (scoreText != null)
+        {
+            scoreTextPrefix = scoreText.text;
+        }
     }
 
     // get the controller type

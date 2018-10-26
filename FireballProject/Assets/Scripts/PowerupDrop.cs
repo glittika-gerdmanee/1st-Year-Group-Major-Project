@@ -7,8 +7,22 @@ public class PowerupDrop : MonoBehaviour
     // how long does the powerup drop stay before despawning
     public float duration = 0f;
 
+    // the powerup
+    [HideInInspector]
+    public Powerup powerup = null;
+
     // age of the powerup drop
     private float age = 0f;
+
+    // initialisation
+    private void Start()
+    {
+        // generate random powerup
+        if (powerup == null)
+        {
+            powerup = GetRandomPowerup();
+        }
+    }
 
     // update is called once per frame
     private void Update()
@@ -33,7 +47,7 @@ public class PowerupDrop : MonoBehaviour
         if (hitDragon != null)
         {
             // give the dragon the powerup
-            if (hitDragon.GivePowerup(GeneratePowerup()))
+            if (hitDragon.GivePowerup(GetRandomPowerup()))
             {
                 // despawn the powerup drop
                 Destroy(gameObject);
@@ -41,15 +55,25 @@ public class PowerupDrop : MonoBehaviour
         }
     }
 
+    // generates a new random powerup
+    public static Powerup GetRandomPowerup()
+    {
+        // randomise type
+        int enumLength = System.Enum.GetValues(typeof(PowerupType)).Length;
+        PowerupType type = (PowerupType)(Random.Range(0, enumLength));
+
+        // get powerup
+        return GetPowerup(type);
+    }
+
     // generates a new powerup
-    public Powerup GeneratePowerup()
+    public static Powerup GetPowerup(PowerupType type)
     {
         // create powerup
         Powerup newPowerup = new Powerup();
 
-        // randomise type
-        int enumLength = System.Enum.GetValues(typeof(PowerupType)).Length;
-        newPowerup.type = (PowerupType)(Random.Range(0, enumLength));
+        // set type
+        newPowerup.type = type;
 
         // get powerup stats
         PowerupStats powerupStats = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>();

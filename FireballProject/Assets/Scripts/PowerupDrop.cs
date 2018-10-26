@@ -63,11 +63,11 @@ public class PowerupDrop : MonoBehaviour
         PowerupType type = (PowerupType)(Random.Range(0, enumLength));
 
         // get powerup
-        return GetPowerup(type);
+        return GetPowerup(type, -1f);
     }
 
     // generates a new powerup
-    public static Powerup GetPowerup(PowerupType type)
+    public static Powerup GetPowerup(PowerupType type, float duration)
     {
         // create powerup
         Powerup newPowerup = new Powerup();
@@ -137,6 +137,12 @@ public class PowerupDrop : MonoBehaviour
 
                     break;
                 }
+        }
+
+        // set duration
+        if (duration > -1f)
+        {
+            newPowerup.duration = duration;
         }
 
         return newPowerup;

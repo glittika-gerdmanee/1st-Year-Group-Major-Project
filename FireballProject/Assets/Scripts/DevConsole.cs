@@ -240,7 +240,7 @@ public class DevConsole : MonoBehaviour
         string argsStr = "";
         for (int i = 0; i < args.Length; ++i)
         {
-            argsStr += args[i];
+            argsStr += args[i] + " ";
         }
 
         return invalidArgsErrorMessage1 + command + invalidArgsErrorMessage2 + argsStr + invalidArgsErrorMessage3;
@@ -263,7 +263,7 @@ public class DevConsole : MonoBehaviour
             Log("command: maxcritters <uint max> \"sets the maximum amount of critters (does not remove existing critters)\"");
             Log("commmand: settimer <float seconds> \"sets the remaining game time in seconds\"");
             Log("command: spawnpowerup <int type> \"spawns a powerup\"");
-            Log("command: givepowerup <int type> <int playerNum> \"gives the player a powerup\"");
+            Log("command: givepowerup <int type> <float duration> <int playerNum> \"gives the player a powerup\"");
             Log("command: poweruplist \"displays a list of powerups\"");
             Log("command: kill <string entityType> \"kills all specified entities, types are 'critter', 'dragon' or 'all'\"");
 
@@ -407,7 +407,7 @@ public class DevConsole : MonoBehaviour
             PowerupDrop drop = Instantiate(powerupDrop, Vector3.zero, Quaternion.identity).GetComponent<PowerupDrop>();
 
             // set type
-            drop.powerup = PowerupDrop.GetPowerup((PowerupType)type);
+            drop.powerup = PowerupDrop.GetPowerup((PowerupType)type, -1f);
 
             return "spawned " + drop.powerup.type.ToString() + " powerup";
         }
@@ -419,13 +419,14 @@ public class DevConsole : MonoBehaviour
     }
 
     // givepowerup command
-    // args: <int type> <int playerNum>
+    // args: <int type> <float duration> <int playerNum>
     private string GivePowerupCommand(string[] args)
     {
         // check args
         int type = 0;
+        float duration = 0f;
         int playerNum = 0;
-        if (args.Length == 2 && int.TryParse(args[0], out type) && type == Mathf.Clamp(type, 0, 6) && int.TryParse(args[1], out playerNum))
+        if (args.Length == 3 && int.TryParse(args[0], out type) && type == Mathf.Clamp(type, 0, 6) && float.TryParse(args[1], out duration) && int.TryParse(args[2], out playerNum))
         {
             // get reference to the player
             DragonController player = null;
@@ -447,11 +448,11 @@ public class DevConsole : MonoBehaviour
             // give powerup
             if (player != null)
             {
-                Powerup newPowerup = PowerupDrop.GetPowerup((PowerupType)type);
+                Powerup newPowerup = PowerupDrop.GetPowerup((PowerupType)type, duration);
 
                 player.GivePowerup(newPowerup);
 
-                return "gave player " + playerNum.ToString() + " a " + type.ToString() + " powerup";
+                return "gave player " + playerNum.ToString() + " a " + ((PowerupType)type).ToString() + " powerup";
             }
             else
             {

@@ -76,4 +76,11 @@ public class GameTimer : MonoBehaviour
         // load end scene
         SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
+
+    // sets the remaining time
+    public void SetRemainingTime(float t)
+    {
+        duration = t;
+        currentDuration = 0f;
+    }
 }

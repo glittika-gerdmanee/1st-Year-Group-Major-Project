@@ -444,15 +444,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 5cff539babd658c42a6f4f1fae6ab5c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.5
+      value: -9.03
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5cff539babd658c42a6f4f1fae6ab5c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5cff539babd658c42a6f4f1fae6ab5c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.12
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5cff539babd658c42a6f4f1fae6ab5c8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -534,6 +534,7 @@ GameObject:
   - component: {fileID: 327466262}
   - component: {fileID: 327466263}
   - component: {fileID: 327466264}
+  - component: {fileID: 327466265}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -734,9 +735,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerupDrop: {fileID: 1413962039736392, guid: 4bd0ac3ded4e536448507a48c697b8ee,
     type: 2}
-  visible: 1
-  textHeight: 20
-  maxRenderLogs: 31
+  visible: 0
+  textHeight: 21
+--- !u!114 &327466265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 327466258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c903c0c3978e4e4d9ce9d0a8bb9fc61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: 11010000110100001201000012010000140100001301000014010000130100006200000061000000
+  keyDelay: 1
+  spawnObj: {fileID: 1896191310592310, guid: 5554c7a59f91188469af47bcb4959a6e, type: 2}
 --- !u!1 &328256395
 GameObject:
   m_ObjectHideFlags: 0

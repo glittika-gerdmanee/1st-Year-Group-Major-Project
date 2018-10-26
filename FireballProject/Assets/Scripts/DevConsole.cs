@@ -16,9 +16,6 @@ public class DevConsole : MonoBehaviour
     // height of text
     public float textHeight = 0f;
 
-    // max amount of logs to render
-    private uint maxRenderLogs = 0u;
-
     // string to type into
     private string inputString = "";
 
@@ -110,11 +107,14 @@ public class DevConsole : MonoBehaviour
 
             // render log
             {
+                // set max render logs
+                uint maxRenderLogs = (uint)((Screen.height -  textHeight) / textHeight);
+
                 // get y position to draw text at
                 float yPos = inputFieldRect.position.y - textHeight;
 
                 // render logs text
-                for (int i = log.Count - 1; i > Mathf.Clamp(log.Count - maxRenderLogs, -1, log.Count); --i)
+                for (int i = log.Count - 1; i > Mathf.Clamp(log.Count - maxRenderLogs - 1, -1, log.Count); --i)
                 {
                     // text label
                     Rect labelRect = new Rect(0f, yPos, Screen.width, textHeight);
@@ -130,9 +130,6 @@ public class DevConsole : MonoBehaviour
     // initialisation
     private void Awake()
     {
-        // set max render logs
-        maxRenderLogs = (uint)(Screen.height / textHeight) - 1;
-
         // add commands
         {
             // help
@@ -167,6 +164,9 @@ public class DevConsole : MonoBehaviour
 
             // kill
             commands.Add("kill", KillCommand);
+
+            // stun
+            commands.Add("stun", StunCommand);
         }
     }
 
@@ -261,11 +261,12 @@ public class DevConsole : MonoBehaviour
             Log("command: spawndragon <int controller> \"spawns a new dragon\"");
             Log("command: crittercooldown <float cooldown> \"sets the delay in seconds between critter spawns\"");
             Log("command: maxcritters <uint max> \"sets the maximum amount of critters (does not remove existing critters)\"");
-            Log("commmand: settimer <float seconds> \"sets the remaining game time in seconds\"");
+            Log("command: settimer <float seconds> \"sets the remaining game time in seconds\"");
             Log("command: spawnpowerup <int type> \"spawns a powerup\"");
             Log("command: givepowerup <int type> <float duration> <int playerNum> \"gives the player a powerup\"");
             Log("command: poweruplist \"displays a list of powerups\"");
-            Log("command: kill <string entityType> \"kills all specified entities, types are 'critter', 'dragon' or 'all'\"");
+            Log("command: kill <string entityType> \"kills all specified entities, types are 'critter', 'dragon', or 'all'\"");
+            Log("command: stun <string entityType> <float duration> \"kills all specified entities, types are 'critter', 'dragon', or 'all'\"");
 
             return "";
         }
@@ -468,6 +469,7 @@ public class DevConsole : MonoBehaviour
     }
 
     // poweruplist command
+    // args: none
     private string PowerupListCommand(string[] args)
     {
         // check args
@@ -493,6 +495,7 @@ public class DevConsole : MonoBehaviour
     }
 
     // kill command
+    // args: <string entityType>
     private string KillCommand(string[] args)
     {
         // check args
@@ -544,5 +547,68 @@ public class DevConsole : MonoBehaviour
 
         // invalid parameters
         return GetInvalidArgsErrorMessage("kill", args);
+    }
+
+    // stun command
+    // args: <string entityType>
+    private string StunCommand(string[] args)
+    {
+        // check args
+        float duration = 0f;
+        if (args.Length == 2 && float.TryParse(args[1], out duration))
+        {
+            // stun all critters
+            if (args[0] == "critter")
+            {
+                // get all critters
+                CritterController[] critters = FindObjectsOfType<CritterController>();
+
+                // stun
+                for (int i = 0; i < critters.Length; ++i)
+                {
+                    critters[i].Stun(duration);
+                }
+
+                return "stunned " + critters.Length.ToString() + " critters for " + duration.ToString() + " seconds";
+            }
+            // stun all dragons
+            else if (args[0] == "dragon")
+            {
+                // get all critters
+                DragonController[] dragons = FindObjectsOfType<DragonController>();
+
+                // stun
+                for (int i = 0; i < dragons.Length; ++i)
+                {
+                    dragons[i].Stun(duration);
+                }
+
+                return "stunned " + dragons.Length.ToString() + " dragons for " + duration.ToString() + " seconds";
+            }
+            // stun all entities
+            else if (args[0] == "all")
+            {
+                // get all entities
+                Entity[] entities = FindObjectsOfType<Entity>();
+
+                // stun
+                for (int i = 0; i < entities.Length; ++i)
+                {
+                    entities[i].Stun(duration);
+                }
+
+                return "stunned " + entities.Length.ToString() + " entities for " + duration.ToString() + " seconds";
+            }
+            else
+            {
+                // invalid parameters
+                return GetInvalidArgsErrorMessage("stun", args);
+            }
+        }
+        else
+        {
+            // invalid parameters
+            return GetInvalidArgsErrorMessage("stun", args);
+        }
     }
 }

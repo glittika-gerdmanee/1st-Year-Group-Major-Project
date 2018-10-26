@@ -17,6 +17,9 @@ public class PlayerSpawner : MonoBehaviour
     // don't change the size of this list
     public Text[] scoreDisplays = new Text[CharacterSelect.MAX_PLAYERS];
 
+    // list of dragon materials
+    public Material[] materials = new Material[4];
+
 	// Use this for initialization
 	void Start()
     {
@@ -34,6 +37,9 @@ public class PlayerSpawner : MonoBehaviour
 
         // set the new players controls
         newPlayerController.SetControls(cNum);
+
+        // set the new dragons colour
+        newPlayerController.SetMaterial(RandomMaterial());
     }
 
     // spawn players
@@ -64,7 +70,18 @@ public class PlayerSpawner : MonoBehaviour
 
                 // set the players number
                 newPlayerController.playerNumber = i;
+
+                // set the new dragons colour
+                newPlayerController.SetMaterial(RandomMaterial());
             }
         }
+    }
+
+    // gets a random dragon material
+    private Material RandomMaterial()
+    {
+        int r = Random.Range(0, materials.Length);
+
+        return materials[r];
     }
 }

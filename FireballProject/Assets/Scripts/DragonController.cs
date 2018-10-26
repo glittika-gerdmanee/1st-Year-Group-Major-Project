@@ -61,6 +61,9 @@ public class DragonController : Entity
     // sprite to display the current powerup
     public SpriteRenderer powerupSprite = null;
 
+    // reference to the model to change the material
+    public MeshRenderer dragonMesh = null;
+
     // can the dragon shoot
     private bool canShoot = true;
 
@@ -504,5 +507,14 @@ public class DragonController : Entity
         }
 
         return ProjectileType.None;
+    }
+
+    // sets the dragons material
+    public void SetMaterial(Material mat)
+    {
+        if (dragonMesh != null)
+        {
+            dragonMesh.material = mat;
+        }
     }
 }

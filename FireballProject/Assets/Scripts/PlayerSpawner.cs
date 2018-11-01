@@ -25,7 +25,7 @@ public class PlayerSpawner : MonoBehaviour
     // spawn a debug dragon
     public void SpawnDebugDragon(ControllerNum cNum)
     {
-        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 1, RandomMaterial());
+        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, RandomMaterial());
     }
 
     // spawn players

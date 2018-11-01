@@ -24,7 +24,7 @@ public class DevConsole : MonoBehaviour
     private Dictionary<string, CommandFunction> commands = new Dictionary<string, CommandFunction>();
 
     // the last processed command
-    private string previousInputString = "";
+    private string previousInputString = "spawndragon 0";
 
     // max amount of logs to store
     private static uint maxLogs = 100u;

@@ -219,12 +219,11 @@ public class DragonController : Entity
             // move
             charController.Move(move * modifiedStats.moveSpeed * Time.deltaTime);
 
-            // do animation stuff when dragon animations are implemented
             // movement animation
-            //if (animator != null)
-            //{
-            //    animator.SetBool("isMoving", move.magnitude > 0f);
-            //}
+            if (animator != null)
+            {
+                animator.SetBool("isMoving", move.magnitude > 0f);
+            }
         }
 
         // rotate the dragon
@@ -261,12 +260,11 @@ public class DragonController : Entity
                         shotTimer = 0f;
                     }
 
-                    // do animation stuff when dragon animations are implemented
                     // attack animation
-                    //if (animator != null)
-                    //{
-                    //    animator.SetTrigger("attack");
-                    //}
+                    if (animator != null)
+                    {
+                        animator.SetTrigger("attack");
+                    }
 
                     // remove a single use attack powerup
                     if (powerup != null && powerup.isSingleUse)

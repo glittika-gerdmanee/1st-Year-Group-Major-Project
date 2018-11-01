@@ -14,6 +14,9 @@ public class PowerupDrop : MonoBehaviour
     // age of the powerup drop
     private float age = 0f;
 
+    // rarities of powerups
+    private static readonly float[] powerupRarities = { 18.75f, 8.33f, 18.75f, 8.33f, 18.75f, 8.33f, 18.75f };
+
     // initialisation
     private void Start()
     {
@@ -59,8 +62,27 @@ public class PowerupDrop : MonoBehaviour
     public static Powerup GetRandomPowerup()
     {
         // randomise type
-        int enumLength = System.Enum.GetValues(typeof(PowerupType)).Length;
-        PowerupType type = (PowerupType)(Random.Range(0, enumLength));
+        PowerupType type = PowerupType.MoveSpeed;
+        {
+            // get random %
+            float rand = Random.Range(0f, 100f);
+
+            float total = 0f;
+            for (int i = 0; i < powerupRarities.Length; ++i)
+            {
+                // check value
+                if (rand >= total && rand <= total + powerupRarities[i])
+                {
+                    // set type
+                    type = (PowerupType)i;
+
+                    break;
+                }
+
+                // add chance
+                total += powerupRarities[i];
+            }
+        }
 
         // get powerup
         return GetPowerup(type, -1f);

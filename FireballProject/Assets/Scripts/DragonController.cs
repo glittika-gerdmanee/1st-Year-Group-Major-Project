@@ -64,6 +64,9 @@ public class DragonController : Entity
     // reference to the model to change the material
     public MeshRenderer dragonMesh = null;
 
+    // animator controller
+    public Animator animator = null;
+
     // can the dragon shoot
     private bool canShoot = true;
 
@@ -210,8 +213,18 @@ public class DragonController : Entity
         // move the dragon
         if (canMove)
         {
+            // get movement vector
+            Vector3 move = new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis));
+
             // move
-            charController.Move(new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis)) * modifiedStats.moveSpeed * Time.deltaTime);
+            charController.Move(move * modifiedStats.moveSpeed * Time.deltaTime);
+
+            // do animation stuff when dragon animations are implemented
+            // movement animation
+            //if (animator != null)
+            //{
+            //    animator.SetBool("isMoving", move.magnitude > 0f);
+            //}
         }
 
         // rotate the dragon
@@ -247,6 +260,13 @@ public class DragonController : Entity
                         // reset cooldown timer
                         shotTimer = 0f;
                     }
+
+                    // do animation stuff when dragon animations are implemented
+                    // attack animation
+                    //if (animator != null)
+                    //{
+                    //    animator.SetTrigger("attack");
+                    //}
 
                     // remove a single use attack powerup
                     if (powerup != null && powerup.isSingleUse)

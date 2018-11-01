@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spooky : MonoBehaviour
+public class EasterEgg : MonoBehaviour
 {
     // list of keys to press to activate the function
     public KeyCode[] code = new KeyCode[1];

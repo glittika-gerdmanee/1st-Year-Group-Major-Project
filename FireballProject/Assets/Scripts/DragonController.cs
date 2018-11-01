@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum ControllerNum
 {
@@ -54,10 +53,6 @@ public class DragonController : Entity
     // shoot point transform
     public Transform shootPoint = null;
 
-    // string to write to the UI text before the score number
-    [HideInInspector]
-    public string scoreTextPrefix = "";
-
     // sprite to display the current powerup
     public SpriteRenderer powerupSprite = null;
 
@@ -91,9 +86,6 @@ public class DragonController : Entity
     // score
     private int score = 0;
 
-    // UI text to display the dragons score
-    private Text scoreText = null;
-
     // timer for invincibility after reviving
     private float iTimer = 0f;
 
@@ -102,6 +94,9 @@ public class DragonController : Entity
 
     // the dragons current powerup
     private Powerup powerup = null;
+
+    // reference to the score text
+    ScoreDisplay scoreDisplay = null;
 
     // get the dragons stats after aplying boosts from powerups
     public DragonStats GetModifiedStats()
@@ -174,6 +169,9 @@ public class DragonController : Entity
     {
         base.Start();
 
+        // get score display
+        scoreDisplay = FindObjectOfType<ScoreDisplay>();
+
         // set controls
         SetControls(controller);
 
@@ -185,7 +183,6 @@ public class DragonController : Entity
 
         // give default score
         SetScore(0);
-        UpdateScoreDisplay();
 
         // default invincibility timer
         iTimer = iTime;
@@ -476,24 +473,8 @@ public class DragonController : Entity
     // update the UI to display the dragons current score
     public void UpdateScoreDisplay()
     {
-        // set text
-        if (scoreText != null)
-        {
-            scoreText.text = scoreTextPrefix + score.ToString();
-        }
-    }
-
-    // set reference to the UI text for score display
-    public void SetScoreText(Text newText)
-    {
-        // set text
-        scoreText = newText;
-
-        // get text prefix
-        if (scoreText != null)
-        {
-            scoreTextPrefix = scoreText.text;
-        }
+        // update players score
+        scoreDisplay.SetScores(playerNumber, score);
     }
 
     // get the controller type

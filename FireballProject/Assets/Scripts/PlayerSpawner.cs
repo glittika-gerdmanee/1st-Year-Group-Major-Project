@@ -13,10 +13,6 @@ public class PlayerSpawner : MonoBehaviour
     // don't change the size of this list
     public GameObject[] spawnLocations = new GameObject[CharacterSelect.MAX_PLAYERS];
 
-    // list of UI text to display players scores
-    // don't change the size of this list
-    public Text[] scoreDisplays = new Text[CharacterSelect.MAX_PLAYERS];
-
     // list of dragon materials
     public Material[] materials = new Material[4];
 
@@ -29,7 +25,7 @@ public class PlayerSpawner : MonoBehaviour
     // spawn a debug dragon
     public void SpawnDebugDragon(ControllerNum cNum)
     {
-        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, null, 0, RandomMaterial());
+        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 1, RandomMaterial());
     }
 
     // spawn players
@@ -40,22 +36,19 @@ public class PlayerSpawner : MonoBehaviour
             // spawn players
             for (int i = 0; i < CharacterSelect.players.Count; ++i)
             {
-                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, scoreDisplays[i], i, RandomMaterial());
+                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, RandomMaterial());
             }
         }
     }
 
     // spawns a dragon
-    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, Text scoreText, int playerNum, Material mat)
+    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat)
     {
         // spawn dragon
         DragonController newDragon = Instantiate(player, position, rotation).GetComponent<DragonController>();
 
         // set controls
         newDragon.SetControls(num);
-
-        // set text to display the dragons score
-        newDragon.SetScoreText(scoreText);
 
         // set the players number
         newDragon.playerNumber = playerNum;

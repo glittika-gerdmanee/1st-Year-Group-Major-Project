@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 327466263}
   - component: {fileID: 327466264}
   - component: {fileID: 327466265}
+  - component: {fileID: 327466266}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -566,11 +567,6 @@ MonoBehaviour:
   - {fileID: 129217242}
   - {fileID: 1618644032}
   - {fileID: 942046088}
-  scoreDisplays:
-  - {fileID: 328256397}
-  - {fileID: 726161315}
-  - {fileID: 53158108}
-  - {fileID: 1124493207}
   materials:
   - {fileID: 2100000, guid: 9c243376eaf0c53419f177501ffc8973, type: 2}
   - {fileID: 2100000, guid: 3d3fa94e257324244be868f8309cc183, type: 2}
@@ -708,6 +704,22 @@ MonoBehaviour:
   code: 11010000110100001201000012010000140100001301000014010000130100006200000061000000
   keyDelay: 1
   spawnObj: {fileID: 1896191310592310, guid: 5554c7a59f91188469af47bcb4959a6e, type: 2}
+--- !u!114 &327466266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 327466258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9736287bb101ec64a9a99b1c8f204039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreDisplays:
+  - {fileID: 328256397}
+  - {fileID: 726161315}
+  - {fileID: 53158108}
+  - {fileID: 1124493207}
 --- !u!1 &328256395
 GameObject:
   m_ObjectHideFlags: 0

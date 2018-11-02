@@ -57,7 +57,7 @@ public class DragonController : Entity
     public SpriteRenderer powerupSprite = null;
 
     // reference to the model to change the material
-    public MeshRenderer dragonMesh = null;
+    public Renderer[] dragonMesh = new Renderer[1];
 
     // animator controller
     public Animator animator = null;
@@ -503,9 +503,13 @@ public class DragonController : Entity
     // sets the dragons material
     public void SetMaterial(Material mat)
     {
-        if (dragonMesh != null)
+        if (dragonMesh.Length > 0)
         {
-            dragonMesh.material = mat;
+            for (int i = 0; i < dragonMesh.Length; ++i)
+            {
+                // set the renderers material
+                dragonMesh[i].material = mat;
+            }
         }
     }
 }

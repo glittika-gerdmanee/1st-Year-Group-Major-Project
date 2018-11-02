@@ -3583,7 +3583,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1982790539243746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.4089216, y: 0, z: -1.2315092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4136277391203942}
@@ -4318,8 +4318,17 @@ MonoBehaviour:
   coneAttack: {fileID: 1957312978427320, guid: 623858d6adf532448b8650b7175fa384, type: 2}
   shootPoint: {fileID: 4136277391203942}
   powerupSprite: {fileID: 212702541906085102}
-  dragonMesh: {fileID: 0}
+  dragonMesh:
+  - {fileID: 137424962126928036}
+  - {fileID: 137713369669602534}
+  - {fileID: 137349591336845960}
+  - {fileID: 137095571091424278}
+  - {fileID: 137360233988403734}
+  - {fileID: 137918809596754360}
+  - {fileID: 137288991038458276}
   animator: {fileID: 95257005028996402}
+  canShoot: 1
+  canMove: 1
   controller: 0
 --- !u!114 &114990670472526590
 MonoBehaviour:

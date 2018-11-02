@@ -456,7 +456,7 @@ public class DevConsole : MonoBehaviour
         int type = 0;
         float duration = 0f;
         int playerNum = 0;
-        if (args.Length == 3 && int.TryParse(args[0], out type) && type == Mathf.Clamp(type, 0, 6) && float.TryParse(args[1], out duration) && int.TryParse(args[2], out playerNum))
+        if (args.Length == 3 && int.TryParse(args[0], out type) && type == Mathf.Clamp(type, 0, System.Enum.GetValues(typeof(PowerupType)).Length - 1) && float.TryParse(args[1], out duration) && int.TryParse(args[2], out playerNum))
         {
             // get reference to the player
             DragonController player = null;

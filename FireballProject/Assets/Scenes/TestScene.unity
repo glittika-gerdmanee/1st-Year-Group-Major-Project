@@ -627,7 +627,7 @@ MonoBehaviour:
     maxPierces: 1
     projectileLifespan: 1
     attackType: 3
-    attackDamage: 1
+    attackDamage: 3
     stunDuration: 1
     explosionRadius: 1
   bombAttackIsSingleUse: 1

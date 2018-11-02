@@ -36,8 +36,14 @@ public class FireCone : MonoBehaviour
     // despawn the fire cone
     public void Despawn()
     {
+        // remove powerup from owner
+        owner.RemovePowerup();
+
+        // allow the owner to shoot again
+        owner.canShoot = true;
+
         // destroy the gameobject
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 
     // trigger collider enter

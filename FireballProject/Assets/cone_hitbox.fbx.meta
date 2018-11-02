@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: 4029951a846711a45b3d4c54972728dd
-timeCreated: 1539321021
+guid: b663084b7c3af3740b722632b88a9604
+timeCreated: 1541114070
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cone001
-    9500000: //RootNode
+    4300000: pCube1
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -86,7 +85,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

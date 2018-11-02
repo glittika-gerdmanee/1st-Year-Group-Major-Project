@@ -16,6 +16,15 @@ public class DevConsole : MonoBehaviour
     // height of text
     public float textHeight = 0f;
 
+    // run commands from hotkeys or not
+    public bool runHotkeys = true;
+
+    // list of hotkeys
+    public KeyCode[] hotkeys = new KeyCode[1];
+
+    // list of hotkey commands
+    public string[] hotkeyCommands = new string[1];
+
     // string to type into
     private string inputString = "";
 
@@ -24,7 +33,7 @@ public class DevConsole : MonoBehaviour
     private Dictionary<string, CommandFunction> commands = new Dictionary<string, CommandFunction>();
 
     // the last processed command
-    private string previousInputString = "spawndragon 0";
+    private string previousInputString = "";
 
     // max amount of logs to store
     private static uint maxLogs = 100u;
@@ -92,7 +101,7 @@ public class DevConsole : MonoBehaviour
             if (e.keyCode == KeyCode.Return && inputString != "")
             {
                 // run command and log output
-                string commandOutput = ProcessCommand();
+                string commandOutput = ProcessCommand(inputString);
                 if (commandOutput != "")
                 {
                     Log(commandOutput);
@@ -122,6 +131,26 @@ public class DevConsole : MonoBehaviour
 
                     // move y position up
                     yPos -= textHeight;
+                }
+            }
+        }
+    }
+
+    // hotkeys
+    private void Update()
+    {
+        if (runHotkeys)
+        {
+            // detect hotkey button press
+            for (int i = 0; i < hotkeys.Length; ++i)
+            {
+                if (Input.GetKeyDown(hotkeys[i]))
+                {
+                    string commandOutput = ProcessCommand(hotkeyCommands[i]);
+                    if (commandOutput != null)
+                    {
+                        Log(commandOutput);
+                    }
                 }
             }
         }
@@ -185,10 +214,10 @@ public class DevConsole : MonoBehaviour
     }
 
     // process a command from the input string
-    private string ProcessCommand()
+    private string ProcessCommand(string commandStr)
     {
         // split the input string into string array
-        string[] words = inputString.Split(' ');
+        string[] words = commandStr.Split(' ');
         {
             List<string> wordsList = new List<string>(words);
 
@@ -451,9 +480,10 @@ public class DevConsole : MonoBehaviour
             {
                 Powerup newPowerup = PowerupDrop.GetPowerup((PowerupType)type, duration);
 
+                player.RemovePowerup();
                 player.GivePowerup(newPowerup);
 
-                return "gave player " + playerNum.ToString() + " a " + ((PowerupType)type).ToString() + " powerup";
+                return "gave player " + playerNum.ToString() + " a " + ((PowerupType)type).ToString() + " powerup for " + duration.ToString() + " seconds";
             }
             else
             {

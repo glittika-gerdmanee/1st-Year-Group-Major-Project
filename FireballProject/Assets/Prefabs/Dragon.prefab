@@ -4302,11 +4302,11 @@ MonoBehaviour:
   maxHealth: 3
   deathStunTime: 5
   baseStats:
-    moveSpeed: 2
-    projectileVelocity: 5
-    attackCooldown: 1
+    moveSpeed: 1.8
+    projectileVelocity: 3.5
+    attackCooldown: 1.25
     maxPierces: 1
-    projectileLifespan: 1
+    projectileLifespan: 1.8
     attackType: 1
     attackDamage: -1
     stunDuration: 3
@@ -4315,9 +4315,8 @@ MonoBehaviour:
   iTime: 2
   canPickupPowerup: 1
   projectile: {fileID: 1734649102457260, guid: 48faacf168c0530449c2c6d6be98e0a6, type: 2}
-  coneAttack: {fileID: 1673790995172900, guid: 623858d6adf532448b8650b7175fa384, type: 2}
+  coneAttack: {fileID: 1957312978427320, guid: 623858d6adf532448b8650b7175fa384, type: 2}
   shootPoint: {fileID: 4136277391203942}
-  scoreTextPrefix: 
   powerupSprite: {fileID: 212702541906085102}
   dragonMesh: {fileID: 0}
   animator: {fileID: 95257005028996402}

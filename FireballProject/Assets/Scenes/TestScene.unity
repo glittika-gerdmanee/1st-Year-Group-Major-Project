@@ -519,8 +519,8 @@ MonoBehaviour:
   - {fileID: 1133849559}
   - {fileID: 1343075439}
   - {fileID: 1924987075}
-  maxCritters: 50
-  spawnCooldown: 0.3
+  maxCritters: 20
+  spawnCooldown: 0.75
   maxScale: 1.3
   minScale: 0.7
 --- !u!4 &327466260
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09be344cb68f79141a9248a2f9c355a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 120
+  duration: 180
   timerText: {fileID: 674527012}
   nextScene: Scenes/EndScreen
 --- !u!114 &327466262
@@ -601,7 +601,7 @@ MonoBehaviour:
     projectileVelocity: 1
     attackCooldown: 1
     maxPierces: 1
-    projectileLifespan: 1
+    projectileLifespan: 2
     attackType: 2
     attackDamage: 1
     stunDuration: 1
@@ -612,7 +612,7 @@ MonoBehaviour:
     moveSpeed: 1
     projectileVelocity: 1
     attackCooldown: 1
-    maxPierces: 1
+    maxPierces: 100
     projectileLifespan: 1
     attackType: 4
     attackDamage: 1
@@ -636,7 +636,7 @@ MonoBehaviour:
     moveSpeed: 1
     projectileVelocity: 1
     attackCooldown: 1
-    maxPierces: 5
+    maxPierces: 100
     projectileLifespan: 1
     attackType: 1
     attackDamage: 1
@@ -655,18 +655,6 @@ MonoBehaviour:
     stunDuration: 1
     explosionRadius: 1
   shotIntervalIsSingleUse: 0
-  shotRangeDuration: 5
-  shotRangeStats:
-    moveSpeed: 1
-    projectileVelocity: 1
-    attackCooldown: 1
-    maxPierces: 1
-    projectileLifespan: 5
-    attackType: 1
-    attackDamage: 1
-    stunDuration: 1
-    explosionRadius: 1
-  shotRangeIsSingleUse: 0
   sprites:
   - {fileID: 21300000, guid: 67a7288046f22384780a5fbb273b396d, type: 3}
   - {fileID: 21300000, guid: 582da5f405048a546b280a9b82f09600, type: 3}
@@ -690,6 +678,20 @@ MonoBehaviour:
     type: 2}
   visible: 0
   textHeight: 21
+  runHotkeys: 1
+  hotkeys: 0f01000000010000010100000201000003010000040100000501000006010000070100000801000009010000
+  hotkeyCommands:
+  - spawndragon 0
+  - givepowerup 0 60 0
+  - givepowerup 1 60 0
+  - givepowerup 2 60 0
+  - givepowerup 3 60 0
+  - givepowerup 4 60 0
+  - givepowerup 5 60 0
+  - givepowerup 6 60 0
+  - givepowerup 7 60 0
+  - givepowerup 8 60 0
+  - givepowerup 9 60 0
 --- !u!114 &327466265
 MonoBehaviour:
   m_ObjectHideFlags: 0

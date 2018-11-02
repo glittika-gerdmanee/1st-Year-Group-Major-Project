@@ -63,10 +63,10 @@ public class DragonController : Entity
     public Animator animator = null;
 
     // can the dragon shoot
-    private bool canShoot = true;
+    public bool canShoot = true;
 
     // can the dragon move
-    private bool canMove = true;
+    public bool canMove = true;
 
     // the controller number assigned to the dragon
     [SerializeField]
@@ -208,7 +208,7 @@ public class DragonController : Entity
         }
 
         // move the dragon
-        if (canMove)
+        if (canMove && !IsStunned())
         {
             // get movement vector
             Vector3 move = new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis));
@@ -246,7 +246,7 @@ public class DragonController : Entity
             // shoot a projectile
             if (Input.GetButtonDown(shootButton))
             {
-                if (canShoot)
+                if (canShoot && !IsStunned())
                 {
                     // has the cooldown finished
                     if (shotTimer >= modifiedStats.attackCooldown)
@@ -322,12 +322,15 @@ public class DragonController : Entity
             else if (modifiedStats.attackType == AttackType.FlameCone)
             {
                 // spawn cone attack
-                FireCone newFireCone = (Instantiate(coneAttack, shootPoint.transform.position, shootPoint.transform.rotation, shootPoint.transform)).GetComponent<FireCone>();
+                FireCone newFireCone = (Instantiate(coneAttack, shootPoint.transform.position, shootPoint.transform.rotation, shootPoint.transform)).GetComponentInChildren<FireCone>();
 
                 // set fire cone vars
                 newFireCone.owner = this;
                 newFireCone.duration = modifiedStats.projectileLifespan;
                 newFireCone.damage = modifiedStats.attackDamage;
+
+                // can't shoot fire cone again :(
+                canShoot = false;
             }
         }
     }
@@ -345,24 +348,10 @@ public class DragonController : Entity
         Stun(deathStunTime);
     }
 
-    // override for getitng stunned to disable movement and attacking
-    public override void Stun(float duration)
-    {
-        base.Stun(duration);
-
-        // disable movement and attacking while stunned
-        canMove = false;
-        canShoot = false;
-    }
-
     // override for breaking stun
     public override void BreakStun()
     {
         base.BreakStun();
-
-        // aloow movement and shooting
-        canMove = true;
-        canShoot = true;
 
         // resets health to full
         if (GetHealth() <= 0)

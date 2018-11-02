@@ -14,8 +14,12 @@ public class PowerupDrop : MonoBehaviour
     // age of the powerup drop
     private float age = 0f;
 
+    // rarities
+    private const float commonRarity = 75f / 3f;
+    private const float rareRarity = 25f / 3f;
+
     // rarities of powerups
-    private static readonly float[] powerupRarities = { 18.75f, 8.33f, 18.75f, 8.33f, 18.75f, 8.33f, 18.75f };
+    private static readonly float[] powerupRarities = { commonRarity, rareRarity, rareRarity, rareRarity, commonRarity, commonRarity };
 
     // initialisation
     private void Start()
@@ -148,14 +152,6 @@ public class PowerupDrop : MonoBehaviour
                     newPowerup.duration = powerupStats.shotIntervalDuration;
                     newPowerup.stats = powerupStats.shotIntervalStats;
                     newPowerup.isSingleUse = powerupStats.shotIntervalIsSingleUse;
-
-                    break;
-                }
-            case PowerupType.ShotRange:
-                {
-                    newPowerup.duration = powerupStats.shotRangeDuration;
-                    newPowerup.stats = powerupStats.shotRangeStats;
-                    newPowerup.isSingleUse = powerupStats.shotRangeIsSingleUse;
 
                     break;
                 }

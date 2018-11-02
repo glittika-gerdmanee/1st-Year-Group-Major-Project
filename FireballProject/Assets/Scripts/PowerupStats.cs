@@ -34,11 +34,6 @@ public class PowerupStats : MonoBehaviour
     public DragonStats shotIntervalStats = new DragonStats();
     public bool shotIntervalIsSingleUse = false;
 
-    // stat modifiers for a shot range powerup
-    public float shotRangeDuration = 0f;
-    public DragonStats shotRangeStats = new DragonStats();
-    public bool shotRangeIsSingleUse = false;
-
     // powerup sprites
     public Sprite[] sprites = new Sprite[System.Enum.GetValues(typeof(PowerupType)).Length];
 }

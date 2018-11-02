@@ -184,4 +184,10 @@ public class Entity : MonoBehaviour
         // destroy the object
         Destroy(gameObject);
     }
+
+    // is the entity stunned
+    public bool IsStunned()
+    {
+        return isStunned;
+    }
 }

@@ -4300,7 +4300,7 @@ MonoBehaviour:
   healthBar: {fileID: 114990670472526590}
   currentHealth: 3
   maxHealth: 3
-  deathStunTime: 5
+  deathStunTime: 2.5
   baseStats:
     moveSpeed: 1.8
     projectileVelocity: 3.5

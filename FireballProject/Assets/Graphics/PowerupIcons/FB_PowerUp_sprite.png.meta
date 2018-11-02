@@ -1,14 +1,20 @@
 fileFormatVersion: 2
 guid: 2836e96c1c9f6dc438eedfe252c2967a
-timeCreated: 1541134054
+timeCreated: 1541134713
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: FB_PowerUp_sprite_0
+    21300002: FB_PowerUp_sprite_1
+    21300004: FB_PowerUp_sprite_2
+    21300006: FB_PowerUp_sprite_3
+    21300008: FB_PowerUp_sprite_4
+    21300010: FB_PowerUp_sprite_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,13 +40,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -1
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,9 +54,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
@@ -66,11 +72,184 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
-    physicsShape: []
+    sprites:
+    - serializedVersion: 2
+      name: FB_PowerUp_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 143
+        width: 104
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: FB_PowerUp_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 143
+        width: 104
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: FB_PowerUp_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 143
+        width: 104
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: FB_PowerUp_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 143
+        width: 104
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: FB_PowerUp_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 20
+        width: 104
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: FB_PowerUp_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 20
+        width: 104
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -247.07744, y: -4.0193634}
+      - {x: -247.03873, y: -112.31776}
+      - {x: -136.7016, y: -112.31776}
+      - {x: -136.96127, y: -3.7596817}
+    - - {x: -116.59679, y: -4.2790375}
+      - {x: -116.33711, y: -112.058075}
+      - {x: -3.9225616, y: -112.356476}
+      - {x: -4.1822357, y: -4.411209}
+    - - {x: -246.78168, y: 11.4487915}
+      - {x: -137.4744, y: 11.222382}
+      - {x: -137.2992, y: 120.55121}
+      - {x: -246.7008, y: 120.50809}
+    - - {x: -116.5968, y: 8.112808}
+      - {x: -3.9225616, y: 8.046738}
+      - {x: -4.1822357, y: 120.27904}
+      - {x: -116.856476, y: 120.6936}
+    - - {x: 116.674255, y: 120.01935}
+      - {x: 4.4031982, y: 120.61615}
+      - {x: 4.143524, y: 7.59346}
+      - {x: 116.5307, y: 7.825775}
+    - - {x: 245.15488, y: 120.27904}
+      - {x: 132.62418, y: 120.356476}
+      - {x: 133.14352, y: 7.59346}
+      - {x: 245.5307, y: 8.085434}
+    physicsShape:
+    - - {x: -240, y: -4.5}
+      - {x: -245, y: -12.5}
+      - {x: -245, y: -109.5}
+      - {x: -241, y: -110.5}
+      - {x: -139, y: -110.5}
+      - {x: -139, y: -9.5}
+      - {x: -140, y: -4.5}
+    - - {x: -112, y: -4.5}
+      - {x: -113, y: -5.5}
+      - {x: -113, y: -96.5}
+      - {x: -111, y: -110.5}
+      - {x: -17, y: -110.5}
+      - {x: -7, y: -99.5}
+      - {x: -7, y: -5.5}
+      - {x: -11, y: -4.5}
+    - - {x: -231, y: 118.5}
+      - {x: -245, y: 116.5}
+      - {x: -245, y: 22.5}
+      - {x: -234, y: 12.5}
+      - {x: -140, y: 12.5}
+      - {x: -139, y: 16.5}
+      - {x: -139, y: 117.5}
+      - {x: -140, y: 118.5}
+    - - {x: -7, y: 104.5}
+      - {x: -10, y: 111.5}
+      - {x: -14, y: 115.5}
+      - {x: -21, y: 118.5}
+      - {x: -99, y: 118.5}
+      - {x: -106, y: 115.5}
+      - {x: -110, y: 111.5}
+      - {x: -113, y: 104.5}
+      - {x: -113, y: 26.5}
+      - {x: -110, y: 19.5}
+      - {x: -106, y: 15.5}
+      - {x: -99, y: 12.5}
+      - {x: -21, y: 12.5}
+      - {x: -14, y: 15.5}
+      - {x: -10, y: 19.5}
+      - {x: -7, y: 26.5}
+    - - {x: 106, y: 118.5}
+      - {x: 13, y: 118.5}
+      - {x: 8, y: 110.5}
+      - {x: 8, y: 17.5}
+      - {x: 16, y: 12.5}
+      - {x: 109, y: 12.5}
+      - {x: 114, y: 20.5}
+      - {x: 114, y: 113.5}
+    - - {x: 235, y: 118.5}
+      - {x: 142, y: 118.5}
+      - {x: 137, y: 110.5}
+      - {x: 137, y: 17.5}
+      - {x: 145, y: 12.5}
+      - {x: 238, y: 12.5}
+      - {x: 243, y: 20.5}
+      - {x: 243, y: 113.5}
   spritePackingTag: 
   userData: 
   assetBundleName: 

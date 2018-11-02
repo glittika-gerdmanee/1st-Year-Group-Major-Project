@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4631621088319410}
   - component: {fileID: 198340185439019614}
   - component: {fileID: 199822138419335686}
+  - component: {fileID: 114749322871948106}
   m_Layer: 10
   m_Name: Flames
   m_TagString: Untagged
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1734649102457260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.1524143, y: 0, z: 0.26805902}
   m_LocalScale: {x: 0.43852144, y: 0.43852156, z: 0.43852156}
   m_Children:
   - {fileID: 4631621088319410}
@@ -131,6 +132,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &114749322871948106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065174544614420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d49bf938ec93d5409f2962eaf4e6af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114900647288050456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,6 +161,9 @@ MonoBehaviour:
   damage: 0
   stunDuration: 0
   explosionRadius: 0
+  deparentEffects: {fileID: 1065174544614420}
+  explosionEffect: {fileID: 1925692475331554, guid: a59ef2247dd1b2f4f8faa9813b59385a,
+    type: 2}
 --- !u!135 &135213635593527086
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -221,7 +236,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 708074977
+  randomSeed: 1417866381
   InitialModule:
     serializedVersion: 3
     enabled: 1

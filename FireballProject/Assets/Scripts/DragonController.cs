@@ -68,6 +68,18 @@ public class DragonController : Entity
     // can the dragon move
     public bool canMove = true;
 
+    // dash speed
+    public float dashSpeed = 0.0f;
+
+    // dash time
+    public float dashDuration = 0.0f;
+
+    // dash cooldown
+    public float dashCooldown = 0f;
+
+    // the direction to dash in
+    private Vector3 dashDirection = Vector3.zero;
+
     // the controller number assigned to the dragon
     [SerializeField]
     private ControllerNum controller = ControllerNum.Keyboard;
@@ -82,6 +94,7 @@ public class DragonController : Entity
     private string horizontalAxis = "";
     private string verticalAxis = "";
     private string shootButton = "";
+    private string dashButton = "";
 
     // score
     private int score = 0;
@@ -97,6 +110,15 @@ public class DragonController : Entity
 
     // reference to the score text
     ScoreDisplay scoreDisplay = null;
+
+    // dash duration timer
+    private float dashTimer = 0f;
+
+    // is the dragon dashing
+    private bool isDashing = false;
+
+    // dash cooldown timer
+    private float dashCooldownTimer = 0f;
 
     // get the dragons stats after aplying boosts from powerups
     public DragonStats GetModifiedStats()
@@ -189,6 +211,9 @@ public class DragonController : Entity
 
         // set default no powerup
         RemovePowerup();
+
+        // dash cooldown
+        dashCooldownTimer = dashCooldown;
     }
 
     // update is called once per frame
@@ -208,19 +233,13 @@ public class DragonController : Entity
         }
 
         // move the dragon
-        if (canMove && !IsStunned())
+        if (canMove && !IsStunned() && !isDashing)
         {
             // get movement vector
             Vector3 move = new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis));
 
             // move
             charController.Move(move * modifiedStats.moveSpeed * Time.deltaTime);
-
-            // movement animation
-            if (animator != null)
-            {
-                animator.SetBool("isMoving", move.magnitude > 0f);
-            }
         }
 
         // rotate the dragon
@@ -235,6 +254,54 @@ public class DragonController : Entity
             previousPos = transform.position;
         }
 
+        // dash
+        {
+            // dash cooldown
+            if (dashCooldownTimer < dashCooldown)
+            {
+                // increment timer
+                dashCooldownTimer += Time.deltaTime;
+            }
+
+            // start dash
+            if (Input.GetButtonDown(dashButton) && dashCooldownTimer >= dashCooldown && !isDashing)
+            {
+                // reset dash duration timer
+                dashTimer = 0f;
+
+                // set dash direction
+                dashDirection = transform.forward;
+
+                // start dash
+                isDashing = true;
+            }
+
+            // dash
+            if (isDashing)
+            {
+                // move
+                charController.Move(dashDirection * modifiedStats.moveSpeed * dashSpeed * Time.deltaTime);
+
+                // increment dash duration timer
+                dashTimer += Time.deltaTime;
+
+                // stop dashing
+                if (dashTimer >= dashDuration)
+                {
+                    isDashing = false;
+
+                    // reset dash cooldown
+                    dashCooldownTimer = 0f;
+                }
+            }
+        }
+
+        // movement animation
+        if (animator != null)
+        {
+            animator.SetBool("isMoving", (Input.GetAxis(horizontalAxis) != 0f) || (Input.GetAxis(verticalAxis) != 0f) || isDashing);
+        }
+
         // attack
         {
             // attack cooldown timer
@@ -246,7 +313,7 @@ public class DragonController : Entity
             // shoot a projectile
             if (Input.GetButtonDown(shootButton))
             {
-                if (canShoot && !IsStunned())
+                if (canShoot && !IsStunned() && !isDashing)
                 {
                     // has the cooldown finished
                     if (shotTimer >= modifiedStats.attackCooldown)
@@ -379,42 +446,47 @@ public class DragonController : Entity
                     horizontalAxis = "HorizontalK";
                     verticalAxis = "VerticalK";
                     shootButton = "ShootK";
+                    dashButton = "DashK";
 
                     break;
                 }
             case ControllerNum.Controller1:
                 {
-                    // assign controller 0
+                    // assign controller 1
                     horizontalAxis = "HorizontalC1";
                     verticalAxis = "VerticalC1";
                     shootButton = "ShootC1";
+                    dashButton = "DashC1";
 
                     break;
                 }
             case ControllerNum.Controller2:
                 {
-                    // assign controller 1
+                    // assign controller 2
                     horizontalAxis = "HorizontalC2";
                     verticalAxis = "VerticalC2";
                     shootButton = "ShootC2";
+                    dashButton = "DashC2";
 
                     break;
                 }
             case ControllerNum.Controller3:
                 {
-                    // assign controller 2
+                    // assign controller 3
                     horizontalAxis = "HorizontalC3";
                     verticalAxis = "VerticalC3";
                     shootButton = "ShootC3";
+                    dashButton = "DashC3";
 
                     break;
                 }
             case ControllerNum.Controller4:
                 {
-                    // assign controller 3
+                    // assign controller 4
                     horizontalAxis = "HorizontalC4";
                     verticalAxis = "VerticalC4";
                     shootButton = "ShootC4";
+                    dashButton = "DashC4";
 
                     break;
                 }

@@ -4329,6 +4329,9 @@ MonoBehaviour:
   animator: {fileID: 95257005028996402}
   canShoot: 1
   canMove: 1
+  dashSpeed: 5
+  dashDuration: 0.25
+  dashCooldown: 2
   controller: 0
 --- !u!114 &114990670472526590
 MonoBehaviour:
@@ -4760,7 +4763,7 @@ CharacterController:
   m_Radius: 0.31
   m_SlopeLimit: 0
   m_StepOffset: 0
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.1
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.32, z: 0}
 --- !u!212 &212527649809095080

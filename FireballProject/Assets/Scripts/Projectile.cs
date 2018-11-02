@@ -35,6 +35,12 @@ public class Projectile : MonoBehaviour
     // how large is the projectiles explosion
     public float explosionRadius = 0f;
 
+    // the particles to deparent after the projectile despawns
+    public GameObject deparentEffects = null;
+
+    // explosion effect
+    public GameObject explosionEffect = null;
+
     // reference to the rigidbody
     private Rigidbody rb = null;
 
@@ -87,6 +93,10 @@ public class Projectile : MonoBehaviour
         {
             Explode();
         }
+
+        // deparent effects
+        deparentEffects.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        deparentEffects.transform.SetParent(null);
 
         // destroy the projectile
         Destroy(gameObject);
@@ -167,24 +177,28 @@ public class Projectile : MonoBehaviour
     }
 
     // explodes the projectile damaging entities in the damage radius
+    [System.Obsolete]
     private void Explode()
     {
-        // find all entities
-        GameObject[] entities = GameObject.FindGameObjectsWithTag("Entity");
+        //// find all entities
+        //GameObject[] entities = GameObject.FindGameObjectsWithTag("Entity");
 
-        // damage them if they are within the radius
-        for (int i = 0; i < entities.Length; ++i)
-        {
-            // get vector from the projectile to the entity
-            Vector3 toEntity = entities[i].transform.position - transform.position;
+        //// damage them if they are within the radius
+        //for (int i = 0; i < entities.Length; ++i)
+        //{
+        //    // get vector from the projectile to the entity
+        //    Vector3 toEntity = entities[i].transform.position - transform.position;
 
-            // check the distance between the projectile and the entity
-            if (toEntity.magnitude <= explosionRadius)
-            {
-                // damage entity
-                entities[i].GetComponent<Entity>().Damage(damage);
-            }
-        }
+        //    // check the distance between the projectile and the entity
+        //    if (toEntity.magnitude <= explosionRadius)
+        //    {
+        //        // damage entity
+        //        entities[i].GetComponent<Entity>().Damage(damage);
+        //    }
+        //}
+
+        //// spawn explosion effect
+        //Instantiate(explosionEffect, transform.position, transform.rotation);
     }
 
     // find the highest parent of the gameobject

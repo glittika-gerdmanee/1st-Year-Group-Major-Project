@@ -4295,7 +4295,7 @@ MonoBehaviour:
   canTakeDamage: 1
   lockY: 1
   canTakeDamageWhileStunned: 1
-  deathEffect: {fileID: 1925692475331554, guid: a59ef2247dd1b2f4f8faa9813b59385a,
+  deathEffect: {fileID: 1143170212348502, guid: a59ef2247dd1b2f4f8faa9813b59385a,
     type: 2}
   healthBar: {fileID: 114990670472526590}
   currentHealth: 3
@@ -4310,7 +4310,7 @@ MonoBehaviour:
     attackType: 1
     attackDamage: -1
     stunDuration: 3
-    explosionRadius: 3
+    explosionRadius: 4
   playerNumber: 0
   iTime: 2
   canPickupPowerup: 1
@@ -4330,7 +4330,7 @@ MonoBehaviour:
   canShoot: 1
   canMove: 1
   dashSpeed: 5
-  dashDuration: 0.25
+  dashDuration: 0.225
   dashCooldown: 2
   controller: 0
 --- !u!114 &114990670472526590

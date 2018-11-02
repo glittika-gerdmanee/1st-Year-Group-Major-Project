@@ -358,7 +358,7 @@ public class DragonController : Entity
         // attack type
         {
             // moving projectile
-            if (modifiedStats.attackType == AttackType.Fireball || modifiedStats.attackType == AttackType.Freeze)
+            if (modifiedStats.attackType == AttackType.Fireball || modifiedStats.attackType == AttackType.Freeze || modifiedStats.attackType == AttackType.Bomb)
             {
                 // spawn projectile (fireball or freeze ball)
                 Projectile newProjectile = (Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation)).GetComponent<Projectile>();
@@ -371,18 +371,6 @@ public class DragonController : Entity
                 newProjectile.damage = modifiedStats.attackDamage;
                 newProjectile.stunDuration = modifiedStats.stunDuration;
                 newProjectile.SetVelocity(modifiedStats.projectileVelocity);
-            }
-            // stationary projectile (bomb)
-            else if (modifiedStats.attackType == AttackType.Bomb)
-            {
-                // spawn projectile
-                Projectile newProjectile = (Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation)).GetComponent<Projectile>();
-
-                // set projectile vars
-                newProjectile.owner = this;
-                newProjectile.lifespan = modifiedStats.projectileLifespan;
-                newProjectile.type = AttackToProjectileType(modifiedStats.attackType);
-                newProjectile.damage = modifiedStats.attackDamage;
                 newProjectile.explosionRadius = modifiedStats.explosionRadius;
             }
             // cone (fire breath)

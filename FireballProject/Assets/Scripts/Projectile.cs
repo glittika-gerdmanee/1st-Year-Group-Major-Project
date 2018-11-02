@@ -41,6 +41,9 @@ public class Projectile : MonoBehaviour
     // explosion effect
     public GameObject explosionEffect = null;
 
+    // explosion object
+    public GameObject explosion = null;
+
     // reference to the rigidbody
     private Rigidbody rb = null;
 
@@ -91,7 +94,13 @@ public class Projectile : MonoBehaviour
         // explode if this projectile is a bomb
         if (type == ProjectileType.Bomb)
         {
-            Explode();
+            // spawn explosion object
+            ExpandingExplosion newExplosion = Instantiate(explosion, transform.position, transform.rotation).GetComponent<ExpandingExplosion>();
+            newExplosion.endSize = explosionRadius;
+            newExplosion.hitDamage = damage;
+
+            // spawn explosion effect
+            Instantiate(explosionEffect, transform.position, transform.rotation);
         }
 
         // deparent effects

@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 63e7ed83ebf2632489d918c1d32b7416
-timeCreated: 1539233234
-licenseType: Free
+guid: 13ced40ef89855545bcb3cb573bd9c2c
+timeCreated: 1541631183
+licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: rock_big_thick
+    4300000: Bush1
     9500000: //RootNode
   externalObjects: {}
   materials:

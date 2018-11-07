@@ -957,7 +957,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1125467285823798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.2604065, y: 0, z: 2.7738914}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4942612615790862}
@@ -1135,6 +1135,9 @@ MonoBehaviour:
   dropChance: 0.25
   drop: {fileID: 1413962039736392, guid: 4bd0ac3ded4e536448507a48c697b8ee, type: 2}
   animator: {fileID: 95598994453863862}
+  renderers:
+  - {fileID: 137732323715021684}
+  - {fileID: 137944202799549786}
 --- !u!136 &136529620318163086
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1162,7 +1165,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: cd238386fdba3384b9f0ac3a386390ce, type: 2}
+  - {fileID: 2100000, guid: 101f2b6a48b64f14db96d015b37e904f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1221,7 +1224,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: eac430983b7978f40899d727cefb0a04, type: 2}
+  - {fileID: 2100000, guid: 101f2b6a48b64f14db96d015b37e904f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

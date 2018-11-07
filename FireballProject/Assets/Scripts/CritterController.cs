@@ -37,6 +37,9 @@ public class CritterController : Entity
     // animator controller
     public Animator animator = null;
 
+    // renderers to set the critters material
+    public Renderer[] renderers = new Renderer[1];
+
     // how many critters exist
     private static int critterCount = 0;
 
@@ -254,5 +257,14 @@ public class CritterController : Entity
 
         // allow movement
         canMove = true;
+    }
+
+    // sets the critters material
+    public void SetMaterial(Material mat)
+    {
+        for (int i = 0; i < renderers.Length; ++i)
+        {
+            renderers[i].material = mat;
+        }
     }
 }

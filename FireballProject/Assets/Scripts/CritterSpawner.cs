@@ -22,6 +22,9 @@ public class CritterSpawner : MonoBehaviour
     // minimum scale of a critter
     public float minScale = 0f;
 
+    // critter materials
+    public Material[] materials = new Material[1];
+
     // current spawn timer
     private float spawnTimer = 0f;
 	
@@ -65,6 +68,10 @@ public class CritterSpawner : MonoBehaviour
                             // modify movement speed
                             newCritter.GetComponent<CritterController>().movementSpeed *= rrInverse;
                         }
+
+                        // set random material of new critter
+                        int rMat = Random.Range(0, materials.Length);
+                        newCritter.GetComponent<CritterController>().SetMaterial(materials[rMat]);
 
                         // reset spawn timer
                         spawnTimer = 0f;

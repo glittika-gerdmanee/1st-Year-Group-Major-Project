@@ -238,6 +238,12 @@ public class DragonController : Entity
             // get movement vector
             Vector3 move = new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis));
 
+            // movement animation
+            if (animator != null)
+            {
+                animator.SetBool(("isMoving"), move.magnitude > 0);
+            }
+
             // move
             charController.Move(move * modifiedStats.moveSpeed * Time.deltaTime);
         }
@@ -264,7 +270,7 @@ public class DragonController : Entity
             }
 
             // start dash
-            if (Input.GetButtonDown(dashButton) && dashCooldownTimer >= dashCooldown && !isDashing)
+            if (Input.GetButtonDown(dashButton) && dashCooldownTimer >= dashCooldown && !isDashing && !IsStunned())
             {
                 // reset dash duration timer
                 dashTimer = 0f;
@@ -274,6 +280,12 @@ public class DragonController : Entity
 
                 // start dash
                 isDashing = true;
+
+                // start dash animation
+                if (animator != null)
+                {
+                    animator.SetTrigger("dash");
+                }
             }
 
             // dash
@@ -296,12 +308,6 @@ public class DragonController : Entity
             }
         }
 
-        // movement animation
-        if (animator != null)
-        {
-            animator.SetBool("isMoving", (Input.GetAxis(horizontalAxis) != 0f) || (Input.GetAxis(verticalAxis) != 0f) || isDashing);
-        }
-
         // attack
         {
             // attack cooldown timer
@@ -320,14 +326,14 @@ public class DragonController : Entity
                     {
                         Attack();
 
+                        // attack animation
+                        if (animator != null)
+                        {
+                            animator.SetTrigger("attack");
+                        }
+
                         // reset cooldown timer
                         shotTimer = 0f;
-                    }
-
-                    // attack animation
-                    if (animator != null)
-                    {
-                        animator.SetTrigger("attack");
                     }
 
                     // remove a single use attack powerup
@@ -403,6 +409,18 @@ public class DragonController : Entity
         Stun(deathStunTime);
     }
 
+    // override for stunning
+    public override void Stun(float duration)
+    {
+        base.Stun(duration);
+
+        // start stun animation
+        if (animator != null)
+        {
+            animator.SetTrigger("stun");
+        }
+    }
+
     // override for breaking stun
     public override void BreakStun()
     {
@@ -417,6 +435,12 @@ public class DragonController : Entity
         // start invincibility timer
         iTimer = 0f;
         canTakeDamage = false;
+
+        // stop stun animation
+        if (animator != null)
+        {
+            animator.SetTrigger("breakStun");
+        }
     }
 
     // set control inputs for the dragon

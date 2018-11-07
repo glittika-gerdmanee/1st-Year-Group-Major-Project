@@ -74,7 +74,8 @@ ModelImporter:
     2100000: lambert1
     4300000: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_body
     4300002: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_eyes
-    7400000: Take 001
+    7400000: BunnyIdle
+    7400002: BunnyHop
     9500000: //RootNode
     13700000: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_body
     13700002: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_eyes
@@ -106,7 +107,35 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: BunnyIdle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BunnyHop
       takeName: Take 001
       firstFrame: 1
       lastFrame: 29

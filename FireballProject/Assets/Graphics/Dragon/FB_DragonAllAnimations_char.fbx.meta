@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1c36153f27b266547ac88a35f94aa7ae
-timeCreated: 1541044546
+guid: 6ab549e6637524147998ca88c3c09c2e
+timeCreated: 1541628051
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -276,6 +276,7 @@ ModelImporter:
     400266: Dragon_Rig_0034:wingEnd_R_NULL
     400268: //RootNode
     2100000: lambert1
+    2100002: blinn1
     4300000: Dragon_Rig_0034:BabyDragon_retopo_0041:dragonBody_LP
     4300002: Dragon_Rig_0034:BabyDragon_retopo_0041:leftEye_LP
     4300004: Dragon_Rig_0034:BabyDragon_retopo_0041:rightEye_LP
@@ -283,7 +284,11 @@ ModelImporter:
     4300008: Dragon_Rig_0034:BabyDragon_retopo_0041:R_bottomEyelid
     4300010: Dragon_Rig_0034:BabyDragon_retopo_0041:L_topEyelid
     4300012: Dragon_Rig_0034:BabyDragon_retopo_0041:L_bottomEyelid
-    7400000: Take 001
+    7400000: DragonWalk
+    7400002: DragonShoot
+    7400004: DragonIdle
+    7400006: DragonStunned
+    7400008: DragonDash
     9500000: //RootNode
     13700000: Dragon_Rig_0034:BabyDragon_retopo_0041:dragonBody_LP
     13700002: Dragon_Rig_0034:BabyDragon_retopo_0041:L_bottomEyelid
@@ -320,7 +325,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: DragonWalk
       takeName: Take 001
       firstFrame: 1
       lastFrame: 55
@@ -331,6 +336,118 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: DragonShoot
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 71
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: DragonIdle
+      takeName: Take 001
+      firstFrame: 81
+      lastFrame: 109
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: DragonStunned
+      takeName: Take 001
+      firstFrame: 111
+      lastFrame: 118
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: DragonDash
+      takeName: Take 001
+      firstFrame: 121
+      lastFrame: 138
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

@@ -87,9 +87,6 @@ public class DragonController : Entity
     // for timing inbetween shots
     private float shotTimer = 0f;
 
-    // previous position of the dragon
-    private Vector3 previousPos = Vector3.zero;
-
     // control inputs
     private string horizontalAxis = "";
     private string verticalAxis = "";
@@ -197,9 +194,6 @@ public class DragonController : Entity
         // set controls
         SetControls(controller);
 
-        // set default value of previous position
-        previousPos = transform.position;
-
         // shot cooldown
         shotTimer = baseStats.attackCooldown;
 
@@ -246,18 +240,9 @@ public class DragonController : Entity
 
             // move
             charController.Move(move * modifiedStats.moveSpeed * Time.deltaTime);
-        }
-
-        // rotate the dragon
-        {
-            // get direction vector
-            Vector3 direction = transform.position - previousPos;
 
             // rotate the dragon
-            transform.LookAt(transform.position + direction);
-
-            // update the previous direction
-            previousPos = transform.position;
+            transform.LookAt(transform.position + move);
         }
 
         // dash

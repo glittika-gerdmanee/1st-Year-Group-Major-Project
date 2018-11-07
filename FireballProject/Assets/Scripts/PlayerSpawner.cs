@@ -14,10 +14,21 @@ public class PlayerSpawner : MonoBehaviour
     public GameObject[] spawnLocations = new GameObject[CharacterSelect.MAX_PLAYERS];
 
     // list of dragon materials
-    public Material[] materials = new Material[4];
+    public Material dragonBlue = null;
+    public Material dragonEyeBlue = null;
+    public Material dragonEyelidBlue = null;
+    public Material dragonGreen = null;
+    public Material dragonEyeGreen = null;
+    public Material dragonEyelidGreen = null;
+    public Material dragonRed = null;
+    public Material dragonEyeRed = null;
+    public Material dragonEyelidRed = null;
+    public Material dragonYellow = null;
+    public Material dragonEyeYellow = null;
+    public Material dragonEyelidYellow = null;
 
-	// Use this for initialization
-	void Start()
+    // Use this for initialization
+    void Start()
     {
         SpawnPlayers();
 	}
@@ -25,7 +36,7 @@ public class PlayerSpawner : MonoBehaviour
     // spawn a debug dragon
     public void SpawnDebugDragon(ControllerNum cNum)
     {
-        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, materials[0]);
+        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, dragonBlue, dragonEyeBlue, dragonEyelidBlue);
     }
 
     // spawn players
@@ -36,13 +47,58 @@ public class PlayerSpawner : MonoBehaviour
             // spawn players
             for (int i = 0; i < CharacterSelect.players.Count; ++i)
             {
-                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, materials[i]);
+                // get materials
+                Material mat = null;
+                Material eyeMat = null;
+                Material eyelidMat = null;
+                switch (i)
+                {
+                    case 0:
+                        {
+                            // blue
+                            mat = dragonBlue;
+                            eyeMat = dragonEyeBlue;
+                            eyelidMat = dragonEyelidBlue;
+
+                            break;
+                        }
+                    case 1:
+                        {
+                            // green
+                            mat = dragonGreen;
+                            eyeMat = dragonEyeGreen;
+                            eyelidMat = dragonEyelidGreen;
+
+                            break;
+                        }
+                    case 2:
+                        {
+                            // red
+                            mat = dragonRed;
+                            eyeMat = dragonEyeRed;
+                            eyelidMat = dragonEyelidRed;
+
+                            break;
+                        }
+                    case 3:
+                        {
+                            // yellow
+                            mat = dragonYellow;
+                            eyeMat = dragonEyeYellow;
+                            eyelidMat = dragonEyelidYellow;
+
+                            break;
+                        }
+                }
+
+                // spawn dragon
+                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, mat, eyeMat, eyelidMat);
             }
         }
     }
 
     // spawns a dragon
-    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat)
+    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat)
     {
         // spawn dragon
         DragonController newDragon = Instantiate(player, position, rotation).GetComponent<DragonController>();
@@ -54,16 +110,8 @@ public class PlayerSpawner : MonoBehaviour
         newDragon.playerNumber = playerNum;
 
         // set the dragons colour
-        newDragon.SetMaterial(mat);
+        newDragon.SetMaterial(mat, eyeMat, eyelidMat);
 
         return newDragon;
-    }
-
-    // gets a random dragon material
-    private Material RandomMaterial()
-    {
-        int r = Random.Range(0, materials.Length);
-
-        return materials[r];
     }
 }

@@ -590,7 +590,7 @@ public class DragonController : Entity
             for (int i = 0; i < dragonEyeRenderers.Length; ++i)
             {
                 // set the renderers material
-                dragonEyeRenderers[i].material = mat;
+                dragonEyeRenderers[i].material = eyeMat;
             }
         }
 
@@ -600,7 +600,7 @@ public class DragonController : Entity
             for (int i = 0; i < dragonEyelidRenderers.Length; ++i)
             {
                 // set the renderers material
-                dragonEyelidRenderers[i].material = mat;
+                dragonEyelidRenderers[i].material = eyelidMat;
             }
         }
     }

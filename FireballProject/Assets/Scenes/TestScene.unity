@@ -4353,8 +4353,60 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1667876646
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4692483577000658, guid: 587453c3b8eb1b24590e82b2e8731131, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.8482847
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692483577000658, guid: 587453c3b8eb1b24590e82b2e8731131, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692483577000658, guid: 587453c3b8eb1b24590e82b2e8731131, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.0211315
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692483577000658, guid: 587453c3b8eb1b24590e82b2e8731131, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692483577000658, guid: 587453c3b8eb1b24590e82b2e8731131, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692483577000658, guid: 587453c3b8eb1b24590e82b2e8731131, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692483577000658, guid: 587453c3b8eb1b24590e82b2e8731131, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692483577000658, guid: 587453c3b8eb1b24590e82b2e8731131, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 587453c3b8eb1b24590e82b2e8731131, type: 2}
+  m_IsPrefabParent: 0
+=======
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 81.677, y: -222.152, z: -214.87099}
+>>>>>>> 9438c3de17220bc1b2a088fb01d6b6b6531cb9ea
+=======
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+>>>>>>> parent of 5f7616c... Added proper dragon textures
 --- !u!4 &1671112430 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 095a899a77afab24281430f534dcec53, type: 3}

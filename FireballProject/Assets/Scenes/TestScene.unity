@@ -667,11 +667,18 @@ MonoBehaviour:
   - {fileID: 129217242}
   - {fileID: 1618644032}
   - {fileID: 942046088}
-  materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  dragonBlue: {fileID: 2100000, guid: 057eb26567bbab145bc1c48dd46989f6, type: 2}
+  dragonEyeBlue: {fileID: 2100000, guid: c3dd892168fbe894593ac3343f280e74, type: 2}
+  dragonEyelidBlue: {fileID: 2100000, guid: e4f11fdb56ecef04d9aacf193a410cb5, type: 2}
+  dragonGreen: {fileID: 2100000, guid: 11447caef30452d4bbe5e1e1809c7ce5, type: 2}
+  dragonEyeGreen: {fileID: 2100000, guid: ddc369aabb28bcc47bd3b836f71fd965, type: 2}
+  dragonEyelidGreen: {fileID: 2100000, guid: 9461a8132a21fe046bff6139bdcb55e2, type: 2}
+  dragonRed: {fileID: 2100000, guid: 1a694455aa7de7a4c895fe4e29c624bb, type: 2}
+  dragonEyeRed: {fileID: 2100000, guid: 10f0e18153847374f9ecc4d76a297a32, type: 2}
+  dragonEyelidRed: {fileID: 2100000, guid: 1a7077d6db2db1143bf668a99f997816, type: 2}
+  dragonYellow: {fileID: 2100000, guid: c92d9a33ae6a79c4a8673e41b37d4b4d, type: 2}
+  dragonEyeYellow: {fileID: 2100000, guid: 2dfc17e7558bf5642aad14fe93cf593c, type: 2}
+  dragonEyelidYellow: {fileID: 2100000, guid: f2002eac6723d044f91bd6b598bd47c7, type: 2}
 --- !u!114 &327466263
 MonoBehaviour:
   m_ObjectHideFlags: 0

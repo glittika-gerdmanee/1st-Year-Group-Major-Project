@@ -1,28 +1,16 @@
 fileFormatVersion: 2
-guid: 7c26935ea0868a04bb8f17fe0f30e3bc
-timeCreated: 1541631031
-licenseType: Pro
+guid: 78856d44b479fe54ca16d6b103bdb6e9
+timeCreated: 1539233235
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: rock_big_flat
-    100004: rock_pillar
-    100006: rock_small_flat_2
     400000: //RootNode
-    400002: rock_big_flat
-    400004: rock_pillar
-    400006: rock_small_flat_2
     2100000: lambert1
-    2300000: rock_big_flat
-    2300002: rock_pillar
-    2300004: rock_small_flat_2
-    3300000: rock_big_flat
-    3300002: rock_pillar
-    3300004: rock_small_flat_2
-    4300000: rock_pillar
-    4300002: rock_small_flat_2
-    4300004: rock_big_flat
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: rock_small_thick
     9500000: //RootNode
   externalObjects: {}
   materials:

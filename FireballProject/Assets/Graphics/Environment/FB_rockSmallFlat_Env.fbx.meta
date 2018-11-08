@@ -6,16 +6,11 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: rock_small_flat_2
     400000: //RootNode
-    400002: rock_small_flat_2
     2100000: lambert1
     2300000: //RootNode
-    2300002: rock_small_flat_2
     3300000: //RootNode
-    3300002: rock_small_flat_2
     4300000: rock_small_flat
-    4300002: rock_small_flat_2
     9500000: //RootNode
   externalObjects: {}
   materials:

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4f5e3f9539047ea4abcfd999c407a72a
-timeCreated: 1539233234
+guid: 67879e7787cfece4fa48f4d9098b7bba
+timeCreated: 1539233235
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: rock_big_flat
+    4300000: rock_small_flat_2
     9500000: //RootNode
   externalObjects: {}
   materials:

@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 4519499f063795042b7ba40dd7275693
-timeCreated: 1539233234
-licenseType: Free
+guid: 7cf9efb4c1b705547bc85a644fddfdb4
+timeCreated: 1541639364
+licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -10,12 +10,9 @@ ModelImporter:
     400000: //RootNode
     400002: rock_small_flat_2
     2100000: lambert1
-    2300000: //RootNode
-    2300002: rock_small_flat_2
-    3300000: //RootNode
-    3300002: rock_small_flat_2
-    4300000: rock_small_flat
-    4300002: rock_small_flat_2
+    2300000: rock_small_flat_2
+    3300000: rock_small_flat_2
+    4300000: rock_small_flat_2
     9500000: //RootNode
   externalObjects: {}
   materials:

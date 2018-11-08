@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
-	// load a scene
-    public void LoadScene(string sceneName)
+    // the selected scene
+    public static string currentScene = "";
+
+    // set the forest scene
+    public void SetLevel(string scene)
     {
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        currentScene = scene;
+
+        SceneManager.LoadScene("Scenes/CharacterSelect", LoadSceneMode.Single);
     }
 }

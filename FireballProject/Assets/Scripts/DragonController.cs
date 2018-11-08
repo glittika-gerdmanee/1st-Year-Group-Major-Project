@@ -186,6 +186,9 @@ public class DragonController : Entity
 
         // allow new powerup
         canPickupPowerup = true;
+
+        // set walk animation speed
+        animator.SetFloat("walkSpeed", 1f);
     }
 
     // use this for initialisation
@@ -397,6 +400,9 @@ public class DragonController : Entity
 
         // stun the dragon
         Stun(deathStunTime);
+
+        // remove powerup
+        RemovePowerup();
     }
 
     // override for stunning

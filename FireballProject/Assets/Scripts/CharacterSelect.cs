@@ -21,15 +21,15 @@ public class CharacterSelect : MonoBehaviour
     [HideInInspector]
     public static List<ControllerNum> players = new List<ControllerNum>();
 
-    // the scene to load in after players have joined
-    public string nextScene = "Scenes/Scene";
-
     // minimum amount of players to start the game
     public uint minPlayers = 2u;
 
     // text to change when a player joins
     // don't change the size of this list
     public GameObject[] playersDisplayText = new GameObject[MAX_PLAYERS];
+
+    // the scene to load in after players have joined
+    private string nextScene = "";
 
     // Use this for initialization
     void Start()
@@ -39,6 +39,9 @@ public class CharacterSelect : MonoBehaviour
 
         // set default joined player states
         UpdateJoinedPlayersDisplay();
+
+        // set the next scene
+        nextScene = LevelSelect.currentScene;
 	}
 	
 	// Update is called once per frame

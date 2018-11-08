@@ -163,6 +163,9 @@ public class DragonController : Entity
             // don't allow new powerup
             canPickupPowerup = false;
 
+            // set walk animation speed
+            animator.SetFloat("walkSpeed", newPowerup.stats.moveSpeed);
+
             return true;
         }
 

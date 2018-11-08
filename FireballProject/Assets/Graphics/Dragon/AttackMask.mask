@@ -105,25 +105,25 @@ AvatarMask:
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt/Dragon_Rig_0034:nose_jnt
     m_Weight: 1
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_L_jnt
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_L_jnt/Dragon_Rig_0034:wing02_L_jnt
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_L_jnt/Dragon_Rig_0034:wing02_L_jnt/Dragon_Rig_0034:wing03_L_jnt
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_L_jnt/Dragon_Rig_0034:wing02_L_jnt/Dragon_Rig_0034:wing03_L_jnt/Dragon_Rig_0034:wing04_L_jnt
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_L_jnt/Dragon_Rig_0034:wing02_L_jnt/Dragon_Rig_0034:wing03_L_jnt/Dragon_Rig_0034:wing04_L_jnt/Dragon_Rig_0034:wingEnd_L_NULL
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_R_jnt
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_R_jnt/Dragon_Rig_0034:wing02_R_jnt
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_R_jnt/Dragon_Rig_0034:wing02_R_jnt/Dragon_Rig_0034:wing03_R_jnt
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_R_jnt/Dragon_Rig_0034:wing02_R_jnt/Dragon_Rig_0034:wing03_R_jnt/Dragon_Rig_0034:wing04_R_jnt
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_R_jnt/Dragon_Rig_0034:wing02_R_jnt/Dragon_Rig_0034:wing03_R_jnt/Dragon_Rig_0034:wing04_R_jnt/Dragon_Rig_0034:wingEnd_R_NULL
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Dragon_Rig_0034:MASTER_ctrl
     m_Weight: 0
   - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_L_ctrl_NULL

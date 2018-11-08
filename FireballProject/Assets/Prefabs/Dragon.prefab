@@ -4332,7 +4332,7 @@ MonoBehaviour:
   canShoot: 1
   canMove: 1
   dashSpeed: 5
-  dashDuration: 0.225
+  dashDuration: 0.25
   dashCooldown: 2
   controller: 0
 --- !u!114 &114990670472526590

@@ -1,0 +1,280 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: AnimationMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:BabyDragon_retopo_0041:BabyDragon_LP
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:BabyDragon_retopo_0041:BabyDragon_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:dragonBody_LP
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:BabyDragon_retopo_0041:BabyDragon_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:Left_eye_LP
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:BabyDragon_retopo_0041:BabyDragon_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:Left_eye_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:L_bottomEyelid
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:BabyDragon_retopo_0041:BabyDragon_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:Left_eye_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:L_topEyelid
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:BabyDragon_retopo_0041:BabyDragon_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:leftEye_LP
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:BabyDragon_retopo_0041:BabyDragon_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:Right_eye_LP
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:BabyDragon_retopo_0041:BabyDragon_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:Right_eye_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:R_bottomEyelid
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:BabyDragon_retopo_0041:BabyDragon_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:Right_eye_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:R_topEyelid
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:BabyDragon_retopo_0041:BabyDragon_LP/Dragon_Rig_0034:BabyDragon_retopo_0041:rightEye_LP
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:backLeg_L_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:backLeg_L_jnt/Dragon_Rig_0034:backKnee_L_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:backLeg_L_jnt/Dragon_Rig_0034:backKnee_L_jnt/Dragon_Rig_0034:backAnkle_L_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:backLeg_L_jnt/Dragon_Rig_0034:backKnee_L_jnt/Dragon_Rig_0034:backAnkle_L_jnt/Dragon_Rig_0034:backFoot_L_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:backLeg_L_jnt/Dragon_Rig_0034:backKnee_L_jnt/Dragon_Rig_0034:backAnkle_L_jnt/Dragon_Rig_0034:backFoot_L_jnt/Dragon_Rig_0034:backToe_L_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:backLeg_R_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:backLeg_R_jnt/Dragon_Rig_0034:backKnee_R_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:backLeg_R_jnt/Dragon_Rig_0034:backKnee_R_jnt/Dragon_Rig_0034:backAnkle_R_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:backLeg_R_jnt/Dragon_Rig_0034:backKnee_R_jnt/Dragon_Rig_0034:backAnkle_R_jnt/Dragon_Rig_0034:backFoot_R_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:backLeg_R_jnt/Dragon_Rig_0034:backKnee_R_jnt/Dragon_Rig_0034:backAnkle_R_jnt/Dragon_Rig_0034:backFoot_R_jnt/Dragon_Rig_0034:backToe_R_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:rump_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:rump_jnt/Dragon_Rig_0034:tail01_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:rump_jnt/Dragon_Rig_0034:tail01_jnt/Dragon_Rig_0034:tail02_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:rump_jnt/Dragon_Rig_0034:tail01_jnt/Dragon_Rig_0034:tail02_jnt/Dragon_Rig_0034:tail03_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:rump_jnt/Dragon_Rig_0034:tail01_jnt/Dragon_Rig_0034:tail02_jnt/Dragon_Rig_0034:tail03_jnt/Dragon_Rig_0034:tail04_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:back_jnt/Dragon_Rig_0034:rump_jnt/Dragon_Rig_0034:tail01_jnt/Dragon_Rig_0034:tail02_jnt/Dragon_Rig_0034:tail03_jnt/Dragon_Rig_0034:tail04_jnt/Dragon_Rig_0034:tailEnd_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:frontLeg_L_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:frontLeg_L_jnt/Dragon_Rig_0034:frontKnee_L_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:frontLeg_L_jnt/Dragon_Rig_0034:frontKnee_L_jnt/Dragon_Rig_0034:frontAnkle_L_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:frontLeg_L_jnt/Dragon_Rig_0034:frontKnee_L_jnt/Dragon_Rig_0034:frontAnkle_L_jnt/Dragon_Rig_0034:frontToe_L_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:frontLeg_R_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:frontLeg_R_jnt/Dragon_Rig_0034:frontKnee_R_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:frontLeg_R_jnt/Dragon_Rig_0034:frontKnee_R_jnt/Dragon_Rig_0034:frontAnkle_R_jnt
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:frontLeg_R_jnt/Dragon_Rig_0034:frontKnee_R_jnt/Dragon_Rig_0034:frontAnkle_R_jnt/Dragon_Rig_0034:frontToe_R_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt/Dragon_Rig_0034:eye_L_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt/Dragon_Rig_0034:eye_R_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt/Dragon_Rig_0034:eyelidLower_L_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt/Dragon_Rig_0034:eyelidLower_R_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt/Dragon_Rig_0034:eyelidUpper_L_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt/Dragon_Rig_0034:eyelidUpper_R_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt/Dragon_Rig_0034:jaw_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt/Dragon_Rig_0034:jaw_jnt/Dragon_Rig_0034:jaw_NULL
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:head_jnt/Dragon_Rig_0034:nose_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_L_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_L_jnt/Dragon_Rig_0034:wing02_L_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_L_jnt/Dragon_Rig_0034:wing02_L_jnt/Dragon_Rig_0034:wing03_L_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_L_jnt/Dragon_Rig_0034:wing02_L_jnt/Dragon_Rig_0034:wing03_L_jnt/Dragon_Rig_0034:wing04_L_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_L_jnt/Dragon_Rig_0034:wing02_L_jnt/Dragon_Rig_0034:wing03_L_jnt/Dragon_Rig_0034:wing04_L_jnt/Dragon_Rig_0034:wingEnd_L_NULL
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_R_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_R_jnt/Dragon_Rig_0034:wing02_R_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_R_jnt/Dragon_Rig_0034:wing02_R_jnt/Dragon_Rig_0034:wing03_R_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_R_jnt/Dragon_Rig_0034:wing02_R_jnt/Dragon_Rig_0034:wing03_R_jnt/Dragon_Rig_0034:wing04_R_jnt
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:COG_jnt/Dragon_Rig_0034:front_jnt/Dragon_Rig_0034:wing01_R_jnt/Dragon_Rig_0034:wing02_R_jnt/Dragon_Rig_0034:wing03_R_jnt/Dragon_Rig_0034:wing04_R_jnt/Dragon_Rig_0034:wingEnd_R_NULL
+    m_Weight: 1
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_L_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_L_ctrl_NULL/Dragon_Rig_0034:backLeg_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_L_ctrl_NULL/Dragon_Rig_0034:backLeg_L_ctrl/Dragon_Rig_0034:backHeel_L_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_L_ctrl_NULL/Dragon_Rig_0034:backLeg_L_ctrl/Dragon_Rig_0034:backHeel_L_ctrl_NULL/Dragon_Rig_0034:backHeel_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_L_ctrl_NULL/Dragon_Rig_0034:backLeg_L_ctrl/Dragon_Rig_0034:backHeel_L_ctrl_NULL/Dragon_Rig_0034:backHeel_L_ctrl/Dragon_Rig_0034:backLeg_L_ikh
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_L_ctrl_NULL/Dragon_Rig_0034:backLeg_L_ctrl/Dragon_Rig_0034:backHeel_L_ctrl_NULL/Dragon_Rig_0034:backHeel_L_ctrl/Dragon_Rig_0034:backToe_L_ikh
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_R_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_R_ctrl_NULL/Dragon_Rig_0034:backLeg_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_R_ctrl_NULL/Dragon_Rig_0034:backLeg_R_ctrl/Dragon_Rig_0034:backHeel_R_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_R_ctrl_NULL/Dragon_Rig_0034:backLeg_R_ctrl/Dragon_Rig_0034:backHeel_R_ctrl_NULL/Dragon_Rig_0034:backHeel_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_R_ctrl_NULL/Dragon_Rig_0034:backLeg_R_ctrl/Dragon_Rig_0034:backHeel_R_ctrl_NULL/Dragon_Rig_0034:backHeel_R_ctrl/Dragon_Rig_0034:backLeg_R_ikh
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:backLeg_R_ctrl_NULL/Dragon_Rig_0034:backLeg_R_ctrl/Dragon_Rig_0034:backHeel_R_ctrl_NULL/Dragon_Rig_0034:backHeel_R_ctrl/Dragon_Rig_0034:backToe_R_ikh
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl/Dragon_Rig_0034:rump_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl/Dragon_Rig_0034:rump_ctrl_NULL/Dragon_Rig_0034:rump_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl/Dragon_Rig_0034:rump_ctrl_NULL/Dragon_Rig_0034:rump_ctrl/Dragon_Rig_0034:tail01_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl/Dragon_Rig_0034:rump_ctrl_NULL/Dragon_Rig_0034:rump_ctrl/Dragon_Rig_0034:tail01_ctrl_NULL/Dragon_Rig_0034:tail01_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl/Dragon_Rig_0034:rump_ctrl_NULL/Dragon_Rig_0034:rump_ctrl/Dragon_Rig_0034:tail01_ctrl_NULL/Dragon_Rig_0034:tail01_ctrl/Dragon_Rig_0034:tail02_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl/Dragon_Rig_0034:rump_ctrl_NULL/Dragon_Rig_0034:rump_ctrl/Dragon_Rig_0034:tail01_ctrl_NULL/Dragon_Rig_0034:tail01_ctrl/Dragon_Rig_0034:tail02_ctrl_NULL/Dragon_Rig_0034:tail02_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl/Dragon_Rig_0034:rump_ctrl_NULL/Dragon_Rig_0034:rump_ctrl/Dragon_Rig_0034:tail01_ctrl_NULL/Dragon_Rig_0034:tail01_ctrl/Dragon_Rig_0034:tail02_ctrl_NULL/Dragon_Rig_0034:tail02_ctrl/Dragon_Rig_0034:tail03_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl/Dragon_Rig_0034:rump_ctrl_NULL/Dragon_Rig_0034:rump_ctrl/Dragon_Rig_0034:tail01_ctrl_NULL/Dragon_Rig_0034:tail01_ctrl/Dragon_Rig_0034:tail02_ctrl_NULL/Dragon_Rig_0034:tail02_ctrl/Dragon_Rig_0034:tail03_ctrl_NULL/Dragon_Rig_0034:tail03_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl/Dragon_Rig_0034:rump_ctrl_NULL/Dragon_Rig_0034:rump_ctrl/Dragon_Rig_0034:tail01_ctrl_NULL/Dragon_Rig_0034:tail01_ctrl/Dragon_Rig_0034:tail02_ctrl_NULL/Dragon_Rig_0034:tail02_ctrl/Dragon_Rig_0034:tail03_ctrl_NULL/Dragon_Rig_0034:tail03_ctrl/Dragon_Rig_0034:tail04_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:back_ctrl_NULL/Dragon_Rig_0034:back_ctrl/Dragon_Rig_0034:rump_ctrl_NULL/Dragon_Rig_0034:rump_ctrl/Dragon_Rig_0034:tail01_ctrl_NULL/Dragon_Rig_0034:tail01_ctrl/Dragon_Rig_0034:tail02_ctrl_NULL/Dragon_Rig_0034:tail02_ctrl/Dragon_Rig_0034:tail03_ctrl_NULL/Dragon_Rig_0034:tail03_ctrl/Dragon_Rig_0034:tail04_ctrl_NULL/Dragon_Rig_0034:tail04_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyelidLower_L_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyelidLower_L_ctrl_NULL/Dragon_Rig_0034:eyelidLower_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyelidLower_R_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyelidLower_R_ctrl_NULL/Dragon_Rig_0034:eyelidLower_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyelidUpper_L_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyelidUpper_L_ctrl_NULL/Dragon_Rig_0034:eyelidUpper_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyelidUpper_R_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyelidUpper_R_ctrl_NULL/Dragon_Rig_0034:eyelidUpper_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyeMaster_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyeMaster_ctrl/Dragon_Rig_0034:eye_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:eyeMaster_ctrl/Dragon_Rig_0034:eye_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:jaw_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:jaw_ctrl_NULL/Dragon_Rig_0034:jaw_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:nose_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:head_ctrl_NULL/Dragon_Rig_0034:head_ctrl/Dragon_Rig_0034:nose_ctrl_NULL/Dragon_Rig_0034:nose_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_L_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_L_ctrl_NULL/Dragon_Rig_0034:wing01_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_L_ctrl_NULL/Dragon_Rig_0034:wing01_L_ctrl/Dragon_Rig_0034:wing02_L_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_L_ctrl_NULL/Dragon_Rig_0034:wing01_L_ctrl/Dragon_Rig_0034:wing02_L_ctrl_NULL/Dragon_Rig_0034:wing02_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_L_ctrl_NULL/Dragon_Rig_0034:wing01_L_ctrl/Dragon_Rig_0034:wing02_L_ctrl_NULL/Dragon_Rig_0034:wing02_L_ctrl/Dragon_Rig_0034:wing03_L_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_L_ctrl_NULL/Dragon_Rig_0034:wing01_L_ctrl/Dragon_Rig_0034:wing02_L_ctrl_NULL/Dragon_Rig_0034:wing02_L_ctrl/Dragon_Rig_0034:wing03_L_ctrl_NULL/Dragon_Rig_0034:wing03_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_L_ctrl_NULL/Dragon_Rig_0034:wing01_L_ctrl/Dragon_Rig_0034:wing02_L_ctrl_NULL/Dragon_Rig_0034:wing02_L_ctrl/Dragon_Rig_0034:wing03_L_ctrl_NULL/Dragon_Rig_0034:wing03_L_ctrl/Dragon_Rig_0034:wing04_L_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_L_ctrl_NULL/Dragon_Rig_0034:wing01_L_ctrl/Dragon_Rig_0034:wing02_L_ctrl_NULL/Dragon_Rig_0034:wing02_L_ctrl/Dragon_Rig_0034:wing03_L_ctrl_NULL/Dragon_Rig_0034:wing03_L_ctrl/Dragon_Rig_0034:wing04_L_ctrl_NULL/Dragon_Rig_0034:wing04_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_R_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_R_ctrl_NULL/Dragon_Rig_0034:wing01_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_R_ctrl_NULL/Dragon_Rig_0034:wing01_R_ctrl/Dragon_Rig_0034:wing02_R_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_R_ctrl_NULL/Dragon_Rig_0034:wing01_R_ctrl/Dragon_Rig_0034:wing02_R_ctrl_NULL/Dragon_Rig_0034:wing02_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_R_ctrl_NULL/Dragon_Rig_0034:wing01_R_ctrl/Dragon_Rig_0034:wing02_R_ctrl_NULL/Dragon_Rig_0034:wing02_R_ctrl/Dragon_Rig_0034:wing03_R_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_R_ctrl_NULL/Dragon_Rig_0034:wing01_R_ctrl/Dragon_Rig_0034:wing02_R_ctrl_NULL/Dragon_Rig_0034:wing02_R_ctrl/Dragon_Rig_0034:wing03_R_ctrl_NULL/Dragon_Rig_0034:wing03_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_R_ctrl_NULL/Dragon_Rig_0034:wing01_R_ctrl/Dragon_Rig_0034:wing02_R_ctrl_NULL/Dragon_Rig_0034:wing02_R_ctrl/Dragon_Rig_0034:wing03_R_ctrl_NULL/Dragon_Rig_0034:wing03_R_ctrl/Dragon_Rig_0034:wing04_R_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:COG_ctrl/Dragon_Rig_0034:front_ctrl_NULL/Dragon_Rig_0034:front_ctrl/Dragon_Rig_0034:wing01_R_ctrl_NULL/Dragon_Rig_0034:wing01_R_ctrl/Dragon_Rig_0034:wing02_R_ctrl_NULL/Dragon_Rig_0034:wing02_R_ctrl/Dragon_Rig_0034:wing03_R_ctrl_NULL/Dragon_Rig_0034:wing03_R_ctrl/Dragon_Rig_0034:wing04_R_ctrl_NULL/Dragon_Rig_0034:wing04_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_L_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_L_ctrl_NULL/Dragon_Rig_0034:frontLeg_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_L_ctrl_NULL/Dragon_Rig_0034:frontLeg_L_ctrl/Dragon_Rig_0034:frontHeel_L_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_L_ctrl_NULL/Dragon_Rig_0034:frontLeg_L_ctrl/Dragon_Rig_0034:frontHeel_L_ctrl_NULL/Dragon_Rig_0034:frontHeel_L_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_L_ctrl_NULL/Dragon_Rig_0034:frontLeg_L_ctrl/Dragon_Rig_0034:frontHeel_L_ctrl_NULL/Dragon_Rig_0034:frontHeel_L_ctrl/Dragon_Rig_0034:frontLeg_L_ikh
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_L_ctrl_NULL/Dragon_Rig_0034:frontLeg_L_ctrl/Dragon_Rig_0034:frontHeel_L_ctrl_NULL/Dragon_Rig_0034:frontHeel_L_ctrl/Dragon_Rig_0034:frontToe_L_ikh
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_R_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_R_ctrl_NULL/Dragon_Rig_0034:frontLeg_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_R_ctrl_NULL/Dragon_Rig_0034:frontLeg_R_ctrl/Dragon_Rig_0034:frontHeel_R_ctrl_NULL
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_R_ctrl_NULL/Dragon_Rig_0034:frontLeg_R_ctrl/Dragon_Rig_0034:frontHeel_R_ctrl_NULL/Dragon_Rig_0034:frontHeel_R_ctrl
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_R_ctrl_NULL/Dragon_Rig_0034:frontLeg_R_ctrl/Dragon_Rig_0034:frontHeel_R_ctrl_NULL/Dragon_Rig_0034:frontHeel_R_ctrl/Dragon_Rig_0034:frontLeg_R_ikh
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:frontLeg_R_ctrl_NULL/Dragon_Rig_0034:frontLeg_R_ctrl/Dragon_Rig_0034:frontHeel_R_ctrl_NULL/Dragon_Rig_0034:frontHeel_R_ctrl/Dragon_Rig_0034:frontToe_R_ikh
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:PV_back_L
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:PV_back_R
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:PV_front_L
+    m_Weight: 0
+  - m_Path: Dragon_Rig_0034:MASTER_ctrl/Dragon_Rig_0034:PV_front_R
+    m_Weight: 0

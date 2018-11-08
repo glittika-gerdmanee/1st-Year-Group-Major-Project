@@ -25,6 +25,9 @@ public class CritterSpawner : MonoBehaviour
     // critter materials
     public Material[] materials = new Material[1];
 
+    // critter death effects
+    public GameObject[] deathEffects = new GameObject[1];
+
     // current spawn timer
     private float spawnTimer = 0f;
 	
@@ -57,6 +60,8 @@ public class CritterSpawner : MonoBehaviour
                         float rr = Random.Range(minScale, maxScale);
                         newCritter.transform.localScale = newCritter.transform.localScale * rr;
 
+                        CritterController newCritterController = newCritter.GetComponent<CritterController>();
+
                         // set move speed of critter based on it's randomised scale
                         {
                             // get rr average
@@ -66,12 +71,15 @@ public class CritterSpawner : MonoBehaviour
                             float rrInverse = rrAverage + (rrAverage - rr);
 
                             // modify movement speed
-                            newCritter.GetComponent<CritterController>().movementSpeed *= rrInverse;
+                            newCritterController.movementSpeed *= rrInverse;
                         }
 
                         // set random material of new critter
                         int rMat = Random.Range(0, materials.Length);
-                        newCritter.GetComponent<CritterController>().SetMaterial(materials[rMat]);
+                        newCritterController.SetMaterial(materials[rMat]);
+
+                        // set death effect of critter based on it's texture colour
+                        newCritterController.deathEffect = deathEffects[rMat];
 
                         // reset spawn timer
                         spawnTimer = 0f;

@@ -56,10 +56,8 @@ public class DragonController : Entity
     // sprite to display the current powerup
     public SpriteRenderer powerupSprite = null;
 
-    // reference to the renderers to change the material
-    public Renderer[] dragonRenderers = new Renderer[1];
-    public Renderer[] dragonEyeRenderers = new Renderer[1];
-    public Renderer[] dragonEyelidRenderers = new Renderer[1];
+    // reference to the model to change the material
+    public Renderer[] dragonMesh = new Renderer[1];
 
     // animator controller
     public Animator animator = null;
@@ -572,35 +570,14 @@ public class DragonController : Entity
     }
 
     // sets the dragons material
-    public void SetMaterial(Material mat, Material eyeMat, Material eyelidMat)
+    public void SetMaterial(Material mat)
     {
-        // body
-        if (dragonRenderers.Length > 0)
+        if (dragonMesh.Length > 0)
         {
-            for (int i = 0; i < dragonRenderers.Length; ++i)
+            for (int i = 0; i < dragonMesh.Length; ++i)
             {
                 // set the renderers material
-                dragonRenderers[i].material = mat;
-            }
-        }
-
-        // eye
-        if (dragonEyeRenderers.Length > 0)
-        {
-            for (int i = 0; i < dragonEyeRenderers.Length; ++i)
-            {
-                // set the renderers material
-                dragonEyeRenderers[i].material = mat;
-            }
-        }
-
-        // eyelid
-        if (dragonEyelidRenderers.Length > 0)
-        {
-            for (int i = 0; i < dragonEyelidRenderers.Length; ++i)
-            {
-                // set the renderers material
-                dragonEyelidRenderers[i].material = mat;
+                dragonMesh[i].material = mat;
             }
         }
     }

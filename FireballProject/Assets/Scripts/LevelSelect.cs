@@ -9,17 +9,9 @@ public class LevelSelect : MonoBehaviour
     public static string currentScene = "";
 
     // set the forest scene
-    public void SetForestLevel()
+    public void SetLevel(string scene)
     {
-        currentScene = "Scenes/ForestLevel";
-
-        SceneManager.LoadScene("Scenes/CharacterSelect", LoadSceneMode.Single);
-    }
-
-    // set the ice scene
-    public void SetIceLevel()
-    {
-        currentScene = "Scenes/IceLevel";
+        currentScene = scene;
 
         SceneManager.LoadScene("Scenes/CharacterSelect", LoadSceneMode.Single);
     }

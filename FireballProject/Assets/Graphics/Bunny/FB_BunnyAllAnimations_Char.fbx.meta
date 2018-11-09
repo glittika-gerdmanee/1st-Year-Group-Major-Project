@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0629fc4ee55f6624b9e189372ecc3a23
-timeCreated: 1539922905
+guid: f47a2d8722db9cb4aab966f89fbf8902
+timeCreated: 1541725493
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -74,8 +74,9 @@ ModelImporter:
     2100000: lambert1
     4300000: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_body
     4300002: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_eyes
-    7400000: BunnyIdle
-    7400002: BunnyHop
+    7400000: BunnyHop
+    7400002: BunnyIdle
+    7400004: BunnyDeath
     9500000: //RootNode
     13700000: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_body
     13700002: Bunny_Rig_0010:Bunny_LP_0010:Bunny_LP_eyes
@@ -107,10 +108,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: BunnyIdle
+      name: BunnyHop
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 2
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -135,10 +136,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BunnyHop
+      name: BunnyIdle
       takeName: Take 001
-      firstFrame: 1
-      lastFrame: 29
+      firstFrame: 32
+      lastFrame: 110
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -146,6 +147,34 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BunnyDeath
+      takeName: Take 001
+      firstFrame: 112
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

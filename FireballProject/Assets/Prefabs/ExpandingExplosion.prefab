@@ -99,6 +99,8 @@ MonoBehaviour:
   endSize: 3
   expansionSpeed: 3
   hitDamage: -1
+  explosionMark: {fileID: 1115815485143218, guid: cb4447e53661e40438534c97aeb4e6f6,
+    type: 2}
 --- !u!135 &135237103254987994
 SphereCollider:
   m_ObjectHideFlags: 1

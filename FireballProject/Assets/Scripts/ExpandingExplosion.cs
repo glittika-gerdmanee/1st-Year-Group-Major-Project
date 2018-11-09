@@ -16,6 +16,9 @@ public class ExpandingExplosion : MonoBehaviour
     // hit damage
     public int hitDamage = 0;
 
+    // explosion blast projector
+    public GameObject explosionMark = null;
+
     // lerp value
     private float lerpVal = 0f;
 
@@ -27,6 +30,9 @@ public class ExpandingExplosion : MonoBehaviour
     {
         // set default size
         transform.localScale = new Vector3(startSize, startSize, startSize);
+
+        // spawn explosion mark
+        Instantiate(explosionMark, transform.position, Quaternion.Euler(90f, 0f, 0f));
 	}
 	
 	// Update is called once per frame

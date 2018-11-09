@@ -1956,8 +1956,8 @@ MonoBehaviour:
   - {fileID: 0}
   maxCritters: 20
   spawnCooldown: 0.75
-  maxScale: 1.3
-  minScale: 0.7
+  maxScale: 2
+  minScale: 1
   materials:
   - {fileID: 2100000, guid: cd238386fdba3384b9f0ac3a386390ce, type: 2}
   - {fileID: 2100000, guid: 8116a2de8ffc9f84eb953f146423a6d2, type: 2}

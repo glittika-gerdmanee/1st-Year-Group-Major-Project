@@ -40,6 +40,9 @@ public class CharacterSelect : MonoBehaviour
         // set default joined player states
         UpdateJoinedPlayersDisplay();
 
+        // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        LevelSelect.currentScene = "Scenes/ForestLevel";
+
         // set the next scene
         nextScene = LevelSelect.currentScene;
 	}

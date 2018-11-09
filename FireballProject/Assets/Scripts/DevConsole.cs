@@ -196,6 +196,9 @@ public class DevConsole : MonoBehaviour
 
             // stun
             commands.Add("stun", StunCommand);
+
+            // nocritter
+            commands.Add("nocritters", NoCrittersCommand);
         }
     }
 
@@ -296,6 +299,7 @@ public class DevConsole : MonoBehaviour
             Log("command: poweruplist \"displays a list of powerups\"");
             Log("command: kill <string entityType> \"kills all specified entities, types are 'critter', 'dragon', or 'all'\"");
             Log("command: stun <string entityType> <float duration> \"kills all specified entities, types are 'critter', 'dragon', or 'all'\"");
+            Log("command: nocritters \"kills all critters and stops more critters from spawning\"");
 
             return "";
         }
@@ -639,6 +643,36 @@ public class DevConsole : MonoBehaviour
         {
             // invalid parameters
             return GetInvalidArgsErrorMessage("stun", args);
+        }
+    }
+
+    // nocritters command
+    // args: none
+    private string NoCrittersCommand(string[] args)
+    {
+        // check args
+        if (args.Length == 0)
+        {
+            // set max critters to zero
+            string output1 = ProcessCommand("maxcritters 0");
+            if (output1 != "")
+            {
+                Log(output1);
+            }
+
+            // kill all critters
+            string output2 = ProcessCommand("kill critter");
+            if (output2 != "")
+            {
+                Log(output2);
+            }
+
+            return "";
+        }
+        else
+        {
+            // invalid parameters
+            return GetInvalidArgsErrorMessage("nocritter", args);
         }
     }
 }

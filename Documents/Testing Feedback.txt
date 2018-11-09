@@ -1,0 +1,23 @@
+- head bobbing while dead - shoot just before death
+- bomb lost instantly
+- flame cone still active while stunned
+- animation for getting points
+- fix sped up dash
+- show when powerups are going to despawn
+- max powerups = amount of players
+- shoot cooldown bar
+- dash cooldown bar
+- make it more clear that the bunnies are bunnies - bigger?
+- more clear what powerups are
+- 321-fight
+	tutorial pictures
+- knockback to prevent dragons mashing against each other
+- stage hazards
+- hold to charge shot
+- health items
+- more max mealth
+- buff freeze attack
+- slightly speed up default movement speed
+- help screen
+- fix main menu
+- melee attack

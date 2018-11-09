@@ -9,7 +9,8 @@ public enum PowerupType
     FreezeAttack,
     BombAttack,
     PierceAttack,
-    ShotInterval
+    ShotInterval,
+    Health
 }
 
 public class Powerup

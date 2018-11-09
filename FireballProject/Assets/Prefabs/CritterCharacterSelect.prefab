@@ -1126,7 +1126,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   currentHealth: 1
   maxHealth: 1
-  movementSpeed: 1
+  movementSpeed: 0.7
   wanderEndRange: 0.1
   maxWanderTime: 5
   maxIdleTime: 3

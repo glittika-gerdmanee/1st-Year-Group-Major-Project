@@ -400,9 +400,6 @@ public class DragonController : Entity
 
         // stun the dragon
         Stun(deathStunTime);
-
-        // remove powerup
-        RemovePowerup();
     }
 
     // override for stunning
@@ -415,6 +412,9 @@ public class DragonController : Entity
         {
             animator.SetTrigger("stun");
         }
+
+        // remove powerup on stun
+        RemovePowerup();
     }
 
     // override for breaking stun

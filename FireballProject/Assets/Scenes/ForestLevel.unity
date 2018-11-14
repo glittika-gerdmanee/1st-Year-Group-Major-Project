@@ -7343,6 +7343,53 @@ Transform:
   m_PrefabParentObject: {fileID: 4198074817660644, guid: 737ce1301e5f3c04bb14fb3622b8d6e9,
     type: 2}
   m_PrefabInternal: {fileID: 1069478838}
+--- !u!1 &1078142425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1078142427}
+  - component: {fileID: 1078142426}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1078142426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078142425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5af8671f9055d4196fff10c344d5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragons: []
+  lerpSpeed: 2
+  maxZoom: 100
+  minCamX: -1.5
+  maxCamX: 1.5
+  buffer: 0
+--- !u!4 &1078142427
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1078142425}
+  m_LocalRotation: {x: 0.5379361, y: -0, z: -0, w: 0.8429857}
+  m_LocalPosition: {x: 0, y: 15.41, z: -7.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1276163489}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1099143791
 Prefab:
   m_ObjectHideFlags: 0
@@ -8822,7 +8869,6 @@ GameObject:
   - component: {fileID: 1276163487}
   - component: {fileID: 1276163486}
   - component: {fileID: 1276163490}
-  - component: {fileID: 1276163491}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8886,11 +8932,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1276163485}
-  m_LocalRotation: {x: 0.5379361, y: -0, z: -0, w: 0.8429857}
-  m_LocalPosition: {x: 0, y: 15.41, z: -7.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1078142427}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 65.087006, y: 0, z: 0}
 --- !u!114 &1276163490
@@ -8905,22 +8951,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: a351b3a7a14781b408b60ed48d327381, type: 2}
---- !u!114 &1276163491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1276163485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed5af8671f9055d4196fff10c344d5c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragons: []
-  lerpSpeed: 2
-  maxXPos: 100
-  minFov: 30
-  maxFov: 40
 --- !u!1001 &1276235691
 Prefab:
   m_ObjectHideFlags: 0

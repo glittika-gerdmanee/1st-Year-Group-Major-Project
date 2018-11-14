@@ -79,6 +79,9 @@ public class DragonController : Entity
     // dash cooldown
     public float dashCooldown = 0f;
 
+    // ui object
+    public GameObject uiObj = null;
+
     // the direction to dash in
     private Vector3 dashDirection = Vector3.zero;
 
@@ -158,7 +161,14 @@ public class DragonController : Entity
             modifiedStats = GetModifiedStats();
 
             // set the powerup display sprite
-            powerupSprite.sprite = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>().sprites[(int)(powerup.type)];
+            try
+            {
+                powerupSprite.sprite = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>().sprites[(int)(powerup.type)];
+            }
+            catch
+            {
+                Debug.Log("error");
+            }
 
             // don't allow new powerup
             canPickupPowerup = false;
@@ -613,4 +623,16 @@ public class DragonController : Entity
             }
         }
     }
+
+    // face the ui towards the camera
+    protected override void LateUpdate()
+    {
+        base.LateUpdate();
+
+        if (uiObj != null)
+        {
+            uiObj.transform.LookAt(cam.transform.position);
+        }
+    }
+
 }

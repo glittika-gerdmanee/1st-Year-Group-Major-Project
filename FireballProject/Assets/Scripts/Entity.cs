@@ -6,7 +6,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     // the camera
-    public Vector3 camPos = Vector3.zero;
+    public Camera cam = null;
 
     // can the entity take damage and die
     public bool canTakeDamage = true;
@@ -63,6 +63,9 @@ public class Entity : MonoBehaviour
         {
             healthBar.UpdateBar((uint)currentHealth);
         }
+
+        // find the camera
+        cam = FindObjectOfType<Camera>();
 	}
 
     // Update is called once per frame
@@ -86,13 +89,6 @@ public class Entity : MonoBehaviour
     // late update is called once per frame after update
     protected virtual void LateUpdate()
     {
-        // make health bar face the camera
-        if (healthBar != null)
-        {
-            // look at the camera object
-            healthBar.transform.LookAt(camPos);
-        }
-
         // reset y position
         if (lockY)
         {

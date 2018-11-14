@@ -98,6 +98,7 @@ public class Projectile : MonoBehaviour
             ExpandingExplosion newExplosion = Instantiate(explosion, transform.position, transform.rotation).GetComponent<ExpandingExplosion>();
             newExplosion.endSize = explosionRadius;
             newExplosion.hitDamage = damage;
+            newExplosion.owner = owner;
 
             // spawn explosion effect
             Instantiate(explosionEffect, transform.position, transform.rotation);

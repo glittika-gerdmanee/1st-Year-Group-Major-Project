@@ -527,8 +527,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 54662613}
+<<<<<<< HEAD
   m_Layer: 5
   m_Name: Health
+=======
+  - component: {fileID: 54662614}
+  m_Layer: 5
+  m_Name: Health1
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -555,6 +561,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+=======
+--- !u!114 &54662614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54662612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f94992e0e814134f8c6ca0a46f1a1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  sprites:
+  - {fileID: 1443117046}
+  - {fileID: 1149500920}
+  - {fileID: 570134306}
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
 --- !u!1001 &92430315
 Prefab:
   m_ObjectHideFlags: 0
@@ -888,11 +913,14 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1129, y: -77}
   m_SizeDelta: {x: 280, y: 130}
 =======
+=======
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -151, y: -77}
@@ -2164,8 +2192,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 299539516}
+<<<<<<< HEAD
   m_Layer: 5
   m_Name: Health
+=======
+  - component: {fileID: 299539517}
+  m_Layer: 5
+  m_Name: Health4
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2192,6 +2226,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+=======
+--- !u!114 &299539517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 299539515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f94992e0e814134f8c6ca0a46f1a1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  sprites:
+  - {fileID: 839064968}
+  - {fileID: 1739260331}
+  - {fileID: 1174926264}
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
 --- !u!1001 &300073317
 Prefab:
   m_ObjectHideFlags: 0
@@ -2445,6 +2498,11 @@ MonoBehaviour:
   dragonYellow: {fileID: 2100000, guid: c92d9a33ae6a79c4a8673e41b37d4b4d, type: 2}
   dragonEyeYellow: {fileID: 2100000, guid: 2dfc17e7558bf5642aad14fe93cf593c, type: 2}
   dragonEyelidYellow: {fileID: 2100000, guid: f2002eac6723d044f91bd6b598bd47c7, type: 2}
+  healthBars:
+  - {fileID: 54662614}
+  - {fileID: 1010805443}
+  - {fileID: 1375030250}
+  - {fileID: 299539517}
 --- !u!114 &327466263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5299,11 +5357,14 @@ RectTransform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1129, y: -637.86456}
   m_SizeDelta: {x: 280, y: 130}
 =======
+=======
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -151, y: 82.13544}
@@ -5376,10 +5437,14 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 1077, y: -88}
 =======
   m_AnchoredPosition: {x: 95.5, y: -75.99997}
 >>>>>>> 95b8040e3e62cccee2a5870fe317f8cfd7a8f3ba
+=======
+  m_AnchoredPosition: {x: 95.5, y: -75.99997}
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
   m_SizeDelta: {x: 898.57, y: 169.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726161315
@@ -6677,8 +6742,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1010805442}
+<<<<<<< HEAD
   m_Layer: 5
   m_Name: Health
+=======
+  - component: {fileID: 1010805443}
+  m_Layer: 5
+  m_Name: Health2
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6705,6 +6776,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+=======
+--- !u!114 &1010805443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010805441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f94992e0e814134f8c6ca0a46f1a1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  sprites:
+  - {fileID: 1841372046}
+  - {fileID: 1861197641}
+  - {fileID: 143036286}
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
 --- !u!1001 &1032900137
 Prefab:
   m_ObjectHideFlags: 0
@@ -7440,10 +7530,14 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 1077, y: -648.7429}
 =======
   m_AnchoredPosition: {x: 95.5, y: -75.878296}
 >>>>>>> 95b8040e3e62cccee2a5870fe317f8cfd7a8f3ba
+=======
+  m_AnchoredPosition: {x: 95.5, y: -75.878296}
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
   m_SizeDelta: {x: 898.57, y: 169.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124493207
@@ -9216,8 +9310,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1375030249}
+<<<<<<< HEAD
   m_Layer: 5
   m_Name: Health
+=======
+  - component: {fileID: 1375030250}
+  m_Layer: 5
+  m_Name: Health3
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9244,6 +9344,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
+=======
+--- !u!114 &1375030250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1375030248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f94992e0e814134f8c6ca0a46f1a1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  sprites:
+  - {fileID: 277136177}
+  - {fileID: 790444320}
+  - {fileID: 98077518}
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
 --- !u!1 &1407282046
 GameObject:
   m_ObjectHideFlags: 0
@@ -10679,11 +10798,14 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 152.00002, y: -637.86456}
   m_SizeDelta: {x: 280, y: 130}
 =======
+=======
+>>>>>>> 4e92e1bdfd4d7284f6711a9a3910900ae3e86b17
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 152.00002, y: 82.13544}

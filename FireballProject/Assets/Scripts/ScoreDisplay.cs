@@ -29,9 +29,6 @@ public class ScoreDisplay : MonoBehaviour
             scores.Add(playerNum, score);
         }
 
-        // sort
-        SortScores();
-
         // update ui
         UpdateUI();
     }
@@ -70,13 +67,10 @@ public class ScoreDisplay : MonoBehaviour
     // updates the ui
     private void UpdateUI()
     {
-        // get sorted score list
-        SortScores();
-
-        // disable text objects
+        // disable ui objects
         for (int i = 0; i < scoreDisplays.Length; ++i)
         {
-            scoreDisplays[i].gameObject.SetActive(false);
+            scoreDisplays[i].transform.parent.gameObject.SetActive(false);
         }
 
         // set text and enable objects
@@ -90,7 +84,7 @@ public class ScoreDisplay : MonoBehaviour
             scoreDisplays[textIndex].text = str;
 
             // enable text
-            scoreDisplays[textIndex].gameObject.SetActive(true);
+            scoreDisplays[textIndex].transform.parent.gameObject.SetActive(true);
 
             // next text field
             ++textIndex;

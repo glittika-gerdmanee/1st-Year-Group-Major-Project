@@ -14,8 +14,7 @@ public class DynamicCamera : MonoBehaviour
     public float maxZoom = 0f;
 
     // min/max camera x pos
-    public float minCamX = 0f;
-    public float maxCamX = 0f;
+    public float maxCamOffset = 0f;
 
     // offset
     public float buffer = 0f;
@@ -30,6 +29,12 @@ public class DynamicCamera : MonoBehaviour
 	void Start()
     {
         cam = GetComponentInChildren<Camera>();
+
+        // what??
+        if (dragons.Count > 0)
+        {
+            dragons.Clear();
+        }
 	}
 	
 	// Update is called once per frame
@@ -64,7 +69,7 @@ public class DynamicCamera : MonoBehaviour
                 }
             }
             float averageX = (minX + maxX) / 2f;
-            averageX = Mathf.Clamp(averageX, minCamX, maxCamX);
+            averageX = Mathf.Clamp(averageX, -maxCamOffset, maxCamOffset);
 
             // get the farthest position away from the average
             float farthestX = 0f;
@@ -91,20 +96,24 @@ public class DynamicCamera : MonoBehaviour
             float horizontalFov = cam.fieldOfView * cam.aspect;
 
             // get the camera distance when the farthest dragon is on the edge of the screen
-            float h = (new Vector3(farthestX, 0f, 0f) - cam.transform.position).magnitude;
-            float o = Mathf.Abs(farthestX - averageX);
-            // h^2 = a^2 + o^2
-            // a^2 = h^2 - o^2
-            // a = sqrt( h^2 - o^2 )
-            float a = Mathf.Sqrt((h * h) - (o * o));
+            float x = Mathf.Abs(farthestX);
+            float theta = 180f - 90f - (horizontalFov / 2f);
+            float y = Mathf.Tan(theta) * x;
 
             // get the new z position of the camera
-            float newZ = height - a;
-            // newZ = Mathf.Clamp(newZ, 0f, maxZoom);
+            float newZ = height - y;
+            newZ = Mathf.Clamp(newZ, 0f, maxZoom);
 
             // set the cameras z pos
             cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, new Vector3(0f, 0f, newZ), lerpSpeed * Time.deltaTime);
-            Debug.Log(cam.transform.localEulerAngles.z);
+
+            // debug draw tri
+            // x line
+            Debug.DrawLine(new Vector3(cam.transform.position.x, 0f, 0f), new Vector3(cam.transform.position.x + farthestX, 0f, 0f), Color.red);
+            // y line
+            Debug.DrawLine(cam.transform.position, new Vector3(cam.transform.position.x, 0f, 0f), Color.red);
+            // h line
+            Debug.DrawLine(cam.transform.position, new Vector3(cam.transform.position.x + farthestX, 0f, 0f), Color.red);
         }
 	}
 }

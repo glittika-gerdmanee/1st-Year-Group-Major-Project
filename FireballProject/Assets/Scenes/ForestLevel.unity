@@ -2649,7 +2649,7 @@ MonoBehaviour:
   visible: 0
   textHeight: 21
   runHotkeys: 1
-  hotkeys: 0f01000000010000010100000201000003010000040100000501000006010000070100000801000009010000
+  hotkeys: 0f010000000100000101000002010000030100000401000005010000060100000701000008010000090100000e010000
   hotkeyCommands:
   - spawndragon 0
   - givepowerup 0 60 0
@@ -2662,6 +2662,7 @@ MonoBehaviour:
   - givepowerup 7 60 0
   - givepowerup 8 60 0
   - givepowerup 9 60 0
+  - spawndragon 1
 --- !u!114 &327466265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7370,12 +7371,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5af8671f9055d4196fff10c344d5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragons: []
-  lerpSpeed: 2
-  maxZoom: 100
-  minCamX: -1.5
-  maxCamX: 1.5
-  buffer: 0
+  dragons:
+  - {fileID: 0}
+  - {fileID: 0}
+  lerpSpeed: 3
+  maxZoom: 3
+  maxCamOffset: 4
+  buffer: 2
 --- !u!4 &1078142427
 Transform:
   m_ObjectHideFlags: 0
@@ -8933,7 +8935,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1276163485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1078142427}

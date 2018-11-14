@@ -109,11 +109,11 @@ public class DynamicCamera : MonoBehaviour
 
             // debug draw tri
             // x line
-            Debug.DrawLine(new Vector3(cam.transform.position.x, 0f, 0f), new Vector3(cam.transform.position.x + farthestX, 0f, 0f), Color.red);
+            // Debug.DrawLine(new Vector3(cam.transform.position.x, 0f, 0f), new Vector3(cam.transform.position.x + farthestX, 0f, 0f), Color.red);
             // y line
-            Debug.DrawLine(cam.transform.position, new Vector3(cam.transform.position.x, 0f, 0f), Color.red);
+            // Debug.DrawLine(cam.transform.position, new Vector3(cam.transform.position.x, 0f, 0f), Color.red);
             // h line
-            Debug.DrawLine(cam.transform.position, new Vector3(cam.transform.position.x + farthestX, 0f, 0f), Color.red);
+            // Debug.DrawLine(cam.transform.position, new Vector3(cam.transform.position.x + farthestX, 0f, 0f), Color.red);
         }
 	}
 }

@@ -330,12 +330,12 @@ public class DragonController : Entity
 
                         // reset cooldown timer
                         shotTimer = 0f;
-                    }
 
-                    // remove a single use attack powerup
-                    if (powerup != null && powerup.isSingleUse)
-                    {
-                        RemovePowerup();
+                        // remove a single use attack powerup
+                        if (powerup != null && powerup.isSingleUse)
+                        {
+                            RemovePowerup();
+                        }
                     }
                 }
             }

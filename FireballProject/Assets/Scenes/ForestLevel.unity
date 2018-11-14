@@ -8613,6 +8613,7 @@ GameObject:
   - component: {fileID: 1276163487}
   - component: {fileID: 1276163486}
   - component: {fileID: 1276163490}
+  - component: {fileID: 1276163491}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8650,8 +8651,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 30
+  near clip plane: 1
+  far clip plane: 50
   field of view: 40
   orthographic: 0
   orthographic size: 5
@@ -8695,6 +8696,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: a351b3a7a14781b408b60ed48d327381, type: 2}
+--- !u!114 &1276163491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1276163485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5af8671f9055d4196fff10c344d5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragons: []
+  lerpSpeed: 2
+  maxXPos: 100
+  minFov: 30
+  maxFov: 40
 --- !u!1001 &1276235691
 Prefab:
   m_ObjectHideFlags: 0

@@ -161,14 +161,7 @@ public class DragonController : Entity
             modifiedStats = GetModifiedStats();
 
             // set the powerup display sprite
-            try
-            {
-                powerupSprite.sprite = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>().sprites[(int)(powerup.type)];
-            }
-            catch
-            {
-                Debug.Log("error");
-            }
+            powerupSprite.sprite = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>().sprites[(int)(powerup.type)];
 
             // don't allow new powerup
             canPickupPowerup = false;

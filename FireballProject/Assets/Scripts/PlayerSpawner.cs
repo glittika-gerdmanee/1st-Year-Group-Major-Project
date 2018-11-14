@@ -30,9 +30,15 @@ public class PlayerSpawner : MonoBehaviour
     // list of healthbars
     public HealthBar[] healthBars = new HealthBar[4];
 
+    // the camera
+    private DynamicCamera cam = null;
+
     // Use this for initialization
     void Start()
     {
+        // get the camera
+        cam = FindObjectOfType<DynamicCamera>();
+
         SpawnPlayers();
 	}
 
@@ -116,6 +122,9 @@ public class PlayerSpawner : MonoBehaviour
 
         // set the dragons healthbar
         newDragon.healthBar = health;
+
+        // give camera a reference to the dragon
+        cam.dragons.Add(newDragon);
 
         return newDragon;
     }

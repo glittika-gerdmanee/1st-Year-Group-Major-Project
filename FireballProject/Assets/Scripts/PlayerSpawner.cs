@@ -27,6 +27,9 @@ public class PlayerSpawner : MonoBehaviour
     public Material dragonEyeYellow = null;
     public Material dragonEyelidYellow = null;
 
+    // list of healthbars
+    public HealthBar[] healthBars = new HealthBar[4];
+
     // Use this for initialization
     void Start()
     {
@@ -36,7 +39,7 @@ public class PlayerSpawner : MonoBehaviour
     // spawn a debug dragon
     public void SpawnDebugDragon(ControllerNum cNum)
     {
-        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, dragonBlue, dragonEyeBlue, dragonEyelidBlue);
+        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, dragonBlue, dragonEyeBlue, dragonEyelidBlue, healthBars[0]);
     }
 
     // spawn players
@@ -91,14 +94,13 @@ public class PlayerSpawner : MonoBehaviour
                         }
                 }
 
-                // spawn dragon
-                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, body, eye, eyelid);
+                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, body, eye, eyelid, healthBars[i]);
             }
         }
     }
 
     // spawns a dragon
-    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat)
+    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat, HealthBar health)
     {
         // spawn dragon
         DragonController newDragon = Instantiate(player, position, rotation).GetComponent<DragonController>();
@@ -111,6 +113,9 @@ public class PlayerSpawner : MonoBehaviour
 
         // set the dragons colour
         newDragon.SetMaterial(mat, eyeMat, eyelidMat);
+
+        // set the dragons healthbar
+        newDragon.healthBar = health;
 
         return newDragon;
     }

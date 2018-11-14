@@ -527,8 +527,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 54662613}
+  - component: {fileID: 54662614}
   m_Layer: 5
-  m_Name: Health
+  m_Name: Health1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -555,6 +556,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &54662614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54662612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f94992e0e814134f8c6ca0a46f1a1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  sprites:
+  - {fileID: 1443117046}
+  - {fileID: 1149500920}
+  - {fileID: 570134306}
 --- !u!1001 &92430315
 Prefab:
   m_ObjectHideFlags: 0
@@ -2157,8 +2174,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 299539516}
+  - component: {fileID: 299539517}
   m_Layer: 5
-  m_Name: Health
+  m_Name: Health4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2185,6 +2203,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &299539517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 299539515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f94992e0e814134f8c6ca0a46f1a1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  sprites:
+  - {fileID: 839064968}
+  - {fileID: 1739260331}
+  - {fileID: 1174926264}
 --- !u!1001 &300073317
 Prefab:
   m_ObjectHideFlags: 0
@@ -2438,6 +2472,11 @@ MonoBehaviour:
   dragonYellow: {fileID: 2100000, guid: c92d9a33ae6a79c4a8673e41b37d4b4d, type: 2}
   dragonEyeYellow: {fileID: 2100000, guid: 2dfc17e7558bf5642aad14fe93cf593c, type: 2}
   dragonEyelidYellow: {fileID: 2100000, guid: f2002eac6723d044f91bd6b598bd47c7, type: 2}
+  healthBars:
+  - {fileID: 54662614}
+  - {fileID: 1010805443}
+  - {fileID: 1375030250}
+  - {fileID: 299539517}
 --- !u!114 &327466263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6659,8 +6698,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1010805442}
+  - component: {fileID: 1010805443}
   m_Layer: 5
-  m_Name: Health
+  m_Name: Health2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6687,6 +6727,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1010805443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010805441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f94992e0e814134f8c6ca0a46f1a1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  sprites:
+  - {fileID: 1841372046}
+  - {fileID: 1861197641}
+  - {fileID: 143036286}
 --- !u!1001 &1032900137
 Prefab:
   m_ObjectHideFlags: 0
@@ -9194,8 +9250,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1375030249}
+  - component: {fileID: 1375030250}
   m_Layer: 5
-  m_Name: Health
+  m_Name: Health3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9222,6 +9279,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1375030250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1375030248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f94992e0e814134f8c6ca0a46f1a1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  sprites:
+  - {fileID: 277136177}
+  - {fileID: 790444320}
+  - {fileID: 98077518}
 --- !u!1 &1407282046
 GameObject:
   m_ObjectHideFlags: 0

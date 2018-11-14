@@ -19,6 +19,10 @@ public class ExpandingExplosion : MonoBehaviour
     // explosion blast projector
     public GameObject explosionMark = null;
 
+    // the owner of the bomb
+    [HideInInspector]
+    public DragonController owner = null;
+
     // lerp value
     private float lerpVal = 0f;
 
@@ -67,7 +71,24 @@ public class ExpandingExplosion : MonoBehaviour
             if (!(hitEntities.Contains(hitEntity)))
             {
                 // damage the entity
-                hitEntity.Damage(hitDamage);
+                if (hitEntity.Damage(hitDamage))
+                {
+                    // give score
+                    {
+                        DragonController hitDragon = hitEntity.GetComponent<DragonController>();
+
+                        if (hitDragon == null)
+                        {
+                            // entity is a critter
+                            owner.AddScore(DragonController.KILL_CRITTER_SCORE);
+                        }
+                        else
+                        {
+                            // entity is a dragon
+                            owner.AddScore(DragonController.KILL_DRAGON_SCORE);
+                        }
+                    }
+                }
 
                 // add to the hit list
                 hitEntities.Add(hitEntity);

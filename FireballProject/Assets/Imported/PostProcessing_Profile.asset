@@ -114,33 +114,33 @@ MonoBehaviour:
       tonemapping:
         tonemapper: 2
         neutralBlackIn: 0.01
-        neutralWhiteIn: 9
-        neutralBlackOut: 0.011
-        neutralWhiteOut: 9.8
-        neutralWhiteLevel: 5.3
-        neutralWhiteClip: 10
+        neutralWhiteIn: 8.6
+        neutralBlackOut: 0.046
+        neutralWhiteOut: 7.5
+        neutralWhiteLevel: 5.9
+        neutralWhiteClip: 8.06
       basic:
         postExposure: 0
-        temperature: 0
-        tint: 0
+        temperature: 55
+        tint: 18
         hueShift: 0
         saturation: 1.57
-        contrast: 0.98
+        contrast: 1.06
       channelMixer:
-        red: {x: 1, y: 0, z: 0}
+        red: {x: 0.7, y: 0.08, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 0.65401894, b: 0.4940514, a: 0}
+          slope: {r: 1, g: 1, b: 1, a: 0}
           power: {r: 1, g: 1, b: 1, a: 0}
-          offset: {r: 1, g: 0.97191143, b: 0.96665233, a: 0}
+          offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
-          lift: {r: 0, g: 0, b: 0, a: 0}
-          gamma: {r: 0, g: 0, b: 0, a: 0}
-          gain: {r: 0, g: 0, b: 0, a: 0}
+          lift: {r: 1, g: 1, b: 1, a: 0}
+          gamma: {r: 1, g: 1, b: 1, a: 0}
+          gain: {r: 1, g: 1, b: 1, a: 0}
       curves:
         master:
           curve:
@@ -149,14 +149,14 @@ MonoBehaviour:
             - serializedVersion: 2
               time: 0
               value: 0
-              inSlope: 1
-              outSlope: 1
+              inSlope: 0
+              outSlope: 2.5196722
               tangentMode: 0
             - serializedVersion: 2
               time: 1
               value: 1
               inSlope: 1
-              outSlope: 1
+              outSlope: 0
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2

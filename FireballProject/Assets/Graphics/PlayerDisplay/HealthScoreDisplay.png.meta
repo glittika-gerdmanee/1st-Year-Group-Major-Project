@@ -1,22 +1,26 @@
 fileFormatVersion: 2
 guid: a5b310f8cf3b757478b840ac394a95ea
-timeCreated: 1542039908
-licenseType: Free
+timeCreated: 1542168793
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: HealthScoreDisplay_0
-    21300002: HealthScoreDisplay_1
-    21300004: HealthScoreDisplay_2
+    21300000: Player1
+    21300002: BlueDashBorder
+    21300004: Heart
     21300006: HealthScoreDisplay_3
-    21300008: HealthScoreDisplay_4
-    21300010: HealthScoreDisplay_5
-    21300012: HealthScoreDisplay_6
-    21300014: HealthScoreDisplay_7
-    21300016: HealthScoreDisplay_8
+    21300008: GreenDashBorder
+    21300010: Player 2
+    21300012: GreenDashBar
+    21300014: RedDashBorder
+    21300016: RedDashBar
     21300018: HealthScoreDisplay_9
-    21300020: HealthScoreDisplay_10
-    21300022: HealthScoreDisplay_11
-    21300024: HealthScoreDisplay_12
+    21300020: YellowDashBar
+    21300022: Player 3
+    21300024: BlueAttackCooldown
+    21300026: GreenAttackCooldown
+    21300028: Player 4
+    21300030: RedAttackCooldown
+    21300032: YellowAttackCooldown
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -123,43 +127,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HealthScoreDisplay_0
+      name: Player1
       rect:
         serializedVersion: 2
-        x: 49
+        x: 48
         y: 718
-        width: 471
-        height: 211
+        width: 473
+        height: 212
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HealthScoreDisplay_1
+      name: BlueDashBorder
       rect:
         serializedVersion: 2
         x: 563
-        y: 812
-        width: 295
-        height: 25
+        y: 811
+        width: 296
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HealthScoreDisplay_2
+      name: Heart
       rect:
         serializedVersion: 2
-        x: 934
-        y: 792
-        width: 54
-        height: 47
+        x: 933
+        y: 791
+        width: 55
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,82 +172,82 @@ TextureImporter:
       name: HealthScoreDisplay_3
       rect:
         serializedVersion: 2
-        x: 569
-        y: 779
-        width: 284
-        height: 19
+        x: 568
+        y: 777
+        width: 286
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HealthScoreDisplay_4
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 490
-        width: 470
-        height: 210
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: HealthScoreDisplay_5
+      name: GreenDashBorder
       rect:
         serializedVersion: 2
         x: 563
-        y: 584
-        width: 295
-        height: 25
+        y: 728
+        width: 296
+        height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HealthScoreDisplay_6
+      name: Player 2
       rect:
         serializedVersion: 2
-        x: 569
-        y: 550
-        width: 284
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: HealthScoreDisplay_7
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 268
-        width: 470
+        x: 48
+        y: 491
+        width: 472
         height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HealthScoreDisplay_8
+      name: GreenDashBar
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 695
+        width: 286
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: RedDashBorder
       rect:
         serializedVersion: 2
         x: 563
-        y: 359
-        width: 295
-        height: 25
+        y: 641
+        width: 296
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: RedDashBar
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 606
+        width: 286
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,54 +256,110 @@ TextureImporter:
       name: HealthScoreDisplay_9
       rect:
         serializedVersion: 2
-        x: 569
-        y: 325
-        width: 284
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: HealthScoreDisplay_10
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 42
-        width: 470
-        height: 211
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: HealthScoreDisplay_11
-      rect:
-        serializedVersion: 2
         x: 563
-        y: 137
-        width: 295
-        height: 25
+        y: 552
+        width: 296
+        height: 26
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: HealthScoreDisplay_12
+      name: YellowDashBar
       rect:
         serializedVersion: 2
-        x: 569
-        y: 103
-        width: 284
-        height: 19
+        x: 568
+        y: 518
+        width: 286
+        height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player 3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 267
+        width: 472
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: BlueAttackCooldown
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 279
+        width: 204
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GreenAttackCooldown
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 279
+        width: 204
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player 4
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 42
+        width: 472
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: RedAttackCooldown
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 59
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: YellowAttackCooldown
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 56
+        width: 204
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

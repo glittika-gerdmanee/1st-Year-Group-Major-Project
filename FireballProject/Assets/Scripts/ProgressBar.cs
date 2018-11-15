@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RadialBar : MonoBehaviour
+public class ProgressBar : MonoBehaviour
 {
     // the image
     private Image img = null;

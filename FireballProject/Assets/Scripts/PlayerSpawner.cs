@@ -31,10 +31,10 @@ public class PlayerSpawner : MonoBehaviour
     public HealthBar[] healthBars = new HealthBar[4];
 
     // list of dash bars
-    public Bar[] dashBars = new Bar[4];
+    public ProgressBar[] dashBars = new ProgressBar[4];
 
     // list of attack bars
-    public RadialBar[] attackBars = new RadialBar[4];
+    public ProgressBar[] attackBars = new ProgressBar[4];
 
     // list of 
 
@@ -114,7 +114,7 @@ public class PlayerSpawner : MonoBehaviour
     }
 
     // spawns a dragon
-    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat, HealthBar health, Bar dashBar, RadialBar attackBar)
+    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat, HealthBar health, ProgressBar dashBar, ProgressBar attackBar)
     {
         // spawn dragon
         DragonController newDragon = Instantiate(player, position, rotation).GetComponent<DragonController>();

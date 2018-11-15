@@ -84,11 +84,11 @@ public class DragonController : Entity
 
     // dash cooldown bar
     [HideInInspector]
-    public Bar dashBar = null;
+    public ProgressBar dashBar = null;
 
     // attack cooldown bar
     [HideInInspector]
-    public RadialBar attackBar = null;
+    public ProgressBar attackBar = null;
 
     // the direction to dash in
     private Vector3 dashDirection = Vector3.zero;

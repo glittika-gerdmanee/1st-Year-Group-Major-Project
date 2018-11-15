@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 58098046}
   - component: {fileID: 58098048}
   - component: {fileID: 58098047}
+  - component: {fileID: 58098049}
   m_Layer: 0
   m_Name: GreenAttackCooldown
   m_TagString: Untagged
@@ -627,12 +628,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300026, guid: a5b310f8cf3b757478b840ac394a95ea, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 0
 --- !u!222 &58098048
 CanvasRenderer:
@@ -640,6 +641,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 58098045}
+--- !u!114 &58098049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 58098045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01302174c6b59354f804d0e0a5757a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &92430315
 Prefab:
   m_ObjectHideFlags: 0
@@ -2562,6 +2574,11 @@ MonoBehaviour:
   - {fileID: 1249932662}
   - {fileID: 1415827767}
   - {fileID: 177489596}
+  attackBars:
+  - {fileID: 1653121554}
+  - {fileID: 58098049}
+  - {fileID: 925661050}
+  - {fileID: 911975505}
 --- !u!114 &327466263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6436,6 +6453,7 @@ GameObject:
   - component: {fileID: 911975502}
   - component: {fileID: 911975504}
   - component: {fileID: 911975503}
+  - component: {fileID: 911975505}
   m_Layer: 0
   m_Name: YellowAttackCooldown
   m_TagString: Untagged
@@ -6481,12 +6499,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300032, guid: a5b310f8cf3b757478b840ac394a95ea, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 0
 --- !u!222 &911975504
 CanvasRenderer:
@@ -6494,6 +6512,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 911975501}
+--- !u!114 &911975505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 911975501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01302174c6b59354f804d0e0a5757a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &925661046
 GameObject:
   m_ObjectHideFlags: 0
@@ -6504,6 +6533,7 @@ GameObject:
   - component: {fileID: 925661047}
   - component: {fileID: 925661049}
   - component: {fileID: 925661048}
+  - component: {fileID: 925661050}
   m_Layer: 0
   m_Name: RedAttackCooldown
   m_TagString: Untagged
@@ -6549,7 +6579,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300030, guid: a5b310f8cf3b757478b840ac394a95ea, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6562,6 +6592,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 925661046}
+--- !u!114 &925661050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925661046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01302174c6b59354f804d0e0a5757a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &935579919
 Prefab:
   m_ObjectHideFlags: 0
@@ -11335,6 +11376,7 @@ GameObject:
   - component: {fileID: 1653121551}
   - component: {fileID: 1653121553}
   - component: {fileID: 1653121552}
+  - component: {fileID: 1653121554}
   m_Layer: 0
   m_Name: BlueAttackCooldown
   m_TagString: Untagged
@@ -11349,15 +11391,15 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1653121550}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4611874, y: 1.4611874, z: 1.4611874}
+  m_LocalPosition: {x: 0, y: 0, z: -2.6999998}
+  m_LocalScale: {x: 1.4534881, y: 1.4534885, z: 1.4534885}
   m_Children: []
   m_Father: {fileID: 471040395}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 62.079247, y: -65.3627}
+  m_AnchoredPosition: {x: 62.079, y: -65.36274}
   m_SizeDelta: {x: 81, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1653121552
@@ -11380,7 +11422,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300024, guid: a5b310f8cf3b757478b840ac394a95ea, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11393,6 +11435,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1653121550}
+--- !u!114 &1653121554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653121550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01302174c6b59354f804d0e0a5757a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1653169693
 GameObject:
   m_ObjectHideFlags: 0

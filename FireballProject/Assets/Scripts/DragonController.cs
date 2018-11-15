@@ -86,6 +86,10 @@ public class DragonController : Entity
     [HideInInspector]
     public Bar dashBar = null;
 
+    // attack cooldown bar
+    [HideInInspector]
+    public RadialBar attackBar = null;
+
     // the direction to dash in
     private Vector3 dashDirection = Vector3.zero;
 
@@ -310,7 +314,7 @@ public class DragonController : Entity
             // update bar
             if (dashBar != null)
             {
-                dashBar.SetBar(Mathf.InverseLerp(0f, dashCooldown, dashCooldownTimer));
+                dashBar.SetBar(canMove ? Mathf.InverseLerp(0f, dashCooldown, dashCooldownTimer) : 0f);
             }
         }
 
@@ -348,6 +352,12 @@ public class DragonController : Entity
                         }
                     }
                 }
+            }
+
+            // update bar
+            if (attackBar != null)
+            {
+                attackBar.SetBar(canShoot ? Mathf.InverseLerp(0f, modifiedStats.attackCooldown, shotTimer) : 0f);
             }
         }
 

@@ -2596,10 +2596,10 @@ MonoBehaviour:
   moveSpeedDuration: 5
   moveSpeedStats:
     moveSpeed: 3
-    projectileVelocity: 1
+    projectileVelocity: 3
     attackCooldown: 1
     maxPierces: 1
-    projectileLifespan: 1
+    projectileLifespan: 0.33
     attackType: 1
     attackDamage: 1
     stunDuration: 1

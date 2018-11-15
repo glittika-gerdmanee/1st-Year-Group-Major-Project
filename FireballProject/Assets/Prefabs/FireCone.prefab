@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4675916445135102}
   - component: {fileID: 198589234913225836}
   - component: {fileID: 199866323824866190}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114410235175163508}
   - component: {fileID: 33811788015342430}
   - component: {fileID: 23899605725351800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4504077795350412}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: FireCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

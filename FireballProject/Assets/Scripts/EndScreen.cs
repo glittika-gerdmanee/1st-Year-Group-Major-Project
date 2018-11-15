@@ -98,7 +98,7 @@ public class EndScreen : MonoBehaviour
             // find the highest value
             int highestValue = 0;
             int index = 0;
-            foreach (int key  in scores.Keys)
+            foreach (int key in scores.Keys)
             {
                 if (scores[key] >= highestValue)
                 {

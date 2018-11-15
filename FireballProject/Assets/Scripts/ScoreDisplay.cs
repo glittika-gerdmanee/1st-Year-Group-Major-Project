@@ -14,6 +14,15 @@ public class ScoreDisplay : MonoBehaviour
     // value = score
     private static Dictionary<int, int> scores = new Dictionary<int, int>();
 
+    private void Start()
+    {
+        // reset scores
+        foreach (var key in scores.Keys)
+        {
+            scores[key] = 0;
+        }
+    }
+
     // set player scores
     public void SetScores(int playerNum, int score)
     {

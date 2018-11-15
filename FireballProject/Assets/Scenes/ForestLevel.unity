@@ -2568,10 +2568,10 @@ MonoBehaviour:
   - {fileID: 1375030250}
   - {fileID: 299539517}
   dashBars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2073848873}
+  - {fileID: 1249932662}
+  - {fileID: 1415827767}
+  - {fileID: 177489596}
   attackBars:
   - {fileID: 1653121554}
   - {fileID: 58098049}

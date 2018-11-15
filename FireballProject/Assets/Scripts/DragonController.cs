@@ -145,7 +145,7 @@ public class DragonController : Entity
             // multiply stats
             newStats *= powerup.stats;
 
-            return newStats;
+             return newStats;
         }
         else
         {

@@ -18,8 +18,8 @@ TagManager:
   - Entity
   - Fireball
   - Powerup
-  - 
-  - 
+  - Dragon
+  - Critter
   - 
   - 
   - 
@@ -41,7 +41,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Health
-    uniqueID: 3542892351
     locked: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum ControllerNum
 {
@@ -53,9 +54,6 @@ public class DragonController : Entity
     // shoot point transform
     public Transform shootPoint = null;
 
-    // sprite to display the current powerup
-    public SpriteRenderer powerupSprite = null;
-
     // reference to the renderers to change the material
     public Renderer[] dragonRenderers = new Renderer[1];
     public Renderer[] dragonEyeRenderers = new Renderer[1];
@@ -89,6 +87,10 @@ public class DragonController : Entity
     // attack cooldown bar
     [HideInInspector]
     public ProgressBar attackBar = null;
+
+    // sprite to display the current powerup
+    [HideInInspector]
+    public Image powerupSprite = null;
 
     // the direction to dash in
     private Vector3 dashDirection = Vector3.zero;
@@ -170,6 +172,7 @@ public class DragonController : Entity
 
             // set the powerup display sprite
             powerupSprite.sprite = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>().sprites[(int)(powerup.type)];
+            powerupSprite.gameObject.SetActive(true);
 
             // don't allow new powerup
             canPickupPowerup = false;
@@ -193,7 +196,7 @@ public class DragonController : Entity
         modifiedStats = GetModifiedStats();
 
         // set the powerup display sprite
-        powerupSprite.sprite = null;
+        powerupSprite.gameObject.SetActive(false);
 
         // allow new powerup
         canPickupPowerup = true;

@@ -36,6 +36,9 @@ public class PlayerSpawner : MonoBehaviour
     // list of attack bars
     public ProgressBar[] attackBars = new ProgressBar[4];
 
+    // list of powerup sprites
+    public Image[] powerupSprites = new Image[4];
+
     // list of 
 
     // the camera
@@ -53,7 +56,7 @@ public class PlayerSpawner : MonoBehaviour
     // spawn a debug dragon
     public void SpawnDebugDragon(ControllerNum cNum)
     {
-        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, dragonBlue, dragonEyeBlue, dragonEyelidBlue, healthBars[0], dashBars[0], attackBars[0]);
+        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, dragonBlue, dragonEyeBlue, dragonEyelidBlue, healthBars[0], dashBars[0], attackBars[0], powerupSprites[0]);
     }
 
     // spawn players
@@ -108,13 +111,13 @@ public class PlayerSpawner : MonoBehaviour
                         }
                 }
 
-                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, body, eye, eyelid, healthBars[i], dashBars[i], attackBars[i]);
+                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, body, eye, eyelid, healthBars[i], dashBars[i], attackBars[i], powerupSprites[i]);
             }
         }
     }
 
     // spawns a dragon
-    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat, HealthBar health, ProgressBar dashBar, ProgressBar attackBar)
+    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat, HealthBar health, ProgressBar dashBar, ProgressBar attackBar, Image powerupSprite)
     {
         // spawn dragon
         DragonController newDragon = Instantiate(player, position, rotation).GetComponent<DragonController>();
@@ -136,6 +139,9 @@ public class PlayerSpawner : MonoBehaviour
 
         // set the dragons attack bar
         newDragon.attackBar = attackBar;
+
+        // set the dragons powerup sprite
+        newDragon.powerupSprite = powerupSprite;
 
         // give camera a reference to the dragon
         cam.dragons.Add(newDragon);

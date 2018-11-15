@@ -222,7 +222,7 @@ public class CritterController : Entity
     }
 
     // kill the critter
-    public override void Kill()
+    public override void Kill(DragonController damageDealer)
     {
         // chance to drop a powerup
         {
@@ -238,7 +238,7 @@ public class CritterController : Entity
             }
         }
 
-        base.Kill();
+        base.Kill(damageDealer);
     }
 
     // stun the critter

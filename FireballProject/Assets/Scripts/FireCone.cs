@@ -61,7 +61,7 @@ public class FireCone : MonoBehaviour
             {
                 // damage the entity
                 // check if this damage killed the entity
-                if (hitEntity.Damage(damage))
+                if (hitEntity.Damage(damage, owner))
                 {
                     // is the entity a dragon or a critter
                     if (hitEntity.GetComponent<DragonController>() != null)

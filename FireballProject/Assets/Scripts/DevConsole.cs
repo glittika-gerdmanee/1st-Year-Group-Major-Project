@@ -544,7 +544,7 @@ public class DevConsole : MonoBehaviour
                 // kill
                 for (int i = 0; i < critters.Length; ++i)
                 {
-                    critters[i].Kill();
+                    critters[i].Kill(null);
                 }
 
                 return "killed " + critters.Length.ToString() + " critters";
@@ -558,7 +558,7 @@ public class DevConsole : MonoBehaviour
                 // kill
                 for (int i = 0; i < dragons.Length; ++i)
                 {
-                    dragons[i].Kill();
+                    dragons[i].Kill(null);
                 }
 
                 return "killed " + dragons.Length.ToString() + " dragons";
@@ -572,7 +572,7 @@ public class DevConsole : MonoBehaviour
                 // kill
                 for (int i = 0; i < entities.Length; ++i)
                 {
-                    entities[i].Kill();
+                    entities[i].Kill(null);
                 }
 
                 return "killed " + entities.Length.ToString() + " entities";

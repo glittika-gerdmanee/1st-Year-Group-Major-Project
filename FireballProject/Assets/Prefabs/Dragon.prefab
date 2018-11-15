@@ -4204,7 +4204,7 @@ MonoBehaviour:
   canTakeDamage: 1
   lockY: 1
   canTakeDamageWhileStunned: 1
-  deathEffect: {fileID: 1143170212348502, guid: a59ef2247dd1b2f4f8faa9813b59385a,
+  deathEffect: {fileID: 1331672098996662, guid: 66cf21bb77869ac4388ce3d82143d590,
     type: 2}
   healthBar: {fileID: 0}
   currentHealth: 3

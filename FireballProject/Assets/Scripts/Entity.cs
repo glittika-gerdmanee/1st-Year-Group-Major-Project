@@ -174,7 +174,7 @@ public class Entity : MonoBehaviour
         // spawn the death effect
         if (deathEffect != null)
         {
-            Instantiate(deathEffect, transform.position, transform.rotation);
+            Instantiate(deathEffect, transform.position, Quaternion.Euler(-90f, 0f, 0f));
         }
 
         // destroy the object

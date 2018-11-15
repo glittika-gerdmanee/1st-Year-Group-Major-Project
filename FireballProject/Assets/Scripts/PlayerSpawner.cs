@@ -31,7 +31,10 @@ public class PlayerSpawner : MonoBehaviour
     public HealthBar[] healthBars = new HealthBar[4];
 
     // list of dash bars
-    public Bar[] dashBars = new Bar[4];
+    public ProgressBar[] dashBars = new ProgressBar[4];
+
+    // list of attack bars
+    public ProgressBar[] attackBars = new ProgressBar[4];
 
     // list of 
 
@@ -50,7 +53,7 @@ public class PlayerSpawner : MonoBehaviour
     // spawn a debug dragon
     public void SpawnDebugDragon(ControllerNum cNum)
     {
-        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, dragonBlue, dragonEyeBlue, dragonEyelidBlue, healthBars[0], dashBars[0]);
+        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, dragonBlue, dragonEyeBlue, dragonEyelidBlue, healthBars[0], dashBars[0], attackBars[0]);
     }
 
     // spawn players
@@ -105,13 +108,13 @@ public class PlayerSpawner : MonoBehaviour
                         }
                 }
 
-                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, body, eye, eyelid, healthBars[i], dashBars[i]);
+                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, body, eye, eyelid, healthBars[i], dashBars[i], attackBars[i]);
             }
         }
     }
 
     // spawns a dragon
-    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat, HealthBar health, Bar dashBar)
+    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat, HealthBar health, ProgressBar dashBar, ProgressBar attackBar)
     {
         // spawn dragon
         DragonController newDragon = Instantiate(player, position, rotation).GetComponent<DragonController>();
@@ -130,6 +133,9 @@ public class PlayerSpawner : MonoBehaviour
 
         // set the dragons dash bar
         newDragon.dashBar = dashBar;
+
+        // set the dragons attack bar
+        newDragon.attackBar = attackBar;
 
         // give camera a reference to the dragon
         cam.dragons.Add(newDragon);

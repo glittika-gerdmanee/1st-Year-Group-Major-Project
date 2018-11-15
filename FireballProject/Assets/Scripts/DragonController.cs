@@ -419,12 +419,51 @@ public class DragonController : Entity
     }
 
     // override for death because dragons get stunned instead of actually dying
-    public override void Kill()
+    public override void Kill(DragonController damageDealer)
     {
         // spawn the death effect
         if (deathEffect != null)
         {
-            Instantiate(deathEffect, transform.position, transform.rotation);
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.Euler(-90f, 0f, 0f));
+
+            // set particle colour
+            if (damageDealer != null)
+            {
+                GameObject child = effect.transform.GetChild(0).gameObject;
+
+                ParticleSystem.MainModule p = child.GetComponent<ParticleSystem>().main;
+
+                Color c = Color.white;
+                switch (damageDealer.playerNumber)
+                {
+                    case 0:
+                        {
+                            c = Color.blue;
+
+                            break;
+                        }
+                    case 1:
+                        {
+                            c = Color.green;
+
+                            break;
+                        }
+                    case 2:
+                        {
+                            c = Color.red;
+
+                            break;
+                        }
+                    case 3:
+                        {
+                            c = Color.yellow;
+
+                            break;
+                        }
+                }
+
+                p.startColor = new ParticleSystem.MinMaxGradient(c);
+            }
         }
 
         // stun the dragon
@@ -454,7 +493,7 @@ public class DragonController : Entity
         // resets health to full
         if (GetHealth() <= 0)
         {
-            Damage(GetMaxHealth());
+            Damage(GetMaxHealth(), null);
         }
 
         // start invincibility timer

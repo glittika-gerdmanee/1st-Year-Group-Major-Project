@@ -71,7 +71,7 @@ public class ExpandingExplosion : MonoBehaviour
             if (!(hitEntities.Contains(hitEntity)))
             {
                 // damage the entity
-                if (hitEntity.Damage(hitDamage))
+                if (hitEntity.Damage(hitDamage, owner))
                 {
                     // give score
                     {

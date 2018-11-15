@@ -106,7 +106,7 @@ public class Entity : MonoBehaviour
     // deal damage or heal the entity
     // negative values deal damage, positive values heal
     // returns true if this damage killed the entity
-    public bool Damage(int value)
+    public bool Damage(int value, DragonController damageDealer)
     {
         // check if allowed to take damage
         if (!canTakeDamage)
@@ -145,7 +145,7 @@ public class Entity : MonoBehaviour
             if (prevHealth > 0)
             {
                 // kill the entity
-                Kill();
+                Kill(damageDealer);
 
                 return true;
             }
@@ -169,12 +169,51 @@ public class Entity : MonoBehaviour
     }
 
     // kill the entity
-    public virtual void Kill()
+    public virtual void Kill(DragonController damageDealer)
     {
         // spawn the death effect
         if (deathEffect != null)
         {
-            Instantiate(deathEffect, transform.position, Quaternion.Euler(-90f, 0f, 0f));
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.Euler(-90f, 0f, 0f));
+
+            // set particle colour
+            if (damageDealer != null)
+            {
+                GameObject child = effect.transform.GetChild(0).gameObject;
+
+                ParticleSystem.MainModule p = child.GetComponent<ParticleSystem>().main;
+
+                Color c = Color.white;
+                switch (damageDealer.playerNumber)
+                {
+                    case 0:
+                        {
+                            c = Color.blue;
+
+                            break;
+                        }
+                    case 1:
+                        {
+                            c = Color.green;
+
+                            break;
+                        }
+                    case 2:
+                        {
+                            c = Color.red;
+
+                            break;
+                        }
+                    case 3:
+                        {
+                            c = Color.yellow;
+
+                            break;
+                        }
+                }
+
+                p.startColor = new ParticleSystem.MinMaxGradient(c);
+            }
         }
 
         // destroy the object

@@ -25,16 +25,19 @@ public class DynamicCamera : MonoBehaviour
     // the point to look at
     private Vector3 lookPoint = Vector3.zero;
 
-	// Use this for initialization
-	void Start()
+    private void Awake()
     {
-        cam = GetComponentInChildren<Camera>();
-
         // what??
         if (dragons.Count > 0)
         {
             dragons.Clear();
         }
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        cam = GetComponentInChildren<Camera>();
 	}
 	
 	// Update is called once per frame

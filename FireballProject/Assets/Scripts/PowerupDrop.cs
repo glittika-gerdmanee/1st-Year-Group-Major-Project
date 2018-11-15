@@ -19,7 +19,7 @@ public class PowerupDrop : MonoBehaviour
     private const float rareRarity = 25f / 3f;
 
     // rarities of powerups
-    private static readonly float[] powerupRarities = { 0f, 0f, 0f, 100f, 0f, 0f }; // { commonRarity, rareRarity, rareRarity, rareRarity, commonRarity, commonRarity };
+    private static readonly float[] powerupRarities = { commonRarity, rareRarity, rareRarity, rareRarity, commonRarity, commonRarity };
 
     // initialisation
     private void Start()

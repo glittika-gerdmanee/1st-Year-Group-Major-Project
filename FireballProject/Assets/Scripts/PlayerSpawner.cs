@@ -30,6 +30,11 @@ public class PlayerSpawner : MonoBehaviour
     // list of healthbars
     public HealthBar[] healthBars = new HealthBar[4];
 
+    // list of dash bars
+    public Bar[] dashBars = new Bar[4];
+
+    // list of 
+
     // the camera
     private DynamicCamera cam = null;
 
@@ -45,7 +50,7 @@ public class PlayerSpawner : MonoBehaviour
     // spawn a debug dragon
     public void SpawnDebugDragon(ControllerNum cNum)
     {
-        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, dragonBlue, dragonEyeBlue, dragonEyelidBlue, healthBars[0]);
+        SpawnDragon(cNum, Vector3.zero, Quaternion.identity, 0, dragonBlue, dragonEyeBlue, dragonEyelidBlue, healthBars[0], dashBars[0]);
     }
 
     // spawn players
@@ -100,13 +105,13 @@ public class PlayerSpawner : MonoBehaviour
                         }
                 }
 
-                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, body, eye, eyelid, healthBars[i]);
+                SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, body, eye, eyelid, healthBars[i], dashBars[i]);
             }
         }
     }
 
     // spawns a dragon
-    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat, HealthBar health)
+    private DragonController SpawnDragon(ControllerNum num, Vector3 position, Quaternion rotation, int playerNum, Material mat, Material eyeMat, Material eyelidMat, HealthBar health, Bar dashBar)
     {
         // spawn dragon
         DragonController newDragon = Instantiate(player, position, rotation).GetComponent<DragonController>();
@@ -122,6 +127,9 @@ public class PlayerSpawner : MonoBehaviour
 
         // set the dragons healthbar
         newDragon.healthBar = health;
+
+        // set the dragons dash bar
+        newDragon.dashBar = dashBar;
 
         // give camera a reference to the dragon
         cam.dragons.Add(newDragon);

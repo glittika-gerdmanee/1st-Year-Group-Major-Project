@@ -82,6 +82,10 @@ public class DragonController : Entity
     // ui object
     public GameObject uiObj = null;
 
+    // dash cooldown bar
+    [HideInInspector]
+    public Bar dashBar = null;
+
     // the direction to dash in
     private Vector3 dashDirection = Vector3.zero;
 
@@ -110,8 +114,8 @@ public class DragonController : Entity
     // the dragons current powerup
     private Powerup powerup = null;
 
-    // reference to the score text
-    ScoreDisplay scoreDisplay = null;
+    // reference to the score display ui
+    private ScoreDisplay scoreDisplay = null;
 
     // dash duration timer
     private float dashTimer = 0f;
@@ -259,7 +263,7 @@ public class DragonController : Entity
         // dash
         {
             // dash cooldown
-            if (dashCooldownTimer < dashCooldown)
+            if (dashCooldownTimer < dashCooldown && !isDashing)
             {
                 // increment timer
                 dashCooldownTimer += Time.deltaTime;
@@ -282,6 +286,9 @@ public class DragonController : Entity
                 {
                     animator.SetTrigger("dash");
                 }
+
+                // reset dash cooldown
+                dashCooldownTimer = 0f;
             }
 
             // dash
@@ -297,10 +304,13 @@ public class DragonController : Entity
                 if (dashTimer >= dashDuration)
                 {
                     isDashing = false;
-
-                    // reset dash cooldown
-                    dashCooldownTimer = 0f;
                 }
+            }
+
+            // update bar
+            if (dashBar != null)
+            {
+                dashBar.SetBar(Mathf.InverseLerp(0f, dashCooldown, dashCooldownTimer));
             }
         }
 

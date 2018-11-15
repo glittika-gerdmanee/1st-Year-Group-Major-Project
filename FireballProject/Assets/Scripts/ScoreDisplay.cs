@@ -17,10 +17,7 @@ public class ScoreDisplay : MonoBehaviour
     private void Start()
     {
         // reset scores
-        foreach (var key in scores.Keys)
-        {
-            scores[key] = 0;
-        }
+        scores.Clear();
     }
 
     // set player scores

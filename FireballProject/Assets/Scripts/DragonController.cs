@@ -235,145 +235,148 @@ public class DragonController : Entity
     // update is called once per frame
     protected override void Update()
     {
-        base.Update();
-
-        // update powerup
-        if (powerup != null && !(powerup.isSingleUse))
+        if (GameTimer.gameStarted)
         {
-            // increment powerup duration timer
-            // remove the powerup if it has timed out
-            if (powerup.UpdateTimer(Time.deltaTime))
-            {
-                RemovePowerup();
-            }
-        }
+            base.Update();
 
-        // move the dragon
-        if (canMove && !IsStunned() && !isDashing)
-        {
-            // get movement vector
-            Vector3 move = new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis));
-
-            // movement animation
-            if (animator != null)
+            // update powerup
+            if (powerup != null && !(powerup.isSingleUse))
             {
-                animator.SetBool(("isMoving"), move.magnitude > 0);
+                // increment powerup duration timer
+                // remove the powerup if it has timed out
+                if (powerup.UpdateTimer(Time.deltaTime))
+                {
+                    RemovePowerup();
+                }
             }
 
-            // move
-            charController.Move(move * modifiedStats.moveSpeed * Time.deltaTime);
-
-            // rotate the dragon
-            transform.LookAt(transform.position + move);
-        }
-
-        // dash
-        {
-            // dash cooldown
-            if (dashCooldownTimer < dashCooldown && !isDashing)
+            // move the dragon
+            if (canMove && !IsStunned() && !isDashing)
             {
-                // increment timer
-                dashCooldownTimer += Time.deltaTime;
-            }
+                // get movement vector
+                Vector3 move = new Vector3(Input.GetAxis(horizontalAxis), 0f, Input.GetAxis(verticalAxis));
 
-            // start dash
-            if (Input.GetButtonDown(dashButton) && dashCooldownTimer >= dashCooldown && !isDashing && !IsStunned())
-            {
-                // reset dash duration timer
-                dashTimer = 0f;
-
-                // set dash direction
-                dashDirection = transform.forward;
-
-                // start dash
-                isDashing = true;
-
-                // start dash animation
+                // movement animation
                 if (animator != null)
                 {
-                    animator.SetTrigger("dash");
+                    animator.SetBool(("isMoving"), move.magnitude > 0);
                 }
 
-                // reset dash cooldown
-                dashCooldownTimer = 0f;
+                // move
+                charController.Move(move * modifiedStats.moveSpeed * Time.deltaTime);
+
+                // rotate the dragon
+                transform.LookAt(transform.position + move);
             }
 
             // dash
-            if (isDashing)
             {
-                // move
-                charController.Move(dashDirection * modifiedStats.moveSpeed * dashSpeed * Time.deltaTime);
-
-                // increment dash duration timer
-                dashTimer += Time.deltaTime;
-
-                // stop dashing
-                if (dashTimer >= dashDuration)
+                // dash cooldown
+                if (dashCooldownTimer < dashCooldown && !isDashing)
                 {
-                    isDashing = false;
+                    // increment timer
+                    dashCooldownTimer += Time.deltaTime;
+                }
+
+                // start dash
+                if (Input.GetButtonDown(dashButton) && dashCooldownTimer >= dashCooldown && !isDashing && !IsStunned())
+                {
+                    // reset dash duration timer
+                    dashTimer = 0f;
+
+                    // set dash direction
+                    dashDirection = transform.forward;
+
+                    // start dash
+                    isDashing = true;
+
+                    // start dash animation
+                    if (animator != null)
+                    {
+                        animator.SetTrigger("dash");
+                    }
+
+                    // reset dash cooldown
+                    dashCooldownTimer = 0f;
+                }
+
+                // dash
+                if (isDashing)
+                {
+                    // move
+                    charController.Move(dashDirection * modifiedStats.moveSpeed * dashSpeed * Time.deltaTime);
+
+                    // increment dash duration timer
+                    dashTimer += Time.deltaTime;
+
+                    // stop dashing
+                    if (dashTimer >= dashDuration)
+                    {
+                        isDashing = false;
+                    }
+                }
+
+                // update bar
+                if (dashBar != null)
+                {
+                    dashBar.SetBar(canMove ? Mathf.InverseLerp(0f, dashCooldown, dashCooldownTimer) : 0f);
                 }
             }
 
-            // update bar
-            if (dashBar != null)
+            // attack
             {
-                dashBar.SetBar(canMove ? Mathf.InverseLerp(0f, dashCooldown, dashCooldownTimer) : 0f);
-            }
-        }
-
-        // attack
-        {
-            // attack cooldown timer
-            if (shotTimer < modifiedStats.attackCooldown)
-            {
-                shotTimer += Time.deltaTime;
-            }
-
-            // shoot a projectile
-            if (Input.GetButtonDown(shootButton))
-            {
-                if (canShoot && !IsStunned() && !isDashing)
+                // attack cooldown timer
+                if (shotTimer < modifiedStats.attackCooldown)
                 {
-                    // has the cooldown finished
-                    if (shotTimer >= modifiedStats.attackCooldown)
+                    shotTimer += Time.deltaTime;
+                }
+
+                // shoot a projectile
+                if (Input.GetButtonDown(shootButton))
+                {
+                    if (canShoot && !IsStunned() && !isDashing)
                     {
-                        Attack();
-
-                        // attack animation
-                        if (animator != null)
+                        // has the cooldown finished
+                        if (shotTimer >= modifiedStats.attackCooldown)
                         {
-                            animator.SetTrigger("attack");
-                        }
+                            Attack();
 
-                        // reset cooldown timer
-                        shotTimer = 0f;
+                            // attack animation
+                            if (animator != null)
+                            {
+                                animator.SetTrigger("attack");
+                            }
 
-                        // remove a single use attack powerup
-                        if (powerup != null && powerup.isSingleUse)
-                        {
-                            RemovePowerup();
+                            // reset cooldown timer
+                            shotTimer = 0f;
+
+                            // remove a single use attack powerup
+                            if (powerup != null && powerup.isSingleUse)
+                            {
+                                RemovePowerup();
+                            }
                         }
                     }
                 }
+
+                // update bar
+                if (attackBar != null)
+                {
+                    attackBar.SetBar(canShoot ? Mathf.InverseLerp(0f, modifiedStats.attackCooldown, shotTimer) : 0f);
+                }
             }
 
-            // update bar
-            if (attackBar != null)
+            // invincibility timer
+            if (iTimer < iTime)
             {
-                attackBar.SetBar(canShoot ? Mathf.InverseLerp(0f, modifiedStats.attackCooldown, shotTimer) : 0f);
+                // increment timer
+                iTimer += Time.deltaTime;
             }
-        }
-
-        // invincibility timer
-        if (iTimer < iTime)
-        {
-            // increment timer
-            iTimer += Time.deltaTime;
-        }
-        else if (!canTakeDamage)
-        {
-            // end invincibility
-            canTakeDamage = true;
+            else if (!canTakeDamage)
+            {
+                // end invincibility
+                canTakeDamage = true;
+            }
         }
     }
 

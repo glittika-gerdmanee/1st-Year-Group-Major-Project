@@ -9,20 +9,63 @@ public class GameTimer : MonoBehaviour
     // how long the game lasts for in seconds
     public float duration = 0f;
 
+    // how many seconds is the countdown to start the game
+    public float startCountdownDuration = 0f;
+
     // timer display
     public Text timerText = null;
+
+    // countdown display text
+    public Text countdownText = null;
 
     // the scene to load once the game ends
     public string nextScene = "Scenes/Scene";
 
+    // is the game started
+    public static bool gameStarted
+    {
+        get
+        {
+            return started;
+        }
+    }
+
     // the current duration of the game in seconds
     private float currentDuration = 0f;
 
-	// Update is called once per frame
-	void Update()
+    // the current game start countdown in seconds
+    private float startCountdownTimer = 0f;
+
+    // is the game started
+    private static bool started = false;
+
+    private void Awake()
     {
-        // increment duration
-        currentDuration += Time.deltaTime;
+        SetStarted(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // game timer
+        if (started)
+        {
+            // increment duration
+            currentDuration += Time.deltaTime;
+        }
+        // start countdown
+        else
+        {
+            startCountdownTimer += Time.deltaTime;
+
+            if (startCountdownTimer >= startCountdownDuration)
+            {
+                SetStarted(true);
+            }
+
+            // update the ui
+            UpdateCountdownText();
+        }
 
         // update the UI
         UpdateTimerText();
@@ -33,6 +76,14 @@ public class GameTimer : MonoBehaviour
             EndGame();
         }
 	}
+
+    // sets the game to started/not started
+    private void SetStarted(bool b)
+    {
+        started = b;
+
+        countdownText.gameObject.SetActive(!started);
+    }
 
     // updates the timer text
     private void UpdateTimerText()
@@ -51,10 +102,24 @@ public class GameTimer : MonoBehaviour
         timerText.text = remainingMinutes.ToString() + ":" + remainingSeconds.ToString();
     }
 
+    // update countdown text
+    private void UpdateCountdownText()
+    {
+        // get remaining countdown seconds
+        int remainingSeconds = (int)(startCountdownDuration - startCountdownTimer);
+
+        // clamp remaining seconds
+        remainingSeconds = (int)(Mathf.Clamp(remainingSeconds, 0f, startCountdownDuration));
+
+        // set text
+        countdownText.text = remainingSeconds == 0 ? "Start!" : remainingSeconds.ToString();
+    }
+
     // resets the timer to 0
     public void ResetTimer()
     {
         currentDuration = 0f;
+        startCountdownTimer = 0f;
     }
 
     // ends the game

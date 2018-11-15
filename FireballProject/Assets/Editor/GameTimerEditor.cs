@@ -14,14 +14,10 @@ public class GameTimerEditor : Editor
         // get reference to the object instance
         GameTimer myTarget = (GameTimer)target;
 
-        // duration in seconds
-        myTarget.duration = EditorGUILayout.FloatField("Duration (seconds)", myTarget.duration);
-
         // duration in minutes
         myTarget.duration = EditorGUILayout.FloatField("Duration (minutes)", myTarget.duration / 60f) * 60f;
 
-        // text object
-        myTarget.timerText = (Text)(EditorGUILayout.ObjectField("Text", myTarget.timerText, typeof(Text), true));
+        base.OnInspectorGUI();
     }
 }
 

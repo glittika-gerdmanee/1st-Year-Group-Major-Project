@@ -137,17 +137,19 @@ public class OptionsMenu : MonoBehaviour {
             soundsPanel.SetActive(false);
             optionsPanel.SetActive(true);
         }
-
-        if (videoPanel.activeInHierarchy)
+        else if (videoPanel.activeInHierarchy)
         {
             videoPanel.SetActive(false);
             optionsPanel.SetActive(true);
         }
-
-        if (controlsPanel.activeInHierarchy)
+        else if (controlsPanel.activeInHierarchy)
         {
             controlsPanel.SetActive(false);
             optionsPanel.SetActive(true);
+        }
+        else if (optionsMenu.activeInHierarchy)
+        {
+            optionsMenu.SetActive(false);
         }
     }
 

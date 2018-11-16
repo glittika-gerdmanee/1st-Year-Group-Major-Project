@@ -36,13 +36,18 @@ public class Projectile : MonoBehaviour
     public float explosionRadius = 0f;
 
     // the particles to deparent after the projectile despawns
-    public GameObject deparentEffects = null;
+    public GameObject[] deparentEffects = new GameObject[1];
 
     // explosion effect
     public GameObject explosionEffect = null;
 
     // explosion object
     public GameObject explosion = null;
+
+    // graphics objects
+    public GameObject fireballgraphic = null;
+    public GameObject freezeGraphic = null;
+    public GameObject bombGraphic = null;
 
     // reference to the rigidbody
     private Rigidbody rb = null;
@@ -59,9 +64,35 @@ public class Projectile : MonoBehaviour
         // get the rigidbody on the projectile
         rb = GetComponent<Rigidbody>();
 	}
-	
-	// Update is called once per frame
-	void Update()
+
+    private void Start()
+    {
+        // enable graphics object
+        switch (type)
+        {
+            case ProjectileType.Damage:
+                {
+                    fireballgraphic.SetActive(true);
+
+                    break;
+                }
+            case ProjectileType.Stun:
+                {
+                    freezeGraphic.SetActive(true);
+
+                    break;
+                }
+            case ProjectileType.Bomb:
+                {
+                    bombGraphic.SetActive(true);
+
+                    break;
+                }
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         // increment age
         {
@@ -105,8 +136,14 @@ public class Projectile : MonoBehaviour
         }
 
         // deparent effects
-        deparentEffects.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
-        deparentEffects.transform.SetParent(null);
+        for (int i = 0; i < deparentEffects.Length; ++i)
+        {
+            if (deparentEffects[i].activeInHierarchy)
+            {
+                deparentEffects[i].GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                deparentEffects[i].transform.SetParent(null);
+            }
+        }
 
         // destroy the projectile
         Destroy(gameObject);

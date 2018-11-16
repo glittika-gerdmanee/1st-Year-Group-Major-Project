@@ -11,11 +11,11 @@ public class CharacterSelect : MonoBehaviour
     public const uint MAX_PLAYERS = 4u;
 
     // buttons to press to join the game
-    public string keyboardButton = "ShootK";
-    public string controller1Button = "ShootC1";
-    public string controller2Button = "ShootC2";
-    public string controller3Button = "ShootC3";
-    public string controller4Button = "ShootC4";
+    public string keyboardButton = "JoinK";
+    public string controller1Button = "JoinC1";
+    public string controller2Button = "JoinC2";
+    public string controller3Button = "JoinC3";
+    public string controller4Button = "JoinC4";
 
     // list of joined players
     [HideInInspector]

@@ -13,6 +13,13 @@ public class EndScreen : MonoBehaviour
     // the scene to load once players have finished looking at scores
     public string nextScene = "Scenes/Scene";
 
+    // list of positions for dragons to stand in
+    // 0th position is the winner
+    public GameObject[] positions = new GameObject[4];
+
+    // list of dragons
+    public GameObject[] dragons = new GameObject[4];
+
     // list of scores
     // key = player number
     // value = score
@@ -23,6 +30,7 @@ public class EndScreen : MonoBehaviour
     {
         // display scores
         UpdateUI();
+        ShowDragons();
 	}
 	
 	// Update is called once per frame
@@ -84,6 +92,25 @@ public class EndScreen : MonoBehaviour
 
             // next text field
             ++textIndex;
+        }
+    }
+
+    // shows the dragons in their positions
+    private void ShowDragons()
+    {
+        int i = 0;
+        foreach (int key in scores.Keys)
+        {
+            GameObject dragon = dragons[key];
+
+            // move dragon to position
+            dragon.transform.position = positions[i].transform.position;
+            dragon.transform.rotation = positions[i].transform.rotation;
+
+            // un-hide dragon
+            dragon.SetActive(true);
+
+            ++i;
         }
     }
 

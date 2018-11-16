@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a59c5555e11b05b4aa65380ce05468a8
-timeCreated: 1542322309
+timeCreated: 1542324970
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -148,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 29
-        y: 26
+        y: 23
         width: 78
         height: 139
       alignment: 0
@@ -161,8 +161,8 @@ TextureImporter:
       name: 2nd
       rect:
         serializedVersion: 2
-        x: 112
-        y: 26
+        x: 120
+        y: 23
         width: 89
         height: 139
       alignment: 0
@@ -175,8 +175,8 @@ TextureImporter:
       name: 3rd
       rect:
         serializedVersion: 2
-        x: 204
-        y: 26
+        x: 228
+        y: 23
         width: 94
         height: 139
       alignment: 0
@@ -189,8 +189,8 @@ TextureImporter:
       name: 4th
       rect:
         serializedVersion: 2
-        x: 299
-        y: 26
+        x: 335
+        y: 22
         width: 104
         height: 139
       alignment: 0

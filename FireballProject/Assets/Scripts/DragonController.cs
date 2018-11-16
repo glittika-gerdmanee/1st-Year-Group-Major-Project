@@ -132,6 +132,9 @@ public class DragonController : Entity
     // dash cooldown timer
     private float dashCooldownTimer = 0f;
 
+    // reference to the flame cone
+    private FireCone fireCone = null;
+
     // get the dragons stats after aplying boosts from powerups
     public DragonStats GetModifiedStats()
     {
@@ -414,6 +417,9 @@ public class DragonController : Entity
 
                 // can't shoot fire cone again :(
                 canShoot = false;
+
+                // get reference to fire cone
+                fireCone = newFireCone;
             }
         }
     }
@@ -483,6 +489,10 @@ public class DragonController : Entity
 
         // remove powerup on stun
         RemovePowerup();
+        if (fireCone != null)
+        {
+            fireCone.Despawn();
+        }
     }
 
     // override for breaking stun

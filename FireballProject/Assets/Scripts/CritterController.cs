@@ -231,7 +231,9 @@ public class CritterController : Entity
             if (r <= dropChance)
             {
                 // spawn a drop
-                if (drop != null)
+                // max drops
+                int maxDrops = FindObjectsOfType<DragonController>().Length;
+                if (drop != null && PowerupDrop.powerupCount < maxDrops)
                 {
                     Instantiate(drop, transform.position, transform.rotation);
                 }

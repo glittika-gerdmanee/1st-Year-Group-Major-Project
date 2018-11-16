@@ -11,6 +11,15 @@ public class PowerupDrop : MonoBehaviour
     [HideInInspector]
     public Powerup powerup = null;
 
+    // max drops
+    public static int powerupCount
+    {
+        get
+        {
+            return dropCount;
+        }
+    }
+
     // age of the powerup drop
     private float age = 0f;
 
@@ -20,6 +29,19 @@ public class PowerupDrop : MonoBehaviour
 
     // rarities of powerups
     private static readonly float[] powerupRarities = { commonRarity, rareRarity, rareRarity, rareRarity, commonRarity, commonRarity };
+
+    // max powerup drops
+    private static int dropCount = 0;
+
+    private void Awake()
+    {
+        ++dropCount;
+    }
+
+    private void OnDestroy()
+    {
+        --dropCount;
+    }
 
     // initialisation
     private void Start()

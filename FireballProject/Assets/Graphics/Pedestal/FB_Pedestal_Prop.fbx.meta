@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d53c28b2122f3a3489971b77a42b9a40
-timeCreated: 1541741205
+guid: 762cc80d3c960314f98fe0bfefa6a120
+timeCreated: 1542329907
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,8 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Pedestal
+    4300000: pCylinder1
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -85,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -92,6 +92,9 @@ public class DragonController : Entity
     [HideInInspector]
     public Image powerupSprite = null;
 
+    // the dizzy effect
+    public GameObject dizzyEffect = null;
+
     // the direction to dash in
     private Vector3 dashDirection = Vector3.zero;
 
@@ -493,6 +496,9 @@ public class DragonController : Entity
         {
             fireCone.Despawn();
         }
+
+        // enable dizzy effect
+        dizzyEffect.SetActive(true);
     }
 
     // override for breaking stun
@@ -515,6 +521,9 @@ public class DragonController : Entity
         {
             animator.SetTrigger("breakStun");
         }
+
+        // disable dizzy effect
+        dizzyEffect.SetActive(false);
     }
 
     // set control inputs for the dragon

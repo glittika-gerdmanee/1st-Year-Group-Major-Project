@@ -7,6 +7,10 @@ public class PowerupDrop : MonoBehaviour
     // how long does the powerup drop stay before despawning
     public float duration = 0f;
 
+    // powerup drop graphics
+    public GameObject commonGraphic = null;
+    public GameObject rareGraphic = null;
+
     // the powerup
     [HideInInspector]
     public Powerup powerup = null;
@@ -50,6 +54,18 @@ public class PowerupDrop : MonoBehaviour
         if (powerup == null)
         {
             powerup = GetRandomPowerup();
+
+            // set graphic
+            if (powerup.type == PowerupType.BombAttack || powerup.type == PowerupType.FreezeAttack || powerup.type == PowerupType.FlameCone)
+            {
+                // rare
+                rareGraphic.SetActive(true);
+            }
+            else
+            {
+                // common
+                commonGraphic.SetActive(true);
+            }
         }
     }
 
@@ -76,7 +92,7 @@ public class PowerupDrop : MonoBehaviour
         if (hitDragon != null)
         {
             // give the dragon the powerup
-            if (!(hitDragon.IsDead()) && hitDragon.GivePowerup(GetRandomPowerup()))
+            if (!(hitDragon.IsDead()) && hitDragon.GivePowerup(powerup))
             {
                 // despawn the powerup drop
                 Destroy(gameObject);

@@ -2690,7 +2690,7 @@ MonoBehaviour:
   visible: 0
   textHeight: 21
   runHotkeys: 1
-  hotkeys: 0f010000000100000101000002010000030100000401000005010000060100000701000008010000090100000e010000
+  hotkeys: 0f010000000100000101000002010000030100000401000005010000060100000701000008010000090100000e0100000d010000
   hotkeyCommands:
   - spawndragon 0
   - givepowerup 0 60 0
@@ -2704,6 +2704,7 @@ MonoBehaviour:
   - givepowerup 8 60 0
   - givepowerup 9 60 0
   - spawndragon 1
+  - nocritters
 --- !u!114 &327466265
 MonoBehaviour:
   m_ObjectHideFlags: 0

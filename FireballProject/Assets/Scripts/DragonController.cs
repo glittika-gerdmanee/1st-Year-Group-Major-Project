@@ -265,7 +265,7 @@ public class DragonController : Entity
                 // movement animation
                 if (animator != null)
                 {
-                    animator.SetBool(("isMoving"), move.magnitude > 0);
+                    animator.SetBool(("walking"), move.magnitude > 0);
                 }
 
                 // move
@@ -487,7 +487,7 @@ public class DragonController : Entity
         // start stun animation
         if (animator != null)
         {
-            animator.SetTrigger("stun");
+            animator.SetTrigger("startStun");
         }
 
         // remove powerup on stun

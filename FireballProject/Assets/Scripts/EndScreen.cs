@@ -8,7 +8,13 @@ using System.Linq;
 public class EndScreen : MonoBehaviour
 {
     // UI text to display players scores
-    public Text[] displayText = new Text[CharacterSelect.MAX_PLAYERS];
+    public Text[] displayText = new Text[4];
+
+    // the panels
+    public Image[] panels = new Image[4];
+
+    // the panel images
+    public Sprite[] panelSprites = new Sprite[4];
 
     // the scene to load once players have finished looking at scores
     public string nextScene = "Scenes/Scene";
@@ -71,24 +77,27 @@ public class EndScreen : MonoBehaviour
         // get sorted score list
         SortScores();
 
-        // disable text objects
-        for (int i = 0; i < displayText.Length; ++i)
+        // disable ui objects
+        for (int i = 0; i < panels.Length; ++i)
         {
-            displayText[i].gameObject.SetActive(false);
+            panels[i].gameObject.SetActive(false);
         }
 
-        // set text and enable text objects
+        // set text and enable ui objects
         int textIndex = 0;
         foreach (int key in scores.Keys)
         {
             // string to display
             string str = "Player " + (key + 1).ToString() + " : " + scores[key].ToString();
 
+            // set panel sprite
+            panels[textIndex].sprite = panelSprites[key];
+
             // set ui text
             displayText[textIndex].text = str;
 
-            // enable text
-            displayText[textIndex].gameObject.SetActive(true);
+            // enable object
+            panels[textIndex].gameObject.SetActive(true);
 
             // next text field
             ++textIndex;

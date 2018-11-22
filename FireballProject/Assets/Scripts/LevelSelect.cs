@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelSelect : MonoBehaviour
 {
     // the selected scene
-    public static string currentScene = "";
+    public static string currentScene = "Scenes/ForestLevel";
 
     // set the forest scene
     public void SetLevel(string scene)

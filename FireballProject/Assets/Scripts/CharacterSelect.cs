@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
-    // maximum amount of players that can join
-    [HideInInspector]
-    public const uint MAX_PLAYERS = 4u;
-
     // buttons to press to join the game
     public string keyboardButton = "JoinK";
     public string controller1Button = "JoinC1";
@@ -26,7 +22,7 @@ public class CharacterSelect : MonoBehaviour
 
     // text to change when a player joins
     // don't change the size of this list
-    public GameObject[] playersDisplayText = new GameObject[MAX_PLAYERS];
+    public GameObject[] playersDisplayText = new GameObject[4];
 
     // the scene to load in after players have joined
     private string nextScene = "";
@@ -137,7 +133,7 @@ public class CharacterSelect : MonoBehaviour
     private bool AddPlayer(ControllerNum newPlayer)
     {
         // don't add the player if there is already maximum amount of players
-        if (players.Count >= MAX_PLAYERS)
+        if (players.Count >= 4)
         {
             return false;
         }

@@ -10,8 +10,7 @@ public class PlayerSpawner : MonoBehaviour
     public GameObject player = null;
 
     // list of spawn locations
-    // don't change the size of this list
-    public GameObject[] spawnLocations = new GameObject[CharacterSelect.MAX_PLAYERS];
+    public GameObject[] spawnLocations = new GameObject[4];
 
     // list of dragon materials
     public Material dragonBlue = null;

@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class ScoreDisplay : MonoBehaviour
 {
     // list of UI text to display players scores
-    // don't change the size of this list
-    public Text[] scoreDisplays = new Text[CharacterSelect.MAX_PLAYERS];
+    public Text[] scoreDisplays = new Text[4];
 
     // list of scores
     // key = player number

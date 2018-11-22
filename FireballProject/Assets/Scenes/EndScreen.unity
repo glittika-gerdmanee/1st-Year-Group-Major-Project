@@ -659,6 +659,19 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100268, guid: 6ab549e6637524147998ca88c3c09c2e, type: 3}
   m_PrefabInternal: {fileID: 144781823}
+--- !u!114 &144781825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 144781824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1334473cd496d44b1f487095b9a23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minBlinkTime: 2.5
+  maxBlinkTime: 4.5
 --- !u!1 &159601653
 GameObject:
   m_ObjectHideFlags: 0
@@ -5535,6 +5548,19 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100268, guid: 6ab549e6637524147998ca88c3c09c2e, type: 3}
   m_PrefabInternal: {fileID: 1598300376}
+--- !u!114 &1598300378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1598300377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1334473cd496d44b1f487095b9a23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minBlinkTime: 2.5
+  maxBlinkTime: 4.5
 --- !u!1 &1610952570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5695,6 +5721,19 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100268, guid: 6ab549e6637524147998ca88c3c09c2e, type: 3}
   m_PrefabInternal: {fileID: 1657513083}
+--- !u!114 &1657513085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1657513084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1334473cd496d44b1f487095b9a23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minBlinkTime: 2.5
+  maxBlinkTime: 4.5
 --- !u!1 &1659461013
 GameObject:
   m_ObjectHideFlags: 0
@@ -6703,6 +6742,19 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100268, guid: 6ab549e6637524147998ca88c3c09c2e, type: 3}
   m_PrefabInternal: {fileID: 1845357992}
+--- !u!114 &1845357994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845357993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1334473cd496d44b1f487095b9a23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minBlinkTime: 2.5
+  maxBlinkTime: 4.5
 --- !u!1001 &1847898250
 Prefab:
   m_ObjectHideFlags: 0
@@ -7241,7 +7293,6 @@ MonoBehaviour:
   - {fileID: 21300002, guid: a59c5555e11b05b4aa65380ce05468a8, type: 3}
   - {fileID: 21300004, guid: a59c5555e11b05b4aa65380ce05468a8, type: 3}
   - {fileID: 21300006, guid: a59c5555e11b05b4aa65380ce05468a8, type: 3}
-  nextScene: Scenes/CharacterSelect
   positions:
   - {fileID: 778314196}
   - {fileID: 1879741195}

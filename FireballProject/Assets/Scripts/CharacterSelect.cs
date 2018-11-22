@@ -19,9 +19,6 @@ public class CharacterSelect : MonoBehaviour
     // sprites
     public Sprite[] sprites = new Sprite[4];
 
-    // the scene to load in after players have joined
-    private string nextScene = "";
-
     // Use this for initialization
     void Start()
     {
@@ -30,9 +27,6 @@ public class CharacterSelect : MonoBehaviour
 
         // set default joined player states
         UpdateJoinedPlayersDisplay();
-
-        // set the next scene
-        nextScene = LevelSelect.currentScene;
 	}
 	
 	// Update is called once per frame
@@ -44,8 +38,8 @@ public class CharacterSelect : MonoBehaviour
             // check if enough players have joined
             if (players.Count >= minPlayers)
             {
-                // load the test scene
-                SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+                // load the game scene
+                SceneManager.LoadScene("Scenes/ForestLevel", LoadSceneMode.Single);
             }
         }
 
@@ -73,6 +67,11 @@ public class CharacterSelect : MonoBehaviour
                 {
                     // update the display
                     UpdateJoinedPlayersDisplay();
+                }
+                else if (players.Count == 0)
+                {
+                    // go back to main menu
+                    SceneManager.LoadScene("Scenes/MenuScene");
                 }
             }
         }

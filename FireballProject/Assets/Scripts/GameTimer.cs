@@ -18,9 +18,6 @@ public class GameTimer : MonoBehaviour
     // countdown display text
     public Text countdownText = null;
 
-    // the scene to load once the game ends
-    public string nextScene = "Scenes/Scene";
-
     // is the game started
     public static bool gameStarted
     {
@@ -139,7 +136,7 @@ public class GameTimer : MonoBehaviour
         }
 
         // load end scene
-        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+        SceneManager.LoadScene("Scenes/EndScreen", LoadSceneMode.Single);
     }
 
     // sets the remaining time

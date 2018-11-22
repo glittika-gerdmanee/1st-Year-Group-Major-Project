@@ -16,9 +16,6 @@ public class EndScreen : MonoBehaviour
     // the panel images
     public Sprite[] panelSprites = new Sprite[4];
 
-    // the scene to load once players have finished looking at scores
-    public string nextScene = "Scenes/Scene";
-
     // list of positions for dragons to stand in
     // 0th position is the winner
     public GameObject[] positions = new GameObject[4];
@@ -45,7 +42,7 @@ public class EndScreen : MonoBehaviour
         // continue from end screen
         if (Input.GetButtonDown("StartK") || Input.GetButtonDown("StartC1") || Input.GetButtonDown("StartC2") || Input.GetButtonDown("StartC3") || Input.GetButtonDown("StartC4"))
         {
-            SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+            SceneManager.LoadScene("Scenes/CharacterSelect", LoadSceneMode.Single);
         }
     }
 
@@ -127,6 +124,12 @@ public class EndScreen : MonoBehaviour
             else
             {
                 dragon.GetComponent<Animator>().SetTrigger("defeat");
+            }
+
+            // disable blink
+            if (i != 0)
+            {
+                dragon.GetComponent<RandomBlink>().enabled = false;
             }
 
             ++i;

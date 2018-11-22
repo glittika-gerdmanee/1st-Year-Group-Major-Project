@@ -76,7 +76,7 @@ public class CharacterSelect : MonoBehaviour
         }
 	}
 
-    // checks if a ploayer has pressed start
+    // checks if a player has pressed start
     private bool WasStartPressed()
     {
         bool startPressed = false;

@@ -4228,12 +4228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdfe5a17e9b3d540b48f71356c38c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyboardButton: ShootK
-  controller1Button: ShootC1
-  controller2Button: ShootC2
-  controller3Button: ShootC3
-  controller4Button: ShootC4
-  minPlayers: 1
+  minPlayers: 2
   playersDisplayText:
   - {fileID: 1843882245}
   - {fileID: 1905538861}

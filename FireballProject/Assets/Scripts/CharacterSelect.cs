@@ -13,9 +13,11 @@ public class CharacterSelect : MonoBehaviour
     // minimum amount of players to start the game
     public uint minPlayers = 2u;
 
-    // text to change when a player joins
-    // don't change the size of this list
-    public GameObject[] playersDisplayText = new GameObject[4];
+    // sprite to dislay what controller a dragon has
+    public SpriteRenderer[] spriteRenderers = new SpriteRenderer[4];
+
+    // sprites
+    public Sprite[] sprites = new Sprite[4];
 
     // the scene to load in after players have joined
     private string nextScene = "";
@@ -140,55 +142,26 @@ public class CharacterSelect : MonoBehaviour
     private void UpdateJoinedPlayersDisplay()
     {
         // enable/disable displays
-        for (int i = 0; i < playersDisplayText.Length; ++i)
+        for (int i = 0; i < spriteRenderers.Length; ++i)
         {
             bool enable = i < players.Count;
 
-            playersDisplayText[i].transform.parent.gameObject.SetActive(enable);
+            spriteRenderers[i].transform.parent.gameObject.SetActive(enable);
         }
 
-        // set text on displays
+        // set sprite displays
         for (int i = 0; i < players.Count; ++i)
         {
-            // get string for current player
+            // get sprite for current player
             ControllerNum num = players[i];
-            string str = "";
-            switch (num)
+            Sprite img = null;
+            if (num != ControllerNum.Keyboard)
             {
-                case ControllerNum.Keyboard:
-                    {
-                        str = "Keyboard";
-
-                        break;
-                    }
-                case ControllerNum.Controller1:
-                    {
-                        str = "Controller 1";
-
-                        break;
-                    }
-                case ControllerNum.Controller2:
-                    {
-                        str = "Controller 2";
-
-                        break;
-                    }
-                case ControllerNum.Controller3:
-                    {
-                        str = "Controller 3";
-
-                        break;
-                    }
-                case ControllerNum.Controller4:
-                    {
-                        str = "Controller 4";
-
-                        break;
-                    }
+                img = sprites[(int)num - 1];
             }
 
-            // set text
-            playersDisplayText[i].GetComponent<TextMesh>().text = str;
+            // set sprite
+            spriteRenderers[i].sprite = img;
         }
     }
 

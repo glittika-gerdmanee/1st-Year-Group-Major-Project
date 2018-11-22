@@ -1834,20 +1834,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   images:
   - {fileID: 21300000, guid: b920e5cdec940164cbcddf99ebe59d49, type: 3}
+  - {fileID: 21300000, guid: 708f24d31b705de4bb76eff3d4377f13, type: 3}
   - {fileID: 21300000, guid: 27780a2f29e2f0b448c2646f9c0b6cde, type: 3}
   - {fileID: 21300000, guid: 29cf12dea3cc31d42bd5271d8e76b55c, type: 3}
   imagePos: 0
-  currentImage: {fileID: 675860640}
+  currentImage: {fileID: 0}
   texts:
   - Run around and gain points by shooting fireballs at bunnies and other players
+  - Bunnies can randomly drop a variety of power-ups when attacked
   - If a player's health is depeleted they will be stunned for a few seconds
   - The player who gains the highest score wins!
   textPos: 0
-  currentText: {fileID: 853287469}
+  currentText: {fileID: 0}
   pageNo: 0
-  pageText: {fileID: 1222414158}
-  nextButton: {fileID: 157009752}
-  prevButton: {fileID: 598125959}
+  pageText: {fileID: 0}
+  nextButton: {fileID: 0}
+  prevButton: {fileID: 0}
 --- !u!4 &322490644
 Transform:
   m_ObjectHideFlags: 0

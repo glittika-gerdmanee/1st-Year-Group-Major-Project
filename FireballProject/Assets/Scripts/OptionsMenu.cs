@@ -52,8 +52,14 @@ public class OptionsMenu : MonoBehaviour {
     //array of resolution options
     public Resolution[] resolution;
 
-	// Use this for initialization
-	void Start()
+    // option buttons
+    public Button soundOptionsButton = null;
+    public Button videoOptionsButton = null;
+    public Button creditsOptionsButton = null;
+    public Button optionsButton = null;
+
+    // Use this for initialization
+    void Start()
     {
         resolution = Screen.resolutions;
 
@@ -134,22 +140,34 @@ public class OptionsMenu : MonoBehaviour {
     {
         if(soundsPanel.activeInHierarchy)
         {
+            // close sounds options menu
             soundsPanel.SetActive(false);
             optionsPanel.SetActive(true);
+
+            GetComponent<SetSelectedButton>().SetButton(soundOptionsButton);
         }
         else if (videoPanel.activeInHierarchy)
         {
+            // close video options menu
             videoPanel.SetActive(false);
             optionsPanel.SetActive(true);
+
+            GetComponent<SetSelectedButton>().SetButton(videoOptionsButton);
         }
         else if (controlsPanel.activeInHierarchy)
         {
+            // close controls (credits ??) options menu
             controlsPanel.SetActive(false);
             optionsPanel.SetActive(true);
+
+            GetComponent<SetSelectedButton>().SetButton(creditsOptionsButton);
         }
         else if (optionsMenu.activeInHierarchy)
         {
+            // close options menu
             optionsMenu.SetActive(false);
+
+            GetComponent<SetSelectedButton>().SetButton(optionsButton);
         }
     }
 

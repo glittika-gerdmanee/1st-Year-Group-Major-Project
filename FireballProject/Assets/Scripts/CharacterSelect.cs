@@ -6,13 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
-    // buttons to press to join the game
-    public string keyboardButton = "JoinK";
-    public string controller1Button = "JoinC1";
-    public string controller2Button = "JoinC2";
-    public string controller3Button = "JoinC3";
-    public string controller4Button = "JoinC4";
-
     // list of joined players
     [HideInInspector]
     public static List<ControllerNum> players = new List<ControllerNum>();
@@ -43,6 +36,17 @@ public class CharacterSelect : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
+        // start the game
+        if (WasStartPressed())
+        {
+            // check if enough players have joined
+            if (players.Count >= minPlayers)
+            {
+                // load the test scene
+                SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+            }
+        }
+
         // check if any of the join buttons were pressed
         {
             int buttonCheck = CheckJoinButtons();
@@ -57,19 +61,80 @@ public class CharacterSelect : MonoBehaviour
             }
         }
 
-        // start the game
-        if (Input.GetButtonDown("StartK") || Input.GetButtonDown("StartC1") || Input.GetButtonDown("StartC2") || Input.GetButtonDown("StartC3") || Input.GetButtonDown("StartC4"))
+        // check if any of the quit buttons were pressed
         {
-            // check if enough players have joined
-            if (players.Count >= minPlayers)
+            int buttonCheck = CheckQuitButtons();
+            if (buttonCheck != -1)
             {
-                // load the test scene
-                SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
+                // remove the player who pressed the button
+                if (RemovePlayer((ControllerNum)buttonCheck))
+                {
+                    // update the display
+                    UpdateJoinedPlayersDisplay();
+                }
+            }
+        }
+	}
+
+    // checks if a ploayer has pressed start
+    private bool WasStartPressed()
+    {
+        bool startPressed = false;
+
+        foreach (ControllerNum num in players)
+        {
+            switch (num)
+            {
+                case ControllerNum.Keyboard:
+                    {
+                        if (Input.GetButtonDown("StartK"))
+                        {
+                            startPressed = true;
+                        }
+
+                        break;
+                    }
+                case ControllerNum.Controller1:
+                    {
+                        if (Input.GetButtonDown("StartC1"))
+                        {
+                            startPressed = true;
+                        }
+
+                        break;
+                    }
+                case ControllerNum.Controller2:
+                    {
+                        if (Input.GetButtonDown("StartC2"))
+                        {
+                            startPressed = true;
+                        }
+
+                        break;
+                    }
+                case ControllerNum.Controller3:
+                    {
+                        if (Input.GetButtonDown("StartC3"))
+                        {
+                            startPressed = true;
+                        }
+
+                        break;
+                    }
+                case ControllerNum.Controller4:
+                    {
+                        if (Input.GetButtonDown("StartC4"))
+                        {
+                            startPressed = true;
+                        }
+
+                        break;
+                    }
             }
         }
 
-
-	}
+        return startPressed;
+    }
 
     // update display
     private void UpdateJoinedPlayersDisplay()
@@ -160,35 +225,87 @@ public class CharacterSelect : MonoBehaviour
         return false;
     }
 
+    // removes a player from the list
+    private bool RemovePlayer(ControllerNum player)
+    {
+        // check if the player exists
+        if (players.Contains(player))
+        {
+            // remove the player
+            players.Remove(player);
+
+            return true;
+        }
+
+        return false;
+    }
+
     // check if any of the 'join game' buttons were pressed
     private int CheckJoinButtons()
     {
         // keyboard
-        if (Input.GetButtonDown(keyboardButton))
+        if (Input.GetButtonDown("StartK"))
         {
             return (int)ControllerNum.Keyboard;
         }
 
         // controller 1
-        if (Input.GetButtonDown(controller1Button))
+        if (Input.GetButtonDown("StartC1"))
         {
             return (int)ControllerNum.Controller1;
         }
 
         // controller 2
-        if (Input.GetButtonDown(controller2Button))
+        if (Input.GetButtonDown("StartC2"))
         {
             return (int)ControllerNum.Controller2;
         }
 
         // controller 3
-        if (Input.GetButtonDown(controller3Button))
+        if (Input.GetButtonDown("StartC3"))
         {
             return (int)ControllerNum.Controller3;
         }
 
         // controller 4
-        if (Input.GetButtonDown(controller4Button))
+        if (Input.GetButtonDown("StartC4"))
+        {
+            return (int)ControllerNum.Controller4;
+        }
+
+        // -1 means none of the join keys were pressed
+        return -1;
+    }
+
+    // check if any of the 'quit game' buttons were pressed
+    private int CheckQuitButtons()
+    {
+        // keyboard
+        if (Input.GetButtonDown("QuitK"))
+        {
+            return (int)ControllerNum.Keyboard;
+        }
+
+        // controller 1
+        if (Input.GetButtonDown("QuitC1"))
+        {
+            return (int)ControllerNum.Controller1;
+        }
+
+        // controller 2
+        if (Input.GetButtonDown("QuitC2"))
+        {
+            return (int)ControllerNum.Controller2;
+        }
+
+        // controller 3
+        if (Input.GetButtonDown("QuitC3"))
+        {
+            return (int)ControllerNum.Controller3;
+        }
+
+        // controller 4
+        if (Input.GetButtonDown("QuitC4"))
         {
             return (int)ControllerNum.Controller4;
         }

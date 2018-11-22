@@ -119,6 +119,16 @@ public class EndScreen : MonoBehaviour
             // un-hide dragon
             dragon.SetActive(true);
 
+            // set animation
+            if (i == 0)
+            {
+                dragon.GetComponent<Animator>().SetTrigger("victory");
+            }
+            else
+            {
+                dragon.GetComponent<Animator>().SetTrigger("defeat");
+            }
+
             ++i;
         }
     }

@@ -235,7 +235,7 @@ public class CritterController : Entity
                 int maxDrops = FindObjectsOfType<DragonController>().Length;
                 if (drop != null && PowerupDrop.powerupCount < maxDrops)
                 {
-                    Instantiate(drop, transform.position, transform.rotation);
+                    Instantiate(drop, transform.position, Quaternion.identity);
                 }
             }
         }

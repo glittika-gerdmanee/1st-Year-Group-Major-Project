@@ -87,6 +87,7 @@ MonoBehaviour:
   radius: 2
   freezeDuration: 3
   graphic: {fileID: 1727452074889142}
+  frostmark: {fileID: 1801503985366074, guid: 8eedd3514f1c1104a9085fa056c5ea51, type: 2}
   owner: {fileID: 0}
 --- !u!114 &114915298748287168
 MonoBehaviour:

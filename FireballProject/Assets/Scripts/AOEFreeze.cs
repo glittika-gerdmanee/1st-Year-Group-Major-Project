@@ -13,6 +13,9 @@ public class AOEFreeze : MonoBehaviour
     // graphic
     public GameObject graphic = null;
 
+    // frost mark
+    public GameObject frostmark = null;
+
     // the owner of the aoe
     [HideInInspector]
     public DragonController owner = null;
@@ -36,5 +39,9 @@ public class AOEFreeze : MonoBehaviour
 
         // deparent particles
         graphic.transform.SetParent(null);
+
+        // spawn frost mark
+        GameObject light = Instantiate(frostmark, new Vector3(transform.position.x, 7.5f, transform.position.z), Quaternion.Euler(90f, 0f, 0f));
+        light.transform.localScale = new Vector3(1f, 1f, 1f);
 	}
 }

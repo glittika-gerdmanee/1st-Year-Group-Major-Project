@@ -77,7 +77,7 @@ public class InstructionScroll : MonoBehaviour
     {
         currentImage.sprite = images[imagePos];
         currentText.text = texts[textPos];
-        pageText.text = pageNo + "/3";
+        pageText.text = pageNo + "/4";
 
     }
 }

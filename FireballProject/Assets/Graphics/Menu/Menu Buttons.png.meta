@@ -1,18 +1,18 @@
 fileFormatVersion: 2
 guid: 8c7b6fea33c7704468adcb102cb19b60
-timeCreated: 1542848071
+timeCreated: 1542939670
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Menu Buttons_0
-    21300002: Menu Buttons_4
-    21300004: Menu Buttons_5
-    21300006: Menu Buttons_6
-    21300008: Menu Buttons_7
-    21300010: Menu Buttons_8
-    21300012: Menu Buttons_9
-    21300014: Menu Buttons_10
-    21300016: Menu Buttons_11
+    21300000: UI_Button
+    21300002: '''A'' Button'
+    21300004: '''A'' Button Pushed'
+    21300006: R_Arrow
+    21300008: Controller_01
+    21300010: Controller_02
+    21300012: Controller_03
+    21300014: Controller_04
+    21300016: L_Arrow
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -89,7 +89,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Menu Buttons_0
+      name: UI_Button
       rect:
         serializedVersion: 2
         x: 23
@@ -97,13 +97,13 @@ TextureImporter:
         width: 328
         height: 117
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Menu Buttons_4
+      name: '''A'' Button'
       rect:
         serializedVersion: 2
         x: 369
@@ -111,13 +111,13 @@ TextureImporter:
         width: 52
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Menu Buttons_5
+      name: '''A'' Button Pushed'
       rect:
         serializedVersion: 2
         x: 425
@@ -125,13 +125,13 @@ TextureImporter:
         width: 52
         height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Menu Buttons_6
+      name: R_Arrow
       rect:
         serializedVersion: 2
         x: 437
@@ -139,13 +139,13 @@ TextureImporter:
         width: 34
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Menu Buttons_7
+      name: Controller_01
       rect:
         serializedVersion: 2
         x: 16
@@ -153,13 +153,13 @@ TextureImporter:
         width: 95
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Menu Buttons_8
+      name: Controller_02
       rect:
         serializedVersion: 2
         x: 115
@@ -167,13 +167,13 @@ TextureImporter:
         width: 95
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Menu Buttons_9
+      name: Controller_03
       rect:
         serializedVersion: 2
         x: 214
@@ -181,13 +181,13 @@ TextureImporter:
         width: 95
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Menu Buttons_10
+      name: Controller_04
       rect:
         serializedVersion: 2
         x: 313
@@ -195,13 +195,13 @@ TextureImporter:
         width: 95
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Menu Buttons_11
+      name: L_Arrow
       rect:
         serializedVersion: 2
         x: 435
@@ -209,7 +209,7 @@ TextureImporter:
         width: 34
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

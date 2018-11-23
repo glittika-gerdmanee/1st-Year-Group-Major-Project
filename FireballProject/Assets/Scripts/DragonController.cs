@@ -51,6 +51,9 @@ public class DragonController : Entity
     // cone attack prefab
     public GameObject coneAttack = null;
 
+    // freeze aoe prefab
+    public GameObject freezeBomb = null;
+
     // shoot point transform
     public Transform shootPoint = null;
 
@@ -392,7 +395,7 @@ public class DragonController : Entity
         // attack type
         {
             // moving projectile
-            if (modifiedStats.attackType == AttackType.Fireball || modifiedStats.attackType == AttackType.Freeze || modifiedStats.attackType == AttackType.Bomb)
+            if (modifiedStats.attackType == AttackType.Fireball || modifiedStats.attackType == AttackType.Bomb)
             {
                 // spawn projectile (fireball or freeze ball)
                 Projectile newProjectile = (Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation)).GetComponent<Projectile>();
@@ -403,7 +406,6 @@ public class DragonController : Entity
                 newProjectile.lifespan = modifiedStats.projectileLifespan;
                 newProjectile.type = AttackToProjectileType(modifiedStats.attackType);
                 newProjectile.damage = modifiedStats.attackDamage;
-                newProjectile.stunDuration = modifiedStats.stunDuration;
                 newProjectile.SetVelocity(modifiedStats.projectileVelocity);
                 newProjectile.explosionRadius = modifiedStats.explosionRadius;
             }
@@ -423,6 +425,16 @@ public class DragonController : Entity
 
                 // get reference to fire cone
                 fireCone = newFireCone;
+            }
+            // freeze aoe
+            else if (modifiedStats.attackType == AttackType.Freeze)
+            {
+                // spawn new freeze aoe
+                ExpandingExplosion newFreeze = Instantiate(freezeBomb, shootPoint.transform.position, shootPoint.transform.rotation).GetComponent<ExpandingExplosion>();
+
+                // set stats
+                newFreeze.owner = this;
+                newFreeze.stunDuration = modifiedStats.stunDuration;
             }
         }
     }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ExpandingExplosion : MonoBehaviour
 {
+    // the damage type
+    public bool stun = false;
+
     // start size of the explosion
     public float startSize = 0f;
 
@@ -18,6 +21,9 @@ public class ExpandingExplosion : MonoBehaviour
 
     // explosion blast projector
     public GameObject explosionMark = null;
+
+    // stun duration
+    public float stunDuration = 0f;
 
     // the owner of the bomb
     [HideInInspector]
@@ -70,23 +76,34 @@ public class ExpandingExplosion : MonoBehaviour
             // has the entity already been hit
             if (!(hitEntities.Contains(hitEntity)))
             {
-                // damage the entity
-                if (hitEntity.Damage(hitDamage, owner))
+                if (!stun)
                 {
-                    // give score
+                    // damage the entity
+                    if (hitEntity.Damage(hitDamage, owner))
                     {
-                        DragonController hitDragon = hitEntity.GetComponent<DragonController>();
+                        // give score
+                        {
+                            DragonController hitDragon = hitEntity.GetComponent<DragonController>();
 
-                        if (hitDragon == null)
-                        {
-                            // entity is a critter
-                            owner.AddScore(DragonController.KILL_CRITTER_SCORE);
+                            if (hitDragon == null)
+                            {
+                                // entity is a critter
+                                owner.AddScore(DragonController.KILL_CRITTER_SCORE);
+                            }
+                            else
+                            {
+                                // entity is a dragon
+                                owner.AddScore(DragonController.KILL_DRAGON_SCORE);
+                            }
                         }
-                        else
-                        {
-                            // entity is a dragon
-                            owner.AddScore(DragonController.KILL_DRAGON_SCORE);
-                        }
+                    }
+                }
+                else
+                {
+                    // stun the entity
+                    if (hitEntity != owner)
+                    {
+                        hitEntity.Stun(stunDuration);
                     }
                 }
 

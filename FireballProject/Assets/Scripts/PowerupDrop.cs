@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PowerupDropDisplayType
+{
+    models,
+    sprites
+}
+
 public class PowerupDrop : MonoBehaviour
 {
+    private const PowerupDropDisplayType displayType = PowerupDropDisplayType.models;
+
     // how long does the powerup drop stay before despawning
     public float duration = 0f;
 
     // powerup drop graphics
     public GameObject commonGraphic = null;
     public GameObject rareGraphic = null;
+    public GameObject spriteGraphic = null;
 
     // the powerup
     [HideInInspector]
@@ -56,15 +65,29 @@ public class PowerupDrop : MonoBehaviour
             powerup = GetRandomPowerup();
 
             // set graphic
-            if (powerup.type == PowerupType.BombAttack || powerup.type == PowerupType.FreezeAttack || powerup.type == PowerupType.FlameCone)
+            if (displayType == PowerupDropDisplayType.models)
             {
-                // rare
-                rareGraphic.SetActive(true);
+                if (powerup.type == PowerupType.BombAttack || powerup.type == PowerupType.FreezeAttack || powerup.type == PowerupType.FlameCone)
+                {
+                    // rare
+                    rareGraphic.SetActive(true);
+                }
+                else
+                {
+                    // common
+                    commonGraphic.SetActive(true);
+                }
             }
             else
             {
-                // common
-                commonGraphic.SetActive(true);
+                // get sprite
+                spriteGraphic.GetComponent<SpriteRenderer>().sprite = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>().sprites[(int)(powerup.type)];
+
+                // enable object
+                spriteGraphic.SetActive(true);
+
+                // face towards camera
+                spriteGraphic.transform.LookAt(FindObjectOfType<Camera>().transform);
             }
         }
     }
@@ -82,7 +105,7 @@ public class PowerupDrop : MonoBehaviour
     }
 
     // trigger enter
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerStay(Collider col)
     {
         // get hit object
         GameObject hitObject = FindHighestParent(col.gameObject);

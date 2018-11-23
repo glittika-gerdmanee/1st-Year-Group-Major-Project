@@ -4447,6 +4447,7 @@ MonoBehaviour:
   canPickupPowerup: 1
   projectile: {fileID: 1734649102457260, guid: 48faacf168c0530449c2c6d6be98e0a6, type: 2}
   coneAttack: {fileID: 1957312978427320, guid: 623858d6adf532448b8650b7175fa384, type: 2}
+  freezeBomb: {fileID: 1276136458478824, guid: 34378309c50e62443962012d71e755ba, type: 2}
   shootPoint: {fileID: 4136277391203942}
   dragonRenderers:
   - {fileID: 137671812090705216}

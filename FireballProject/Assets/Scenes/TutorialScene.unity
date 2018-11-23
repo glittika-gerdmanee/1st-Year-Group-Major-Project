@@ -963,7 +963,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b920e5cdec940164cbcddf99ebe59d49, type: 3}
   - {fileID: 21300000, guid: 708f24d31b705de4bb76eff3d4377f13, type: 3}
   - {fileID: 21300000, guid: 27780a2f29e2f0b448c2646f9c0b6cde, type: 3}
-  - {fileID: 21300000, guid: 29cf12dea3cc31d42bd5271d8e76b55c, type: 3}
+  - {fileID: 21300000, guid: 2aa2b54b61003d241955355942cde3f3, type: 3}
   imagePos: 0
   currentImage: {fileID: 2129755422}
   texts:

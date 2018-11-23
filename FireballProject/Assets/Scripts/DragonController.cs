@@ -430,11 +430,11 @@ public class DragonController : Entity
             else if (modifiedStats.attackType == AttackType.Freeze)
             {
                 // spawn new freeze aoe
-                ExpandingExplosion newFreeze = Instantiate(freezeBomb, shootPoint.transform.position, shootPoint.transform.rotation).GetComponent<ExpandingExplosion>();
+                AOEFreeze newFreeze = Instantiate(freezeBomb, shootPoint.transform.position, shootPoint.transform.rotation).GetComponent<AOEFreeze>();
 
                 // set stats
                 newFreeze.owner = this;
-                newFreeze.stunDuration = modifiedStats.stunDuration;
+                newFreeze.freezeDuration = modifiedStats.stunDuration;
             }
         }
     }

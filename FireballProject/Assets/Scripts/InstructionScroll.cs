@@ -38,7 +38,7 @@ public class InstructionScroll : MonoBehaviour
     public void Start()
     {
         pageNo = 1;
-        pageText.text = pageNo + "/3";
+        pageText.text = pageNo + "/4";
     }
 
     public void RightButton()

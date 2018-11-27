@@ -1,18 +1,29 @@
 fileFormatVersion: 2
 guid: 8c7b6fea33c7704468adcb102cb19b60
-timeCreated: 1542939670
-licenseType: Pro
+timeCreated: 1543330051
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: UI_Button
     21300002: '''A'' Button'
     21300004: '''A'' Button Pushed'
-    21300006: R_Arrow
+    21300006: Arrow_R
     21300008: Controller_01
     21300010: Controller_02
     21300012: Controller_03
     21300014: Controller_04
-    21300016: L_Arrow
+    21300016: Arrow_L
+    21300018: UIButton
+    21300020: '''A'' Button'
+    21300022: '''A'' Button Pushed'
+    21300024: Arrow_R
+    21300026: Player01
+    21300028: Player02
+    21300030: Player03
+    21300032: Player04
+    21300034: L_Arrow
+    21300036: '''R'' Trigger'
+    21300038: '''R'' Trigger Pushed'
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -74,7 +85,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 512
     resizeAlgorithm: 0
@@ -84,18 +94,17 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Button
+      name: UIButton
       rect:
         serializedVersion: 2
         x: 23
         y: 163
         width: 328
-        height: 117
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,7 +132,7 @@ TextureImporter:
         x: 425
         y: 229
         width: 52
-        height: 54
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,12 +140,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: R_Arrow
+      name: Arrow_R
       rect:
         serializedVersion: 2
-        x: 437
+        x: 436
         y: 183
-        width: 34
+        width: 35
         height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -145,13 +154,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Controller_01
+      name: Player01
       rect:
         serializedVersion: 2
-        x: 16
+        x: 8
         y: 17
         width: 95
-        height: 128
+        height: 130
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,13 +168,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Controller_02
+      name: Player02
       rect:
         serializedVersion: 2
-        x: 115
+        x: 107
         y: 17
         width: 95
-        height: 128
+        height: 130
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,13 +182,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Controller_03
+      name: Player03
       rect:
         serializedVersion: 2
-        x: 214
+        x: 206
         y: 17
         width: 95
-        height: 128
+        height: 130
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,13 +196,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Controller_04
+      name: Player04
       rect:
         serializedVersion: 2
-        x: 313
+        x: 305
         y: 17
         width: 95
-        height: 128
+        height: 130
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,13 +210,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: L_Arrow
+      name: Arrow_L
       rect:
         serializedVersion: 2
         x: 435
         y: 141
-        width: 34
+        width: 35
         height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: '''R'' Trigger'
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 92
+        width: 78
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: '''R'' Trigger Pushed'
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 39
+        width: 78
+        height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

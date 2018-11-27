@@ -98,6 +98,10 @@ public class DragonController : Entity
     // the dizzy effect
     public GameObject dizzyEffect = null;
 
+    // sound effects
+    public AudioClip fireballSound = null;
+    public AudioClip freezeSound = null;
+
     // the direction to dash in
     private Vector3 dashDirection = Vector3.zero;
 
@@ -410,7 +414,7 @@ public class DragonController : Entity
                 newProjectile.explosionRadius = modifiedStats.explosionRadius;
 
                 // play audio
-                GetComponent<AudioSource>().Play();
+                GetComponentInChildren<AudioPlayer>().AddSound(fireballSound, 1f);
             }
             // cone (fire breath)
             else if (modifiedStats.attackType == AttackType.FlameCone)
@@ -438,6 +442,9 @@ public class DragonController : Entity
                 // set stats
                 newFreeze.owner = this;
                 newFreeze.freezeDuration = modifiedStats.stunDuration;
+
+                // play audio
+                GetComponentInChildren<AudioPlayer>().AddSound(freezeSound, 1f);
             }
         }
     }

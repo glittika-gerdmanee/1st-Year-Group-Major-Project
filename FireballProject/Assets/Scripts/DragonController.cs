@@ -408,6 +408,9 @@ public class DragonController : Entity
                 newProjectile.damage = modifiedStats.attackDamage;
                 newProjectile.SetVelocity(modifiedStats.projectileVelocity);
                 newProjectile.explosionRadius = modifiedStats.explosionRadius;
+
+                // play audio
+                GetComponent<AudioSource>().Play();
             }
             // cone (fire breath)
             else if (modifiedStats.attackType == AttackType.FlameCone)

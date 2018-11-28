@@ -7,6 +7,9 @@ using System.Linq;
 
 public class EndScreen : MonoBehaviour
 {
+    // amount of time until players are allowed to continue
+    public float inputDelay = 0f;
+
     // UI text to display players scores
     public Text[] displayText = new Text[4];
 
@@ -28,6 +31,8 @@ public class EndScreen : MonoBehaviour
     // value = score
     private static Dictionary<int, int> scores = new Dictionary<int, int>();
 
+    private float age = 0f;
+
     // Use this for initialization
     void Start()
     {
@@ -39,10 +44,18 @@ public class EndScreen : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
+        if (age < inputDelay)
+        {
+            age += Time.deltaTime;
+        }
+
         // continue from end screen
         if (Input.GetButtonDown("StartK") || Input.GetButtonDown("StartC1") || Input.GetButtonDown("StartC2") || Input.GetButtonDown("StartC3") || Input.GetButtonDown("StartC4"))
         {
-            SceneManager.LoadScene("Scenes/CharacterSelect", LoadSceneMode.Single);
+            if (age >= inputDelay)
+            {
+                SceneManager.LoadScene("Scenes/CharacterSelect", LoadSceneMode.Single);
+            }
         }
     }
 

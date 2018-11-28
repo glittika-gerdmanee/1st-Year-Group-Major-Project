@@ -4502,7 +4502,10 @@ MonoBehaviour:
   dizzyEffect: {fileID: 1297072263439488}
   fireballSound: {fileID: 8300000, guid: e3027ca2b746b7b479b5ba782f92628b, type: 3}
   freezeSound: {fileID: 8300000, guid: 650f93cc4a669914dac3c7c31c69a90a, type: 3}
+  damageTintDuration: 0.2
+  damageTint: {r: 1, g: 0, b: 0, a: 1}
   controller: 0
+  damageTintTimer: 0
 --- !u!114 &114721116903727834
 MonoBehaviour:
   m_ObjectHideFlags: 1

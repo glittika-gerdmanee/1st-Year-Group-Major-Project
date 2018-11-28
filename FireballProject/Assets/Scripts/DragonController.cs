@@ -102,6 +102,10 @@ public class DragonController : Entity
     public AudioClip fireballSound = null;
     public AudioClip freezeSound = null;
 
+    // damage tint
+    public float damageTintDuration = 0f;
+    public Color damageTint = Color.red;
+
     // the direction to dash in
     private Vector3 dashDirection = Vector3.zero;
 
@@ -145,6 +149,9 @@ public class DragonController : Entity
     // reference to the flame cone
     private FireCone fireCone = null;
 
+    // damage tint timer
+    public float damageTintTimer = 0f;
+
     // get the dragons stats after aplying boosts from powerups
     public DragonStats GetModifiedStats()
     {
@@ -165,7 +172,6 @@ public class DragonController : Entity
         else
         {
             // no powerup so modified stats = base stats
-
             return baseStats;
         }
     }
@@ -391,6 +397,29 @@ public class DragonController : Entity
                 canTakeDamage = true;
             }
         }
+
+        // damage tint
+        if (damageTintTimer > 0f)
+        {
+            damageTintTimer -= Time.deltaTime;
+
+            // disable damage tint
+            if (damageTintTimer <= 0f)
+            {
+                foreach (Renderer r in dragonRenderers)
+                {
+                    r.material.color = Color.white;
+                }
+                foreach (Renderer r in dragonEyeRenderers)
+                {
+                    r.material.color = Color.white;
+                }
+                foreach (Renderer r in dragonEyelidRenderers)
+                {
+                    r.material.color = Color.white;
+                }
+            }
+        }
     }
 
     // attack
@@ -432,6 +461,9 @@ public class DragonController : Entity
 
                 // get reference to fire cone
                 fireCone = newFireCone;
+
+                // play audio
+                GetComponentInChildren<AudioPlayer>().AddSound(fireballSound, 1f);
             }
             // freeze aoe
             else if (modifiedStats.attackType == AttackType.Freeze)
@@ -447,6 +479,33 @@ public class DragonController : Entity
                 GetComponentInChildren<AudioPlayer>().AddSound(freezeSound, 1f);
             }
         }
+    }
+
+    // override for damage to apply damage tint to model
+    // deal damage or heal the entity
+    // negative values deal damage, positive values heal
+    // returns true if this damage killed the entity
+    public override bool Damage(int value, DragonController damageDealer)
+    {
+        // set renderer colours
+        if (value < 0)
+        {
+            foreach (Renderer r in dragonRenderers)
+            {
+                r.material.color = damageTint;
+            }
+            foreach (Renderer r in dragonEyeRenderers)
+            {
+                r.material.color = damageTint;
+            }
+            foreach (Renderer r in dragonEyelidRenderers)
+            {
+                r.material.color = damageTint;
+            }
+            damageTintTimer = damageTintDuration;
+        }
+
+        return base.Damage(value, damageDealer);
     }
 
     // override for death because dragons get stunned instead of actually dying

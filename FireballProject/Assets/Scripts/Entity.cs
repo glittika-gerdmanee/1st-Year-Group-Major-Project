@@ -106,7 +106,7 @@ public class Entity : MonoBehaviour
     // deal damage or heal the entity
     // negative values deal damage, positive values heal
     // returns true if this damage killed the entity
-    public bool Damage(int value, DragonController damageDealer)
+    public virtual bool Damage(int value, DragonController damageDealer)
     {
         // check if allowed to take damage
         if (!canTakeDamage)

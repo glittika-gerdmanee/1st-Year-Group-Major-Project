@@ -10,7 +10,9 @@ public class PlayerSpawner : MonoBehaviour
     public GameObject player = null;
 
     // list of spawn locations
-    public GameObject[] spawnLocations = new GameObject[4];
+    public GameObject[] spawnLocations2 = new GameObject[2];
+    public GameObject[] spawnLocations3 = new GameObject[3];
+    public GameObject[] spawnLocations4 = new GameObject[4];
 
     // list of dragon materials
     public Material dragonBlue = null;
@@ -110,6 +112,28 @@ public class PlayerSpawner : MonoBehaviour
                         }
                 }
 
+                List<GameObject> spawnLocations = new List<GameObject>();
+                switch (CharacterSelect.players.Count)
+                {
+                    case 2:
+                        {
+                            spawnLocations = new List<GameObject>(spawnLocations2);
+
+                            break;
+                        }
+                    case 3:
+                        {
+                            spawnLocations = new List<GameObject>(spawnLocations3);
+
+                            break;
+                        }
+                    case 4:
+                        {
+                            spawnLocations = new List<GameObject>(spawnLocations4);
+
+                            break;
+                        }
+                }
                 SpawnDragon(CharacterSelect.players[i], spawnLocations[i].transform.position, spawnLocations[i].transform.rotation, i, body, eye, eyelid, healthBars[i], dashBars[i], attackBars[i], powerupSprites[i]);
             }
         }

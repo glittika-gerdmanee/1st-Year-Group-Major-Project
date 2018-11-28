@@ -150,7 +150,7 @@ public class DragonController : Entity
     private FireCone fireCone = null;
 
     // damage tint timer
-    public float damageTintTimer = 0f;
+    private float damageTintTimer = 0f;
 
     // get the dragons stats after aplying boosts from powerups
     public DragonStats GetModifiedStats()
@@ -508,6 +508,22 @@ public class DragonController : Entity
         return base.Damage(value, damageDealer);
     }
 
+    // converts a hex code to a color
+    public static Color HexToColor(uint hex)
+    {
+        uint rInt = ((hex >> (4 * 3)) & 255u);
+        uint gInt = ((hex >> (4 * 2)) & 255u);
+        uint bInt = ((hex >> (4 * 1)) & 255u);
+        uint aInt = ((hex >> (4 * 0)) & 255u);
+
+        float r = Mathf.InverseLerp(0u, 255u, rInt);
+        float g = Mathf.InverseLerp(0u, 255u, gInt);
+        float b = Mathf.InverseLerp(0u, 255u, bInt);
+        float a = Mathf.InverseLerp(0u, 255u, aInt);
+
+        return new Color(r, g, b, a);
+    }
+
     // override for death because dragons get stunned instead of actually dying
     public override void Kill(DragonController damageDealer)
     {
@@ -528,25 +544,25 @@ public class DragonController : Entity
                 {
                     case 0:
                         {
-                            c = Color.blue;
+                            c = HexToColor(0x0000FFFF); // blue
 
                             break;
                         }
                     case 1:
                         {
-                            c = Color.green;
+                            c = HexToColor(0x009C34FF); // green
 
                             break;
                         }
                     case 2:
                         {
-                            c = Color.red;
+                            c = HexToColor(0xBA0000FF); // red
 
                             break;
                         }
                     case 3:
                         {
-                            c = Color.yellow;
+                            c = HexToColor(0xFFED00FF); // yellow
 
                             break;
                         }

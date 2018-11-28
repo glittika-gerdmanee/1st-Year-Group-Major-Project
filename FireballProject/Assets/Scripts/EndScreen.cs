@@ -31,6 +31,7 @@ public class EndScreen : MonoBehaviour
     // value = score
     private static Dictionary<int, int> scores = new Dictionary<int, int>();
 
+    // elapsed time
     private float age = 0f;
 
     // Use this for initialization
@@ -117,10 +118,10 @@ public class EndScreen : MonoBehaviour
     // shows the dragons in their positions
     private void ShowDragons()
     {
-        int i = 0;
-        foreach (int key in scores.Keys)
+        int[] keys = scores.Keys.ToArray();
+        for (int i = 0; i < keys.Length; ++i)
         {
-            GameObject dragon = dragons[key];
+            GameObject dragon = dragons[keys[i]];
 
             // move dragon to position
             dragon.transform.position = positions[i].transform.position;
@@ -160,12 +161,13 @@ public class EndScreen : MonoBehaviour
             // find the highest value
             int highestValue = 0;
             int index = 0;
-            foreach (int key in scores.Keys)
+            int[] keys = scores.Keys.ToArray();
+            for (int i = 0; i < keys.Length; ++i)
             {
-                if (scores[key] >= highestValue)
+                if (scores[keys[i]] >= highestValue)
                 {
-                    highestValue = scores[key];
-                    index = key;
+                    highestValue = scores[keys[i]];
+                    index = keys[i];
                 }
             }
 

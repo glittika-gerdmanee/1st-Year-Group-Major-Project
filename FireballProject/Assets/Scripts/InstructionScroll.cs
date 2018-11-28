@@ -25,7 +25,7 @@ public class InstructionScroll : MonoBehaviour
     public Text currentText = null;
 
     //page number
-    public int pageNo;
+    public int pageNo = 0;
 
     //display page number
     public Text pageText = null;
@@ -33,7 +33,6 @@ public class InstructionScroll : MonoBehaviour
     //the right and left button respectively
     public Button nextButton = null;
     public Button prevButton = null;
-
 
     public void Start()
     {
@@ -49,8 +48,6 @@ public class InstructionScroll : MonoBehaviour
             ++textPos;
             ++pageNo;
         }
-
-
     }
 
     public void LeftButton()
@@ -78,6 +75,5 @@ public class InstructionScroll : MonoBehaviour
         currentImage.sprite = images[imagePos];
         currentText.text = texts[textPos];
         pageText.text = pageNo + "/4";
-
     }
 }

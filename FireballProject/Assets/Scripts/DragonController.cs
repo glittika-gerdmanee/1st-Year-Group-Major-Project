@@ -406,17 +406,17 @@ public class DragonController : Entity
             // disable damage tint
             if (damageTintTimer <= 0f)
             {
-                foreach (Renderer r in dragonRenderers)
+                for (int i = 0; i < dragonRenderers.Length; ++i)
                 {
-                    r.material.color = Color.white;
+                    dragonRenderers[i].material.color = Color.white;
                 }
-                foreach (Renderer r in dragonEyeRenderers)
+                for (int i = 0; i < dragonEyeRenderers.Length; ++i)
                 {
-                    r.material.color = Color.white;
+                    dragonEyeRenderers[i].material.color = Color.white;
                 }
-                foreach (Renderer r in dragonEyelidRenderers)
+                for (int i = 0; i < dragonEyelidRenderers.Length; ++i)
                 {
-                    r.material.color = Color.white;
+                    dragonEyelidRenderers[i].material.color = Color.white;
                 }
             }
         }
@@ -490,17 +490,17 @@ public class DragonController : Entity
         // set renderer colours
         if (value < 0)
         {
-            foreach (Renderer r in dragonRenderers)
+            for (int i = 0; i < dragonRenderers.Length; ++i)
             {
-                r.material.color = damageTint;
+                dragonRenderers[i].material.color = damageTint;
             }
-            foreach (Renderer r in dragonEyeRenderers)
+            for (int i = 0; i < dragonEyeRenderers.Length; ++i)
             {
-                r.material.color = damageTint;
+                dragonEyeRenderers[i].material.color = damageTint;
             }
-            foreach (Renderer r in dragonEyelidRenderers)
+            for (int i = 0; i < dragonEyelidRenderers.Length; ++i)
             {
-                r.material.color = damageTint;
+                dragonEyelidRenderers[i].material.color = damageTint;
             }
             damageTintTimer = damageTintDuration;
         }
@@ -544,25 +544,25 @@ public class DragonController : Entity
                 {
                     case 0:
                         {
-                            c = HexToColor(0x0000FFFF); // blue
+                            c = Color.blue; // blue
 
                             break;
                         }
                     case 1:
                         {
-                            c = HexToColor(0x009C34FF); // green
+                            c = Color.green; // green
 
                             break;
                         }
                     case 2:
                         {
-                            c = HexToColor(0xBA0000FF); // red
+                            c = Color.red; // red
 
                             break;
                         }
                     case 3:
                         {
-                            c = HexToColor(0xFFED00FF); // yellow
+                            c = Color.yellow; // yellow
 
                             break;
                         }

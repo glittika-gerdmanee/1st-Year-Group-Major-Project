@@ -188,25 +188,25 @@ public class Entity : MonoBehaviour
                 {
                     case 0:
                         {
-                            c = DragonController.HexToColor(0x0000FFFF); // blue
+                            c = Color.blue; // blue
 
                             break;
                         }
                     case 1:
                         {
-                            c = DragonController.HexToColor(0x009C34FF); // green
+                            c = Color.green; // green
 
                             break;
                         }
                     case 2:
                         {
-                            c = DragonController.HexToColor(0xBA0000FF); // red
+                            c = Color.red; // red
 
                             break;
                         }
                     case 3:
                         {
-                            c = DragonController.HexToColor(0xFFED00FF); // yellow
+                            c = Color.yellow; // yellow
 
                             break;
                         }

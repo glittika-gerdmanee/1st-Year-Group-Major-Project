@@ -40,8 +40,6 @@ public class PlayerSpawner : MonoBehaviour
     // list of powerup sprites
     public Image[] powerupSprites = new Image[4];
 
-    // list of 
-
     // the camera
     private DynamicCamera cam = null;
 

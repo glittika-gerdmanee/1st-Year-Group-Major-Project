@@ -10,8 +10,6 @@ public enum PowerupDropDisplayType
 
 public class PowerupDrop : MonoBehaviour
 {
-    private const PowerupDropDisplayType displayType = PowerupDropDisplayType.models;
-
     // how long does the powerup drop stay before despawning
     public float duration = 0f;
 
@@ -65,8 +63,10 @@ public class PowerupDrop : MonoBehaviour
             powerup = GetRandomPowerup();
 
             // set graphic
-            if (displayType == PowerupDropDisplayType.models)
             {
+                // set #if to true to use models, set to false to use sprites
+#if true
+                // common/rare models
                 if (powerup.type == PowerupType.BombAttack || powerup.type == PowerupType.FreezeAttack || powerup.type == PowerupType.FlameCone)
                 {
                     // rare
@@ -77,17 +77,19 @@ public class PowerupDrop : MonoBehaviour
                     // common
                     commonGraphic.SetActive(true);
                 }
-            }
-            else
-            {
-                // get sprite
-                spriteGraphic.GetComponent<SpriteRenderer>().sprite = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>().sprites[(int)(powerup.type)];
+#else
+                // sprites
+                {
+                    // get sprite
+                    spriteGraphic.GetComponent<SpriteRenderer>().sprite = GameObject.FindGameObjectWithTag("GameController").GetComponent<PowerupStats>().sprites[(int)(powerup.type)];
 
-                // enable object
-                spriteGraphic.SetActive(true);
+                    // enable object
+                    spriteGraphic.SetActive(true);
 
-                // face towards camera
-                spriteGraphic.transform.LookAt(FindObjectOfType<Camera>().transform);
+                    // face towards camera
+                    spriteGraphic.transform.LookAt(FindObjectOfType<Camera>().transform);
+                }
+#endif
             }
         }
     }

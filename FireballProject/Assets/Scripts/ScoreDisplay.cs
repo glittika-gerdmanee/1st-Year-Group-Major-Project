@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -49,12 +50,13 @@ public class ScoreDisplay : MonoBehaviour
             // find the highest value
             int highestValue = 0;
             int index = 0;
-            foreach (int key in scores.Keys)
+            int[] keys = scores.Keys.ToArray();
+            for (int i = 0; i < keys.Length; ++i)
             {
-                if (scores[key] >= highestValue)
+                if (scores[keys[i]] >= highestValue)
                 {
-                    highestValue = scores[key];
-                    index = key;
+                    highestValue = scores[keys[i]];
+                    index = keys[i];
                 }
             }
 

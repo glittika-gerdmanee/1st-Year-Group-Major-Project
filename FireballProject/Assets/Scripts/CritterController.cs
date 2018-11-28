@@ -225,18 +225,16 @@ public class CritterController : Entity
     public override void Kill(DragonController damageDealer)
     {
         // chance to drop a powerup
-        {
-            float r = Random.Range(0f, 1f);
+        float r = Random.Range(0f, 1f);
 
-            if (r <= dropChance)
+        if (r <= dropChance)
+        {
+            // spawn a drop
+            // max drops
+            int maxDrops = FindObjectsOfType<DragonController>().Length;
+            if (drop != null && PowerupDrop.powerupCount < maxDrops)
             {
-                // spawn a drop
-                // max drops
-                int maxDrops = FindObjectsOfType<DragonController>().Length;
-                if (drop != null && PowerupDrop.powerupCount < maxDrops)
-                {
-                    Instantiate(drop, transform.position, Quaternion.identity);
-                }
+                Instantiate(drop, transform.position, Quaternion.identity);
             }
         }
 

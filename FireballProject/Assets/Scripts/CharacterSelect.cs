@@ -82,9 +82,9 @@ public class CharacterSelect : MonoBehaviour
     {
         bool startPressed = false;
 
-        foreach (ControllerNum num in players)
+        for (int i = 0; i < players.Count; ++i)
         {
-            switch (num)
+            switch (players[i])
             {
                 case ControllerNum.Keyboard:
                     {
@@ -131,6 +131,11 @@ public class CharacterSelect : MonoBehaviour
 
                         break;
                     }
+            }
+
+            if (startPressed)
+            {
+                break;
             }
         }
 

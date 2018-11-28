@@ -18,12 +18,6 @@ public class EasterEgg : MonoBehaviour
 
     // the current key index
     private int keyIndex = 0;
-
-	// Use this for initialization
-	void Start()
-    {
-		
-	}
 	
 	// Update is called once per frame
 	void Update()

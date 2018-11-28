@@ -7,11 +7,13 @@ public class BackgroundMusic : MonoBehaviour
     // time to fade in
     public float fadeDuration = 0f;
 
+    // music volume
     public float volume = 1f;
 
     // audio source
     private AudioSource src = null;
 
+    // elapsed time
     private float elapsedTime = 0f;
 
 	// Use this for initialization
@@ -29,14 +31,17 @@ public class BackgroundMusic : MonoBehaviour
         float remainingTime = duration - (elapsedTime - GetComponent<GameTimer>().startCountdownDuration);
         if (elapsedTime < fadeDuration)
         {
+            // fade in
             src.volume = Mathf.InverseLerp(0f, fadeDuration, elapsedTime) * volume;
         }
         else if (remainingTime < fadeDuration)
         {
+            // fade out
             src.volume = Mathf.InverseLerp(0f, fadeDuration, remainingTime) * volume;
         }
-        else
+        else if (src.volume != volume)
         {
+            // set volume
             src.volume = volume;
         }
 	}

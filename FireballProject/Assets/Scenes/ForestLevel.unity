@@ -2721,7 +2721,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 327466258}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 696255f3b152f6b4f856216d31492276, type: 3}
   m_Name: 
@@ -2730,7 +2730,7 @@ MonoBehaviour:
     type: 2}
   visible: 0
   textHeight: 21
-  runHotkeys: 1
+  runHotkeys: 0
   hotkeys: 0f010000000100000101000002010000030100000401000005010000060100000701000008010000090100000e0100000d010000
   hotkeyCommands:
   - spawndragon 0

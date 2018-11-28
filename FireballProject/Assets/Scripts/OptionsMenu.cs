@@ -22,12 +22,6 @@ public class OptionsMenu : MonoBehaviour {
     //control mapping panel
     public GameObject controlsPanel;
 
-    //button to confirm all settings adjusted by player
-    // public Button applyButton = null;
-
-    //button for player to return to other panels and leave options menu
-    // public Button backButton = null;
-
     //source of bgm
     public AudioSource musicSource;
 

@@ -36,17 +36,15 @@ public class DragonStats : System.Object
     public void CopyFrom(DragonStats target)
     {
         // copy values
-        {
-            moveSpeed = target.moveSpeed;
-            projectileVelocity = target.projectileVelocity;
-            attackCooldown = target.attackCooldown;
-            maxPierces = target.maxPierces;
-            projectileLifespan = target.projectileLifespan;
-            attackType = target.attackType;
-            attackDamage = target.attackDamage;
-            stunDuration = target.stunDuration;
-            explosionRadius = target.explosionRadius;
-        }
+        moveSpeed = target.moveSpeed;
+        projectileVelocity = target.projectileVelocity;
+        attackCooldown = target.attackCooldown;
+        maxPierces = target.maxPierces;
+        projectileLifespan = target.projectileLifespan;
+        attackType = target.attackType;
+        attackDamage = target.attackDamage;
+        stunDuration = target.stunDuration;
+        explosionRadius = target.explosionRadius;
     }
 
     // multiplies stats

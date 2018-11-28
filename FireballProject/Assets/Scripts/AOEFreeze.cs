@@ -25,14 +25,15 @@ public class AOEFreeze : MonoBehaviour
     {
         // freeze entities in the radius
         Entity[] entities = FindObjectsOfType<Entity>();
-        foreach (Entity ent in entities)
+        for (int i = 0; i < entities.Length; ++i)
         {
-            if (ent != owner)
+            if (entities[i] != owner)
             {
-                Vector3 toEnt = ent.transform.position - transform.position;
+                Vector3 toEnt = entities[i].transform.position - transform.position;
+
                 if (toEnt.magnitude <= radius)
                 {
-                    ent.Stun(freezeDuration);
+                    entities[i].Stun(freezeDuration);
                 }
             }
         }

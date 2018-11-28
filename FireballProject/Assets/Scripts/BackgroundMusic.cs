@@ -7,6 +7,8 @@ public class BackgroundMusic : MonoBehaviour
     // time to fade in
     public float fadeDuration = 0f;
 
+    public float volume = 1f;
+
     // audio source
     private AudioSource src = null;
 
@@ -27,15 +29,15 @@ public class BackgroundMusic : MonoBehaviour
         float remainingTime = duration - (elapsedTime - GetComponent<GameTimer>().startCountdownDuration);
         if (elapsedTime < fadeDuration)
         {
-            src.volume = Mathf.InverseLerp(0f, fadeDuration, elapsedTime);
+            src.volume = Mathf.InverseLerp(0f, fadeDuration, elapsedTime) * volume;
         }
         else if (remainingTime < fadeDuration)
         {
-            src.volume = Mathf.InverseLerp(0f, fadeDuration, remainingTime);
+            src.volume = Mathf.InverseLerp(0f, fadeDuration, remainingTime) * volume;
         }
         else
         {
-            src.volume = 1f;
+            src.volume = volume;
         }
 	}
 }

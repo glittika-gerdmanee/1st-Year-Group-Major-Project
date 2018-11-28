@@ -145,8 +145,6 @@ public class EndScreen : MonoBehaviour
             {
                 dragon.GetComponent<RandomBlink>().enabled = false;
             }
-
-            ++i;
         }
     }
 

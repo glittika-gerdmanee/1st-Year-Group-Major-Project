@@ -15,8 +15,11 @@ public class GameTimer : MonoBehaviour
     // timer display
     public Text timerText = null;
 
-    // countdown display text
-    public Text countdownText = null;
+    // countdown display sprite
+    public Image countdownSprite = null;
+
+    // countdown sprites
+    public Sprite[] countdown = new Sprite[4];
 
     // is the game started
     public static bool gameStarted
@@ -61,14 +64,14 @@ public class GameTimer : MonoBehaviour
             }
 
             // update the ui
-            UpdateCountdownText();
+            UpdateCountdown();
         }
 
         // update the UI
         UpdateTimerText();
 
         // end the game when the timer ends
-        if (currentDuration >= duration)
+        if (currentDuration >= duration || Input.GetKeyDown(KeyCode.Escape))
         {
             EndGame();
         }
@@ -79,7 +82,7 @@ public class GameTimer : MonoBehaviour
     {
         started = b;
 
-        countdownText.gameObject.SetActive(!started);
+        countdownSprite.gameObject.SetActive(!started);
     }
 
     // updates the timer text
@@ -99,8 +102,8 @@ public class GameTimer : MonoBehaviour
         timerText.text = remainingMinutes.ToString() + ":" + remainingSeconds.ToString();
     }
 
-    // update countdown text
-    private void UpdateCountdownText()
+    // update countdown sprite
+    private void UpdateCountdown()
     {
         // get remaining countdown seconds
         int remainingSeconds = (int)(startCountdownDuration - startCountdownTimer);
@@ -108,8 +111,8 @@ public class GameTimer : MonoBehaviour
         // clamp remaining seconds
         remainingSeconds = (int)(Mathf.Clamp(remainingSeconds, 0f, startCountdownDuration));
 
-        // set text
-        countdownText.text = remainingSeconds == 0 ? "Start!" : remainingSeconds.ToString();
+        // set sprite
+        countdownSprite.sprite = countdown[remainingSeconds];
     }
 
     // resets the timer to 0

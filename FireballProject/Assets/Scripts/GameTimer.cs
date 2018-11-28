@@ -71,7 +71,7 @@ public class GameTimer : MonoBehaviour
         UpdateTimerText();
 
         // end the game when the timer ends
-        if (currentDuration >= duration)
+        if (currentDuration >= duration || Input.GetKeyDown(KeyCode.Escape))
         {
             EndGame();
         }

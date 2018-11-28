@@ -1516,7 +1516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 675.8773, y: -74.88913}
+  m_AnchoredPosition: {x: 674, y: -74.7}
   m_SizeDelta: {x: 190, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177489594
@@ -2532,7 +2532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09be344cb68f79141a9248a2f9c355a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 180
+  duration: 10
   startCountdownDuration: 4
   timerText: {fileID: 674527012}
   countdownSprite: {fileID: 1980859512}
@@ -2750,7 +2750,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ee90e7349a834cb42a83d3c6ee1aad97, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2832,7 +2832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 927ff8c3f893ee04984d0ab2eaf784a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClip: {fileID: 0}
+  fadeDuration: 3
 --- !u!1 &328256395
 GameObject:
   m_ObjectHideFlags: 0
@@ -8980,7 +8980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 675.3, y: 373.50003}
+  m_AnchoredPosition: {x: 673.5, y: 373.50003}
   m_SizeDelta: {x: 190, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1249932660
@@ -10041,7 +10041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28.281303, y: -74.467476}
+  m_AnchoredPosition: {x: -27.3, y: -74.8}
   m_SizeDelta: {x: 190, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1415827765

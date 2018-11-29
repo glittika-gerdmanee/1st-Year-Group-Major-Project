@@ -501,7 +501,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08bd08a374455d242adfc47f8ae3a624, type: 3}
-    m_FontSize: 76
+    m_FontSize: 78
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -2916,7 +2916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.19607842, g: 0.19607842, b: 0.19607842, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2925,7 +2925,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08bd08a374455d242adfc47f8ae3a624, type: 3}
-    m_FontSize: 76
+    m_FontSize: 78
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -5748,7 +5748,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08bd08a374455d242adfc47f8ae3a624, type: 3}
-    m_FontSize: 76
+    m_FontSize: 78
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -8116,7 +8116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 675.9, y: -48.2}
+  m_AnchoredPosition: {x: 680.8, y: -48.2}
   m_SizeDelta: {x: 991.13, y: 261.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124493207
@@ -8140,7 +8140,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 08bd08a374455d242adfc47f8ae3a624, type: 3}
-    m_FontSize: 76
+    m_FontSize: 78
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -13813,6 +13813,7 @@ GameObject:
   - component: {fileID: 1980859511}
   - component: {fileID: 1980859513}
   - component: {fileID: 1980859512}
+  - component: {fileID: 1980859514}
   m_Layer: 5
   m_Name: Countdown
   m_TagString: Untagged
@@ -13871,6 +13872,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1980859510}
+--- !u!114 &1980859514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1980859510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2000592174
 GameObject:
   m_ObjectHideFlags: 0

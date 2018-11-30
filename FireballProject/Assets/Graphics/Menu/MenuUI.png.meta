@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 8c7b6fea33c7704468adcb102cb19b60
-timeCreated: 1543331520
-licenseType: Free
+timeCreated: 1543536603
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: UI_Button
@@ -25,6 +25,11 @@ TextureImporter:
     21300036: '''R'' Trigger'
     21300038: '''R'' Trigger Pushed'
     21300040: UIPanel
+    21300042: EggSprite
+    21300044: Dropdown
+    21300046: Scrollbar
+    21300048: Slider
+    21300050: Slider_BG
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -86,6 +91,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -95,6 +101,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -102,10 +109,10 @@ TextureImporter:
       name: UIButton
       rect:
         serializedVersion: 2
-        x: 23
-        y: 163
-        width: 328
-        height: 120
+        x: 22
+        y: 643
+        width: 330
+        height: 118
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,9 +124,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 369
-        y: 229
+        y: 711
         width: 52
-        height: 34
+        height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +137,8 @@ TextureImporter:
       name: '''A'' Button Pushed'
       rect:
         serializedVersion: 2
-        x: 425
-        y: 229
+        x: 426
+        y: 711
         width: 52
         height: 55
       alignment: 0
@@ -145,7 +152,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 436
-        y: 183
+        y: 664
         width: 35
         height: 39
       alignment: 0
@@ -158,8 +165,8 @@ TextureImporter:
       name: Player01
       rect:
         serializedVersion: 2
-        x: 8
-        y: 17
+        x: 416
+        y: 497
         width: 95
         height: 130
       alignment: 0
@@ -172,8 +179,8 @@ TextureImporter:
       name: Player02
       rect:
         serializedVersion: 2
-        x: 107
-        y: 17
+        x: 515
+        y: 497
         width: 95
         height: 130
       alignment: 0
@@ -186,8 +193,8 @@ TextureImporter:
       name: Player03
       rect:
         serializedVersion: 2
-        x: 206
-        y: 17
+        x: 613
+        y: 497
         width: 95
         height: 130
       alignment: 0
@@ -200,8 +207,8 @@ TextureImporter:
       name: Player04
       rect:
         serializedVersion: 2
-        x: 305
-        y: 17
+        x: 713
+        y: 497
         width: 95
         height: 130
       alignment: 0
@@ -214,8 +221,8 @@ TextureImporter:
       name: Arrow_L
       rect:
         serializedVersion: 2
-        x: 435
-        y: 141
+        x: 372
+        y: 664
         width: 35
         height: 39
       alignment: 0
@@ -228,8 +235,8 @@ TextureImporter:
       name: '''R'' Trigger'
       rect:
         serializedVersion: 2
-        x: 409
-        y: 92
+        x: 506
+        y: 712
         width: 78
         height: 31
       alignment: 0
@@ -242,8 +249,8 @@ TextureImporter:
       name: '''R'' Trigger Pushed'
       rect:
         serializedVersion: 2
-        x: 409
-        y: 39
+        x: 507
+        y: 659
         width: 78
         height: 49
       alignment: 0
@@ -256,12 +263,82 @@ TextureImporter:
       name: UIPanel
       rect:
         serializedVersion: 2
-        x: 493
-        y: 7
-        width: 349
-        height: 293
+        x: 18
+        y: 27
+        width: 532
+        height: 445
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: EggSprite
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 646
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dropdown
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 502
+        width: 330
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Scrollbar
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 268
+        width: 41
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Slider
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 410
+        width: 185
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Slider_BG
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 361
+        width: 185
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -2625,7 +2625,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Video Options
+  m_Text: Video
 --- !u!222 &623467057
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3736,8 +3736,6 @@ MonoBehaviour:
   soundSource: {fileID: 0}
   musicVolume: {fileID: 456619012}
   soundVolume: {fileID: 725351072}
-  brightness: {fileID: 0}
-  brightnessLevel: 0
   resolutionDropdown: {fileID: 1058072930}
   soundOptionsButton: {fileID: 190073790}
   videoOptionsButton: {fileID: 867829862}
@@ -5337,7 +5335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Sound Options
+  m_Text: 'Sound
 
 '
 --- !u!222 &1206061057

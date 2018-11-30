@@ -34,12 +34,6 @@ public class OptionsMenu : MonoBehaviour {
     //slider for sfx
     public Slider soundVolume;
 
-    //slider for brightness
-    public Slider brightness;
-
-    //how bright the gamescreen is
-    public float brightnessLevel;
-
     //display for resolution options
     public Dropdown resolutionDropdown;
 
@@ -93,7 +87,6 @@ public class OptionsMenu : MonoBehaviour {
     {
         musicSource.volume = musicVolume.value;
         //soundSource.volume = soundVolume.value;
-        //Have some numbers on the slider to indicate volume placement later
         
     }
 
@@ -116,12 +109,6 @@ public class OptionsMenu : MonoBehaviour {
         QualitySettings.SetQualityLevel(qualityIndex);
     }
     
-
-    //toggle brightness of game screen
-    public void BrightnessToggle()
-    {
-        brightnessLevel = brightness.value;
-    }
 
     //applies any changes made by player
     public void ApplyButton()

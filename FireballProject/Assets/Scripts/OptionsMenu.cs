@@ -113,7 +113,9 @@ public class OptionsMenu : MonoBehaviour {
     //applies any changes made by player
     public void ApplyButton()
     {
-
+        // apply sound volume sliders
+        BackgroundMusic.volume = musicVolume.value;
+        AudioPlayer.volume = soundVolume.value;
     }
 
     //allowing panels to returning to options panel instead of closing it entirely

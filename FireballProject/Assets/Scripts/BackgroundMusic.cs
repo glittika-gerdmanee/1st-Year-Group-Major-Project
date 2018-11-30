@@ -8,7 +8,7 @@ public class BackgroundMusic : MonoBehaviour
     public float fadeDuration = 0f;
 
     // music volume
-    public float volume = 1f;
+    public static float volume = 1f;
 
     // audio source
     private AudioSource src = null;

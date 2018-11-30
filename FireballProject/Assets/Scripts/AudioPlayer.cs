@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
+    // volume
+    public static float volume = 1f;
+
     // list of audio sources
     private List<AudioSource> sources = new List<AudioSource>();
     private List<float> clipLengths = new List<float>();
@@ -43,6 +46,8 @@ public class AudioPlayer : MonoBehaviour
         AudioSource newSource = gameObject.AddComponent<AudioSource>();
         sources.Add(newSource);
         clipLengths.Add(clip.length);
+
+        newSource.volume = volume;
 
         // play the clip
         newSource.PlayOneShot(clip, volume);

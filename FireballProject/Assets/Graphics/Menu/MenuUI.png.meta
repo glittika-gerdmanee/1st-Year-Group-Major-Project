@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 8c7b6fea33c7704468adcb102cb19b60
-timeCreated: 1543536603
+timeCreated: 1543537091
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -263,10 +263,10 @@ TextureImporter:
       name: UIPanel
       rect:
         serializedVersion: 2
-        x: 18
-        y: 27
-        width: 532
-        height: 445
+        x: 12
+        y: 25
+        width: 549
+        height: 449
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,7 +338,7 @@ TextureImporter:
         width: 185
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
